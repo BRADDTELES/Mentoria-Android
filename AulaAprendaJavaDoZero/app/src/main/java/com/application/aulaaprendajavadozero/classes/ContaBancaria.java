@@ -3,7 +3,7 @@ package com.application.aulaaprendajavadozero.classes;
 public class ContaBancaria {
 
     //Atributos sem public é default
-    private double saldo = 0;
+    protected double saldo = 0;
 
     //Métodos
     private void recuperarSaldo(){

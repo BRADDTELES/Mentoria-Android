@@ -1,9 +1,9 @@
 package com.application.aulaaprendajavadozero.classes;
 
-public class Cliente {
+public class Cliente extends ContaBancaria {
 
     void teste(){
-        ContaBancaria conta = new ContaBancaria();
-        conta.transferir();
+        this.saldo = 10;
     }
+
 }
