@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Cliente cliente = new Cliente();
-        cliente.sacar();
+        //Cliente cliente = new Cliente();
+        //cliente.sacar();
         //cliente.saldo = 20;
 
         //ContaBancaria conta = new ContaBancaria();
