@@ -9,13 +9,19 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    String[] frases = {
+            "Frase 01",
+            "Frase 02",
+            "Frase 03"
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
 
-    public void gerarFraseAleatoria(View view){
+    /*public void gerarFraseAleatoria(View view){
 
         String[] frases = {
                 "Frase 01",
@@ -28,6 +34,30 @@ public class MainActivity extends AppCompatActivity {
 
         TextView texto = findViewById(R.id.textFrase);
         texto.setText( frases[numeroAleatorio] );
+
+    }*/
+
+    public void gerarFrase(View view){
+
+        TextView texto = findViewById(R.id.textResultado);
+        int numeroAleatorio = new Random().nextInt(3);
+        String frase = frases[ numeroAleatorio ];
+
+        texto.setText( frase );
+
+    }
+
+    public void exibirTodas(View view){
+
+        TextView texto = findViewById(R.id.textResultado);
+
+        String textResultado = "";
+
+        for (  String frase : frases ){
+            textResultado = textResultado + frase + "\n";
+        }
+
+        texto.setText( textResultado );
 
     }
 }
