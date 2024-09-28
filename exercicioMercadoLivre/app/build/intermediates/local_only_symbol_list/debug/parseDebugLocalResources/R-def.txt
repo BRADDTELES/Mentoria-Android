@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+drawable logo_mercado_livre
+drawable produto
+drawable promocao
+id button
+id imageView
+id imageView2
+id imageView3
+id main
+id textView
+id textView2
+id textView3
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+string btn_comprar
+string text_descricaoProduto
+string text_ofertaDoDia
+string text_tituloProduto
+style Base.Theme.ExercicioMercadoLivre
+style Theme.ExercicioMercadoLivre
+xml backup_rules
+xml data_extraction_rules
