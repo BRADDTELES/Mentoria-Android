@@ -17,11 +17,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0aa72196-47dd-4805-87c5-27ba8caf762a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.idea/other.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.gradle/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaAprendaJavaDoZero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFrasesDoDia/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFrasesDoDia/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFrasesDoDia/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFrasesDoDia/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +31,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\bradd\.android\avd\Pixel_4_API_29_10.0.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/home/bradd/.android/avd/Pixel_3a_API_29.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
