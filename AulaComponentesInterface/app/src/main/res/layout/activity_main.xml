@@ -27,4 +27,13 @@
         android:text="TextView"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:textSize="14sp"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="96dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
