@@ -12,10 +12,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:drawableTop="@drawable/ic_adicionar_24"
         android:text="@string/botao_jogar"
         android:textColor="@color/texto_botao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_adicionar_24"
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/ic_adicionar_24"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteY="180dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:srcCompat="@drawable/ic_adicionar_24"
+        tools:layout_editor_absoluteX="140dp"
+        tools:layout_editor_absoluteY="255dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
