@@ -1,7 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AulaComponentesInterface" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.AulaComponentesInterface" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <!-- Cores primárias escuro -->
+        <item name="colorPrimary">@color/primaria_escuro</item>
+
+        <!-- Cores secundarias escuro-->
+        <item name="colorSecondary">@color/secundaria_escuro</item>
     </style>
 </resources>

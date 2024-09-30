@@ -5,4 +5,20 @@
 
     <!-- Cores customizadas -->
     <color name="texto_botao">#FBECDE</color>
+
+    <!-- Cores customizadas para o tema -->
+    <color name="primaria">#E91E63</color>
+    <color name="primaria_variacao">#52279E</color>
+    <color name="item_primaria">#FFEB3B</color>
+
+    <!-- Cores secundárias -->
+    <color name="secundaria">#8BC34A</color>
+    <color name="item_secundaria">#FBFCFD</color>
+    <color name="fundo">#F3F3F3</color>
+    <color name="secundaria_variacao">#21550C</color>
+    <color name="texto_secundaria">#F44336</color>
+
+    <!-- Cores primarias tema escuro -->
+    <color name="primaria_escuro">#E91E63</color>
+    <color name="secundaria_escuro">#FFC107</color>
 </resources>
