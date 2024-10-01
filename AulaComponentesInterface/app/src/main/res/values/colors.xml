@@ -14,7 +14,7 @@
     <!-- Cores secundárias -->
     <color name="secundaria">#8BC34A</color>
     <color name="item_secundaria">#FBFCFD</color>
-    <color name="fundo">#F3F3F3</color>
+    <color name="fundo">#D6D6D6</color>
     <color name="secundaria_variacao">#21550C</color>
     <color name="texto_secundaria">#F44336</color>
 

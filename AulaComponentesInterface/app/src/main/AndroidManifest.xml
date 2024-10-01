@@ -13,12 +13,18 @@
         android:theme="@style/Theme.AulaComponentesInterface"
         tools:targetApi="31">
         <activity
-            android:name=".SegundaActivity"
+            android:name=".ScrollViewActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="fullSensor"
+            android:exported="false" />
+        <activity
+            android:name=".SegundaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CaixaActivity"
             android:exported="true"
+            android:screenOrientation="sensor"
             tools:ignore="DiscouragedApi">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
