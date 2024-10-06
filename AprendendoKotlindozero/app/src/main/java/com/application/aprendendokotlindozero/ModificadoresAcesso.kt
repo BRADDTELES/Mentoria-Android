@@ -1,6 +1,6 @@
 package com.application.aprendendokotlindozero
 
-open class Carro {
+/*open class Carro {
 
     //var modelo = ""
 
@@ -23,12 +23,22 @@ class Gol : Carro(){
 
 class Ferrari : Carro(){
 
-}
+}*/
 
 fun main() {
 
-    val gol = Gol()
-    gol.acelerar()
+    /*
+    Uber (módulos)
+        - Motorista app só do motorista
+        - Passageiro app só do passageiro
+
+    Ifood
+        - Cliente (App diferente)
+        - Restaurante (App diferente)
+    * */
+
+    /*val gol = Gol()
+    gol.acelerar()*/
 
     /*val carro = Carro()
     carro.modelo = "teste"
