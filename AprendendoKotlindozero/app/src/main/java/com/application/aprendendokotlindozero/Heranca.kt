@@ -1,6 +1,6 @@
 package com.application.aprendendokotlindozero
 
-abstract class Animal{//Classe pai, super classe, Abstrata
+/*abstract class Animal{//Classe pai, super classe, Abstrata
     var cor: String = ""
     var tamanho: String = ""//Pequeno, médio e grande porte
     var peso: Double = 0.0
@@ -35,11 +35,11 @@ class Passaro : Animal(){//Subclasse ou classe filha, Concreta
     override fun dormir() {
         println("Dormir como um pássaro")
     }
-}
+}*/
 
 fun main() {
 
-    val cao = Cao()
+    /*val cao = Cao()
     cao.correr()
     cao.latir()
     cao.dormir()
@@ -47,6 +47,6 @@ fun main() {
     val passaro = Passaro()
     passaro.correr()
     passaro.voar()
-    passaro.dormir()
+    passaro.dormir()*/
 
 }
