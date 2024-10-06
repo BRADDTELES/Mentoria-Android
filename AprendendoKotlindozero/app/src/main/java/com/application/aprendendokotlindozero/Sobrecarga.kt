@@ -1,6 +1,6 @@
 package com.application.aprendendokotlindozero
 
-class Usuario {
+/*class Usuario {
 
     //Propriedades
     fun logar( email: String, senha: String ){
@@ -10,12 +10,12 @@ class Usuario {
     fun logar( numeroTelefone: String ){
         println("Usuário logado com telefone: $numeroTelefone")
     }
-}
+}*/
 
 fun main() {
 
-    val usuario = Usuario()
-    usuario.logar("danillo@email.com", "123")
-    usuario.logar("123456789")
+    //val usuario = Usuario()
+    //usuario.logar("danillo@email.com", "123")
+    //usuario.logar("123456789")
 
 }

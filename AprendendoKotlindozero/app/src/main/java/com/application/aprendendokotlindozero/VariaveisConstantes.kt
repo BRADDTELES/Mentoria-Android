@@ -19,7 +19,7 @@ fun main() {
     val resultado = numero1 + numero2
 
     val numero: Int = 20
-    val usuario = Usuario()
+    //val usuario = Usuario()
 
     println(nome)
 }
