@@ -4,7 +4,7 @@
             "outputFile": "com.application.aulaactivityfragment.app-mergeDebugResources-29:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\a54659ae6c2a31ba84524fcbb5cd6eb5\\transformed\\appcompat-1.7.0\\res\\values-v26\\values-v26.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/9fa4ad46f5e771449326adbee598ccc7/transformed/appcompat-1.7.0/res/values-v26/values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

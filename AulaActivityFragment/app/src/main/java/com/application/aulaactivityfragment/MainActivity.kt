@@ -34,9 +34,19 @@ class MainActivity : AppCompatActivity() {
                 DetalhesActivity::class.java
             )
             //Passar parâmetros para nova tela
-            intent.putExtra("filme", "The Witcher")
+            /*intent.putExtra("filme", "The Witcher")
             intent.putExtra("classificação", 5)
-            intent.putExtra("avaliação", 9.2)
+            intent.putExtra("avaliação", 9.2)*/
+
+            val filme = Filme(
+                nome = "Sem Limites",
+                descricao = "teste",
+                avaliacao = 4.8,
+                diretor = "Danillo",
+                distribuidor = "Netflix"
+            )
+            intent.putExtra("filme", filme)
+
 
             //Iniciar uma nova tela
             startActivity( intent )
