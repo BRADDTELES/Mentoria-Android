@@ -19,7 +19,7 @@ class DetalhesActivity : AppCompatActivity() {
         buttonFechar = findViewById( R.id.button_fechar )
         buttonFechar.setOnClickListener {
             finish()//Finalizar
-            /* Também posso usar esses comandos abaixo
+            /*//Também posso usar esses comandos abaixo
             val intent = Intent(
                 this,
                 MainActivity::class.java

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-30:12
+INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:1-30:12
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\bradd\.gradle\caches\transforms-4\87bace873d8b5a6d1ed89701b4619c93\transformed\material-1.12.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\bradd\.gradle\caches\transforms-4\1598b8b733d0747cf2cc94ac2132127f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.appcompat:appcompat-resources:1.7.0] C:\Users\bradd\.gradle\caches\transforms-4\ff0576141cf5a80bffd3388466aeba5b\transformed\appcompat-resources-1.7.0\AndroidManifest.xml:2:1-7:12
@@ -56,8 +56,8 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\bradd\.gradle\caches\transform
 	xmlns:android
 		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:5:5-27:19
-INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:5:5-27:19
+ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:5:5-28:19
+INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:5:5-28:19
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\bradd\.gradle\caches\transforms-4\87bace873d8b5a6d1ed89701b4619c93\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.12.0] C:\Users\bradd\.gradle\caches\transforms-4\87bace873d8b5a6d1ed89701b4619c93\transformed\material-1.12.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\bradd\.gradle\caches\transforms-4\1598b8b733d0747cf2cc94ac2132127f\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -103,21 +103,23 @@ ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFra
 	android:name
 		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:16:13-45
 activity#com.application.aulaactivityfragment.MainActivity
-ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:18:9-26:20
+ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:18:9-27:20
+	android:screenOrientation
+		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:20:13-47
 	android:exported
-		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:20:13-36
+		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:21:13-36
 	android:name
 		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:19:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:21:13-25:29
+ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:22:13-26:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:22:17-69
+ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:23:17-69
 	android:name
-		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:22:25-66
+		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:23:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:24:17-77
+ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:25:17-77
 	android:name
-		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:24:27-74
+		ADDED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml:25:27-74
 uses-sdk
 INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaActivityFragment\app\src\main\AndroidManifest.xml
