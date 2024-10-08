@@ -8,7 +8,7 @@ drawable ic_launcher_foreground
 id button_abrir
 id button_fechar
 id main
-id textView
+id textFilme
 layout activity_detalhes
 layout activity_main
 mipmap ic_launcher

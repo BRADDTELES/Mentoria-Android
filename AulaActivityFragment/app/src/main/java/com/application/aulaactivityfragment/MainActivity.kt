@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
                 this,
                 DetalhesActivity::class.java
             )
+            //Passar parâmetros para nova tela
+            intent.putExtra("filme", "The Witcher")
+            intent.putExtra("classificação", 5)
+            intent.putExtra("avaliação", 9.2)
 
             //Iniciar uma nova tela
             startActivity( intent )
@@ -40,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onStart() {
+    /*override fun onStart() {
         super.onStart()
         Log.i("ciclo_vida", "onStart")
     }
@@ -67,5 +71,5 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         Log.i("ciclo_vida", "onDestroy")
         super.onDestroy()
-    }
+    }*/
 }
