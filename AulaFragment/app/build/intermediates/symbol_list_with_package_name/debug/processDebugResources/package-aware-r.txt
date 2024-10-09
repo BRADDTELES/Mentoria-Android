@@ -3195,8 +3195,8 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn_chamadas
-id btn_conversas
 id btn_executar
+id btn_mercado
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3548,13 +3548,13 @@ id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id text
 id text2
-id textConversas
 id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id text_categoria
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon

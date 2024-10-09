@@ -1,15 +1,15 @@
 [
     {
-        "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-debug-31:\\layout_fragment_conversas.xml.flat",
+        "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-main-33:\\layout\\fragment_conversas.xml"
     },
     {
         "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-debug-31:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-main-33:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-debug-31:\\layout_fragment_conversas.xml.flat",
-        "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-main-33:\\layout\\fragment_conversas.xml"
+        "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
         "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulafragment.app-debug-31:\\layout_fragment_teste.xml.flat",

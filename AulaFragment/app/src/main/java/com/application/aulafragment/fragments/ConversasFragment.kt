@@ -17,7 +17,11 @@ class ConversasFragment : Fragment() {
 
     private lateinit var btnExecutar: Button
     private lateinit var textNome: TextView
+    private lateinit var textCategoria: TextView
     private lateinit var editNome: EditText
+
+    private var categoria: String? = null
+    private var usuario: String? = null
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -27,6 +31,8 @@ class ConversasFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i("ciclo_vida", "Fragment onCreate")
+        categoria = arguments?.getString("categoria")
+        usuario = arguments?.getString("usuario")
     }
 
     override fun onCreateView(
@@ -42,9 +48,13 @@ class ConversasFragment : Fragment() {
         )
 
         //Processamento da visualização
-        btnExecutar = view.findViewById(R.id.btn_executar)
-        editNome = view.findViewById(R.id.edit_nome)
-        textNome = view.findViewById(R.id.text_nome)
+        btnExecutar = view.findViewById( R.id.btn_executar )
+        editNome = view.findViewById( R.id.edit_nome )
+        textNome = view.findViewById( R.id.text_nome )
+        textCategoria = view.findViewById( R.id.text_categoria )
+
+        textCategoria.text = categoria
+        textNome.text = usuario
 
         btnExecutar.setOnClickListener {
             textNome.text = editNome.text.toString()
