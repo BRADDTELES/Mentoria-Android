@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.application.aulafragment.app-mergeDebugResources-29:/values/values.xml",
+            "outputFile": "com.application.aulafragment.app-mergeDebugResources-35:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\src\\main\\res\\values\\colors.xml",
@@ -128,25 +128,6 @@
                         "endLines": "2482,6376",
                         "endColumns": "12,71",
                         "endOffsets": "174015,446520"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\1e4410842be6f12b1f14ea3a1f3f5436\\transformed\\fragment-1.5.4\\res\\values\\values.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,10",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,112,177,241,411",
-                        "endLines": "2,3,4,9,13",
-                        "endColumns": "56,64,63,24,24",
-                        "endOffsets": "107,172,236,406,555"
-                    },
-                    "to": {
-                        "startLines": "1805,1838,1878,11477,11482",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "120439,122126,124194,724321,724491",
-                        "endLines": "1805,1838,1878,11481,11485",
-                        "endColumns": "56,64,63,24,24",
-                        "endOffsets": "120491,122186,124253,724486,724635"
                     }
                 },
                 {
@@ -293,6 +274,25 @@
                         "endLines": "13635",
                         "endColumns": "24",
                         "endOffsets": "803971"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\2ac7cdb34650ef06b63a360e4f551b65\\transformed\\fragment-1.8.3\\res\\values\\values.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,10",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,112,177,241,411",
+                        "endLines": "2,3,4,9,13",
+                        "endColumns": "56,64,63,24,24",
+                        "endOffsets": "107,172,236,406,555"
+                    },
+                    "to": {
+                        "startLines": "1805,1838,1878,11477,11482",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "120439,122126,124194,724321,724491",
+                        "endLines": "1805,1838,1878,11481,11485",
+                        "endColumns": "56,64,63,24,24",
+                        "endOffsets": "120491,122186,124253,724486,724635"
                     }
                 },
                 {

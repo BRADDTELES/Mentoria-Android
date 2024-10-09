@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.application.aulafragment.app-mergeDebugResources-29:/values-mr/values-mr.xml",
+            "outputFile": "com.application.aulafragment.app-mergeDebugResources-35:/values-mr/values-mr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\a54659ae6c2a31ba84524fcbb5cd6eb5\\transformed\\appcompat-1.7.0\\res\\values-mr\\values-mr.xml",
