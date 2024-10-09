@@ -4,7 +4,7 @@
             "outputFile": "com.application.aulafragment.app-mergeDebugResources-35:/values-w320dp-land-v13/values-w320dp-land-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\87bace873d8b5a6d1ed89701b4619c93\\transformed\\material-1.12.0\\res\\values-w320dp-land-v13\\values-w320dp-land-v13.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/87bace873d8b5a6d1ed89701b4619c93/transformed/material-1.12.0/res/values-w320dp-land-v13/values-w320dp-land-v13.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
