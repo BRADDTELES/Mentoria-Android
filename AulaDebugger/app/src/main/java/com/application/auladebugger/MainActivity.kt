@@ -25,8 +25,13 @@ class MainActivity : AppCompatActivity() {
                 println("primeiro usuário: ")
                 exibirPrimeiroUsuario = false
             }
-            println(usuario)
+            exibirItem( usuario )
             contadorItens++
         }
+    }
+
+    private fun exibirItem(usuario: String) {
+        println(usuario)
+        println("--------")
     }
 }
