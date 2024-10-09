@@ -1,4 +1,4 @@
-#Wed Oct 09 06:07:27 BRT 2024
+#Wed Oct 09 06:28:42 BRT 2024
 base.0=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
