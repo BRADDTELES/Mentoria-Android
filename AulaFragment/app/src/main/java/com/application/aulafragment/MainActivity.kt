@@ -5,6 +5,8 @@ import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 import com.application.aulafragment.fragments.ChamadasFragment
 import com.application.aulafragment.fragments.ConversasFragment
 
@@ -31,18 +33,29 @@ class MainActivity : AppCompatActivity() {
 
 
         btnMercado.setOnClickListener {
-            val conversasFragment = ConversasFragment()
+            /*val conversasFragment = ConversasFragment()
 
             val bundle = bundleOf(
                 "categoria" to "Mercado",
                 "usuario" to "Danillo"
             )
-            conversasFragment.arguments = bundle
+            conversasFragment.arguments = bundle*/
 
-            supportFragmentManager
+            /*supportFragmentManager
                 .beginTransaction()
                 .replace( R.id.fragment_conteudo, conversasFragment )
-                .commit()
+                .commit()*/
+
+            val bundle = bundleOf(
+                "categoria" to "Mercado",
+                "usuario" to "Danillo"
+            )
+            supportFragmentManager.commit {
+                replace<ConversasFragment>(
+                    R.id.fragment_conteudo,
+                    args = bundle
+                )
+            }
         }
 
         btnChamadas.setOnClickListener {
