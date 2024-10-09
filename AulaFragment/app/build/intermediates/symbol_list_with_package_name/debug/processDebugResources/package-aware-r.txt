@@ -3196,6 +3196,7 @@ id bounceEnd
 id bounceStart
 id btn_chamadas
 id btn_conversas
+id btn_executar
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3269,6 +3270,7 @@ id easeInOut
 id easeOut
 id east
 id edge
+id edit_nome
 id edit_query
 id edit_text_id
 id elastic
@@ -3556,6 +3558,7 @@ id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_nome
 id textinput_counter
 id textinput_error
 id textinput_helper_text

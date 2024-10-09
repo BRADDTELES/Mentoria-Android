@@ -31,11 +31,12 @@ class MainActivity : AppCompatActivity() {
 
         fragmentManager.commit()*/
 
-        val conversasFragment = ConversasFragment()
+        //val conversasFragment = ConversasFragment()
+
         btnConversas.setOnClickListener {
             supportFragmentManager
                 .beginTransaction()
-                .replace( R.id.fragment_conteudo, conversasFragment)
+                .replace( R.id.fragment_conteudo, ConversasFragment() )
                 .commit()
         }
 

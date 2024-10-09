@@ -6,12 +6,15 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 id btn_chamadas
 id btn_conversas
+id btn_executar
+id edit_nome
 id fragment_conteudo
 id guideline_horizontal
 id guideline_vertical
 id main
 id textConversas
 id textView
+id text_nome
 layout activity_main
 layout fragment_chamadas
 layout fragment_conversas
