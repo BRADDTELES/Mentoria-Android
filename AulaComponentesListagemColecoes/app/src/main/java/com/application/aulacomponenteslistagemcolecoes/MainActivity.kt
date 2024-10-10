@@ -22,9 +22,9 @@ class MainActivity : AppCompatActivity() {
         btnExecutar = findViewById( R.id.btn_executar )
         textResultado = findViewById( R.id.text_resultado )
 
-        /*btnExecutar.setOnClickListener {
+        btnExecutar.setOnClickListener {
             textResultado.text = "Danillo Teles"
-        }*/
+        }
     }
 
     fun cliqueBotao( view: View) {
