@@ -1,8 +1,8 @@
-#Wed Oct 09 07:24:08 BRT 2024
-base.0=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaFragment\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+#Wed Oct 09 08:44:58 BRT 2024
+base.0=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFragment/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFragment/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFragment/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
+base.3=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFragment/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex
