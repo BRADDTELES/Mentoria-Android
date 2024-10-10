@@ -5,6 +5,12 @@ public class Pessoa {
     private String nome = "";
     private int idade = 0;
 
+    public void salvarTelefone( String... telefones ){
+        for ( String telefone : telefones ){
+            System.out.println("telefone: " + telefone);
+        }
+    }
+
     public String getNome() {
         System.out.println("get: " + nome);
         return nome.toUpperCase();

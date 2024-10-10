@@ -11,7 +11,7 @@ package com.application.aulacomponenteslistagemcolecoes.teste
 /*data class Pergunta( val pergunta: String, val respostaCerta: Int )*/
 
 //Getter (conseguir, recuperar) e Setter (Configurar, definir)
-class Usuario() {
+/*class Usuario() {
 
     var nome: String = ""
         get() {
@@ -23,17 +23,41 @@ class Usuario() {
     var idade: Int = 0
     val maiorIdade
         get() = idade >= 18
+}*/
 
-
+class Usuario {
+    fun salvarTelefones ( vararg telefones: String ){
+        for ( telefone in telefones ){
+            println("telefone: $telefone")
+        }
+    }
 }
 
 fun main() {
 
     val usuario = Usuario()
+    usuario.salvarTelefones(
+        "(11) 995525-5454",
+        "(11) 995525-5454",
+        "(11) 995525-5454",
+        "(11) 995525-5454",
+        "(11) 995525-5454"
+    )
+
+    /*val pessoa = Pessoa()
+    pessoa.salvarTelefone(
+        "(11) 995525-5454",
+        "(11) 995525-5454",
+        "(11) 995525-5454",
+        "(11) 995525-5454",
+        "(11) 995525-5454"
+    )*/
+
+    /*val usuario = Usuario()
     usuario.nome = "Pedro"
     usuario.idade = 15
 
-    println("nome: ${usuario.nome} idade: ${usuario.idade} maiorIdade: ${usuario.maiorIdade}")
+    println("nome: ${usuario.nome} idade: ${usuario.idade} maiorIdade: ${usuario.maiorIdade}")*/
 
     /*val pessoa = Pessoa()
     pessoa.nome = "Danillo"
