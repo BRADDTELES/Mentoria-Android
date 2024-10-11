@@ -1,6 +1,6 @@
 package com.application.aulacomponenteslistagemcolecoes.teste
 
-data class Produto( val nome: String )
+//data class Produto( val nome: String )
 
 fun main() {
 
