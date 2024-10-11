@@ -1,0 +1,29 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color principal
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id btn_calcular
+id edit_alcool
+id edit_gasolina
+id main
+id textView
+id textView2
+id textView3
+id textView4
+id text_alcool
+id text_gasolina
+id text_input_alcool
+id text_input_gasolina
+id text_resultado
+layout activity_detalhes
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.ExercicioGasolinaOuAlcool
+style Theme.ExercicioGasolinaOuAlcool
+xml backup_rules
+xml data_extraction_rules
