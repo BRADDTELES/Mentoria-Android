@@ -46,7 +46,7 @@ class ComponenteListagem {
 }
 
 class MeuAdaptador(
-    lista: List<String>
+    lista: List<Paciente>
 ) : Adaptador {
     private val listaItens = lista
     override fun quantidadeItens(): Int{
@@ -54,14 +54,27 @@ class MeuAdaptador(
     }
 
     override fun montarLayoutParaItem(posicao: Int): String {
-        return "$posicao) " + listaItens[posicao] + " - "
+        /*return "$posicao) " + listaItens[posicao] + " - "*/
+        val paciente = listaItens[posicao]
+        var position = posicao + 1
+        var item = "$position\u00B0) ${paciente.nome} - (${paciente.idade}) \n" // \u00B0 é o símbolo de graus celsius
+        item += "------------------------"
+        return item
     }
 }
+
+data class Paciente( val nome: String, val idade: Int )
 
 fun main() {
 
     //Lista de itens
-    val listaItens = listOf("jamilton", "ana", "maria", "pedro", "joão")
+    //val listaItens = listOf("jamilton", "ana", "maria", "pedro", "joão")
+    val listaItens = listOf(
+        Paciente("Ana", 25),
+        Paciente("Jamilton", 18),
+        Paciente("Maria", 45),
+        Paciente("Pedro", 28)
+    )
 
     val componenteListagem = ComponenteListagem()
     componenteListagem.adaptador = MeuAdaptador( listaItens )
