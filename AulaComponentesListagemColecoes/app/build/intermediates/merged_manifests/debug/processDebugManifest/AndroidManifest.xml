@@ -28,10 +28,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.AulaComponentesListagemColecoes" >
         <activity
+            android:name="com.application.aulacomponenteslistagemcolecoes.ListViewActivity"
+            android:exported="false" />
+        <activity
             android:name="com.application.aulacomponenteslistagemcolecoes.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.application.aulacomponenteslistagemcolecoes.ListViewActivity"
+            android:name="com.application.aulacomponenteslistagemcolecoes.RecyclerviewActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

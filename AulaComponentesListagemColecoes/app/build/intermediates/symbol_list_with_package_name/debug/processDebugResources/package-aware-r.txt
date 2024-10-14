@@ -3093,6 +3093,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable perfil
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3318,6 +3319,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView2
+id image_perfil
 id immediateStop
 id included
 id indeterminate
@@ -3466,6 +3469,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_lista
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -3548,10 +3552,16 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
+id textView
+id textView2
+id textView3
+id text_horario
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
+id text_nome
 id text_resultado
+id text_ultima
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -3716,6 +3726,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_list_view
 layout activity_main
+layout activity_recyclerview
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -3734,6 +3745,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_lista
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3791,6 +3803,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout recycler_view_item
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

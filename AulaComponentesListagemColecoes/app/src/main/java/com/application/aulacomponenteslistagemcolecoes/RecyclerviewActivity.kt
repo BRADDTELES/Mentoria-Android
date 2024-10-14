@@ -5,6 +5,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerviewActivity : AppCompatActivity() {
@@ -15,7 +16,16 @@ class RecyclerviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recyclerview)
 
+        val lista = listOf(
+            Mensagem("jamilton", "Olá, tudo bem?", "09:45"),
+            Mensagem("ana", "Te vi ontem..", "00:45"),
+            Mensagem("maria", "Não acredito...", "06:03"),
+            Mensagem("pedro", "Futebol hoje?", "15:32")
+        )
+
         rvLista = findViewById(R.id.rv_lista)
+        rvLista.adapter = MensagemAdapter( lista )
+        rvLista.layoutManager = LinearLayoutManager(this)
 
     }
 }

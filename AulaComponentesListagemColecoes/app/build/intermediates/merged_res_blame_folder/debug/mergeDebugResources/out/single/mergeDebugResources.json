@@ -4,8 +4,8 @@
         "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.application.aulacomponenteslistagemcolecoes.app-debug-31:/layout_activity_list_view.xml.flat",
-        "source": "com.application.aulacomponenteslistagemcolecoes.app-main-33:/layout/activity_list_view.xml"
+        "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-debug-31:\\layout_activity_list_view.xml.flat",
+        "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-main-33:\\layout\\activity_list_view.xml"
     },
     {
         "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-debug-31:\\mipmap-hdpi_ic_launcher.webp.flat",
@@ -44,12 +44,28 @@
         "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
+        "merged": "com.application.aulacomponenteslistagemcolecoes.app-debug-31:/drawable_perfil.jpeg.flat",
+        "source": "com.application.aulacomponenteslistagemcolecoes.app-main-33:/drawable/perfil.jpeg"
+    },
+    {
+        "merged": "com.application.aulacomponenteslistagemcolecoes.app-debug-31:/layout_activity_recyclerview.xml.flat",
+        "source": "com.application.aulacomponenteslistagemcolecoes.app-main-33:/layout/activity_recyclerview.xml"
+    },
+    {
         "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-debug-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
+        "merged": "com.application.aulacomponenteslistagemcolecoes.app-debug-31:/layout_item_lista.xml.flat",
+        "source": "com.application.aulacomponenteslistagemcolecoes.app-main-33:/layout/item_lista.xml"
+    },
+    {
         "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-debug-31:\\drawable_ic_launcher_background.xml.flat",
         "source": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-main-33:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.application.aulacomponenteslistagemcolecoes.app-debug-31:/layout_recycler_view_item.xml.flat",
+        "source": "com.application.aulacomponenteslistagemcolecoes.app-main-33:/layout/recycler_view_item.xml"
     },
     {
         "merged": "C:\\Users\\bradd\\.gradle\\daemon\\8.7\\com.application.aulacomponenteslistagemcolecoes.app-debug-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
