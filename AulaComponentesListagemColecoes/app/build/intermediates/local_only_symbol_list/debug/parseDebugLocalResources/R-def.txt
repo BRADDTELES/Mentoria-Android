@@ -6,6 +6,9 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable perfil
 id btn_executar
+id button4
+id editTextTextEmailAddress
+id editTextTextPassword
 id imageView2
 id image_perfil
 id list_usuarios
@@ -14,10 +17,12 @@ id rv_lista
 id textView
 id textView2
 id textView3
-id text_horario
+id textView4
+id textView5
 id text_nome
 id text_resultado
 id text_ultima
+layout activity_linear_layout
 layout activity_list_view
 layout activity_main
 layout activity_recyclerview

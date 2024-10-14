@@ -28,6 +28,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.AulaComponentesListagemColecoes" >
         <activity
+            android:name="com.application.aulacomponenteslistagemcolecoes.LinearLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name="com.application.aulacomponenteslistagemcolecoes.ListViewActivity"
             android:exported="false" />
         <activity

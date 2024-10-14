@@ -21,6 +21,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
+
+
+
         tools:itemCount="20"
         tools:listitem="@layout/item_lista" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--
+LinearLayout
+app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+android:orientation="vertical"
+app:reverseLayout="false"
+
+GridLayout
+app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+app:spanCount="2"
+android:orientation="vertical"
+
+StaggeredGridLayout
+app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+app:spanCount="2"
+-->

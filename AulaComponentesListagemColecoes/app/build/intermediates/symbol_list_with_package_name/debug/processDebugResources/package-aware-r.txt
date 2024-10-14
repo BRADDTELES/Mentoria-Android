@@ -3196,6 +3196,7 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btn_executar
+id button4
 id buttonPanel
 id cache_measures
 id callMeasure
@@ -3269,6 +3270,8 @@ id easeInOut
 id easeOut
 id east
 id edge
+id editTextTextEmailAddress
+id editTextTextPassword
 id edit_query
 id edit_text_id
 id elastic
@@ -3555,7 +3558,8 @@ id textTop
 id textView
 id textView2
 id textView3
-id text_horario
+id textView4
+id textView5
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3724,6 +3728,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_linear_layout
 layout activity_list_view
 layout activity_main
 layout activity_recyclerview

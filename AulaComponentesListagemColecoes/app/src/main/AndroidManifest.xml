@@ -13,7 +13,7 @@
         android:theme="@style/Theme.AulaComponentesListagemColecoes"
         tools:targetApi="31">
         <activity
-            android:name=".RecyclerviewActivity"
+            android:name=".LinearLayoutActivity"
             android:exported="false" />
         <activity
             android:name=".ListViewActivity"
@@ -22,7 +22,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".LinearLayoutActivity"
+            android:name=".RecyclerviewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
