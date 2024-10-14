@@ -1,6 +1,6 @@
 package com.application.aulacomponenteslistagemcolecoes.teste;
 
-public class Pessoa {
+/*public class Pessoa {
 
     private String nome = "";
     private int idade = 0;
@@ -28,4 +28,4 @@ public class Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
-}
+}*/
