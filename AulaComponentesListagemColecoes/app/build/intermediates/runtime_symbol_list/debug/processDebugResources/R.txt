@@ -3197,6 +3197,7 @@ int id bounce 0x7f08005e
 int id bounceBoth 0x7f08005f
 int id bounceEnd 0x7f080060
 int id bounceStart 0x7f080061
+int id btn_clique 0x7f08020b
 int id btn_executar 0x7f080062
 int id button4 0x7f080201
 int id buttonPanel 0x7f080063

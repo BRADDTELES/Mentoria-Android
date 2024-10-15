@@ -1,6 +1,7 @@
 package com.application.aulacomponenteslistagemcolecoes
 
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -16,12 +17,14 @@ import com.application.aulacomponenteslistagemcolecoes.teste.Intent
 class RecyclerviewActivity : AppCompatActivity() {
 
     private lateinit var rvLista: RecyclerView
+    private lateinit var btnClique: Button
+    private lateinit var mensagemAdapter: MensagemAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_recyclerview)
 
-        val lista = listOf(
+        val lista = mutableListOf(
             Mensagem("jamilton", "Olá, tudo bem?", "09:45"),
             Mensagem("ana", "Te vi ontem..blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla", "00:45"),
             Mensagem("maria", "Não acredito...", "06:03"),
@@ -29,9 +32,11 @@ class RecyclerviewActivity : AppCompatActivity() {
         )
 
         rvLista = findViewById(R.id.rv_lista)
+        btnClique = findViewById(R.id.btn_clique)
 
         //tipo: MensagemAdapter, Adapter
-        rvLista.adapter = MensagemAdapter( lista ){ nome ->
+        mensagemAdapter = MensagemAdapter { nome ->
+
             Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
             val intent = android.content.Intent(this, ListViewActivity::class.java)
             intent.putExtra("nome", nome)
@@ -41,12 +46,26 @@ class RecyclerviewActivity : AppCompatActivity() {
             )
         }
 
+        mensagemAdapter.atualizarListaDados(
+            lista
+        )
+        rvLista.adapter = mensagemAdapter
+
         //LinearLayoutManager (XML e Código)
         rvLista.layoutManager = LinearLayoutManager(
             this,
             RecyclerView.VERTICAL,
             false
         )
+
+        btnClique.setOnClickListener {
+
+            lista.add(
+                Mensagem("Nova Jamilton", "teste", "17:12")
+            )
+            mensagemAdapter.atualizarListaDados(lista)
+
+        }
 
         // Divisor entre os CardView
         /*rvLista.addItemDecoration(

@@ -3198,6 +3198,7 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_clique
 id btn_executar
 id button4
 id buttonPanel

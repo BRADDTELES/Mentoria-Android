@@ -8,6 +8,7 @@ color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable perfil
+id btn_clique
 id btn_executar
 id button4
 id card_view_layout
