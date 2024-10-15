@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity() {
 
         with(binding){
             btnClique?.setOnClickListener {  }
-            btnExecutar?.setOnClickListener {  }
         }
 
         /*btnClique = findViewById(R.id.btn_clique)
