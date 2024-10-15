@@ -41,6 +41,7 @@ class MensagemAdapter(
 
         listaMensagens.removeAt(1)
         //notifyItemRemoved(1)// remove apenas um item na posição 1
+
         listaMensagens.removeAt(2)// remove apenas um item na posição 2
         notifyItemRangeRemoved(1,2)// remove os dois itens apartir da posição 1
 
