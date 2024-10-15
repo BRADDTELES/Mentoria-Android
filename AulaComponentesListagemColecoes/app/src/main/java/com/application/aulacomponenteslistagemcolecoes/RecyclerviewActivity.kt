@@ -27,8 +27,8 @@ class RecyclerviewActivity : AppCompatActivity() {
         val lista = mutableListOf(
             Mensagem("jamilton", "Olá, tudo bem?", "09:45"),
             Mensagem("ana", "Te vi ontem..blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla, blablablablablabla", "00:45"),
-            Mensagem("maria", "Não acredito...", "06:03"),
-            Mensagem("pedro", "Futebol hoje?", "15:32")
+            /*Mensagem("maria", "Não acredito...", "06:03"),
+            Mensagem("pedro", "Futebol hoje?", "15:32")*/
         )
 
         rvLista = findViewById(R.id.rv_lista)
@@ -60,10 +60,14 @@ class RecyclerviewActivity : AppCompatActivity() {
 
         btnClique.setOnClickListener {
 
+            mensagemAdapter.executarOperacao()
+
+            /*
             lista.add(
                 Mensagem("Nova Jamilton", "teste", "17:12")
             )
             mensagemAdapter.atualizarListaDados(lista)
+            */
 
         }
 

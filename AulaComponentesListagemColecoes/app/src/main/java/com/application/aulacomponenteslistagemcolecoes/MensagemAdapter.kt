@@ -16,10 +16,28 @@ class MensagemAdapter(
 
     private var listaMensagens = mutableListOf<Mensagem>()
 
+    fun executarOperacao(){
+
+        listaMensagens.add(
+            //0, // irá adicionar no inicio da lista
+            Mensagem("Nova Pedro", "teste", "17:12")
+        )
+        //notifyItemInserted( 0 ) // irá adicionar no inicio da lista
+        //notifyItemInserted( listaMensagens.size ) // irá adicionar no final da lista
+        listaMensagens.add(
+            Mensagem("Nova Maria", "teste Maria", "13:12")
+        )
+        listaMensagens.add(
+            Mensagem("Nova João", "teste João", "11:12")
+        )
+        notifyItemRangeInserted(2, 3)
+
+    }
+
     fun atualizarListaDados( lista: MutableList<Mensagem> ){
         //listaMensagens.addAll( lista )
         listaMensagens = lista
-        notifyDataSetChanged()
+        //notifyDataSetChanged()
     }
 
     inner class MensagemViewHolder(
