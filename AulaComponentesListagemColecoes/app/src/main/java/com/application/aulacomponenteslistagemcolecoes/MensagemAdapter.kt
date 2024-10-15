@@ -18,7 +18,7 @@ class MensagemAdapter(
 
     fun executarOperacao(){
 
-        listaMensagens.add(
+        /*listaMensagens.add(
             //0, // irá adicionar no inicio da lista
             Mensagem("Nova Pedro", "teste", "17:12")
         )
@@ -29,8 +29,20 @@ class MensagemAdapter(
         )
         listaMensagens.add(
             Mensagem("Nova João", "teste João", "11:12")
-        )
-        notifyItemRangeInserted(2, 3)
+        )*/
+        //notifyItemRangeInserted(2, 3)
+
+        /*listaMensagens[0] = Mensagem("jamilton DAMASCENO", "Deu tudo certo?", "11:45")
+        notifyItemChanged(0) // atualiza apenas um item na posição 0*/
+
+        /*listaMensagens[0] = Mensagem("jamilton DAMASCENO", "Deu tudo certo?", "11:45")
+        listaMensagens[1] = Mensagem("Ana", "Olá, tudo bem?", "11:45")
+        notifyItemRangeChanged(0, 2)// atualiza os dois itens apartir da posição 0*/
+
+        listaMensagens.removeAt(1)
+        //notifyItemRemoved(1)// remove apenas um item na posição 1
+        listaMensagens.removeAt(2)// remove apenas um item na posição 2
+        notifyItemRangeRemoved(1,2)// remove os dois itens apartir da posição 1
 
     }
 
