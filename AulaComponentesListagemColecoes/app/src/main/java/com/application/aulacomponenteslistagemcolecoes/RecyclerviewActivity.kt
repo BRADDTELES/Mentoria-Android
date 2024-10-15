@@ -29,21 +29,21 @@ class RecyclerviewActivity : AppCompatActivity() {
         rvLista.adapter = MensagemAdapter( lista )
 
         //LinearLayoutManager (XML e Código)
-        /*rvLista.layoutManager = LinearLayoutManager(
+        rvLista.layoutManager = LinearLayoutManager(
             this,
             RecyclerView.VERTICAL,
             false
-        )*/
+        )
 
         /*rvLista.layoutManager = GridLayoutManager(
             this,
             2
         )*/
 
-        rvLista.layoutManager = StaggeredGridLayoutManager(
+        /*rvLista.layoutManager = StaggeredGridLayoutManager(
             2,
             RecyclerView.VERTICAL
-        )
+        )*/
 
     }
 }

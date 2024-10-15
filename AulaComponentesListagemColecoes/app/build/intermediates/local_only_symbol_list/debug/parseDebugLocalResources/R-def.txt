@@ -1,6 +1,9 @@
 R_DEF: Internal format may change without notice
 local
 color black
+color cinza
+color principal
+color principal_variante
 color white
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -10,6 +13,7 @@ id button4
 id editTextTextEmailAddress
 id editTextTextPassword
 id imageView2
+id image_card
 id image_perfil
 id list_usuarios
 id main
@@ -19,6 +23,8 @@ id textView2
 id textView3
 id textView4
 id textView5
+id text_card_nome
+id text_card_ultima
 id text_nome
 id text_resultado
 id text_ultima
@@ -26,6 +32,7 @@ layout activity_linear_layout
 layout activity_list_view
 layout activity_main
 layout activity_recyclerview
+layout item_cardview
 layout item_lista
 layout recycler_view_item
 mipmap ic_launcher

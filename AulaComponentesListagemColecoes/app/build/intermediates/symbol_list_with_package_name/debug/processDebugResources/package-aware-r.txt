@@ -1376,6 +1376,7 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color cinza
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2088,6 +2089,8 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color principal
+color principal_variante
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3323,6 +3326,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView2
+id image_card
 id image_perfil
 id immediateStop
 id included
@@ -3560,6 +3564,8 @@ id textView2
 id textView3
 id textView4
 id textView5
+id text_card_nome
+id text_card_ultima
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -3750,6 +3756,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_cardview
 layout item_lista
 layout m3_alert_dialog
 layout m3_alert_dialog_actions

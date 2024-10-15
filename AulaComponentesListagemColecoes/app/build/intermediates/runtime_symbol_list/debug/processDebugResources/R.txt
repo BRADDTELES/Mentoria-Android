@@ -1375,6 +1375,7 @@ int color cardview_dark_background 0x7f05002c
 int color cardview_light_background 0x7f05002d
 int color cardview_shadow_end_color 0x7f05002e
 int color cardview_shadow_start_color 0x7f05002f
+int color cinza 0x7f050307
 int color design_bottom_navigation_shadow_color 0x7f050030
 int color design_box_stroke_color 0x7f050031
 int color design_dark_default_color_background 0x7f050032
@@ -2087,6 +2088,8 @@ int color primary_text_default_material_dark 0x7f0502f4
 int color primary_text_default_material_light 0x7f0502f5
 int color primary_text_disabled_material_dark 0x7f0502f6
 int color primary_text_disabled_material_light 0x7f0502f7
+int color principal 0x7f050308
+int color principal_variante 0x7f050309
 int color ripple_material_dark 0x7f0502f8
 int color ripple_material_light 0x7f0502f9
 int color secondary_text_default_material_dark 0x7f0502fa
@@ -3322,6 +3325,7 @@ int id ignore 0x7f0800db
 int id ignoreRequest 0x7f0800dc
 int id image 0x7f0800dd
 int id imageView2 0x7f0801f8
+int id image_card 0x7f080206
 int id image_perfil 0x7f0801f9
 int id immediateStop 0x7f0800de
 int id included 0x7f0800df
@@ -3559,6 +3563,8 @@ int id textView2 0x7f0801fc
 int id textView3 0x7f0801fd
 int id textView4 0x7f080204
 int id textView5 0x7f080205
+int id text_card_nome 0x7f080207
+int id text_card_ultima 0x7f080208
 int id text_input_end_icon 0x7f0801c4
 int id text_input_error_icon 0x7f0801c5
 int id text_input_start_icon 0x7f0801c6
@@ -3749,6 +3755,7 @@ int layout design_text_input_end_icon 0x7f0b002c
 int layout design_text_input_start_icon 0x7f0b002d
 int layout ime_base_split_test_activity 0x7f0b002e
 int layout ime_secondary_split_test_activity 0x7f0b002f
+int layout item_cardview 0x7f0b0071
 int layout item_lista 0x7f0b006e
 int layout m3_alert_dialog 0x7f0b0030
 int layout m3_alert_dialog_actions 0x7f0b0031
