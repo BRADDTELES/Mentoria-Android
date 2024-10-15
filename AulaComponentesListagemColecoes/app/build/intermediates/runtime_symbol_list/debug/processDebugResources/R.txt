@@ -3203,6 +3203,7 @@ int id buttonPanel 0x7f080063
 int id cache_measures 0x7f080064
 int id callMeasure 0x7f080065
 int id cancel_button 0x7f080066
+int id card_view_layout 0x7f08020a
 int id carryVelocity 0x7f080067
 int id center 0x7f080068
 int id centerCrop 0x7f080069
@@ -3325,7 +3326,7 @@ int id ignore 0x7f0800db
 int id ignoreRequest 0x7f0800dc
 int id image 0x7f0800dd
 int id imageView2 0x7f0801f8
-int id image_card 0x7f080206
+int id image_card_perfil 0x7f080209
 int id image_perfil 0x7f0801f9
 int id immediateStop 0x7f0800de
 int id included 0x7f0800df

@@ -1,14 +1,17 @@
 package com.application.aulacomponenteslistagemcolecoes
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.application.aulacomponenteslistagemcolecoes.teste.Intent
 
 class RecyclerviewActivity : AppCompatActivity() {
 
@@ -26,7 +29,17 @@ class RecyclerviewActivity : AppCompatActivity() {
         )
 
         rvLista = findViewById(R.id.rv_lista)
-        rvLista.adapter = MensagemAdapter( lista )
+
+        //tipo: MensagemAdapter, Adapter
+        rvLista.adapter = MensagemAdapter( lista ){ nome ->
+            Toast.makeText(this, "Olá $nome", Toast.LENGTH_SHORT).show()
+            val intent = android.content.Intent(this, ListViewActivity::class.java)
+            intent.putExtra("nome", nome)
+
+            startActivity(
+                intent
+            )
+        }
 
         //LinearLayoutManager (XML e Código)
         rvLista.layoutManager = LinearLayoutManager(
@@ -34,6 +47,14 @@ class RecyclerviewActivity : AppCompatActivity() {
             RecyclerView.VERTICAL,
             false
         )
+
+        // Divisor entre os CardView
+        /*rvLista.addItemDecoration(
+            DividerItemDecoration(
+                this,
+                RecyclerView.VERTICAL
+            )
+        )*/
 
         /*rvLista.layoutManager = GridLayoutManager(
             this,

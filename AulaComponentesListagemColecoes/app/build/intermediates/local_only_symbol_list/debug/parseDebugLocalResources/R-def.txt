@@ -10,10 +10,11 @@ drawable ic_launcher_foreground
 drawable perfil
 id btn_executar
 id button4
+id card_view_layout
 id editTextTextEmailAddress
 id editTextTextPassword
 id imageView2
-id image_card
+id image_card_perfil
 id image_perfil
 id list_usuarios
 id main
