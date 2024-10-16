@@ -1,11 +1,15 @@
 package com.application.aulacomponentesinterfaceviewbinding
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.application.aulacomponentesinterfaceviewbinding.databinding.ActivityFormularioBinding
+import com.google.android.material.snackbar.Snackbar
 
 class FormularioActivity : AppCompatActivity() {
 
@@ -19,10 +23,17 @@ class FormularioActivity : AppCompatActivity() {
 
         with( binding ){
 
-            btnEnviar.setOnClickListener {
+            btnEnviar.setOnClickListener { view ->
                 //checkbox()
                 //radioButton()
-                switchToggle()
+                //switchToggle()
+                exibirSnackBar(view)
+                //Toast.makeText(this, "Mensagem", Toast.LENGTH_SHORT).show()
+                /*Snackbar.make(
+                    view,
+                    "Alteração feita com sucesso!",
+                    Snackbar.LENGTH_LONG
+                ).show()*/
             }
 
             /*toggleAtivo.setOnClickListener {  }
@@ -44,6 +55,43 @@ class FormularioActivity : AppCompatActivity() {
 
         }
 
+    }
+
+    private fun exibirSnackBar(view: View) {
+        //Toast.makeText(this, "Mensagem", Toast.LENGTH_SHORT).show()
+        val snackBar = Snackbar.make(
+            view,
+            "Alteração feita com sucesso!",
+            Snackbar.LENGTH_LONG
+        )
+
+        snackBar.setAction("Desfazer"){
+            Toast.makeText(this, "Desfeito!", Toast.LENGTH_SHORT).show()
+        }
+
+        /*snackBar.setTextColor(
+            //resources.getColor(R.color.secondary) // está depreciado
+            ContextCompat.getColor(
+                this,
+                R.color.fundo
+            )
+        )
+
+        snackBar.setActionTextColor(
+            ContextCompat.getColor(
+                this,
+                android.R.color.holo_red_dark
+            )
+        )
+
+        snackBar.setBackgroundTint(
+            ContextCompat.getColor(
+                this,
+                android.R.color.holo_orange_dark
+            )
+        )*/
+
+        snackBar.show()
     }
 
     private fun switchToggle() {
