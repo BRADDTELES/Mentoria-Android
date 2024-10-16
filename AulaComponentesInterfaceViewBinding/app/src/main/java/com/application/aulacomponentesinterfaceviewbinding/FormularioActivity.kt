@@ -21,8 +21,12 @@ class FormularioActivity : AppCompatActivity() {
 
             btnEnviar.setOnClickListener {
                 //checkbox()
-                radioButton()
+                //radioButton()
+                switchToggle()
             }
+
+            /*toggleAtivo.setOnClickListener {  }
+            toggleAtivo.setOnCheckedChangeListener { buttonView, isChecked ->  }*/
 
             /*rbMasculino.setOnClickListener {  }
             rbMasculino.setOnCheckedChangeListener { _, isChecked -> }*/
@@ -39,6 +43,16 @@ class FormularioActivity : AppCompatActivity() {
             }*/
 
         }
+
+    }
+
+    private fun switchToggle() {
+
+        val switchMarcado = binding.switchNotificacoes.isChecked
+        val toggleMarcado = binding.toggleAtivo.isChecked
+
+        val texto = "Switch: $switchMarcado toggle: $toggleMarcado"
+        binding.textResultado.text = texto
 
     }
 

@@ -55,6 +55,24 @@
             android:checked="false"
             android:text="Sim, quero receber e-mails" />
 
+        <Switch
+            android:id="@+id/switchNotificacoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:showText="false"
+            android:text="Ativar notificações"
+            android:textOff="inativo"
+            android:textOn="ativo" />
+
+        <ToggleButton
+            android:id="@+id/toggleAtivo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:textOff="INATIVO"
+            android:textOn="ATIVO" />
+
         <Button
             android:id="@+id/btnEnviar"
             android:layout_width="match_parent"
