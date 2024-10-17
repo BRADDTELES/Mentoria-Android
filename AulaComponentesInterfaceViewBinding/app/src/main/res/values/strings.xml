@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AulaComponentesInterfaceViewBinding</string>
+    <string name="app_name">Youtube</string>
 
     <string-array name="categorias">
         <item>Selecione uma categoria</item>
