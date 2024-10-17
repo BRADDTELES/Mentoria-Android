@@ -1,5 +1,6 @@
 package com.application.aulacomponentesinterfaceviewbinding
 
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -7,21 +8,40 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.MenuProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.application.aulacomponentesinterfaceviewbinding.databinding.ActivityToolbarActionbarBinding
 
 class ToolbarActionbarActivity : AppCompatActivity() {
 
-
+    private val binding by lazy {
+        ActivityToolbarActionbarBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_toolbar_actionbar)
+        setContentView(binding.root)
 
+        inicializarToolbar()
         //supportActionBar?.hide()
-        inicializarActionBar()
+        //inicializarActionBar()
 
+    }
+
+    private fun inicializarToolbar() {
+
+        binding.tbPrincipal.title = "Youtube"
+        binding.tbPrincipal.setTitleTextColor(
+            ContextCompat.getColor(this, R.color.white)
+        )
+        /*binding.tbPrincipal.subtitle = "Mais detalhes"
+        binding.tbPrincipal.setSubtitleTextColor(
+            ContextCompat.getColor(this, R.color.white)
+        )*/
+
+        setSupportActionBar( binding.tbPrincipal )
     }
 
     private fun inicializarActionBar() {
