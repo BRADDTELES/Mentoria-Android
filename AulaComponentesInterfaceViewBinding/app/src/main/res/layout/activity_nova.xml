@@ -8,6 +8,7 @@
     tools:context=".NovaActivity">
 
     <include
+        android:id="@+id/includeToolbar"
         layout="@layout/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
