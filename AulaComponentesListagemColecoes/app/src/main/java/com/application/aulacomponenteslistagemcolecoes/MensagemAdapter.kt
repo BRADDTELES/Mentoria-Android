@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.application.aulacomponenteslistagemcolecoes.databinding.ItemCardviewBinding
 
 class MensagemAdapter(
     private val clique: (String) -> Unit
@@ -54,26 +55,27 @@ class MensagemAdapter(
     }
 
     inner class MensagemViewHolder(
-        val itemView: View
-    ) : ViewHolder( itemView ){
+        //val itemView: View
+        val binding: ItemCardviewBinding
+    ) : ViewHolder( binding.root ){
 
         /*val textNome: TextView = itemView.findViewById(R.id.text_nome)
         val textUltima: TextView = itemView.findViewById(R.id.text_ultima)*/
 
-        val textNome: TextView = itemView.findViewById(R.id.text_card_nome)
+        /*val textNome: TextView = itemView.findViewById(R.id.text_card_nome)
         val textUltima: TextView = itemView.findViewById(R.id.text_card_ultima)
         val imagePerfil: ImageView = itemView.findViewById(R.id.image_card_perfil)
-        val cardView: CardView = itemView.findViewById(R.id.card_view_layout)
+        val cardView: CardView = itemView.findViewById(R.id.card_view_layout)*/
         //val textHorario: TextView = itemView.findViewById(R.id.text_horario)
 
         fun bind(mensagem: Mensagem){//Conectar com a interface
-            textNome.text = mensagem.nome
-            textUltima.text = mensagem.ultima
+            binding.textCardNome.text = mensagem.nome
+            binding.textCardUltima.text = mensagem.ultima
             //textHorario.text = mensagem.horario
 
             //Aplicar eventos de clique (ao clicar na imagem)
             //val context = cardView.context
-            cardView.setOnClickListener {
+            binding.cardViewLayout.setOnClickListener {
                 clique( mensagem.nome )
             }
         }
@@ -90,8 +92,12 @@ class MensagemAdapter(
             R.layout.item_lista, parent, false
         )*/
 
-        val itemView = layoutInflater.inflate(
+        /*val itemView = layoutInflater.inflate(
             R.layout.item_cardview, parent, false
+        )*/
+
+        val itemView = ItemCardviewBinding.inflate(
+            layoutInflater, parent, false
         )
 
         return MensagemViewHolder( itemView )
