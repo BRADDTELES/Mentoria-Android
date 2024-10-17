@@ -2,6 +2,7 @@ package com.application.aulacomponentesinterfaceviewbinding
 
 import android.os.Bundle
 import android.view.View
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -22,6 +23,7 @@ class FormularioActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        spinnerExibicao()
         with( binding ){
 
             btnEnviar.setOnClickListener { view ->
@@ -35,7 +37,8 @@ class FormularioActivity : AppCompatActivity() {
                     "Alteração feita com sucesso!",
                     Snackbar.LENGTH_LONG
                 ).show()*/
-                caixaDialogAlerta()
+                //caixaDialogAlerta()
+                spinnerSelecionarItem()
             }
 
             /*toggleAtivo.setOnClickListener {  }
@@ -56,6 +59,35 @@ class FormularioActivity : AppCompatActivity() {
             }*/
 
         }
+
+    }
+
+    private fun spinnerSelecionarItem() {
+
+        val itemSelecionado = binding.spinnerCategorias.selectedItem
+        val itemPosicao = binding.spinnerCategorias.selectedItemPosition
+
+        if(itemPosicao == 0){
+            binding.textResultado.text = "Selecione um item"
+        }else{
+            binding.textResultado.text = "selecionado: $itemSelecionado / pos: $itemPosicao"
+
+        }
+
+
+    }
+
+    private fun spinnerExibicao() {
+
+        val categorias = listOf(
+            "Selecione uma categoria",
+            "Eletrônicos", "Roupas", "Móveis", "Roupas"
+        )
+        binding.spinnerCategorias.adapter = ArrayAdapter(
+            this,
+            android.R.layout.simple_spinner_dropdown_item,
+            categorias
+        )
 
     }
 

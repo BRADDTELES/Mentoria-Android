@@ -73,6 +73,11 @@
             android:textOff="INATIVO"
             android:textOn="ATIVO" />
 
+        <Spinner
+            android:id="@+id/spinnerCategorias"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
         <Button
             android:id="@+id/btnEnviar"
             android:layout_width="match_parent"
