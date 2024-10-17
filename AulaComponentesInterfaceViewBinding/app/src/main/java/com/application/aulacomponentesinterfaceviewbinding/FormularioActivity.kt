@@ -2,6 +2,8 @@ package com.application.aulacomponentesinterfaceviewbinding
 
 import android.os.Bundle
 import android.view.View
+import android.widget.AdapterView
+import android.widget.AdapterView.OnItemSelectedListener
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -71,23 +73,47 @@ class FormularioActivity : AppCompatActivity() {
             binding.textResultado.text = "Selecione um item"
         }else{
             binding.textResultado.text = "selecionado: $itemSelecionado / pos: $itemPosicao"
-
         }
-
-
     }
 
     private fun spinnerExibicao() {
 
-        val categorias = listOf(
+        /*val categorias = listOf(
             "Selecione uma categoria",
             "Eletrônicos", "Roupas", "Móveis", "Roupas"
+        )*/
+        /*val categorias = resources.getStringArray(
+            R.array.categorias
         )
         binding.spinnerCategorias.adapter = ArrayAdapter(
             this,
             android.R.layout.simple_spinner_dropdown_item,
             categorias
+        )*/
+
+        binding.spinnerCategorias.adapter = ArrayAdapter.createFromResource(
+            this,
+            R.array.categorias,
+            android.R.layout.simple_spinner_dropdown_item
         )
+
+       /* binding.spinnerCategorias.onItemSelectedListener = object : OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                //val itemSelecionado = parent?.getItemAtPosition(position)
+                val itemSelecionado = parent?.selectedItem
+                binding.textResultado.text = itemSelecionado.toString()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+
+        }*/
 
     }
 
