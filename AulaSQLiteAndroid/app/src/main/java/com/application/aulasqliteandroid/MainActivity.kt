@@ -39,20 +39,28 @@ class MainActivity : AppCompatActivity() {
 
     private fun listar() {
 
-        try {
-            bancoDados.readableDatabase.execSQL(
-                "SELECT * FROM produtos;"
-            )
-            Log.i("info_db", "Sucesso ao listar produtos")
-        }catch (e: Exception){
-            e.printStackTrace()
-            Log.i("info_db", "Erro ao listar produtos")
+        val sql = "SELECT * FROM ${DatabaseHelper.TABELA_PRODUTOS};"
+        val cursor = bancoDados.readableDatabase
+            .rawQuery( sql, null )
+        // cursor.moveToFirst() // Colocar o cursor no primeiro registro
+        // cursor.moveToNext() // Avançar para o próximo registro
+
+        val indiceId = cursor.getColumnIndex( "${DatabaseHelper.ID_PRODUTO}" )
+        val indiceTitulo = cursor.getColumnIndex( "${DatabaseHelper.TITULO}" )
+        val indiceDescricao = cursor.getColumnIndex( "${DatabaseHelper.DESCRICAO}" )
+
+        while ( cursor.moveToNext() ){
+
+            val idProduto = cursor.getInt(indiceId)
+            val titulo = cursor.getString(indiceTitulo)
+            val descricao = cursor.getString(indiceDescricao)
+            Log.i("info_db", "id: $idProduto - $titulo")
         }
     }
 
     private fun salvar(){
         val titulo = binding.editProduto.text.toString()
-        val sql = "INSERT INTO produtos VALUES(null, '$titulo', 'Descrição...');"
+        val sql = "INSERT INTO ${DatabaseHelper.TABELA_PRODUTOS} VALUES(null, '$titulo', 'Descrição...');"
         try {
             bancoDados.writableDatabase.execSQL( sql )
             Log.i("info_db", "Sucesso ao inserir")
