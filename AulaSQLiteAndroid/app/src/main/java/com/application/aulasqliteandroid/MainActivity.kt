@@ -2,6 +2,7 @@ package com.application.aulasqliteandroid
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     private fun remover() {
 
         val produtoDAO = ProdutoDAO(this)
-        produtoDAO.remover( 8 )
+        produtoDAO.remover( 1 )
 
     }
 
@@ -59,7 +60,7 @@ class MainActivity : AppCompatActivity() {
         val titulo = binding.editProduto.text.toString()
         val produtoDAO = ProdutoDAO(this)
         val produto = Produto(
-            8,
+            1,
             titulo,
             "descrição..."
         )
@@ -72,10 +73,15 @@ class MainActivity : AppCompatActivity() {
         val produtoDAO = ProdutoDAO(this)
         val listaProdutos = produtoDAO.listar()
 
+        var texto = ""
         if ( listaProdutos.isNotEmpty() ){
             listaProdutos.forEach { produto ->
+                texto += "${produto.idProduto} - ${produto.titulo} \n"
                 Log.i("info_db", "${produto.idProduto} - ${produto.titulo}")
             }
+            binding.textResultado.text = texto
+        }else{
+            binding.textResultado.text = "Nenhum item cadastrado"
         }
 
     }
@@ -89,7 +95,20 @@ class MainActivity : AppCompatActivity() {
             titulo,
             "descrição..."
         )
-        produtoDAO.salvar( produto )
+        if ( produtoDAO.salvar( produto ) ){
+            Toast.makeText(
+                this,
+                "Sucesso ao cadastrar produto",
+                Toast.LENGTH_SHORT
+            ).show()
+            binding.editProduto.setText("")
+        }else{
+            Toast.makeText(
+                this,
+                "Erro ao cadastrar produto",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
 
     }
 }
