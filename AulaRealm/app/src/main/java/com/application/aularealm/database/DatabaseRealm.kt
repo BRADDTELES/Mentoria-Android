@@ -4,9 +4,11 @@ import android.util.Log
 import com.application.aularealm.model.Usuario
 import io.realm.kotlin.Realm
 import io.realm.kotlin.RealmConfiguration
+import io.realm.kotlin.delete
 import io.realm.kotlin.ext.query
 import io.realm.kotlin.query.RealmResults
 import io.realm.kotlin.query.Sort
+import io.realm.kotlin.types.ObjectId
 
 class DatabaseRealm {
 
@@ -27,11 +29,34 @@ class DatabaseRealm {
     fun listar() : RealmResults<Usuario>{
 
         return realm
-            //.query<Usuario>("nome = $0", "jamilton").find()
+            //.query<Usuario>("nome == $0", "jamilton").find()
             .query<Usuario>()
             //.sort("nome", Sort.ASCENDING)
             .find()
 
+    }
+
+    fun remover( id: ObjectId ){
+
+        realm.writeBlocking {
+            val usuarioRemover = query<Usuario>("id == $0", id)
+                .find()
+                .first()
+
+            delete( usuarioRemover )
+        }
+
+    }
+
+    fun atualizar( usuario: Usuario ){
+        realm.writeBlocking {
+            val usuarioAtualizar = query<Usuario>("id == $0", usuario.id)
+                .find()
+                .first()
+
+            usuarioAtualizar.nome = usuario.nome
+            usuarioAtualizar.idade = usuario.idade
+        }
     }
 
 }
