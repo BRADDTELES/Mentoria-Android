@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.io.realm.kotlin)
 }
 
 android {
@@ -41,6 +42,12 @@ android {
 
 dependencies {
 
+    //Dependências do banco de dados Realm
+    implementation(libs.library.base)
+    implementation(libs.kotlin.library.sync)
+    implementation(libs.kotlinx.coroutines.core)
+
+    //Dependências padrões
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -49,4 +56,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
 }

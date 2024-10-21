@@ -5,12 +5,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.application.aularealm.database.DatabaseRealm
 import com.application.aularealm.databinding.ActivityMainBinding
+import com.application.aularealm.model.Usuario
 
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
+    }
+
+    private val realm by lazy {
+        DatabaseRealm()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSalvar.setOnClickListener {
 
-            val nome = binding.editNome.text.toString()
+            val nomeRecuperado = binding.editNome.text.toString()
+
+            val usuario = Usuario().apply {
+                nome = nomeRecuperado
+                idade = 10
+            }
+            realm.salvar( usuario )
 
         }
 
