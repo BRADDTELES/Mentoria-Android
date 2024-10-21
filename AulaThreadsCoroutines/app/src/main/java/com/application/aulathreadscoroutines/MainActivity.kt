@@ -2,6 +2,7 @@ package com.application.aulathreadscoroutines
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -32,8 +33,27 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIniciar.setOnClickListener {
 
+            MinhaThread().start()
+            /*repeat(30){ indice ->
+                Log.i("info_thread", "Executando: $indice T: ${Thread.currentThread().name}")
+                Thread.sleep(1000)//ms 1000 -> 1s
+            }
+*/
         }
 
-
     }
+
+    inner class MinhaThread : Thread(){
+
+        override fun run() {
+            super.run()
+
+            repeat(30){ indice ->
+                Log.i("info_thread", "Executando: $indice T: ${currentThread().name}")
+                sleep(1000)//ms 1000 -> 1s
+            }
+
+        }
+    }
+
 }
