@@ -8,6 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.lang.Thread.currentThread
 import java.lang.Thread.sleep
 
@@ -43,12 +48,12 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIniciar.setOnClickListener {
 
-            /*repeat(30){ indice ->
+            /*repeat(15){ indice ->
                 Log.i("info_thread", "Executando: $indice T: ${Thread.currentThread().name}")
                 Thread.sleep(1000)//ms 1000 -> 1s
             }*/
             //MinhaThread().start()
-            Thread( MinhaRunnable() ).start()
+            //Thread( MinhaRunnable() ).start()
             /*Thread{
                 repeat(30){ indice ->
                     Log.i("info_thread", "MinhaThread: $indice T: ${Thread.currentThread().name}")
@@ -63,6 +68,19 @@ class MainActivity : AppCompatActivity() {
                     Thread.sleep(1000)//ms 1000 -> 1s
                 }
             }.start()*/
+
+            CoroutineScope( Dispatchers.IO ).launch {
+                repeat(15){ indice ->
+                    Log.i("info_coroutine", "Executando: $indice T: ${currentThread().name}")
+
+                    withContext( Dispatchers.Main ){
+                        binding.btnIniciar.text = "Executando: $indice T: ${currentThread().name}"
+                    }
+
+                    delay(1000)//ms 1000 -> 1s
+                }
+            }
+
         }
 
     }
