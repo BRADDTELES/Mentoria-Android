@@ -8,12 +8,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
+import java.lang.Thread.currentThread
+import java.lang.Thread.sleep
 
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy{
         ActivityMainBinding.inflate(layoutInflater)
     }
+
+    private var pararThread = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +35,58 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        binding.btnParar.setOnClickListener {
+            pararThread = true
+            binding.btnIniciar.text = "Reiniciar execução"
+            binding.btnIniciar.isEnabled = true
+        }
+
         binding.btnIniciar.setOnClickListener {
 
             /*repeat(30){ indice ->
                 Log.i("info_thread", "Executando: $indice T: ${Thread.currentThread().name}")
                 Thread.sleep(1000)//ms 1000 -> 1s
             }*/
-            MinhaThread().start()
+            //MinhaThread().start()
+            Thread( MinhaRunnable() ).start()
+            /*Thread{
+                repeat(30){ indice ->
+                    Log.i("info_thread", "MinhaThread: $indice T: ${Thread.currentThread().name}")
+                    runOnUiThread {
+                        binding.btnIniciar.text = "Executando: $indice T: ${currentThread().name}"
+                        binding.btnIniciar.isEnabled = false
+                        if ( indice == 29 ){
+                            binding.btnIniciar.text = "Reiniciar execução"
+                            binding.btnIniciar.isEnabled = true
+                        }
+                    }
+                    Thread.sleep(1000)//ms 1000 -> 1s
+                }
+            }.start()*/
+        }
+
+    }
+
+    inner class MinhaRunnable : Runnable{
+        override fun run() {
+            repeat(30){ indice ->
+
+                if (pararThread){
+                    pararThread = false
+                    return
+                }
+
+                Log.i("info_thread", "MinhaThread: $indice T: ${Thread.currentThread().name}")
+                runOnUiThread {
+                    binding.btnIniciar.text = "Executando: $indice T: ${currentThread().name}"
+                    binding.btnIniciar.isEnabled = false
+                    if ( indice == 29 ){
+                        binding.btnIniciar.text = "Reiniciar execução"
+                        binding.btnIniciar.isEnabled = true
+                    }
+                }
+                Thread.sleep(1000)//ms 1000 -> 1s
+            }
         }
 
     }
