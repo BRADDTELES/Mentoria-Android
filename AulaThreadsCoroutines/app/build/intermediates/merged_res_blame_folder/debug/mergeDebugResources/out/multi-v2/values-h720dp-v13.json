@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.application.aulathreadscoroutines.app-mergeDebugResources-30:/values-h720dp-v13/values-h720dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/bradd/.gradle/caches/transforms-4/1019d5cede10316f22d95ee4c9fb355d/transformed/appcompat-1.7.0/res/values-h720dp-v13/values-h720dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "66",
+                        "endOffsets": "117"
+                    }
+                }
+            ]
+        }
+    ]
+}
