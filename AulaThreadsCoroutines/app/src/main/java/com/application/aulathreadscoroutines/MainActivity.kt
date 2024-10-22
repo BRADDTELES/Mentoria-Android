@@ -7,13 +7,17 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
 import java.lang.Thread.currentThread
@@ -43,6 +47,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(
                 Intent(this, SegundaActivity::class.java)
             )
+            finish()
         }
 
         binding.btnParar.setOnClickListener {
@@ -53,6 +58,20 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnIniciar.setOnClickListener {
+
+            //CoroutineScope(Dispatchers.Main).launch {
+            //MainScope().launch {
+            //CoroutineScope(Dispatchers.IO).launch {
+            //GlobalScope.launch {
+            //lifecycleScope.launch {
+            runBlocking {
+                binding.btnIniciar.text = "Executando"
+                /*repeat(30){ indice ->
+                    //binding.btnIniciar.text = "Executando $indice"
+                    Log.i("info_coroutine", "Executando: $indice T: ${Thread.currentThread().name}")
+                    delay(1000L)
+                }*/
+            }
 
             /*repeat(15){ indice ->
                 Log.i("info_thread", "Executando: $indice T: ${Thread.currentThread().name}")
@@ -75,8 +94,8 @@ class MainActivity : AppCompatActivity() {
                 }
             }.start()*/
 
-            job = CoroutineScope( Dispatchers.IO ).launch {
-                /*repeat(15){ indice ->
+            /*job = CoroutineScope( Dispatchers.IO ).launch {
+                *//*repeat(15){ indice ->
                     Log.i("info_coroutine", "Executando: $indice T: ${currentThread().name}")
 
                     withContext( Dispatchers.Main ){
@@ -84,16 +103,16 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     delay(1000)//ms 1000 -> 1s
-                }*/
+                }*//*
 
                 //executar()//só funciona dentro de uma Coroutine
-                /*withTimeout(7000L){
+                *//*withTimeout(7000L){
                     executar()
-                }*/
+                }*//*
 
                 val tempo = measureTimeMillis {
 
-                    /*var resultado1: String? = null
+                    *//*var resultado1: String? = null
                     var resultado2: String? = null
 
                     val job1 = launch {
@@ -108,7 +127,7 @@ class MainActivity : AppCompatActivity() {
                     job2.join()
 
                     Log.i("info_coroutine", "resultado1: ${resultado1}")
-                    Log.i("info_coroutine", "resultado2: ${resultado2}")*/
+                    Log.i("info_coroutine", "resultado2: ${resultado2}")*//*
 
                     val resultado1 = async {tarefa1()}//Pedro
                     val resultado2 = async {tarefa2()}//Maria
@@ -123,7 +142,7 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 Log.i("info_coroutine", "Tempo de execução: $tempo")
-            }
+            }*/
 
         }
 

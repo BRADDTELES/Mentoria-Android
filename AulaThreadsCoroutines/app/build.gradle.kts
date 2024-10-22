@@ -40,6 +40,9 @@ android {
 
 dependencies {
 
+    // Dependencias lifecycle
+    implementation (libs.androidx.lifecycle.runtime.ktx)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
