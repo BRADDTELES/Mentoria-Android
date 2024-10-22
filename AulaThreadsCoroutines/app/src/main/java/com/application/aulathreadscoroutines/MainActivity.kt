@@ -12,9 +12,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.lang.Thread.currentThread
-import java.lang.Thread.sleep
 
 class MainActivity : AppCompatActivity() {
 
@@ -69,8 +67,9 @@ class MainActivity : AppCompatActivity() {
                 }
             }.start()*/
 
+
             CoroutineScope( Dispatchers.IO ).launch {
-                repeat(15){ indice ->
+                /*repeat(15){ indice ->
                     Log.i("info_coroutine", "Executando: $indice T: ${currentThread().name}")
 
                     withContext( Dispatchers.Main ){
@@ -78,10 +77,35 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     delay(1000)//ms 1000 -> 1s
-                }
+                }*/
+
+                executar()//só funciona dentro de uma Coroutine
             }
 
         }
+
+    }
+
+    private suspend fun executar(){
+        val usuario = recuperarUsuarioLogado()
+        Log.i("info_coroutine", "usuário: ${usuario.nome} T: ${currentThread().name}")
+        val postagens = recuperarPostagensPeloId( usuario.id )
+        Log.i("info_coroutine", "postagens: ${postagens.size} T: ${currentThread().name}")
+    }
+
+    private suspend fun recuperarPostagensPeloId( idUsuario: Int ) : List<String>{
+        delay(2000)//2s
+        return listOf(
+            "Viagem Nordeste",
+            "Estudando Android",
+            "Jantando restaurante"
+        )
+    }
+
+    private suspend fun recuperarUsuarioLogado(): Usuario{
+
+        delay(2000)//2s
+        return Usuario(1020, "Jamilton Damasceno")
 
     }
 
