@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import com.application.aulathreadscoroutines.api.EnderecoAPI
 import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
+import com.application.aulathreadscoroutines.model.Endereco
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -22,6 +23,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
+import retrofit2.Response
 import java.lang.Thread.currentThread
 import kotlin.system.measureTimeMillis
 import kotlin.time.measureTime
@@ -162,8 +164,26 @@ class MainActivity : AppCompatActivity() {
 
     private suspend fun recuperarEndereco(){
 
-        val enderecoAPI = retrofit.create( EnderecoAPI::class.java )
-        enderecoAPI.recuperarEndereco()
+        var retorno: Response<Endereco>? = null
+
+        try {
+            val enderecoAPI = retrofit.create( EnderecoAPI::class.java )
+            retorno = enderecoAPI.recuperarEndereco()
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_endereco", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+                val endereco = retorno.body()
+                val rua = endereco?.logradouro
+                val cidade = endereco?.localidade
+                Log.i("info_endereco", "endereço: $rua, $cidade")
+
+            }
+        }
 
     }
 
