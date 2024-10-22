@@ -1,14 +1,21 @@
 package com.application.aulathreadscoroutines.model
 
+import com.google.gson.annotations.SerializedName
+
 data class Endereco(
-    val cep: String,
-    val logradouro: String,
-    val complemento: String,
+
     val bairro: String,
-    val localidade: String,
-    val uf: String,
-    val ibge: String,
-    val gia: String,
+    @SerializedName("cep")
+    val teste: String,
+    val complemento: String,
     val ddd: String,
+    val estado: String,
+    val gia: String,
+    val ibge: String,
+    val localidade: String,
+    val logradouro: String,
+    val regiao: String,
     val siafi: String,
+    val uf: String,
+    val unidade: String
 )
