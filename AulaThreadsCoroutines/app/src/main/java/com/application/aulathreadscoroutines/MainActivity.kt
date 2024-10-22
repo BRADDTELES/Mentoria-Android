@@ -16,6 +16,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import kotlinx.coroutines.withTimeout
 import java.lang.Thread.currentThread
+import kotlin.system.measureTimeMillis
+import kotlin.time.measureTime
 
 class MainActivity : AppCompatActivity() {
 
@@ -72,7 +74,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }.start()*/
 
-
             job = CoroutineScope( Dispatchers.IO ).launch {
                 /*repeat(15){ indice ->
                     Log.i("info_coroutine", "Executando: $indice T: ${currentThread().name}")
@@ -85,16 +86,52 @@ class MainActivity : AppCompatActivity() {
                 }*/
 
                 //executar()//só funciona dentro de uma Coroutine
-                withTimeout(7000L){
+                /*withTimeout(7000L){
                     executar()
+                }*/
+
+                val tempo = measureTimeMillis {
+
+                    var resultado1: String? = null
+                    var resultado2: String? = null
+
+                    val job1 = launch {
+                        resultado1 = tarefa1()//Pedro
+                    }
+
+                    val job2 = launch {
+                        resultado2 = tarefa2()//Maria
+                    }
+
+                    job1.join()
+                    job2.join()
+
+                    Log.i("info_coroutine", "resultado1: $resultado1")
+                    Log.i("info_coroutine", "resultado2: $resultado2")
+
                 }
+                Log.i("info_coroutine", "Tempo de execução: $tempo")
             }
 
         }
 
     }
 
+    private suspend fun tarefa1() : String {
+        repeat(3){ indice ->
+            Log.i("info_coroutine", "tarefa1: $indice T: ${currentThread().name}")
+            delay(1000)//ms 1000 -> 1s
+        }
+        return "Executou tarefa 1"
+    }
 
+    private suspend fun tarefa2() : String {
+        repeat(3){ indice ->
+            Log.i("info_coroutine", "tarefa2: $indice T: ${currentThread().name}")
+            delay(1000)//ms 1000 -> 1s
+        }
+        return "Executou tarefa 2"
+    }
 
     private suspend fun executar(){
         repeat(15){ indice ->
