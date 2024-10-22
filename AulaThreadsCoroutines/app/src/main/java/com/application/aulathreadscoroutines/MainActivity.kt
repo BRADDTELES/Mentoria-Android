@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
+import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,6 +29,10 @@ class MainActivity : AppCompatActivity() {
 
     private val binding by lazy{
         ActivityMainBinding.inflate(layoutInflater)
+    }
+
+    private val retrofit by lazy{
+        RetrofitHelper.retrofit
     }
 
     private var pararThread = false
@@ -59,19 +64,20 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnIniciar.setOnClickListener {
 
+        /*
             //CoroutineScope(Dispatchers.Main).launch {
             //MainScope().launch {
             //CoroutineScope(Dispatchers.IO).launch {
             //GlobalScope.launch {
             //lifecycleScope.launch {
-            runBlocking {
+            /*runBlocking {
                 binding.btnIniciar.text = "Executando"
-                /*repeat(30){ indice ->
+                *//*repeat(30){ indice ->
                     //binding.btnIniciar.text = "Executando $indice"
                     Log.i("info_coroutine", "Executando: $indice T: ${Thread.currentThread().name}")
                     delay(1000L)
-                }*/
-            }
+                }*//*
+            }*/
 
             /*repeat(15){ indice ->
                 Log.i("info_thread", "Executando: $indice T: ${Thread.currentThread().name}")
@@ -143,6 +149,9 @@ class MainActivity : AppCompatActivity() {
                 }
                 Log.i("info_coroutine", "Tempo de execução: $tempo")
             }*/
+*/
+
+
 
         }
 
