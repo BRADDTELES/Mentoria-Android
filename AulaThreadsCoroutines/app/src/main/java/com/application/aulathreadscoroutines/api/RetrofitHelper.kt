@@ -7,7 +7,7 @@ class RetrofitHelper {
 
     companion object {
         val retrofit = Retrofit.Builder()
-            .baseUrl("")
+            .baseUrl("https://viacep.com.br/")
             .addConverterFactory( GsonConverterFactory.create() )//json ou XML
             .build()
     }
