@@ -10,8 +10,11 @@ import androidx.core.view.WindowInsetsCompat
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.withTimeout
 import java.lang.Thread.currentThread
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private var pararThread = false
+    private var job: Job? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +43,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnParar.setOnClickListener {
-            pararThread = true
+            //pararThread = true
+            job?.cancel()
             binding.btnIniciar.text = "Reiniciar execução"
             binding.btnIniciar.isEnabled = true
         }
@@ -68,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             }.start()*/
 
 
-            CoroutineScope( Dispatchers.IO ).launch {
+            job = CoroutineScope( Dispatchers.IO ).launch {
                 /*repeat(15){ indice ->
                     Log.i("info_coroutine", "Executando: $indice T: ${currentThread().name}")
 
@@ -79,14 +84,32 @@ class MainActivity : AppCompatActivity() {
                     delay(1000)//ms 1000 -> 1s
                 }*/
 
-                executar()//só funciona dentro de uma Coroutine
+                //executar()//só funciona dentro de uma Coroutine
+                withTimeout(7000L){
+                    executar()
+                }
             }
 
         }
 
     }
 
+
+
     private suspend fun executar(){
+        repeat(15){ indice ->
+            Log.i("info_coroutine", "Executando: $indice T: ${currentThread().name}")
+
+            withContext( Dispatchers.Main ){
+                binding.btnIniciar.text = "Executando: $indice T: ${currentThread().name}"
+                binding.btnIniciar.isEnabled = false
+            }
+
+            delay(1000L)//ms 1000 -> 1s
+        }
+    }
+
+    private suspend fun dadosUsuaio(){
         val usuario = recuperarUsuarioLogado()
         Log.i("info_coroutine", "usuário: ${usuario.nome} T: ${currentThread().name}")
         val postagens = recuperarPostagensPeloId( usuario.id )
