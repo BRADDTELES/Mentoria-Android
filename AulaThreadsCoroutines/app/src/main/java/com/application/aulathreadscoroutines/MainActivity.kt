@@ -11,6 +11,7 @@ import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -92,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
                 val tempo = measureTimeMillis {
 
-                    var resultado1: String? = null
+                    /*var resultado1: String? = null
                     var resultado2: String? = null
 
                     val job1 = launch {
@@ -106,8 +107,19 @@ class MainActivity : AppCompatActivity() {
                     job1.join()
                     job2.join()
 
-                    Log.i("info_coroutine", "resultado1: $resultado1")
-                    Log.i("info_coroutine", "resultado2: $resultado2")
+                    Log.i("info_coroutine", "resultado1: ${resultado1}")
+                    Log.i("info_coroutine", "resultado2: ${resultado2}")*/
+
+                    val resultado1 = async {tarefa1()}//Pedro
+                    val resultado2 = async {tarefa2()}//Maria
+
+                    withContext( Dispatchers.Main ){
+                        binding.btnIniciar.text = "${resultado1.await()}"
+                        binding.btnParar.text = "${resultado2.await()}"
+                    }
+
+                    Log.i("info_coroutine", "resultado1: ${resultado1.await()}")
+                    Log.i("info_coroutine", "resultado2: ${resultado2.await()}")
 
                 }
                 Log.i("info_coroutine", "Tempo de execução: $tempo")
@@ -126,7 +138,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private suspend fun tarefa2() : String {
-        repeat(3){ indice ->
+        repeat(5){ indice ->
             Log.i("info_coroutine", "tarefa2: $indice T: ${currentThread().name}")
             delay(1000)//ms 1000 -> 1s
         }
