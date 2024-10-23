@@ -194,8 +194,14 @@ class MainActivity : AppCompatActivity() {
                 withContext(Dispatchers.Main){
                     binding.textResultado.text = resultado
                     Picasso.get()
-                        .load(foto?.url)
-                        .into(binding.imageFoto)
+                        //.load( foto?.url )
+                        .load( R.drawable.picasso )
+                        .resize(100, 100)
+                        //.centerInside()
+                        //.centerCrop()
+                        .placeholder( R.drawable.carregando )
+                        //.error( R.drawable.picasso )
+                        .into( binding.imageFoto )
                 }
 
                 Log.i("info_jsonplace", resultado)

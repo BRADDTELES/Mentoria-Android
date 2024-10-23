@@ -2,8 +2,10 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable carregando
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable picasso
 id btnAbrir
 id btnIniciar
 id btnParar

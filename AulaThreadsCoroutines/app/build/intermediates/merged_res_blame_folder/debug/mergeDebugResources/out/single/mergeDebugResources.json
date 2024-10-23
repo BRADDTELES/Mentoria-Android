@@ -28,12 +28,20 @@
         "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-main-34:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
+        "merged": "com.application.aulathreadscoroutines.app-debug-32:/drawable_carregando.gif.flat",
+        "source": "com.application.aulathreadscoroutines.app-main-34:/drawable/carregando.gif"
+    },
+    {
         "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-debug-32:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-main-34:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
         "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-debug-32:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-main-34:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.application.aulathreadscoroutines.app-debug-32:/drawable_picasso.jpeg.flat",
+        "source": "com.application.aulathreadscoroutines.app-main-34:/drawable/picasso.jpeg"
     },
     {
         "merged": "com.application.aulathreadscoroutines.app-debug-32:/layout_activity_main.xml.flat",
