@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -35,15 +36,19 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final Switch switch1;
 
+  @NonNull
+  public final TextView textResultado;
+
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull Button btnAbrir,
       @NonNull Button btnIniciar, @NonNull Button btnParar, @NonNull ConstraintLayout main,
-      @NonNull Switch switch1) {
+      @NonNull Switch switch1, @NonNull TextView textResultado) {
     this.rootView = rootView;
     this.btnAbrir = btnAbrir;
     this.btnIniciar = btnIniciar;
     this.btnParar = btnParar;
     this.main = main;
     this.switch1 = switch1;
+    this.textResultado = textResultado;
   }
 
   @Override
@@ -99,8 +104,14 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.textResultado;
+      TextView textResultado = ViewBindings.findChildViewById(rootView, id);
+      if (textResultado == null) {
+        break missingId;
+      }
+
       return new ActivityMainBinding((ConstraintLayout) rootView, btnAbrir, btnIniciar, btnParar,
-          main, switch1);
+          main, switch1, textResultado);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -3545,6 +3545,7 @@ int id tag_window_insets_animation_callback 0x7f0801be
 int id text 0x7f0801bf
 int id text2 0x7f0801c0
 int id textEnd 0x7f0801c1
+int id textResultado 0x7f0801f9
 int id textSpacerNoButtons 0x7f0801c2
 int id textSpacerNoTitle 0x7f0801c3
 int id textStart 0x7f0801c4

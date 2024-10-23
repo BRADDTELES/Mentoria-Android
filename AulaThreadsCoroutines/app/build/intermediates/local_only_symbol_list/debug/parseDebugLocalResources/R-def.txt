@@ -9,6 +9,7 @@ id btnIniciar
 id btnParar
 id main
 id switch1
+id textResultado
 layout activity_main
 layout activity_segunda
 mipmap ic_launcher

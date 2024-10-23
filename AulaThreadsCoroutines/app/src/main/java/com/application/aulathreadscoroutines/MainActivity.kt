@@ -12,6 +12,7 @@ import com.application.aulathreadscoroutines.api.EnderecoAPI
 import com.application.aulathreadscoroutines.api.PostagemAPI
 import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
+import com.application.aulathreadscoroutines.model.Comentario
 import com.application.aulathreadscoroutines.model.Endereco
 import com.application.aulathreadscoroutines.model.Postagem
 import kotlinx.coroutines.CoroutineScope
@@ -162,11 +163,76 @@ class MainActivity : AppCompatActivity() {
 
             CoroutineScope(Dispatchers.IO).launch {
                 //recuperarEndereco()
-                recuperarPostagens()
+                //recuperarPostagens()
+                //recuperarPostagemUnica()
+                recuperarComentariosParaPostagem()
             }
 
         }
 
+    }
+
+    private suspend fun recuperarComentariosParaPostagem() {
+
+        var retorno: Response< List<Comentario> >? = null
+
+        try {
+            val postagemAPI = retrofit.create( PostagemAPI::class.java )
+            retorno = postagemAPI.recuperarComentariosParaPostagem(1)
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_jsonplace", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+                val listaComentarios = retorno.body()
+
+                var resultado = ""
+
+                listaComentarios?.forEach {  comentario ->
+                    val idComentario = comentario.id
+                    val email = comentario.email
+                    val comentarioResultado = "$idComentario - $email \n"
+                    resultado += comentarioResultado
+                }
+
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = resultado
+                    Log.i("info_jsonplace", resultado)
+                }
+
+            }
+        }
+    }
+
+    private suspend fun recuperarPostagemUnica() {
+
+        var retorno: Response<Postagem>? = null
+
+        try {
+            val postagemAPI = retrofit.create( PostagemAPI::class.java )
+            retorno = postagemAPI.recuperarPostagemUnica( 2)
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_jsonplace", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+                val postagem = retorno.body()
+                val resultado = "${postagem?.id} - ${postagem?.title}"
+
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = resultado // Mostrar a Postagem na tela do usuário
+                }
+
+                Log.i("info_jsonplace", resultado)
+
+            }
+        }
     }
 
     private suspend fun recuperarPostagens() {

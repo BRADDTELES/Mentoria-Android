@@ -4,7 +4,11 @@
         "source": "com.application.aulathreadscoroutines.app-main-34:/layout/activity_main.xml"
     },
     {
-        "merged": "com.application.aulathreadscoroutines.app-mergeDebugResources-31:/layout/activity_segunda.xml",
-        "source": "com.application.aulathreadscoroutines.app-main-34:/layout/activity_segunda.xml"
+        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-mergeDebugResources-31:/layout/activity_segunda.xml",
+        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-main-34:/layout/activity_segunda.xml"
+    },
+    {
+        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-mergeDebugResources-31:/layout/activity_main.xml",
+        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulathreadscoroutines.app-main-34:/layout/activity_main.xml"
     }
 ]
