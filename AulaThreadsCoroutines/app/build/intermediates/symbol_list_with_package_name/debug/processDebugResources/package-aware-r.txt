@@ -3320,6 +3320,7 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageFoto
 id immediateStop
 id included
 id indeterminate

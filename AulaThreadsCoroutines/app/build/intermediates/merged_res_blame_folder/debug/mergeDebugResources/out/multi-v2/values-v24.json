@@ -4,7 +4,7 @@
             "outputFile": "com.application.aulathreadscoroutines.app-mergeDebugResources-30:/values-v24/values-v24.xml",
             "map": [
                 {
-                    "source": "/home/bradd/.gradle/caches/transforms-4/06bbd32f01142df51471f55f3f50cd62/transformed/appcompat-1.7.0/res/values-v24/values-v24.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/46bcf439668e0e5cf3b22afd70f89247/transformed/appcompat-1.7.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/bradd/.gradle/caches/transforms-4/9edef6cdcb20918f9a629784d0a4444f/transformed/material-1.12.0/res/values-v24/values-v24.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/e6bd937cb04695fc9cac12af8ce2d024/transformed/material-1.12.0/res/values-v24/values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,9,12,15",
                         "startColumns": "4,4,4,4,4,4,4,4",

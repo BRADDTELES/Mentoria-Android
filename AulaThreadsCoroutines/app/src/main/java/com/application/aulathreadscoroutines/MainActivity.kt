@@ -14,7 +14,9 @@ import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import com.application.aulathreadscoroutines.model.Comentario
 import com.application.aulathreadscoroutines.model.Endereco
+import com.application.aulathreadscoroutines.model.Foto
 import com.application.aulathreadscoroutines.model.Postagem
+import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -162,11 +164,49 @@ class MainActivity : AppCompatActivity() {
                 //recuperarComentariosParaPostagem()
                 //salvarPostagem()
                 //atualizarPostagem()
-                removerPostagem()
+                //removerPostagem()
+                recuperarFotoUnica()
             }
 
         }
 
+    }
+
+    private suspend fun recuperarFotoUnica() {
+
+        var retorno: Response<Foto>? = null
+
+        try {
+            val postagemAPI = retrofit.create( PostagemAPI::class.java )
+            retorno = postagemAPI.recuperarFoto( 5)
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_jsonplace", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+                val foto = retorno.body()
+
+                val resultado = "[${retorno.code()}] - ${foto?.id} - ${foto?.url}"
+
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = resultado
+                    Picasso.get()
+                        .load(foto?.url)
+                        .into(binding.imageFoto)
+                }
+
+                Log.i("info_jsonplace", resultado)
+
+            }else{
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = "ERRO CODE:${retorno.code()}"
+                    Log.i("info_jsonplace", "erro code: ${retorno.code()}")
+                }
+            }
+        }
     }
 
     private suspend fun removerPostagem() {

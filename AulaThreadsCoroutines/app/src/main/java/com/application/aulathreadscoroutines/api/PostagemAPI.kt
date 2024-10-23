@@ -1,6 +1,7 @@
 package com.application.aulathreadscoroutines.api
 
 import com.application.aulathreadscoroutines.model.Comentario
+import com.application.aulathreadscoroutines.model.Foto
 import com.application.aulathreadscoroutines.model.Postagem
 import retrofit2.Response
 import retrofit2.http.Body
@@ -55,4 +56,7 @@ interface PostagemAPI {
 
     @DELETE("posts/{id}")//Requisição DELETE
     suspend fun removerPostagem( @Path("id") id: Int ) : Response < Unit >
+
+    @GET("photos/{id}")
+    suspend fun recuperarFoto( @Path("id") id: Int ) : Response < Foto >
 }
