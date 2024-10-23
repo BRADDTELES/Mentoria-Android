@@ -178,7 +178,8 @@ class MainActivity : AppCompatActivity() {
 
         try {
             val postagemAPI = retrofit.create( PostagemAPI::class.java )
-            retorno = postagemAPI.recuperarComentariosParaPostagem(1)
+            //retorno = postagemAPI.recuperarComentariosParaPostagem(1) //Path
+            retorno = postagemAPI.recuperarComentariosParaPostagemQuery(1) //Query
         }catch (e: Exception){
             e.printStackTrace()
             Log.i("info_jsonplace", "erro ao recuperar")
