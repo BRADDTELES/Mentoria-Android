@@ -4,6 +4,7 @@ import com.application.aulathreadscoroutines.model.Comentario
 import com.application.aulathreadscoroutines.model.Postagem
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -51,4 +52,7 @@ interface PostagemAPI {
         @Path("id") id: Int,
         @Body postagem: Postagem
     ) : Response < Postagem >
+
+    @DELETE("posts/{id}")//Requisição DELETE
+    suspend fun removerPostagem( @Path("id") id: Int ) : Response < Unit >
 }

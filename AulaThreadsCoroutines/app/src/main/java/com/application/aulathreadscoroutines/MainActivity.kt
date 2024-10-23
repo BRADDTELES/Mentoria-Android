@@ -161,11 +161,53 @@ class MainActivity : AppCompatActivity() {
                 //recuperarPostagemUnica()
                 //recuperarComentariosParaPostagem()
                 //salvarPostagem()
-                atualizarPostagem()
+                //atualizarPostagem()
+                removerPostagem()
             }
 
         }
 
+    }
+
+    private suspend fun removerPostagem() {
+
+        var retorno: Response< Unit >? = null
+
+        try {
+            val postagemAPI = retrofit.create( PostagemAPI::class.java )
+            retorno = postagemAPI.removerPostagem(1)
+
+            /*retorno = postagemAPI.atualizarPostagemPut(
+                1,
+                Postagem(
+                    "Corpo da postagem atualizado",
+                    -1,
+                    null,
+                    1090
+                )
+            )*/
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_jsonplace", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+            if ( retorno.isSuccessful ){
+
+                var resultado = "[${retorno.code()}] sucesso ao remover postagem"
+
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = resultado
+                    Log.i("info_jsonplace", resultado)
+                }
+
+            }else{
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = "ERRO CODE:${retorno.code()}"
+                    Log.i("info_jsonplace", "erro code: ${retorno.code()}")
+                }
+            }
+        }
     }
 
     private suspend fun atualizarPostagem() {
