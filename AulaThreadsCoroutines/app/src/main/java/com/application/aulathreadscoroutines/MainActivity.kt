@@ -9,9 +9,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import com.application.aulathreadscoroutines.api.EnderecoAPI
+import com.application.aulathreadscoroutines.api.PostagemAPI
 import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import com.application.aulathreadscoroutines.model.Endereco
+import com.application.aulathreadscoroutines.model.Postagem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
 
     private val retrofit by lazy{
         RetrofitHelper.retrofit
+    }
+
+    private val apiViaCEP by lazy{
+        RetrofitHelper.apiViaCEP
     }
 
     private var pararThread = false
@@ -155,11 +161,38 @@ class MainActivity : AppCompatActivity() {
 */
 
             CoroutineScope(Dispatchers.IO).launch {
-                recuperarEndereco()
+                //recuperarEndereco()
+                recuperarPostagens()
             }
 
         }
 
+    }
+
+    private suspend fun recuperarPostagens() {
+
+        var retorno: Response< List<Postagem> >? = null
+
+        try {
+            val postagemAPI = retrofit.create( PostagemAPI::class.java )
+            retorno = postagemAPI.recuperarPostagens()
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_jsonplace", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+                val listaPostagens = retorno.body()
+                listaPostagens?.forEach {  postagem ->
+                    val id = postagem.id
+                    val title = postagem.title
+                    Log.i("info_jsonplace", "$id - $title")
+                }
+
+            }
+        }
     }
 
     private suspend fun recuperarEndereco(){
