@@ -50,13 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(binding.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
 
         binding.btnAbrir.setOnClickListener {
             startActivity(
@@ -165,16 +159,65 @@ class MainActivity : AppCompatActivity() {
                 //recuperarEndereco()
                 //recuperarPostagens()
                 //recuperarPostagemUnica()
-                recuperarComentariosParaPostagem()
+                //recuperarComentariosParaPostagem()
+                salvarPostagem()
             }
 
         }
 
     }
 
+    private suspend fun salvarPostagem() {
+
+        var retorno: Response< Postagem >? = null
+
+        val postagem = Postagem(
+            "Corpo da postagem",
+            -1,
+            "Titulo da postagem",
+            1090
+        )
+
+        try {
+            val postagemAPI = retrofit.create( PostagemAPI::class.java )
+            //retorno = postagemAPI.salvarPostagens(postagem)
+            retorno = postagemAPI.salvarPostagemFormulario(
+                1090,
+                -1,
+                "Titulo da postagem Formulario",
+                "Corpo da postagem Formulario"
+            )
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_jsonplace", "erro ao recuperar")
+        }
+
+        if ( retorno != null ){
+            if ( retorno.isSuccessful ){
+                val postagem = retorno.body()
+
+                val id = postagem?.id
+                val titulo = postagem?.title
+                val idUsuario = postagem?.userId
+                var resultado = "[${retorno.code()}] id: $id - T: $titulo - U:$idUsuario"
+
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = resultado
+                    Log.i("info_jsonplace", resultado)
+                }
+
+            }else{
+                withContext(Dispatchers.Main){
+                    binding.textResultado.text = "ERRO CODE:${retorno.code()}"
+                    Log.i("info_jsonplace", "erro code: ${retorno.code()}")
+                }
+            }
+        }
+    }
+
     private suspend fun recuperarComentariosParaPostagem() {
 
-        var retorno: Response< List<Comentario> >? = null
+        /*var retorno: Response< List<Comentario> >? = null
 
         try {
             val postagemAPI = retrofit.create( PostagemAPI::class.java )
@@ -205,12 +248,12 @@ class MainActivity : AppCompatActivity() {
                 }
 
             }
-        }
+        }*/
     }
 
     private suspend fun recuperarPostagemUnica() {
 
-        var retorno: Response<Postagem>? = null
+        /*var retorno: Response<Postagem>? = null
 
         try {
             val postagemAPI = retrofit.create( PostagemAPI::class.java )
@@ -233,7 +276,7 @@ class MainActivity : AppCompatActivity() {
                 Log.i("info_jsonplace", resultado)
 
             }
-        }
+        }*/
     }
 
     private suspend fun recuperarPostagens() {
