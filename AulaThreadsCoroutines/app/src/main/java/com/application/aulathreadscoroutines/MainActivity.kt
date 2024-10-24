@@ -14,6 +14,7 @@ import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import com.application.aulathreadscoroutines.model.Comentario
 import com.application.aulathreadscoroutines.model.Endereco
+import com.application.aulathreadscoroutines.model.FilmeDetalhes
 import com.application.aulathreadscoroutines.model.FilmeResposta
 import com.application.aulathreadscoroutines.model.Foto
 import com.application.aulathreadscoroutines.model.Postagem
@@ -173,14 +174,63 @@ class MainActivity : AppCompatActivity() {
                 //recuperarFotoUnica()
 
                 //API The Movie DB
-                recuperarFilmesPopulares()
+                //recuperarFilmesPopulares()
+                recuperarDetalhesFilme()
             }
 
         }
 
     }
 
+    private suspend fun recuperarDetalhesFilme() {
+
+        /*
+        945961 - Alien: Romulus
+        533535 - Deadpool & Wolverine
+        1144962 - Transmorphers: Mech Beasts
+        * */
+
+        var retorno: Response<FilmeDetalhes>? = null
+
+        try {
+            retorno = filmeAPI.recuperarDetalhesFilme(533535)
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_tmbd", "erro ao recuperar detalhes filmes")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+
+                val filmeDetalhes = retorno.body()
+
+                val titulo = filmeDetalhes?.title
+                val listaGenero = filmeDetalhes?.genres // Lista de generos abaixo
+                val pais = filmeDetalhes?.production_countries?.get(0)
+
+                Log.i("info_tmbd", "CODIGO: ${retorno.code()}")
+                Log.i("info_tmbd", "titulo: $titulo")
+                Log.i("info_tmbd", "pais: ${pais?.name}")
+
+                // Lista de generos
+                listaGenero?.forEach { genero ->
+                    Log.i("info_tmbd", "${genero.name}")
+                }
+
+            }else{
+                Log.i("info_tmbd", "erro CODIGO: ${retorno.code()}")
+            }
+        }
+    }
+
     private suspend fun recuperarFilmesPopulares() {
+
+        /*
+        945961 - Alien: Romulus
+        533535 - Deadpool & Wolverine
+        1144962 - Transmorphers: Mech Beasts
+        * */
 
         var retorno: Response<FilmeResposta>? = null
 
