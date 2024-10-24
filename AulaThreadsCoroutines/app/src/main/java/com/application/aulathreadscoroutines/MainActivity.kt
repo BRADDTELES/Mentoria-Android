@@ -14,6 +14,7 @@ import com.application.aulathreadscoroutines.api.RetrofitHelper
 import com.application.aulathreadscoroutines.databinding.ActivityMainBinding
 import com.application.aulathreadscoroutines.model.Comentario
 import com.application.aulathreadscoroutines.model.Endereco
+import com.application.aulathreadscoroutines.model.FilmeResposta
 import com.application.aulathreadscoroutines.model.Foto
 import com.application.aulathreadscoroutines.model.Postagem
 import com.squareup.picasso.Picasso
@@ -169,11 +170,52 @@ class MainActivity : AppCompatActivity() {
                 //salvarPostagem()
                 //atualizarPostagem()
                 //removerPostagem()
-                recuperarFotoUnica()
+                //recuperarFotoUnica()
+
+                //API The Movie DB
+                recuperarFilmesPopulares()
             }
 
         }
 
+    }
+
+    private suspend fun recuperarFilmesPopulares() {
+
+        var retorno: Response<FilmeResposta>? = null
+
+        try {
+            retorno = filmeAPI.recuperarFilmesPopulares()
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_tmbd", "erro ao recuperar filmes populares")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+
+                val filmeResposta = retorno.body()
+                val listaFilmes = filmeResposta?.results
+
+                val pagina = filmeResposta?.page
+                val totalPaginas = filmeResposta?.total_pages
+                val totalDeFilmes = filmeResposta?.total_results
+
+                Log.i("info_tmbd", "CODIGO: ${retorno.code()}")
+                Log.i("info_tmbd", "pagina: $pagina")
+                Log.i("info_tmbd", "totalPaginas: $totalPaginas")
+                Log.i("info_tmbd", "totalDeFilmes: $totalDeFilmes")
+                listaFilmes?.forEach {  filme ->
+                    val id = filme.id
+                    val title = filme.title
+                    Log.i("info_tmbd", "$id - $title")
+                }
+
+            }else{
+                Log.i("info_tmbd", "erro CODIGO: ${retorno.code()}")
+            }
+        }
     }
 
     private suspend fun recuperarFotoUnica() {

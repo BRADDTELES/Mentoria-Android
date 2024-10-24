@@ -6,6 +6,9 @@ import retrofit2.create
 
 class RetrofitHelper {
     companion object {
+
+        const val APY_KEY = "1c696cada346f99c183ec5afb21bfe81"
+
         val apiViaCEP = Retrofit.Builder()
             .baseUrl("https://viacep.com.br/")
             .addConverterFactory( GsonConverterFactory.create() )//json ou XML
