@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         RetrofitHelper.apiViaCEP
     }
 
+    private val filmeAPI by lazy{
+        RetrofitHelper.filmeAPI
+    }
+
     private var pararThread = false
     private var job: Job? = null
 

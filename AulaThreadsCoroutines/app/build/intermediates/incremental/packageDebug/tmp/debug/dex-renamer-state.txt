@@ -1,11 +1,11 @@
-#Wed Oct 23 15:52:21 BRT 2024
-base.0=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.2=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeProjectDexDebug/11/classes.dex
-base.3=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
-base.4=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
-base.5=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
-base.6=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaThreadsCoroutines/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+#Wed Oct 23 18:49:12 BRT 2024
+base.0=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
+base.1=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
+base.2=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\11\\classes.dex
+base.3=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
+base.4=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
+base.5=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
+base.6=C\:\\Users\\bradd\\AndroidStudioProjects\\Mentoria-Android\\AulaThreadsCoroutines\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=11/classes.dex
