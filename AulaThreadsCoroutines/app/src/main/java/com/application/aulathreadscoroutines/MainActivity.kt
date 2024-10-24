@@ -17,6 +17,7 @@ import com.application.aulathreadscoroutines.model.Endereco
 import com.application.aulathreadscoroutines.model.FilmeDetalhes
 import com.application.aulathreadscoroutines.model.FilmeResposta
 import com.application.aulathreadscoroutines.model.Foto
+import com.application.aulathreadscoroutines.model.Genre
 import com.application.aulathreadscoroutines.model.Postagem
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
@@ -208,15 +209,35 @@ class MainActivity : AppCompatActivity() {
                 val titulo = filmeDetalhes?.title
                 val listaGenero = filmeDetalhes?.genres // Lista de generos abaixo
                 val pais = filmeDetalhes?.production_countries?.get(0)
+                val genero1 = filmeDetalhes?.genres?.get(0)
+                val genero2 = filmeDetalhes?.genres?.get(1)
+                val genero3 = filmeDetalhes?.genres?.get(2)
+
+                // https://image.tmdb.org/t/p/ + w1280 + /kqjL17yufvn9OVLyXYpvtyrFfak.jpg
+                val nomeImagem = filmeDetalhes?.backdrop_path
+
+                val url = RetrofitHelper.BASE_URL_IMAGE + RetrofitHelper.TAMANHO_W1280 + nomeImagem
 
                 Log.i("info_tmbd", "CODIGO: ${retorno.code()}")
                 Log.i("info_tmbd", "titulo: $titulo")
                 Log.i("info_tmbd", "pais: ${pais?.name}")
+                Log.i("info_tmbd", "genero: ${genero1?.name}, ${genero2?.name}, ${genero3?.name}")
 
-                // Lista de generos
-                listaGenero?.forEach { genero ->
-                    Log.i("info_tmbd", "${genero.name}")
+                withContext(Dispatchers.Main){
+                    // Lista de generos
+                    /*listaGenero?.forEach { genero ->
+                        binding.textResultado.text = "$titulo - ${pais?.name} - ${genero.name}"
+                        Log.i("info_tmbd", "genero: ${genero.name}")
+                    }*/
+                    binding.textResultado.text = "$titulo - ${pais?.name} - ${genero1?.name}, ${genero2?.name}, ${genero3?.name}"
+                    Picasso.get()
+                        .load( url )
+                        .into( binding.imageFoto )
                 }
+
+
+
+
 
             }else{
                 Log.i("info_tmbd", "erro CODIGO: ${retorno.code()}")
