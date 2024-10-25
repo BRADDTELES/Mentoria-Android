@@ -7,7 +7,7 @@
 7    <uses-sdk
 8        android:minSdkVersion="21"
 8-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml
-9        android:targetSdkVersion="35" />
+9        android:targetSdkVersion="34" />
 9-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
