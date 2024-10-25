@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
@@ -23,6 +24,7 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+    private var paginaAtual = 1
     private val TAG = "info_filme"
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
@@ -34,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     var jobFilmeRecente: Job? = null // Variável para armazenar a Job da Coroutine
     var jobFilmesPopulares: Job? = null // Variável para armazenar a Job da Coroutine
     var linearLayoutManager: LinearLayoutManager? = null
+    var gridLayoutManager: GridLayoutManager? = null
     private lateinit var filmeAdapter: FilmeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,18 +56,37 @@ class MainActivity : AppCompatActivity() {
         }
         binding.rvPopulares.adapter = filmeAdapter
 
-        // Realizar listagem dos filmes um do lado do outro
+        /*// Realizar listagem dos filmes um do lado do outro
         linearLayoutManager = LinearLayoutManager(
             this,
-            LinearLayoutManager.VERTICAL,
+            LinearLayoutManager.HORIZONTAL,
             false
         )
-        binding.rvPopulares.layoutManager = linearLayoutManager
+        binding.rvPopulares.layoutManager = linearLayoutManager*/
+
+        // Realizar listagem dos filmes em grade de 2 colunas (Grid)
+        gridLayoutManager = GridLayoutManager(
+            this,
+            2 // Quantidade de colunas
+        )
+        binding.rvPopulares.layoutManager = gridLayoutManager
 
         binding.rvPopulares.addOnScrollListener( object : OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
 
-                // Verificar se chegou no final da lista e esconder a seta de adicionar
+                val podeDescerVerticalmente = recyclerView.canScrollVertically(1)// Verificar scroll na vertical e se está descendo
+
+                if ( !podeDescerVerticalmente ){//Não NÃO poder descer
+                    //Carregar mais 20 itens
+                    Log.i("recycler_api", "poginaAtual: $paginaAtual")
+                    recuperarFilmesPopularesProximaPagina()
+                }else{
+
+                }
+
+                //Log.i("recycler_api", "podeDescerVerticalmente: $podeDescerVerticalmente")
+
+                /*// Logica Verificar se chegou no final da lista e esconder a seta de adicionar ao final da lista (VERTICAL/HORIZONTAL)
                 val ultimoItemVisivel = linearLayoutManager?.findLastVisibleItemPosition()
                 val totalItens = recyclerView.adapter?.itemCount
                 //Log.i("recycler_test", "ultimo: $ultimoItemVisivel total: $totalItens")
@@ -74,9 +96,10 @@ class MainActivity : AppCompatActivity() {
                     }else{//Não chegou no último item
                         binding.fabAdicionar.show()
                     }
-                }
+                }*/
 
-                /*Log.i("recycler_test", "onScrolled: dx: $dx, dy: $dy")
+                /*// Logica Esconder a seta de adicionar quando o scroll desce e quando sobe aparece a seta (VERTICAL)
+                Log.i("recycler_test", "onScrolled: dx: $dx, dy: $dy")
                 if (dy > 0) {//descendo
                     binding.fabAdicionar.hide()
                 }else{//dy < 0 está subindo
@@ -88,28 +111,29 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*class ScrollCustomizado : OnScrollListener(){
-        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-            super.onScrolled(recyclerView, dx, dy)
-        }
-    }*/
-
-
     override fun onStart() {
         super.onStart()
         recuperarFilmeRecente()
         recuperarFilmesPopulares()
     }
 
+    private fun recuperarFilmesPopularesProximaPagina(){
+
+        if ( paginaAtual < 1000 ){
+            paginaAtual++
+            recuperarFilmesPopulares(paginaAtual)
+        }
+    }
+
     // Método para recuperar os filmes populares
-    private fun recuperarFilmesPopulares() {
+    private fun recuperarFilmesPopulares(pagina: Int = 1) {
         // Essa Coroutine será parada, caso o usuário saia desta tela
         jobFilmesPopulares = CoroutineScope(Dispatchers.IO).launch {
             var resposta: Response<FilmeResposta>? = null
 
             // Fazendo a requisição
             try {
-                resposta = filmeAPI.recuperarFilmesPopulares()
+                resposta = filmeAPI.recuperarFilmesPopulares(pagina)
             }catch (e: Exception){
                 exibirMensagem("Erro ao fazer a requisição")
             }
@@ -124,9 +148,7 @@ class MainActivity : AppCompatActivity() {
 
                         // Trocar o fluxo da Coroutine para o Main Thread
                         withContext(Dispatchers.Main){
-
                             filmeAdapter.adicionarLista( listaFilmes ) // Carregar a lista de filmes
-
                         }
 
                         // Percorrer a lista de filmes e exibir o titulo de cada um no Logcat
