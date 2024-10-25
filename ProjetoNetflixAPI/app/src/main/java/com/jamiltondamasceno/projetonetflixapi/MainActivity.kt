@@ -4,13 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.jamiltondamasceno.projetonetflixapi.adapter.FilmeAdapter
 import com.jamiltondamasceno.projetonetflixapi.api.RetrofitService
 import com.jamiltondamasceno.projetonetflixapi.databinding.ActivityMainBinding
-import com.jamiltondamasceno.projetonetflixapi.model.Filme
 import com.jamiltondamasceno.projetonetflixapi.model.FilmeRecente
 import com.jamiltondamasceno.projetonetflixapi.model.FilmeResposta
 import com.squareup.picasso.Picasso
@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
     }
     var jobFilmeRecente: Job? = null // Variável para armazenar a Job da Coroutine
     var jobFilmesPopulares: Job? = null // Variável para armazenar a Job da Coroutine
+    var linearLayoutManager: LinearLayoutManager? = null
     private lateinit var filmeAdapter: FilmeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,13 +54,45 @@ class MainActivity : AppCompatActivity() {
         binding.rvPopulares.adapter = filmeAdapter
 
         // Realizar listagem dos filmes um do lado do outro
-        binding.rvPopulares.layoutManager = LinearLayoutManager(
+        linearLayoutManager = LinearLayoutManager(
             this,
-            LinearLayoutManager.HORIZONTAL,
+            LinearLayoutManager.VERTICAL,
             false
         )
+        binding.rvPopulares.layoutManager = linearLayoutManager
+
+        binding.rvPopulares.addOnScrollListener( object : OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+
+                // Verificar se chegou no final da lista e esconder a seta de adicionar
+                val ultimoItemVisivel = linearLayoutManager?.findLastVisibleItemPosition()
+                val totalItens = recyclerView.adapter?.itemCount
+                //Log.i("recycler_test", "ultimo: $ultimoItemVisivel total: $totalItens")
+                if ( ultimoItemVisivel != null && totalItens != null ){
+                    if ( totalItens-1 == ultimoItemVisivel ){//Chegou no uĺtimo item
+                        binding.fabAdicionar.hide()
+                    }else{//Não chegou no último item
+                        binding.fabAdicionar.show()
+                    }
+                }
+
+                /*Log.i("recycler_test", "onScrolled: dx: $dx, dy: $dy")
+                if (dy > 0) {//descendo
+                    binding.fabAdicionar.hide()
+                }else{//dy < 0 está subindo
+                    binding.fabAdicionar.show()
+                }*/
+            }
+        })
+
 
     }
+
+    /*class ScrollCustomizado : OnScrollListener(){
+        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+            super.onScrolled(recyclerView, dx, dy)
+        }
+    }*/
 
 
     override fun onStart() {
