@@ -6,7 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import com.jamiltondamasceno.projetonetflixapi.api.RetrofitService
 import com.jamiltondamasceno.projetonetflixapi.databinding.ActivityMainBinding
+import com.jamiltondamasceno.projetonetflixapi.model.Filme
 import com.jamiltondamasceno.projetonetflixapi.model.FilmeRecente
+import com.jamiltondamasceno.projetonetflixapi.model.FilmeResposta
 import com.squareup.picasso.Picasso
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +27,8 @@ class MainActivity : AppCompatActivity() {
     private val filmeAPI by lazy {
         RetrofitService.filmeAPI
     }
-    var jobFilmeRecente: Job? = null
+    var jobFilmeRecente: Job? = null // Variável para armazenar a Job da Coroutine
+    var jobFilmesPopulares: Job? = null // Variável para armazenar a Job da Coroutine
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,8 +43,47 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         recuperarFilmeRecente()
+        recuperarFilmesPopulares()
     }
 
+    // Método para recuperar os filmes populares
+    private fun recuperarFilmesPopulares() {
+        // Essa Coroutine será parada, caso o usuário saia desta tela
+        jobFilmesPopulares = CoroutineScope(Dispatchers.IO).launch {
+            var resposta: Response<FilmeResposta>? = null
+
+            // Fazendo a requisição
+            try {
+                resposta = filmeAPI.recuperarFilmesPopulares()
+            }catch (e: Exception){
+                exibirMensagem("Erro ao fazer a requisição")
+            }
+
+            if (resposta != null){
+                if (resposta.isSuccessful){
+
+                    val filmeResposta = resposta.body()// Capturar o conteudo
+                    val listaFilmes = filmeResposta?.filmes// Capturar a lista de filmes vinda de filmeResposta
+                    // Testar se a lista de filmes não está vazia e se não for nula
+                    if ( listaFilmes != null && listaFilmes.isNotEmpty()){
+
+                        // Percorrer a lista de filmes e exibir o titulo de cada um no Logcat
+                        listaFilmes.forEach{ filme ->
+                            Log.i("filmes_api", "Titulo: ${filme.title}")
+                        }
+
+                    }
+
+                }else{
+                    exibirMensagem("Não foi possivel recuperar o filme recente CODIGO: ${resposta.code()}")
+                }
+            }else{
+                exibirMensagem("Não foi possível fazer a requisição")
+            }
+        }
+    }
+
+    // Método para recuperar o filme mais recente como fundo de tela de capa
     private fun recuperarFilmeRecente() {
         // Essa Coroutine será parada, caso o usuário saia desta tela
         jobFilmeRecente = CoroutineScope(Dispatchers.IO).launch {
@@ -65,8 +107,8 @@ class MainActivity : AppCompatActivity() {
                     withContext( Dispatchers.Main ){
                         /*// Mostrar o titulo e a imagem no Logcat
                         val texto = "titulo: $titulo url: $url"
-                        Log.i("info_netflix", texto)*/
-                        // Exibir a imagem pela Picasso (Mas precisa do withContext(Dispatchers.Main) para funcionar)
+                        Log.i("filmes_api", texto)*/
+                        // Exibir a imagem de filme Recente no fundo da tela usando Picasso (Precisa do withContext(Dispatchers.Main) para funcionar)
                         Picasso.get()
                             .load(url)
                             .error(R.drawable.capa)// Caso a imagem não seja carregada, exibir essa imagem de capa Padrão para não quebrar a tela
@@ -91,7 +133,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        jobFilmeRecente?.cancel()
+        jobFilmeRecente?.cancel() // Cancelar a Coroutine quando a Activity for parada
+        jobFilmesPopulares?.cancel() // Cancelar a Coroutine quando a Activity for parada
     }
 
 }
