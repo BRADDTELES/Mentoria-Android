@@ -1,0 +1,110 @@
+[
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_f2.png.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/f2.png"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_logo.png.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/logo.png"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-xxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_logo_peaky.png.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/logo_peaky.png"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/xml_data_extraction_rules.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/xml/data_extraction_rules.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/layout_item_filme.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/item_filme.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/layout_activity_main.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_f1.png.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/f1.png"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/layout_recycler_view_item.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/recycler_view_item.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_capa.png.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/capa.png"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-xxxhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_f3.png.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/f3.png"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-pngs-24:/drawable-anydpi-v24/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/xml_backup_rules.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/drawable_ic_executar_24.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/drawable/ic_executar_24.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-merged_res-29:/layout_activity_detalhes.xml.flat",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/activity_detalhes.xml"
+    }
+]

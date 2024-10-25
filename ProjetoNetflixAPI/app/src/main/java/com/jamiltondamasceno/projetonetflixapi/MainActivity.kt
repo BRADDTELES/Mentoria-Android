@@ -3,7 +3,10 @@ package com.jamiltondamasceno.projetonetflixapi
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.jamiltondamasceno.projetonetflixapi.adapter.FilmeAdapter
 import com.jamiltondamasceno.projetonetflixapi.api.RetrofitService
 import com.jamiltondamasceno.projetonetflixapi.databinding.ActivityMainBinding
 import com.jamiltondamasceno.projetonetflixapi.model.Filme
@@ -29,15 +32,29 @@ class MainActivity : AppCompatActivity() {
     }
     var jobFilmeRecente: Job? = null // Variável para armazenar a Job da Coroutine
     var jobFilmesPopulares: Job? = null // Variável para armazenar a Job da Coroutine
+    private lateinit var filmeAdapter: FilmeAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
-
+        inicializarViews()
 
     }
 
+    private fun inicializarViews() {
+
+        filmeAdapter = FilmeAdapter()
+        binding.rvPopulares.adapter = filmeAdapter
+
+        // Realizar listagem dos filmes um do lado do outro
+        binding.rvPopulares.layoutManager = LinearLayoutManager(
+            this,
+            LinearLayoutManager.HORIZONTAL,
+            false
+        )
+
+    }
 
 
     override fun onStart() {
@@ -67,10 +84,17 @@ class MainActivity : AppCompatActivity() {
                     // Testar se a lista de filmes não está vazia e se não for nula
                     if ( listaFilmes != null && listaFilmes.isNotEmpty()){
 
-                        // Percorrer a lista de filmes e exibir o titulo de cada um no Logcat
-                        listaFilmes.forEach{ filme ->
-                            Log.i("filmes_api", "Titulo: ${filme.title}")
+                        // Trocar o fluxo da Coroutine para o Main Thread
+                        withContext(Dispatchers.Main){
+
+                            filmeAdapter.adicionarLista( listaFilmes ) // Carregar a lista de filmes
+
                         }
+
+                        // Percorrer a lista de filmes e exibir o titulo de cada um no Logcat
+                        /*listaFilmes.forEach{ filme ->
+                            Log.i("filmes_api", "Titulo: ${filme.title}")
+                        }*/
 
                     }
 

@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-28:/layout/item_filme.xml",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/item_filme.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-28:/layout/activity_detalhes.xml",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/activity_detalhes.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-28:/layout/activity_main.xml",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-28:/layout/recycler_view_item.xml",
+        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-31:/layout/recycler_view_item.xml"
+    }
+]
