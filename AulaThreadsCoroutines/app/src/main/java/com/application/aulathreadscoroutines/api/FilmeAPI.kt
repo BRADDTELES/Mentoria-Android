@@ -5,6 +5,7 @@ import com.application.aulathreadscoroutines.model.FilmeResposta
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface FilmeAPI {
 
@@ -16,4 +17,8 @@ interface FilmeAPI {
         @Path("idFilme") idFilme: Int
     ): Response<FilmeDetalhes>
 
+    @GET("search/movie?api_key=${RetrofitHelper.APY_KEY}")
+    suspend fun recuperarFilmePesquisa(
+        @Query("query") pesquisa: String
+    ): Response<FilmeResposta>
 }

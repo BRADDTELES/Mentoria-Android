@@ -176,11 +176,50 @@ class MainActivity : AppCompatActivity() {
 
                 //API The Movie DB
                 //recuperarFilmesPopulares()
-                recuperarDetalhesFilme()
+                //recuperarDetalhesFilme()
+                recuperarFilmePesquisa()
             }
 
         }
 
+    }
+
+    private suspend fun recuperarFilmePesquisa() {
+
+        /*
+        945961 - Alien: Romulus
+        533535 - Deadpool & Wolverine
+        1144962 - Transmorphers: Mech Beasts
+        * */
+
+        var retorno: Response<FilmeResposta>? = null
+
+        try {
+            retorno = filmeAPI.recuperarFilmePesquisa("hocus")
+        }catch (e: Exception){
+            e.printStackTrace()
+            Log.i("info_tmbd", "erro ao recuperar filmes pesquisa")
+        }
+
+        if ( retorno != null ){
+
+            if ( retorno.isSuccessful ){
+
+                val filmeResposta = retorno.body()
+                val listaFilmes = filmeResposta?.results
+
+                Log.i("info_tmbd", "CODIGO: ${retorno.code()}")
+                // Lista de generos
+                listaFilmes?.forEach { filme ->
+                    val id = filme.id
+                    val title = filme.title
+                    Log.i("info_tmbd", "$id - $title")
+                }
+
+            }else{
+                Log.i("info_tmbd", "erro CODIGO: ${retorno.code()}")
+            }
+        }
     }
 
     private suspend fun recuperarDetalhesFilme() {
