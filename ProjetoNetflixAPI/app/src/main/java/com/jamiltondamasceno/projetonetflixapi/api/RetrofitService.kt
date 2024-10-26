@@ -4,6 +4,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory
 import java.util.concurrent.TimeUnit
 
 object RetrofitService {
@@ -25,4 +26,24 @@ object RetrofitService {
         .build()
 
     val filmeAPI = retrofit.create( FilmeAPI::class.java )
+
+    // Configurar API ViaCep usando método
+    fun recuperarViaCep() : ViaCepAPI {
+
+        return Retrofit.Builder()
+            .baseUrl( "https://viacep.com.br/ws/" ) // URL base da API ViaCep
+            .addConverterFactory( GsonConverterFactory.create() ) // Converter JSON para objeto Kotlin
+            //.addConverterFactory( SimpleXmlConverterFactory.create() ) // Converter XML para objeto Kotlin
+            .client( okhttpClient )
+            .build()
+            .create( ViaCepAPI::class.java )
+    }
+
+    /*// Configurar API ViaCep usando propriedade atributo
+    val viaCepAPI = Retrofit.Builder()
+        .baseUrl( BASE_URL )
+        .addConverterFactory( GsonConverterFactory.create() )
+        .client( okhttpClient )
+        .build()
+        .create( ViaCepAPI::class.java )*/
 }

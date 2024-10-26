@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.jamiltondamasceno.projetonetflixapi.adapter.FilmeAdapter
 import com.jamiltondamasceno.projetonetflixapi.api.RetrofitService
 import com.jamiltondamasceno.projetonetflixapi.databinding.ActivityMainBinding
+import com.jamiltondamasceno.projetonetflixapi.model.Endereco
 import com.jamiltondamasceno.projetonetflixapi.model.FilmeRecente
 import com.jamiltondamasceno.projetonetflixapi.model.FilmeResposta
 import com.squareup.picasso.Picasso
@@ -31,7 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val filmeAPI by lazy {
-        RetrofitService.filmeAPI
+        RetrofitService.filmeAPI // Instanciando a propriedade filmeAPI trazendo a configuração da RetrofitService
+    }
+    private val viaCepAPI by lazy {
+        RetrofitService.recuperarViaCep() // Instanciando o metodo recuperarViaCep trazendo a configuração da RetrofitService
     }
     var jobFilmeRecente: Job? = null // Variável para armazenar a Job da Coroutine
     var jobFilmesPopulares: Job? = null // Variável para armazenar a Job da Coroutine
@@ -44,7 +48,45 @@ class MainActivity : AppCompatActivity() {
         setContentView( binding.root )
 
         inicializarViews()
+        recuperarEndereco()
 
+    }
+
+    private fun recuperarEndereco() {
+
+        CoroutineScope(Dispatchers.IO).launch {
+
+            var resposta: Response<Endereco>? = null
+
+            // Fazendo a requisição
+            try {
+                resposta = viaCepAPI.recuperarEndereco()
+            }catch (e: Exception){
+                exibirMensagem("Erro ao fazer a requisição")
+            }
+
+            if (resposta != null){
+                if (resposta.isSuccessful){
+
+                    val endereco = resposta.body()
+                    if ( endereco != null ){
+                        val logradouro = endereco.logradouro
+                        val bairro = endereco.bairro
+                        val complemento = endereco.complemento
+                        val localidade = endereco.localidade
+                        val estado = endereco.estado
+                        val uf = endereco.uf
+
+                        Log.i("viacep", "recuperarEndereco: $logradouro - $bairro - $complemento - $localidade - $estado - $uf")
+                    }
+
+                }else{
+                    exibirMensagem("Não foi possivel recuperar o endereco CODIGO: ${resposta.code()}")
+                }
+            }else{
+                exibirMensagem("Não foi possível fazer a requisição")
+            }
+        }
     }
 
     private fun inicializarViews() {
