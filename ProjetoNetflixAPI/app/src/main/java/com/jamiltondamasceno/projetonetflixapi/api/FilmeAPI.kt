@@ -9,11 +9,13 @@ import retrofit2.http.Query
 interface FilmeAPI {
 
     // Recuperar o filme mais recente
-    @GET("movie/latest?api_key=${RetrofitService.API_KEY}")
+    //@GET("movie/latest?api_key=${RetrofitService.API_KEY}")
+    @GET("movie/latest")
     suspend fun recuperarFilmeRecente(): Response<FilmeRecente>
 
     // Recuperar os filmes mais populares
-    @GET("movie/popular?api_key=${RetrofitService.API_KEY}")
+    //@GET("movie/popular?api_key=${RetrofitService.API_KEY}")
+    @GET("movie/popular")
     suspend fun recuperarFilmesPopulares(
         @Query("page") pagina: Int
     ): Response<FilmeResposta>
