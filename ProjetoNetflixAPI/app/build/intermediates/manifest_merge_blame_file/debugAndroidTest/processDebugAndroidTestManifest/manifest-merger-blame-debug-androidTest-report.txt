@@ -3,24 +3,24 @@
 3    package="com.jamiltondamasceno.projetonetflixapi.test" >
 4
 5    <uses-sdk
-5-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:5:5-74
+5-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:5:5-74
 6        android:minSdkVersion="21"
-6-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:5:15-41
+6-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:5:15-41
 7        android:targetSdkVersion="34" />
-7-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:5:42-71
+7-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:5:42-71
 8
 9    <instrumentation
-9-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:11:5-15:89
+9-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:11:5-15:89
 10        android:name="androidx.test.runner.AndroidJUnitRunner"
-10-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:11:22-76
+10-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:11:22-76
 11        android:functionalTest="false"
-11-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:14:22-52
+11-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:14:22-52
 12        android:handleProfiling="false"
-12-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:13:22-53
+12-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:13:22-53
 13        android:label="Tests for com.jamiltondamasceno.projetonetflixapi"
-13-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:15:22-87
+13-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:15:22-87
 14        android:targetPackage="com.jamiltondamasceno.projetonetflixapi" />
-14-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:12:22-85
+14-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:12:22-85
 15
 16    <uses-permission android:name="android.permission.REORDER_TASKS" />
 16-->[androidx.test:core:1.4.0] /home/bradd/.gradle/caches/transforms-4/c62350c274617c5ed347c6d716b4cdab/transformed/core-1.4.0/AndroidManifest.xml:24:5-72
@@ -40,12 +40,12 @@
 22    </queries>
 23
 24    <application
-24-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:7:5-9:19
+24-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:7:5-9:19
 25        android:debuggable="true"
 26        android:extractNativeLibs="true" >
 27        <uses-library android:name="android.test.runner" />
-27-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:8:9-60
-27-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest14656397433367994659.xml:8:23-57
+27-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:8:9-60
+27-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/tmp/manifest/androidTest/debug/tempFile1ProcessTestManifest2982112014837971432.xml:8:23-57
 28
 29        <activity
 29-->[androidx.test:core:1.4.0] /home/bradd/.gradle/caches/transforms-4/c62350c274617c5ed347c6d716b4cdab/transformed/core-1.4.0/AndroidManifest.xml:27:9-34:20

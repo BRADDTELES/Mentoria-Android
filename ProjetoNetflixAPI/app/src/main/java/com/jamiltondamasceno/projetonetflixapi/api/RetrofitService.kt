@@ -5,6 +5,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory
+import retrofit2.create
 import java.util.concurrent.TimeUnit
 
 object RetrofitService {
@@ -28,23 +29,28 @@ object RetrofitService {
 
     val filmeAPI = retrofit.create( FilmeAPI::class.java )
 
+    fun <T> recuperarApi( classe: Class <T>) : T {
+        return retrofit.create( classe )
+        //return viaCepAPI.create( classe )
+    }
+
     // Configurar API ViaCep usando método
     fun recuperarViaCep() : ViaCepAPI {
 
         return Retrofit.Builder()
             .baseUrl( "https://viacep.com.br/ws/" ) // URL base da API ViaCep
-            .addConverterFactory( GsonConverterFactory.create() ) // Converter JSON para objeto Kotlin
-            //.addConverterFactory( SimpleXmlConverterFactory.create() ) // Converter XML para objeto Kotlin
-            .client( okhttpClient )
+            .addConverterFactory( SimpleXmlConverterFactory.create() ) // Converter XML para objeto Kotlin
             .build()
             .create( ViaCepAPI::class.java )
     }
 
     /*// Configurar API ViaCep usando propriedade atributo
     val viaCepAPI = Retrofit.Builder()
-        .baseUrl( BASE_URL )
-        .addConverterFactory( GsonConverterFactory.create() )
+        .baseUrl( "https://viacep.com.br/ws/" ) // URL base da API ViaCep
+        .addConverterFactory( GsonConverterFactory.create() ) // Converter JSON para objeto Kotlin
+        //.addConverterFactory( SimpleXmlConverterFactory.create() ) // Converter XML para objeto Kotlin
         .client( okhttpClient )
         .build()
-        .create( ViaCepAPI::class.java )*/
+    val cepAPI = viaCepAPI.create( ViaCepAPI::class.java )*/
+
 }

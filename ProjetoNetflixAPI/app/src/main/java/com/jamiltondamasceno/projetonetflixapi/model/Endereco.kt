@@ -3,6 +3,7 @@ package com.jamiltondamasceno.projetonetflixapi.model
 import org.simpleframework.xml.Element
 import org.simpleframework.xml.Root
 
+/*//Raiz do JSON - Usando uma data class
 data class Endereco(
     val bairro: String,
     val complemento: String,
@@ -10,7 +11,7 @@ data class Endereco(
     val localidade: String,
     val estado: String,
     val uf: String
-)
+)*/
 
 /*//Raiz do XML - Usando uma data class
 @Root(name = "xmlcep", strict = false) // strict -> false para permitir atributos não mapeados / true para permitir atributos por padrão
@@ -41,9 +42,10 @@ data class Endereco( // data class Endereço
     val uf: String
 )*/
 
-/*//Raiz do XML - Usando uma Classe
+//Raiz do XML - Usando uma Classe
 @Root(name = "xmlcep", strict = false) // strict -> false para permitir atributos não mapeados / true para permitir atributos por padrão
 class Endereco{
+
     @field: Element(name = "bairro")//Atributo de classe (campo)
     var bairro: String = ""
 
@@ -61,6 +63,6 @@ class Endereco{
 
     @field: Element(name = "uf")
     var uf: String = ""
-}*/
+}
 
 

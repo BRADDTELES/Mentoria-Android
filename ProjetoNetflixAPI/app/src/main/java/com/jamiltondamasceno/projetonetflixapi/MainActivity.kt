@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.OnScrollListener
 import com.jamiltondamasceno.projetonetflixapi.adapter.FilmeAdapter
+import com.jamiltondamasceno.projetonetflixapi.api.FilmeAPI
 import com.jamiltondamasceno.projetonetflixapi.api.RetrofitService
+import com.jamiltondamasceno.projetonetflixapi.api.ViaCepAPI
 import com.jamiltondamasceno.projetonetflixapi.databinding.ActivityMainBinding
 import com.jamiltondamasceno.projetonetflixapi.model.Endereco
 import com.jamiltondamasceno.projetonetflixapi.model.FilmeRecente
@@ -32,10 +34,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val filmeAPI by lazy {
-        RetrofitService.filmeAPI // Instanciando a propriedade filmeAPI trazendo a configuração da RetrofitService
+        //RetrofitService.filmeAPI // Instanciando a propriedade filmeAPI trazendo a configuração da RetrofitService
+        RetrofitService.recuperarApi( FilmeAPI::class.java )
     }
     private val viaCepAPI by lazy {
+        //RetrofitService.cepAPI
         RetrofitService.recuperarViaCep() // Instanciando o metodo recuperarViaCep trazendo a configuração da RetrofitService
+        //RetrofitService.recuperarApi( ViaCepAPI::class.java )
     }
     var jobFilmeRecente: Job? = null // Variável para armazenar a Job da Coroutine
     var jobFilmesPopulares: Job? = null // Variável para armazenar a Job da Coroutine
@@ -76,9 +81,10 @@ class MainActivity : AppCompatActivity() {
                         val localidade = endereco.localidade
                         val estado = endereco.estado
                         val uf = endereco.uf
-
-                        Log.i("viacep", "recuperarEndereco: $logradouro - $bairro - $complemento - $localidade - $estado - $uf")
+                        val resultado = "$logradouro - $bairro - $complemento - $localidade - $estado - $uf"
+                        Log.i("viacep", "recuperarEndereco: $resultado")
                     }
+
 
                 }else{
                     exibirMensagem("Não foi possivel recuperar o endereco CODIGO: ${resposta.code()}")
