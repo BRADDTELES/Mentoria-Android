@@ -1,11 +1,85 @@
 package com.application.aulafirebase
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.application.aulafirebase.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
+
+    private val binding by lazy {
+        ActivityMainBinding.inflate(layoutInflater)
+    }
+    private val autenticacao by lazy {
+        FirebaseAuth.getInstance()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        verificarUsuarioLogado()
+    }
+
+    /*
+    * MÉTODO DE CÓDIGO ABAIXO
+    * DE UMA SIMULAÇÃO DE VERIFICAÇÃO DE USUÁRIO LOGADO ENCAMINHANDO PARA OUTRA TELA
+    * */
+    private fun verificarUsuarioLogado() {
+        val usuario = autenticacao.currentUser
+        val id = usuario?.uid
+
+        if(usuario != null){
+            exibirMensagem("Usuário está logado com id: $id")// Exibir um Toast de usuário logado...
+            //...em seguida, Encaminhar para outra Tela (PrincipalActivity), com esse código abaixo
+            startActivity(
+                Intent(this, PrincipalActivity::class.java)
+            )
+        }else{
+            exibirMensagem("Não tem usuário logado")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView( binding.root )
+
+        binding.btnExecutar.setOnClickListener {
+            cadastroUsuario()
+        }
+    }
+
+    /*
+    * MÉTODO DE CÓDIGO ABAIXO
+    * DE UMA SIMULAÇÃO DE CADASTRO DE USUÁRIO
+    * */
+    private fun cadastroUsuario() {
+        
+        //Dados digitados pelo usuário
+        val email = "jamilton.jm@gmail.com"
+        val senha = "12345jm67@"
+        
+        //Tela de cadastro do seu App
+        autenticacao.createUserWithEmailAndPassword(
+            email, senha
+        ).addOnSuccessListener { authResult ->
+            val email = authResult.user?.email
+            val id = authResult.user?.uid
+
+            exibirMensagem("TOAST=Usuario Cadastrado\n$id - $email")
+            binding.textResultado.text = "sucesso: $id - $email"
+        }.addOnFailureListener { exception ->
+            val mensagemDeErro = exception.message
+
+            exibirMensagem("TOAST=Erro\n$mensagemDeErro")
+            binding.textResultado.text = "Erro: $mensagemDeErro"
+        }
+        
+        
+        
+    }
+
+    private fun exibirMensagem(texto: String) {
+        Toast.makeText(this, texto, Toast.LENGTH_LONG).show()
     }
 }

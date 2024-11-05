@@ -1,16 +1,17 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
     namespace = "com.application.aulafirebase"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.application.aulafirebase"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
@@ -33,9 +34,28 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
+
+    // Dependẽncias Firebase
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+
+    // Firebase Analytics
+    implementation("com.google.firebase:firebase-analytics")
+
+    // Autenticação
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    // Banco de dados
+    implementation("com.google.firebase:firebase-firestore-ktx")
+
+    // Armazenamento
+    implementation("com.google.firebase:firebase-storage-ktx")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
