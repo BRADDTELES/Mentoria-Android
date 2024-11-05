@@ -16,36 +16,13 @@ class MainActivity : AppCompatActivity() {
         FirebaseAuth.getInstance()
     }
 
-    override fun onStart() {
-        super.onStart()
-        verificarUsuarioLogado()
-    }
-
-    /*
-    * MÉTODO DE CÓDIGO ABAIXO
-    * DE UMA SIMULAÇÃO DE VERIFICAÇÃO DE USUÁRIO LOGADO ENCAMINHANDO PARA OUTRA TELA
-    * */
-    private fun verificarUsuarioLogado() {
-        val usuario = autenticacao.currentUser
-        val id = usuario?.uid
-
-        if(usuario != null){
-            exibirMensagem("Usuário está logado com id: $id")// Exibir um Toast de usuário logado...
-            //...em seguida, Encaminhar para outra Tela (PrincipalActivity), com esse código abaixo
-            startActivity(
-                Intent(this, PrincipalActivity::class.java)
-            )
-        }else{
-            exibirMensagem("Não tem usuário logado")
-        }
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
         binding.btnExecutar.setOnClickListener {
-            cadastroUsuario()
+            //cadastroUsuario()
+            logarUsuario()
         }
     }
 
@@ -75,6 +52,52 @@ class MainActivity : AppCompatActivity() {
             binding.textResultado.text = "Erro: $mensagemDeErro"
         }
 
+    }
+
+    private fun logarUsuario() {
+
+        //Dados digitados pelo usuário
+        val email = "jamilton.jm@gmail.com"
+        val senha = "12345jm67@"
+
+        //Estivesse em uma tela de Login
+        autenticacao.signInWithEmailAndPassword(
+            email, senha
+        ).addOnSuccessListener { authResult ->
+            binding.textResultado.text = "Suceeso ao logar usuário"// Exibir uma mensagem de usuário logado...
+            //...em seguida, Encaminhar para outra Tela (PrincipalActivity), com esse código abaixo
+            startActivity(
+                Intent(this, PrincipalActivity::class.java)
+            )
+        }.addOnFailureListener { exception ->
+            binding.textResultado.text = "Falha ao logar usuário ${exception.message}"
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        verificarUsuarioLogado()
+    }
+
+    /*
+    * MÉTODO DE CÓDIGO ABAIXO
+    * DE UMA SIMULAÇÃO DE VERIFICAÇÃO DE USUÁRIO LOGADO ENCAMINHANDO PARA OUTRA TELA
+    * */
+    private fun verificarUsuarioLogado() {
+
+        //autenticacao.signOut()
+        val usuario = autenticacao.currentUser
+        val id = usuario?.uid
+
+        if(usuario != null){
+            exibirMensagem("Usuário está logado com id: $id")// Exibir um Toast de usuário logado...
+            //...em seguida, Encaminhar para outra Tela (PrincipalActivity), com esse código abaixo
+            startActivity(
+                Intent(this, PrincipalActivity::class.java)
+            )
+        }else{
+            exibirMensagem("Não tem usuário logado")
+        }
     }
 
     private fun exibirMensagem(texto: String) {
