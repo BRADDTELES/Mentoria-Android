@@ -28,6 +28,7 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     private var paginaAtual = 1
+    
     private val TAG = "info_filme"
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
