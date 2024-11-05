@@ -1,18 +1,22 @@
 [
     {
-        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/activity_detalhes.xml",
-        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/activity_detalhes.xml"
+        "merged": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/activity_main.xml",
+        "source": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/activity_main.xml"
     },
     {
-        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/item_filme.xml",
-        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/item_filme.xml"
-    },
-    {
-        "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/recycler_view_item.xml",
-        "source": "com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/recycler_view_item.xml"
+        "merged": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/recycler_view_item.xml",
+        "source": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/recycler_view_item.xml"
     },
     {
         "merged": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/activity_main.xml",
         "source": "com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/item_filme.xml",
+        "source": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/item_filme.xml"
+    },
+    {
+        "merged": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-27:/layout/activity_detalhes.xml",
+        "source": "/home/bradd/.gradle/daemon/8.7/com.jamiltondamasceno.projetonetflixapi.app-main-30:/layout/activity_detalhes.xml"
     }
 ]

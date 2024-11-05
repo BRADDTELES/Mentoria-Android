@@ -16,12 +16,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2f4ae89d-8f5d-4b59-a210-614bea734d46" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AulaDebugger/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaDebugger/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AulaDebugger/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaDebugger/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AulaFragment/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFragment/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2f4ae89d-8f5d-4b59-a210-614bea734d46" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +25,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\bradd\.android\avd\Medium_Phone_API_35.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/home/bradd/.android/avd/Pixel_3a_API_29.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -77,21 +72,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "BRADDTELES"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BRADDTELES&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:BRADDTELES/Mentoria-Android.git",
-    "accountId": "0e77279c-acb4-4639-af03-acdd51dba3f7"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:BRADDTELES/Mentoria-Android.git&quot;,
+    &quot;accountId&quot;: &quot;0e77279c-acb4-4639-af03-acdd51dba3f7&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2nEwbw0eYb9FfiH1TT9A7aylr8X" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -118,7 +113,7 @@
   },
   "keyToStringList": {
     "kotlin-gradle-user-dirs": [
-      "C:\\Users\\bradd\\.gradle"
+      "/home/bradd/.gradle"
     ]
   }
 }]]></component>

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-31:12
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-31:12
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-32:12
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:2:1-32:12
 MERGED from [androidx.databinding:viewbinding:8.6.0] /home/bradd/.gradle/caches/transforms-4/c1c65446a14e80623c15f417aa49539f/transformed/viewbinding-8.6.0/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.6.1] /home/bradd/.gradle/caches/transforms-4/71b8977ebec30b9ca336243e4b9bd37d/transformed/material-1.6.1/AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/bradd/.gradle/caches/transforms-4/eebff9a43779aa84a8a7947b570be43b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:2:1-11:12
@@ -62,8 +62,8 @@ ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/Projeto
 	android:name
 		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:7:5-29:19
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:7:5-29:19
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:8:5-30:19
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:8:5-30:19
 MERGED from [com.google.android.material:material:1.6.1] /home/bradd/.gradle/caches/transforms-4/71b8977ebec30b9ca336243e4b9bd37d/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] /home/bradd/.gradle/caches/transforms-4/71b8977ebec30b9ca336243e4b9bd37d/transformed/material-1.6.1/AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] /home/bradd/.gradle/caches/transforms-4/eebff9a43779aa84a8a7947b570be43b/transformed/constraintlayout-2.1.4/AndroidManifest.xml:9:5-20
@@ -85,45 +85,45 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /home/bradd/.gradle/caches/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.8.0] /home/bradd/.gradle/caches/transforms-4/228d96c8d65df4c54d777d664213f7ab/transformed/core-1.8.0/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:14:9-35
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:12:9-41
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:10:9-54
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:11:9-54
 	android:roundIcon
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:13:9-54
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:14:9-54
 	tools:targetApi
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:16:9-29
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:17:9-29
 	android:icon
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:11:9-43
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:15:9-55
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:16:9-55
 	android:dataExtractionRules
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:9:9-65
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:10:9-65
 activity#com.jamiltondamasceno.projetonetflixapi.DetalhesActivity
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:17:9-19:40
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:18:9-20:40
 	android:exported
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:19:13-37
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:20:13-37
 	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:18:13-45
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:19:13-45
 activity#com.jamiltondamasceno.projetonetflixapi.MainActivity
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:20:9-28:20
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:21:9-29:20
 	android:exported
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:22:13-36
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:23:13-36
 	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:21:13-41
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:22:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:23:13-27:29
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:24:17-69
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:25:17-69
 	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:24:25-66
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:26:17-77
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:27:17-77
 	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:26:27-74
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml:27:27-74
 uses-sdk
 INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/src/main/AndroidManifest.xml

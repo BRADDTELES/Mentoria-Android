@@ -1,4 +1,4 @@
-#Tue Oct 29 09:14:49 BRT 2024
+#Tue Nov 05 10:34:33 BRT 2024
 base.0=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.2=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
