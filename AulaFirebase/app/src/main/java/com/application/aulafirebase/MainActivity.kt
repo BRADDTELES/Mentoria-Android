@@ -74,9 +74,7 @@ class MainActivity : AppCompatActivity() {
             exibirMensagem("TOAST=Erro\n$mensagemDeErro")
             binding.textResultado.text = "Erro: $mensagemDeErro"
         }
-        
-        
-        
+
     }
 
     private fun exibirMensagem(texto: String) {
