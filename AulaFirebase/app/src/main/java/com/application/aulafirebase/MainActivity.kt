@@ -29,11 +29,42 @@ class MainActivity : AppCompatActivity() {
 
             //salvarDados()
             //atualizarRemoverDados()
-            listarDados()
+            //listarDados()
+            pesquisarDados()
 
             //cadastroUsuario()
             //logarUsuario()
         }
+    }
+
+    private fun pesquisarDados() {
+
+        val refUsuarios = bancoDados
+            .collection("usuarios")
+            //.whereEqualTo("nome", "Pedro") // Igual a pedro
+            //.whereNotEqualTo("nome", "Pedro") // Que Não é igual a pedro
+            //.whereIn("nome", listOf("Pedro", "Jamilton")) // Buscar que está dentro desta lista
+            //.whereNotIn("nome", listOf("Pedro", "Jamilton")) // Buscar que Não esta dentro desta lista
+            .whereArrayContains("conhecimentos", "kotlin") // pesquisar dado dentro de uma array
+
+        refUsuarios.addSnapshotListener { querySnapshot, erro ->
+
+            val listaDocuments = querySnapshot?.documents
+
+            var listaResultado = ""
+            listaDocuments?.forEach{ documentSnapshot ->
+                val dados = documentSnapshot?.data
+                if ( dados != null ){
+                    val nome = dados["nome"]
+                    val idade = dados["idade"]
+
+                    listaResultado += "nome: $nome idade: $idade \n"
+                }
+            }
+
+            binding.textResultado.text = listaResultado
+        }
+
     }
 
     private fun salvarDadosUsuario(
