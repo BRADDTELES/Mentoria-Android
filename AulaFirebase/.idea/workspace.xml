@@ -21,7 +21,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baffe16f-5ae5-4aba-8fbe-ae7af2d567b0" name="Changes" comment="" />
+    <list default="true" id="baffe16f-5ae5-4aba-8fbe-ae7af2d567b0" name="Changes" comment="ft. workspace.xml">
+      <changelist_data name="Danillo Teles Carneiro" email="braddteles@gmail.com" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/application/aulafirebase/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/application/aulafirebase/MainActivity.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +41,11 @@
     </projectState>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Danillo Teles Carneiro &lt;braddteles@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -161,9 +170,20 @@
       <option name="presentableId" value="Default" />
       <updated>1730858713490</updated>
     </task>
+    <task id="LOCAL-00001" summary="ft. workspace.xml">
+      <option name="closed" value="true" />
+      <created>1730884551937</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730884551937</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="ft. workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="ft. workspace.xml" />
   </component>
 </project>

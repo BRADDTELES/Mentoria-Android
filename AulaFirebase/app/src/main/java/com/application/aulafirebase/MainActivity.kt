@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.application.aulafirebase.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.firestore
 
 class MainActivity : AppCompatActivity() {
 
@@ -43,11 +42,20 @@ class MainActivity : AppCompatActivity() {
             //"cpf" to "12345678910"
         )
 
-        val referenciaAna = bancoDados
+        val idUsuarioLogado = autenticacao.currentUser?.uid
+        val referenciaUsuario = bancoDados
             .collection("usuarios")
-            .document("2")
+            //.document("1")
 
-        //referenciaAna.set( dados )
+        referenciaUsuario
+            .add( dados )
+            .addOnSuccessListener {
+                exibirMensagem("Usuário adicionado com sucesso")
+            }.addOnFailureListener { exception ->
+                exibirMensagem("Erro ao adicionar usuário com sucesso")
+            }
+
+        //referenciaUsuario.set( dados )
         /*referenciaAna
             .update("nome", "ana cristina")
             .addOnSuccessListener {
@@ -56,13 +64,13 @@ class MainActivity : AppCompatActivity() {
                 exibirMensagem("Erro ao atualizar usuário com sucesso")
             }*/
 
-        referenciaAna
+        /*referenciaUsuario
             .delete()
             .addOnSuccessListener {
                 exibirMensagem("Usuário removido com sucesso")
             }.addOnFailureListener { exception ->
                 exibirMensagem("Erro ao remover usuário com sucesso")
-            }
+            }*/
 
 
     }
