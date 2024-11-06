@@ -45,7 +45,15 @@ class MainActivity : AppCompatActivity() {
             //.whereNotEqualTo("nome", "Pedro") // Que Não é igual a pedro
             //.whereIn("nome", listOf("Pedro", "Jamilton")) // Buscar que está dentro desta lista
             //.whereNotIn("nome", listOf("Pedro", "Jamilton")) // Buscar que Não esta dentro desta lista
-            .whereArrayContains("conhecimentos", "kotlin") // pesquisar dado dentro de uma array
+            //.whereArrayContains("conhecimentos", "kotlin") // pesquisar dado dentro de uma array
+
+            // >, >=, <, <=
+            //.whereGreaterThan("idade", "40") // Maior do que...
+            //.whereGreaterThanOrEqualTo("idade", "36") // Maior e igual do que...
+            //.whereLessThan("idade", "36") // Menor do que...
+            //.whereLessThanOrEqualTo("idade", "36") // Menor e igual do que...
+            .whereGreaterThanOrEqualTo("idade", "36")
+            .whereLessThanOrEqualTo("idade", "46")
 
         refUsuarios.addSnapshotListener { querySnapshot, erro ->
 
@@ -59,6 +67,7 @@ class MainActivity : AppCompatActivity() {
                     val idade = dados["idade"]
 
                     listaResultado += "nome: $nome idade: $idade \n"
+                    Log.i("info_firebase", "nome: $nome - id: ${documentSnapshot.id}")
                 }
             }
 
@@ -145,23 +154,23 @@ class MainActivity : AppCompatActivity() {
     private fun atualizarRemoverDados() {
 
         val dados = mapOf(
-            "nome" to "ana",
-            "idade" to "25"
+            "nome" to "João",
+            "idade" to "56"
             //"cpf" to "12345678910"
         )
 
         val idUsuarioLogado = autenticacao.currentUser?.uid
         val referenciaUsuario = bancoDados
             .collection("usuarios")
-            //.document("1")
+            //.document("4")
 
-        referenciaUsuario
+        /*referenciaUsuario
             .add( dados )
             .addOnSuccessListener {
                 exibirMensagem("Usuário adicionado com sucesso")
             }.addOnFailureListener { exception ->
                 exibirMensagem("Erro ao adicionar usuário com sucesso")
-            }
+            }*/
 
         //referenciaAna.set( dados )
         referenciaUsuario
@@ -169,9 +178,10 @@ class MainActivity : AppCompatActivity() {
             //.delete()
             .add( dados )
             .addOnSuccessListener {
-                exibirMensagem("Usuário atualizado com sucesso")
+                exibirMensagem("Usuário deletado com sucesso")
+                Log.i("info_firebase", "menssagem: ${referenciaUsuario.id}")
             }.addOnFailureListener { exception ->
-                exibirMensagem("Erro ao atualizar usuário")
+                exibirMensagem("Erro ao deletar usuário")
             }
 
     }
@@ -179,17 +189,18 @@ class MainActivity : AppCompatActivity() {
     private fun salvarDados() {
 
         val dados = mapOf(
-            "nome" to "ana",
-            "idade" to "30",
-            "cpf" to "365..."
+            "nome" to "João",
+            "idade" to "56",
+            //"cpf" to "365..."
         )
 
         bancoDados
             .collection("usuarios")
-            .document("2")
+            .document("4")
             .set( dados )
             .addOnSuccessListener {
                 exibirMensagem("Usuário salvo com sucesso")
+                Log.i("info_firebase", "menssagem: ${bancoDados.collection("usuarios").document("4").id}")
             }.addOnFailureListener { exception ->
                 exibirMensagem("Erro ao salvar usuário com sucesso")
             }
