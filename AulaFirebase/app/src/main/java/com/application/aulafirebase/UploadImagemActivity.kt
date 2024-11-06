@@ -6,12 +6,18 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulafirebase.databinding.ActivityUploadImagemBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
+import java.util.UUID
 
 class UploadImagemActivity : AppCompatActivity() {
 
     private val binding by lazy {
         ActivityUploadImagemBinding.inflate( layoutInflater )
+    }
+
+    private val autenticacao by lazy {
+        FirebaseAuth.getInstance()
     }
 
     private val armazenamento by lazy {
@@ -43,15 +49,28 @@ class UploadImagemActivity : AppCompatActivity() {
             uploadGaleria()
         }
 
+        binding.btnRecuperar.setOnClickListener {
+            recuperarImagemFirebase()
+
+        }
+
+    }
+
+    private fun recuperarImagemFirebase() {
+
+
+
     }
 
     private fun uploadGaleria() {
 
-        if ( uriImagemSelecionada != null ){
+        val idUsuarioLogado = autenticacao.currentUser?.uid
+        val nomeImagem = UUID.randomUUID().toString()
+        if ( uriImagemSelecionada != null && idUsuarioLogado != null ){
             armazenamento
                 .getReference("fotos")
-                .child("viagens")
-                .child("foto.jpg")
+                .child( idUsuarioLogado )
+                .child( nomeImagem )
                 .putFile( uriImagemSelecionada!! )
                 .addOnSuccessListener { task ->
                     Toast.makeText(this, "Sucesso ao fazer upload da imagem", Toast.LENGTH_SHORT).show()
