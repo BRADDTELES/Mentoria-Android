@@ -6,6 +6,8 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulafirebase.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,15 +17,74 @@ class MainActivity : AppCompatActivity() {
     private val autenticacao by lazy {
         FirebaseAuth.getInstance()
     }
+    private val bancoDados by lazy {
+        FirebaseFirestore.getInstance()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
         binding.btnExecutar.setOnClickListener {
+
+            //salvarDados()
+            atualizarRemoverDados()
+
             //cadastroUsuario()
-            logarUsuario()
+            //logarUsuario()
         }
+    }
+
+    private fun atualizarRemoverDados() {
+
+        val dados = mapOf(
+            "nome" to "ana",
+            "idade" to "25"
+            //"cpf" to "12345678910"
+        )
+
+        val referenciaAna = bancoDados
+            .collection("usuarios")
+            .document("2")
+
+        //referenciaAna.set( dados )
+        /*referenciaAna
+            .update("nome", "ana cristina")
+            .addOnSuccessListener {
+                exibirMensagem("Usuário atualizado com sucesso")
+            }.addOnFailureListener { exception ->
+                exibirMensagem("Erro ao atualizar usuário com sucesso")
+            }*/
+
+        referenciaAna
+            .delete()
+            .addOnSuccessListener {
+                exibirMensagem("Usuário removido com sucesso")
+            }.addOnFailureListener { exception ->
+                exibirMensagem("Erro ao remover usuário com sucesso")
+            }
+
+
+    }
+
+    private fun salvarDados() {
+
+        val dados = mapOf(
+            "nome" to "ana",
+            "idade" to "30",
+            "cpf" to "12345678910"
+        )
+
+        bancoDados
+            .collection("usuarios")
+            .document("2")
+            .set( dados )
+            .addOnSuccessListener {
+                exibirMensagem("Usuário salvo com sucesso")
+            }.addOnFailureListener { exception ->
+                exibirMensagem("Erro ao salvar usuário com sucesso")
+            }
+
     }
 
     /*
@@ -76,7 +137,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        verificarUsuarioLogado()
+        //verificarUsuarioLogado()
     }
 
     /*

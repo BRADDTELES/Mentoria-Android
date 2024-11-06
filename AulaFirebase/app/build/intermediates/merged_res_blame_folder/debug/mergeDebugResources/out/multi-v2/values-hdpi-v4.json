@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.application.aulafirebase.app-mergeDebugResources-3:/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\1a5af7fdc675cac7e1f270594aa4cd4f\\transformed\\appcompat-1.7.0\\res\\values-hdpi-v4\\values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}
