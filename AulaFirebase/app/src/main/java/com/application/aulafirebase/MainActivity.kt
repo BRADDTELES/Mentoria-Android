@@ -27,11 +27,40 @@ class MainActivity : AppCompatActivity() {
         binding.btnExecutar.setOnClickListener {
 
             //salvarDados()
-            atualizarRemoverDados()
+            //atualizarRemoverDados()
+            listarDados()
 
             //cadastroUsuario()
             //logarUsuario()
         }
+    }
+
+    private fun salvarDadosUsuario(
+        nome: String, idade: String
+    ){
+        val idUsuarioLogado = autenticacao.currentUser?.uid
+        if ( idUsuarioLogado != null ){
+
+            val dados = mapOf(
+                "nome" to nome,
+                "idade" to idade
+                //...vários outros dados
+            )
+
+            bancoDados
+                .collection("usuarios")
+                .document( idUsuarioLogado )
+                .set( dados )
+                .addOnSuccessListener {}
+                .addOnFailureListener {}
+        }
+    }
+
+    private fun listarDados() {
+
+        cadastroUsuario()
+        //salvarDadosUsuario( "Ana Maria", "25")
+
     }
 
     private fun atualizarRemoverDados() {
@@ -104,6 +133,8 @@ class MainActivity : AppCompatActivity() {
         //Dados digitados pelo usuário
         val email = "jamilton.jm@gmail.com"
         val senha = "12345jm67@"
+        val nome = "Jamilton Damasceno"
+        val idade = "35"
         
         //Tela de cadastro do seu App
         autenticacao.createUserWithEmailAndPassword(
@@ -112,12 +143,15 @@ class MainActivity : AppCompatActivity() {
             val email = authResult.user?.email
             val id = authResult.user?.uid
 
-            exibirMensagem("TOAST=Usuario Cadastrado\n$id - $email")
+            //Salvar mais dados do usuário no banco de dados
+            salvarDadosUsuario(nome, idade)
+
+            exibirMensagem("Usuario Cadastrado\n$id - $email")
             binding.textResultado.text = "sucesso: $id - $email"
         }.addOnFailureListener { exception ->
             val mensagemDeErro = exception.message
 
-            exibirMensagem("TOAST=Erro\n$mensagemDeErro")
+            exibirMensagem("Erro\n$mensagemDeErro")
             binding.textResultado.text = "Erro: $mensagemDeErro"
         }
 
