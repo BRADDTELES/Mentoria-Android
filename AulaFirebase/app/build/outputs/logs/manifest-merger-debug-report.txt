@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-29:12
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-29:12
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:1-35:12
 MERGED from [androidx.databinding:viewbinding:8.6.1] /home/bradd/.gradle/caches/transforms-4/c184fddb60ebe099ec230be0dac26d08/transformed/viewbinding-8.6.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:2:1-18:12
 MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:2:1-18:12
@@ -99,9 +99,13 @@ MERGED from [com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/cach
 		INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:6:22-77
 application
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:5:5-27:19
-INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:5:5-27:19
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:8:5-33:19
+INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:8:5-33:19
 MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:8:5-16:19
 MERGED from [com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:8:5-16:19
@@ -183,45 +187,51 @@ MERGED from [com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:15:9-35
 	android:label
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:10:9-41
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:13:9-41
 	android:fullBackupContent
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:8:9-54
-	android:roundIcon
 		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:11:9-54
+	android:roundIcon
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:14:9-54
 	tools:targetApi
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:14:9-29
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:17:9-29
 	android:icon
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:9:9-43
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:12:9-43
 	android:allowBackup
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:6:9-35
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:13:9-50
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:16:9-50
 	android:dataExtractionRules
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:7:9-65
-activity#com.application.aulafirebase.PrincipalActivity
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:15:9-17:40
-	android:exported
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:17:13-37
-	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:16:13-46
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:10:9-65
 activity#com.application.aulafirebase.MainActivity
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:18:9-26:20
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:18:9-20:40
 	android:exported
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:20:13-36
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:20:13-37
 	android:name
 		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:19:13-41
+activity#com.application.aulafirebase.PrincipalActivity
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:21:9-23:40
+	android:exported
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:23:13-37
+	android:name
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:22:13-46
+activity#com.application.aulafirebase.UploadImagemActivity
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:24:9-32:20
+	android:exported
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:26:13-36
+	android:name
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:25:13-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:21:13-25:29
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:22:17-69
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:22:25-66
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:24:17-77
+ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:24:27-74
+		ADDED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:30:27-74
 uses-sdk
 INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml

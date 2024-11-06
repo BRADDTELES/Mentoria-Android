@@ -3063,8 +3063,10 @@ int drawable ic_call_answer_video 0x7f07009f
 int drawable ic_call_answer_video_low 0x7f0700a0
 int drawable ic_call_decline 0x7f0700a1
 int drawable ic_call_decline_low 0x7f0700a2
+int drawable ic_camera_24 0x7f0700ff
 int drawable ic_clear_black_24 0x7f0700a3
 int drawable ic_clock_black_24dp 0x7f0700a4
+int drawable ic_galeria_24 0x7f070100
 int drawable ic_keyboard_black_24dp 0x7f0700a5
 int drawable ic_launcher_background 0x7f0700a6
 int drawable ic_launcher_foreground 0x7f0700a7
@@ -3152,6 +3154,7 @@ int drawable notification_template_icon_bg 0x7f0700f8
 int drawable notification_template_icon_low_bg 0x7f0700f9
 int drawable notification_tile_bg 0x7f0700fa
 int drawable notify_panel_notification_icon_bg 0x7f0700fb
+int drawable padrao 0x7f070101
 int drawable test_level_drawable 0x7f0700fc
 int drawable tooltip_frame_dark 0x7f0700fd
 int drawable tooltip_frame_light 0x7f0700fe
@@ -3263,8 +3266,12 @@ int id browser_actions_menu_item_icon 0x7f080068
 int id browser_actions_menu_item_text 0x7f080069
 int id browser_actions_menu_items 0x7f08006a
 int id browser_actions_menu_view 0x7f08006b
+int id btnCamera 0x7f080209
 int id btnDeslogar 0x7f08006c
 int id btnExecutar 0x7f08006d
+int id btnGaleria 0x7f08020a
+int id btnRecuperar 0x7f08020b
+int id btnUpload 0x7f08020c
 int id buttonPanel 0x7f08006e
 int id cache_measures 0x7f08006f
 int id callMeasure 0x7f080070
@@ -3391,6 +3398,8 @@ int id ifRoom 0x7f0800e8
 int id ignore 0x7f0800e9
 int id ignoreRequest 0x7f0800ea
 int id image 0x7f0800eb
+int id imageRecuperada 0x7f08020d
+int id imageSelecionada 0x7f08020e
 int id immediateStop 0x7f0800ec
 int id included 0x7f0800ed
 int id indeterminate 0x7f0800ee
@@ -3793,6 +3802,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
 int layout activity_principal 0x7f0b001d
+int layout activity_upload_imagem 0x7f0b006f
 int layout browser_actions_context_menu_page 0x7f0b001e
 int layout browser_actions_context_menu_row 0x7f0b001f
 int layout custom_dialog 0x7f0b0020
