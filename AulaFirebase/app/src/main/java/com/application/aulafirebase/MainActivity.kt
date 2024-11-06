@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.application.aulafirebase.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,8 +53,10 @@ class MainActivity : AppCompatActivity() {
             //.whereGreaterThanOrEqualTo("idade", "36") // Maior e igual do que...
             //.whereLessThan("idade", "36") // Menor do que...
             //.whereLessThanOrEqualTo("idade", "36") // Menor e igual do que...
-            .whereGreaterThanOrEqualTo("idade", "36")
-            .whereLessThanOrEqualTo("idade", "46")
+            //.whereGreaterThanOrEqualTo("idade", "36")
+            //.whereLessThanOrEqualTo("idade", "46")
+            //.orderBy("idade", Query.Direction.ASCENDING)
+            .orderBy("idade", Query.Direction.DESCENDING)
 
         refUsuarios.addSnapshotListener { querySnapshot, erro ->
 
