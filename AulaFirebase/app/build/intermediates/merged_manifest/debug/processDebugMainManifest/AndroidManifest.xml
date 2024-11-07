@@ -26,8 +26,9 @@
         android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-
+    <uses-permission android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Caso precise que seja obrigatorio a camera android:requiredFeature="true" -->
+    <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
+    <!-- <uses-permission android:name="android.permission.CAMERA" android:requiredFeature="true" /> -->
     <application
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"

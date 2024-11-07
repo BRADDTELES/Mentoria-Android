@@ -1,7 +1,11 @@
 package com.application.aulafirebase
 
+import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -27,6 +31,7 @@ class UploadImagemActivity : AppCompatActivity() {
     }
 
     private var uriImagemSelecionada: Uri? = null
+    private var bitmapImagemSelecionada: Bitmap? = null
     private val abrirGaleria = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ){ uri ->
@@ -39,6 +44,20 @@ class UploadImagemActivity : AppCompatActivity() {
             Toast.makeText(this, "Nenhuma imagem selecionada", Toast.LENGTH_SHORT).show()
         }
     }
+    private val abrirCamera = registerForActivityResult(
+        //ActivityResultContracts.GetContent()
+        ActivityResultContracts.StartActivityForResult()
+    ){ resultadoActivity ->
+        //if ( resultadoActivity.resultCode == RESULT_OK ){ }else{ }
+        bitmapImagemSelecionada = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            resultadoActivity.data?.extras
+                ?.getParcelable("data", Bitmap::class.java)
+        }else{
+            resultadoActivity.data?.extras
+                ?.getParcelable("data")
+        }
+        binding.imageSelecionada.setImageBitmap( bitmapImagemSelecionada )
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +67,11 @@ class UploadImagemActivity : AppCompatActivity() {
             abrirGaleria.launch("image/*")//Mime Type
         }
 
+        binding.btnCamera.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            abrirCamera.launch( intent )
+        }
+
         binding.btnUpload.setOnClickListener {
             uploadGaleria()
             Log.d("info_upload", "Iniciando upload da imagem após o clique UPLOAD")
@@ -55,7 +79,6 @@ class UploadImagemActivity : AppCompatActivity() {
 
         binding.btnRecuperar.setOnClickListener {
             recuperarImagemFirebase()
-
         }
 
     }

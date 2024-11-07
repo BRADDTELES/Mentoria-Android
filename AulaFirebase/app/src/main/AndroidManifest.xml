@@ -4,6 +4,9 @@
 
     <!--Permissão para acessar a galeria-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- Caso precise que seja obrigatorio a camera android:requiredFeature="true" -->
+    <!--<uses-permission android:name="android.permission.CAMERA"/>-->
+    <!--<uses-permission android:name="android.permission.CAMERA" android:requiredFeature="true" />-->
 
     <application
         android:allowBackup="true"
