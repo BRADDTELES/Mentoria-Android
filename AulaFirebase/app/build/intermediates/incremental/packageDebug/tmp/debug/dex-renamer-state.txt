@@ -1,10 +1,10 @@
-#Wed Nov 06 07:10:43 BRT 2024
-base.0=C\:\\AndroidStudioProjects\\Mentoria-Android\\AulaFirebase\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\AndroidStudioProjects\\Mentoria-Android\\AulaFirebase\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.2=C\:\\AndroidStudioProjects\\Mentoria-Android\\AulaFirebase\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\13\\classes.dex
-base.3=C\:\\AndroidStudioProjects\\Mentoria-Android\\AulaFirebase\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.4=C\:\\AndroidStudioProjects\\Mentoria-Android\\AulaFirebase\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.5=C\:\\AndroidStudioProjects\\Mentoria-Android\\AulaFirebase\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes3.dex
+#Wed Nov 06 17:33:35 BRT 2024
+base.0=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
+base.1=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
+base.2=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/build/intermediates/dex/debug/mergeProjectDexDebug/13/classes.dex
+base.3=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
+base.4=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
+base.5=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/build/intermediates/dex/debug/mergeExtDexDebug/classes3.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=13/classes.dex

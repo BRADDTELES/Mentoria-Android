@@ -2,15 +2,25 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable ic_camera_24
+drawable ic_galeria_24
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable padrao
+id btnCamera
 id btnDeslogar
 id btnExecutar
+id btnGaleria
+id btnRecuperar
+id btnUpload
+id imageRecuperada
+id imageSelecionada
 id main
 id textResultado
 id textResultado2
 layout activity_main
 layout activity_principal
+layout activity_upload_imagem
 mipmap ic_launcher
 mipmap ic_launcher_round
 string app_name
