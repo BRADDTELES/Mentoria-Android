@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
             pesquisarDados()
 
             //cadastroUsuario()
-            //logarUsuario()
+            logarUsuario()
         }
     }
 
@@ -250,7 +250,8 @@ class MainActivity : AppCompatActivity() {
             binding.textResultado.text = "Sucesso ao logar usuário"// Exibir uma mensagem de usuário logado...
             //...em seguida, Encaminhar para outra Tela (PrincipalActivity), com esse código abaixo
             startActivity(
-                Intent(this, PrincipalActivity::class.java)
+                //Intent(this, PrincipalActivity::class.java)
+                Intent(this, UploadImagemActivity::class.java)
             )
         }.addOnFailureListener { exception ->
             binding.textResultado.text = "Falha ao logar usuário ${exception.message}"

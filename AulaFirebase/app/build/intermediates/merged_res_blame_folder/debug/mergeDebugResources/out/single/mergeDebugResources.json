@@ -1,90 +1,90 @@
 [
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/xml_data_extraction_rules.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/xml/data_extraction_rules.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/drawable_ic_camera_24.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/drawable/ic_camera_24.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/layout_activity_main.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/layout/activity_main.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/layout_activity_upload_imagem.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/layout/activity_upload_imagem.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/drawable/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/xml_backup_rules.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/xml/backup_rules.xml"
     },
     {
-        "merged": "com.application.aulafirebase.app-debug-44:/layout_activity_upload_imagem.xml.flat",
-        "source": "com.application.aulafirebase.app-main-46:/layout/activity_upload_imagem.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/layout_activity_principal.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/layout/activity_principal.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/layout_activity_principal.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/layout/activity_principal.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/drawable_ic_launcher_background.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/drawable/ic_launcher_background.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/layout_activity_main.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/layout/activity_main.xml"
     },
     {
-        "merged": "com.application.aulafirebase.app-debug-44:/drawable_padrao.png.flat",
-        "source": "com.application.aulafirebase.app-main-46:/drawable/padrao.png"
+        "merged": "com.application.aulafirebase.app-debug-5:/drawable_ic_galeria_24.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/drawable/ic_galeria_24.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/xml_backup_rules.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/xml/backup_rules.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/xml_data_extraction_rules.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/drawable/ic_launcher_foreground.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "com.application.aulafirebase.app-debug-44:/drawable_ic_galeria_24.xml.flat",
-        "source": "com.application.aulafirebase.app-main-46:/drawable/ic_galeria_24.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "com.application.aulafirebase.app-debug-44:/drawable_ic_camera_24.xml.flat",
-        "source": "com.application.aulafirebase.app-main-46:/drawable/ic_camera_24.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "com.application.aulafirebase.app-debug-5:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.application.aulafirebase.app-main-7:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-debug-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/home/bradd/.gradle/daemon/8.7/com.application.aulafirebase.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "com.application.aulafirebase.app-debug-5:/drawable_padrao.png.flat",
+        "source": "com.application.aulafirebase.app-main-7:/drawable/padrao.png"
     }
 ]

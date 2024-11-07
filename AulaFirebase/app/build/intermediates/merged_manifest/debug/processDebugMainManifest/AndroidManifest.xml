@@ -42,13 +42,13 @@
         android:testOnly="true"
         android:theme="@style/Theme.AulaFirebase" >
         <activity
-            android:name="com.application.aulafirebase.MainActivity"
+            android:name="com.application.aulafirebase.UploadImagemActivity"
             android:exported="false" />
         <activity
             android:name="com.application.aulafirebase.PrincipalActivity"
             android:exported="false" />
         <activity
-            android:name="com.application.aulafirebase.UploadImagemActivity"
+            android:name="com.application.aulafirebase.MainActivity"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -232,6 +232,10 @@
                 android:name="androidx.profileinstaller.ProfileInstallerInitializer"
                 android:value="androidx.startup" />
         </provider>
+        <provider
+            android:name="com.squareup.picasso.PicassoProvider"
+            android:authorities="com.application.aulafirebase.com.squareup.picasso"
+            android:exported="false" />
 
         <receiver
             android:name="androidx.profileinstaller.ProfileInstallReceiver"
