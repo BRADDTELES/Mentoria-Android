@@ -12,6 +12,7 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulafirebase.databinding.ActivityUploadImagemBinding
+import com.application.aulafirebase.helper.Permissao
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
@@ -61,9 +62,17 @@ class UploadImagemActivity : AppCompatActivity() {
         binding.imageSelecionada.setImageBitmap( bitmapImagemSelecionada )
     }
 
+    private val permissoes = listOf(
+        Manifest
+    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
+
+        Permissao.requisitarPermissoes(
+            this,
+        )
 
         binding.btnGaleria.setOnClickListener {
             abrirGaleria.launch("image/*")//Mime Type
