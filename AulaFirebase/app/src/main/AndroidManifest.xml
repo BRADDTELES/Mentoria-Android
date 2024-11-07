@@ -5,8 +5,14 @@
     <!--Permissão para acessar a galeria-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!-- Caso precise que seja obrigatorio a camera android:requiredFeature="true" -->
-    <!--<uses-permission android:name="android.permission.CAMERA"/>-->
-    <!--<uses-permission android:name="android.permission.CAMERA" android:requiredFeature="true" />-->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- Permissões Perigosas -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 
     <application
         android:allowBackup="true"

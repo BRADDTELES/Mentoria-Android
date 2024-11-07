@@ -12,482 +12,499 @@
 12    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 12-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:6:5-79
 12-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:6:22-77
-13
-14    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
-15    <!-- <uses-sdk android:minSdkVersion="21"/> -->
-16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:23:5-79
-16-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:23:22-76
-17    <uses-permission android:name="android.permission.INTERNET" />
-17-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:24:5-67
-17-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:24:22-64
-18    <uses-permission android:name="android.permission.WAKE_LOCK" />
-18-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:5-68
-18-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:22-65
-19    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
-19-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:5-79
-19-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:22-76
-20    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
-20-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:5-88
-20-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:22-85
-21    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
-21-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:5-82
-21-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:22-79
-22    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
-22-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:5-110
-22-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:22-107
-23    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
-23-->[com.google.android.recaptcha:recaptcha:18.5.1] /home/bradd/.gradle/caches/transforms-4/41dfb08fb37aa69801fb0043872ea26e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
-23-->[com.google.android.recaptcha:recaptcha:18.5.1] /home/bradd/.gradle/caches/transforms-4/41dfb08fb37aa69801fb0043872ea26e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
-24
-25    <permission
-25-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
-26        android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-26-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
-27        android:protectionLevel="signature" />
-27-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
-28
-29    <uses-permission android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" /> <!-- Caso precise que seja obrigatorio a camera android:requiredFeature="true" -->
-29-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
-29-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
-30    <!-- <uses-permission android:name="android.permission.CAMERA"/> -->
-31    <!-- <uses-permission android:name="android.permission.CAMERA" android:requiredFeature="true" /> -->
-32    <application
-32-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:11:5-36:19
-33        android:allowBackup="true"
-33-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:12:9-35
-34        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-34-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
-35        android:dataExtractionRules="@xml/data_extraction_rules"
-35-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:13:9-65
-36        android:debuggable="true"
-37        android:extractNativeLibs="false"
-38        android:fullBackupContent="@xml/backup_rules"
-38-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:14:9-54
-39        android:icon="@mipmap/ic_launcher"
-39-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:15:9-43
-40        android:label="@string/app_name"
-40-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:16:9-41
-41        android:roundIcon="@mipmap/ic_launcher_round"
-41-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:17:9-54
-42        android:supportsRtl="true"
-42-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:18:9-35
-43        android:testOnly="true"
-44        android:theme="@style/Theme.AulaFirebase" >
-44-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:19:9-50
-45        <activity
-45-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:21:9-23:40
-46            android:name="com.application.aulafirebase.UploadImagemActivity"
-46-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:22:13-49
-47            android:exported="false" />
-47-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:23:13-37
-48        <activity
-48-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:24:9-26:40
-49            android:name="com.application.aulafirebase.PrincipalActivity"
-49-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:25:13-46
-50            android:exported="false" />
-50-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:26:13-37
-51        <activity
-51-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:27:9-35:20
-52            android:name="com.application.aulafirebase.MainActivity"
-52-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:28:13-41
-53            android:exported="true" >
-53-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:29:13-36
-54            <intent-filter>
-54-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:30:13-34:29
-55                <action android:name="android.intent.action.MAIN" />
-55-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:31:17-69
-55-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:31:25-66
-56
-57                <category android:name="android.intent.category.LAUNCHER" />
-57-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:33:17-77
-57-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:33:27-74
-58            </intent-filter>
-59        </activity>
-60
-61        <service
-61-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:9:9-15:19
-62            android:name="com.google.firebase.components.ComponentDiscoveryService"
-62-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:10:13-84
-63            android:directBootAware="true"
-63-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
-64            android:exported="false" >
-64-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:11:13-37
-65            <meta-data
-65-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:12:13-14:85
-66                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar"
-66-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:13:17-125
-67                android:value="com.google.firebase.components.ComponentRegistrar" />
-67-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:14:17-82
-68            <meta-data
-68-->[com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:12:13-14:85
-69                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
-69-->[com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:13:17-129
-70                android:value="com.google.firebase.components.ComponentRegistrar" />
-70-->[com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:14:17-82
-71            <meta-data
-71-->[com.google.firebase:firebase-auth-ktx:23.1.0] /home/bradd/.gradle/caches/transforms-4/e598f152323cc52371ff23e5991e2bc8/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:11:13-13:85
-72                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
-72-->[com.google.firebase:firebase-auth-ktx:23.1.0] /home/bradd/.gradle/caches/transforms-4/e598f152323cc52371ff23e5991e2bc8/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:12:17-119
-73                android:value="com.google.firebase.components.ComponentRegistrar" />
-73-->[com.google.firebase:firebase-auth-ktx:23.1.0] /home/bradd/.gradle/caches/transforms-4/e598f152323cc52371ff23e5991e2bc8/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:13:17-82
-74            <meta-data
-74-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:30:13-32:85
-75                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
-75-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:31:17-118
-76                android:value="com.google.firebase.components.ComponentRegistrar" />
-76-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:32:17-82
-77            <meta-data
-77-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:33:13-35:85
-78                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-78-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:34:17-107
-79                android:value="com.google.firebase.components.ComponentRegistrar" />
-79-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:35:17-82
-80            <meta-data
-80-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:37:13-39:85
-81                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-81-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:38:17-139
-82                android:value="com.google.firebase.components.ComponentRegistrar" />
-82-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:39:17-82
-83            <meta-data
-83-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:17:13-19:85
-84                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
-84-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:18:17-122
-85                android:value="com.google.firebase.components.ComponentRegistrar" />
-85-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:19:17-82
-86            <meta-data
-86-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:20:13-22:85
-87                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-87-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:21:17-111
-88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:22:17-82
-89            <meta-data
-89-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
-90                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-90-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
-91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
-92            <meta-data
-92-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:25:13-27:85
-93                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
-93-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:26:17-120
-94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:27:17-82
-95            <meta-data
-95-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:28:13-30:85
-96                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
-96-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:29:17-117
-97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:30:17-82
-98            <meta-data
-98-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
-99                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
-99-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
-100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
-101            <meta-data
-101-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
-102                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-102-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
-103                android:value="com.google.firebase.components.ComponentRegistrar" />
-103-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
-104            <meta-data
-104-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/bradd/.gradle/caches/transforms-4/0f3df3c84c520a62e731ccaf4b3d8dbf/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
-105                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
-105-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/bradd/.gradle/caches/transforms-4/0f3df3c84c520a62e731ccaf4b3d8dbf/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
-106                android:value="com.google.firebase.components.ComponentRegistrar" />
-106-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/bradd/.gradle/caches/transforms-4/0f3df3c84c520a62e731ccaf4b3d8dbf/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
-107            <meta-data
-107-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
-108                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
-108-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
-109                android:value="com.google.firebase.components.ComponentRegistrar" />
-109-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
-110        </service>
-111
-112        <property
-112-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:30:9-32:61
-113            android:name="android.adservices.AD_SERVICES_CONFIG"
-113-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:31:13-65
-114            android:resource="@xml/ga_ad_services_config" />
-114-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:32:13-58
-115
-116        <activity
-116-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
-117            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
-117-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
-118            android:excludeFromRecents="true"
-118-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
-119            android:exported="true"
-119-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
-120            android:launchMode="singleTask"
-120-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
-121            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-121-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
-122            <intent-filter>
-122-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
-123                <action android:name="android.intent.action.VIEW" />
-123-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
-123-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
-124
-125                <category android:name="android.intent.category.DEFAULT" />
-125-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
-125-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
-126                <category android:name="android.intent.category.BROWSABLE" />
-126-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
-126-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
-127
-128                <data
-128-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
-129                    android:host="firebase.auth"
-129-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
-130                    android:path="/"
-130-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
-131                    android:scheme="genericidp" />
-131-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
-132            </intent-filter>
-133        </activity>
-134        <activity
-134-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
-135            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
-135-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
-136            android:excludeFromRecents="true"
-136-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
-137            android:exported="true"
-137-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
-138            android:launchMode="singleTask"
-138-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
-139            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
-139-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
-140            <intent-filter>
-140-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
-141                <action android:name="android.intent.action.VIEW" />
-141-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
-141-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
-142
-143                <category android:name="android.intent.category.DEFAULT" />
-143-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
-143-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
-144                <category android:name="android.intent.category.BROWSABLE" />
-144-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
-144-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
-145
-146                <data
-146-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
-147                    android:host="firebase.auth"
-147-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
-148                    android:path="/"
-148-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
-149                    android:scheme="recaptcha" />
-149-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
-150            </intent-filter>
-151        </activity>
-152
-153        <service
-153-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
-154            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
-154-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
-155            android:enabled="true"
-155-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
-156            android:exported="false" >
-156-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
-157            <meta-data
-157-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
-158                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
-158-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
-159                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
-159-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
-160        </service>
-161
-162        <activity
-162-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
-163            android:name="androidx.credentials.playservices.HiddenActivity"
-163-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
-164            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
-164-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
-165            android:enabled="true"
-165-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
-166            android:exported="false"
-166-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
-167            android:fitsSystemWindows="true"
-167-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
-168            android:theme="@style/Theme.Hidden" >
-168-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
-169        </activity>
-170
-171        <receiver
-171-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:29:9-33:20
-172            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-172-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:30:13-85
+13    <!-- Caso precise que seja obrigatorio a camera android:requiredFeature="true" -->
+14    <uses-feature
+14-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:8:5-10:35
+15        android:name="android.hardware.camera"
+15-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:9:9-47
+16        android:required="true" />
+16-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:10:9-32
+17
+18    <uses-permission android:name="android.permission.CAMERA" />
+18-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:11:5-64
+18-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:11:22-62
+19    <!-- Permissões Perigosas -->
+20    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+20-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:13:5-70
+20-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:13:22-68
+21    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+21-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:14:5-80
+21-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:14:22-78
+22
+23    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+24    <!-- <uses-sdk android:minSdkVersion="21"/> -->
+25    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+25-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:23:5-79
+25-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:23:22-76
+26    <uses-permission android:name="android.permission.INTERNET" />
+26-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:24:5-67
+26-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:24:22-64
+27    <uses-permission android:name="android.permission.WAKE_LOCK" />
+27-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:5-68
+27-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:24:22-65
+28    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+28-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:5-79
+28-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:25:22-76
+29    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+29-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:5-88
+29-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:26:22-85
+30    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+30-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:5-82
+30-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:27:22-79
+31    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+31-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:5-110
+31-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:26:22-107
+32    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+32-->[com.google.android.recaptcha:recaptcha:18.5.1] /home/bradd/.gradle/caches/transforms-4/41dfb08fb37aa69801fb0043872ea26e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:5-98
+32-->[com.google.android.recaptcha:recaptcha:18.5.1] /home/bradd/.gradle/caches/transforms-4/41dfb08fb37aa69801fb0043872ea26e/transformed/recaptcha-18.5.1/AndroidManifest.xml:9:22-95
+33
+34    <permission
+34-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:22:5-24:47
+35        android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+35-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:23:9-81
+36        android:protectionLevel="signature" />
+36-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:24:9-44
+37
+38    <uses-permission android:name="com.application.aulafirebase.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+38-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:26:5-97
+38-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:26:22-94
+39
+40    <application
+40-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:17:5-42:19
+41        android:allowBackup="true"
+41-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:18:9-35
+42        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+42-->[androidx.core:core:1.15.0] /home/bradd/.gradle/caches/transforms-4/9a24c53b1909b5613710f1a669ed0491/transformed/core-1.15.0/AndroidManifest.xml:28:18-86
+43        android:dataExtractionRules="@xml/data_extraction_rules"
+43-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:19:9-65
+44        android:debuggable="true"
+45        android:extractNativeLibs="false"
+46        android:fullBackupContent="@xml/backup_rules"
+46-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:20:9-54
+47        android:icon="@mipmap/ic_launcher"
+47-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:21:9-43
+48        android:label="@string/app_name"
+48-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:22:9-41
+49        android:roundIcon="@mipmap/ic_launcher_round"
+49-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:23:9-54
+50        android:supportsRtl="true"
+50-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:24:9-35
+51        android:testOnly="true"
+52        android:theme="@style/Theme.AulaFirebase" >
+52-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:25:9-50
+53        <activity
+53-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:27:9-29:40
+54            android:name="com.application.aulafirebase.UploadImagemActivity"
+54-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:28:13-49
+55            android:exported="false" />
+55-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:29:13-37
+56        <activity
+56-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:30:9-32:40
+57            android:name="com.application.aulafirebase.PrincipalActivity"
+57-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:31:13-46
+58            android:exported="false" />
+58-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:32:13-37
+59        <activity
+59-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:33:9-41:20
+60            android:name="com.application.aulafirebase.MainActivity"
+60-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:34:13-41
+61            android:exported="true" >
+61-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:35:13-36
+62            <intent-filter>
+62-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:36:13-40:29
+63                <action android:name="android.intent.action.MAIN" />
+63-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:37:17-69
+63-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:37:25-66
+64
+65                <category android:name="android.intent.category.LAUNCHER" />
+65-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:39:17-77
+65-->/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/AulaFirebase/app/src/main/AndroidManifest.xml:39:27-74
+66            </intent-filter>
+67        </activity>
+68
+69        <service
+69-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:9:9-15:19
+70            android:name="com.google.firebase.components.ComponentDiscoveryService"
+70-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:10:13-84
+71            android:directBootAware="true"
+71-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:32:13-43
+72            android:exported="false" >
+72-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:11:13-37
+73            <meta-data
+73-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:12:13-14:85
+74                android:name="com.google.firebase.components:com.google.firebase.storage.ktx.FirebaseStorageLegacyRegistrar"
+74-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:13:17-125
+75                android:value="com.google.firebase.components.ComponentRegistrar" />
+75-->[com.google.firebase:firebase-storage-ktx:21.0.1] /home/bradd/.gradle/caches/transforms-4/cc0f3a1fddd9abdd67050ba4dc19a120/transformed/firebase-storage-ktx-21.0.1/AndroidManifest.xml:14:17-82
+76            <meta-data
+76-->[com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:12:13-14:85
+77                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
+77-->[com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:13:17-129
+78                android:value="com.google.firebase.components.ComponentRegistrar" />
+78-->[com.google.firebase:firebase-firestore-ktx:25.1.1] /home/bradd/.gradle/caches/transforms-4/6740996ec324d896e49425eb0d768a40/transformed/firebase-firestore-ktx-25.1.1/AndroidManifest.xml:14:17-82
+79            <meta-data
+79-->[com.google.firebase:firebase-auth-ktx:23.1.0] /home/bradd/.gradle/caches/transforms-4/e598f152323cc52371ff23e5991e2bc8/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:11:13-13:85
+80                android:name="com.google.firebase.components:com.google.firebase.auth.ktx.FirebaseAuthLegacyRegistrar"
+80-->[com.google.firebase:firebase-auth-ktx:23.1.0] /home/bradd/.gradle/caches/transforms-4/e598f152323cc52371ff23e5991e2bc8/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:12:17-119
+81                android:value="com.google.firebase.components.ComponentRegistrar" />
+81-->[com.google.firebase:firebase-auth-ktx:23.1.0] /home/bradd/.gradle/caches/transforms-4/e598f152323cc52371ff23e5991e2bc8/transformed/firebase-auth-ktx-23.1.0/AndroidManifest.xml:13:17-82
+82            <meta-data
+82-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:30:13-32:85
+83                android:name="com.google.firebase.components:com.google.firebase.storage.FirebaseStorageKtxRegistrar"
+83-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:31:17-118
+84                android:value="com.google.firebase.components.ComponentRegistrar" />
+84-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:32:17-82
+85            <meta-data
+85-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:33:13-35:85
+86                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+86-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:34:17-107
+87                android:value="com.google.firebase.components.ComponentRegistrar" />
+87-->[com.google.firebase:firebase-storage:21.0.1] /home/bradd/.gradle/caches/transforms-4/1a9588484405bcb276dcd65c701f6758/transformed/firebase-storage-21.0.1/AndroidManifest.xml:35:17-82
+88            <meta-data
+88-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:37:13-39:85
+89                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+89-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:38:17-139
+90                android:value="com.google.firebase.components.ComponentRegistrar" />
+90-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:39:17-82
+91            <meta-data
+91-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:17:13-19:85
+92                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+92-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:18:17-122
+93                android:value="com.google.firebase.components.ComponentRegistrar" />
+93-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:19:17-82
+94            <meta-data
+94-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:20:13-22:85
+95                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+95-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:21:17-111
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-firestore:25.1.1] /home/bradd/.gradle/caches/transforms-4/91d44f8340e683810f04cc1d6defbb84/transformed/firebase-firestore-25.1.1/AndroidManifest.xml:22:17-82
+97            <meta-data
+97-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:69:13-71:85
+98                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+98-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:70:17-109
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:71:17-82
+100            <meta-data
+100-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:25:13-27:85
+101                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckKtxRegistrar"
+101-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:26:17-120
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:27:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:28:13-30:85
+104                android:name="com.google.firebase.components:com.google.firebase.appcheck.FirebaseAppCheckRegistrar"
+104-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:29:17-117
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-appcheck:18.0.0] /home/bradd/.gradle/caches/transforms-4/acc9fc7fbee93b20d71404c58a0d2e4d/transformed/firebase-appcheck-18.0.0/AndroidManifest.xml:30:17-82
+106            <meta-data
+106-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:15:13-17:85
+107                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+107-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:16:17-130
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:17:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:18:13-20:85
+110                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+110-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:19:17-127
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-installations:18.0.0] /home/bradd/.gradle/caches/transforms-4/2aca17baa5b85d97e757a85da447cfa7/transformed/firebase-installations-18.0.0/AndroidManifest.xml:20:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/bradd/.gradle/caches/transforms-4/0f3df3c84c520a62e731ccaf4b3d8dbf/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:12:13-14:85
+113                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+113-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/bradd/.gradle/caches/transforms-4/0f3df3c84c520a62e731ccaf4b3d8dbf/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:13:17-116
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-common-ktx:21.0.0] /home/bradd/.gradle/caches/transforms-4/0f3df3c84c520a62e731ccaf4b3d8dbf/transformed/firebase-common-ktx-21.0.0/AndroidManifest.xml:14:17-82
+115            <meta-data
+115-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:35:13-37:85
+116                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+116-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:36:17-109
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:37:17-82
+118        </service>
+119
+120        <property
+120-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:30:9-32:61
+121            android:name="android.adservices.AD_SERVICES_CONFIG"
+121-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:31:13-65
+122            android:resource="@xml/ga_ad_services_config" />
+122-->[com.google.android.gms:play-services-measurement-api:22.1.2] /home/bradd/.gradle/caches/transforms-4/645eda8b2a79ca8b92bdb7890d35a5a3/transformed/play-services-measurement-api-22.1.2/AndroidManifest.xml:32:13-58
+123
+124        <activity
+124-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:29:9-46:20
+125            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+125-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:30:13-80
+126            android:excludeFromRecents="true"
+126-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:31:13-46
+127            android:exported="true"
+127-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:32:13-36
+128            android:launchMode="singleTask"
+128-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:33:13-44
+129            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+129-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:34:13-72
+130            <intent-filter>
+130-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:35:13-45:29
+131                <action android:name="android.intent.action.VIEW" />
+131-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+131-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+132
+133                <category android:name="android.intent.category.DEFAULT" />
+133-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+133-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+134                <category android:name="android.intent.category.BROWSABLE" />
+134-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+134-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+135
+136                <data
+136-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+137                    android:host="firebase.auth"
+137-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+138                    android:path="/"
+138-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+139                    android:scheme="genericidp" />
+139-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+140            </intent-filter>
+141        </activity>
+142        <activity
+142-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:47:9-64:20
+143            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+143-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:48:13-79
+144            android:excludeFromRecents="true"
+144-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:49:13-46
+145            android:exported="true"
+145-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:50:13-36
+146            android:launchMode="singleTask"
+146-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:51:13-44
+147            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+147-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:52:13-72
+148            <intent-filter>
+148-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:53:13-63:29
+149                <action android:name="android.intent.action.VIEW" />
+149-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:17-69
+149-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:36:25-66
+150
+151                <category android:name="android.intent.category.DEFAULT" />
+151-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:17-76
+151-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:38:27-73
+152                <category android:name="android.intent.category.BROWSABLE" />
+152-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:17-78
+152-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:39:27-75
+153
+154                <data
+154-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:41:17-44:51
+155                    android:host="firebase.auth"
+155-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:42:21-49
+156                    android:path="/"
+156-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:43:21-37
+157                    android:scheme="recaptcha" />
+157-->[com.google.firebase:firebase-auth:23.1.0] /home/bradd/.gradle/caches/transforms-4/202ae3eb6172501d51f55ffd26a509df/transformed/firebase-auth-23.1.0/AndroidManifest.xml:44:21-48
+158            </intent-filter>
+159        </activity>
+160
+161        <service
+161-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:24:9-32:19
+162            android:name="androidx.credentials.playservices.CredentialProviderMetadataHolder"
+162-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:25:13-94
+163            android:enabled="true"
+163-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:26:13-35
+164            android:exported="false" >
+164-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:27:13-37
+165            <meta-data
+165-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:29:13-31:104
+166                android:name="androidx.credentials.CREDENTIAL_PROVIDER_KEY"
+166-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:30:17-76
+167                android:value="androidx.credentials.playservices.CredentialProviderPlayServicesImpl" />
+167-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:31:17-101
+168        </service>
+169
+170        <activity
+170-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:34:9-41:20
+171            android:name="androidx.credentials.playservices.HiddenActivity"
+171-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:35:13-76
+172            android:configChanges="orientation|screenSize|screenLayout|keyboardHidden"
+172-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:36:13-87
 173            android:enabled="true"
-173-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:31:13-35
-174            android:exported="false" >
-174-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:32:13-37
-175        </receiver>
-176
-177        <service
-177-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:35:9-38:40
-178            android:name="com.google.android.gms.measurement.AppMeasurementService"
-178-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:36:13-84
-179            android:enabled="true"
-179-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:37:13-35
-180            android:exported="false" />
-180-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:38:13-37
-181        <service
-181-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:39:9-43:72
-182            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-182-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:40:13-87
-183            android:enabled="true"
-183-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:41:13-35
-184            android:exported="false"
-184-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:42:13-37
-185            android:permission="android.permission.BIND_JOB_SERVICE" />
-185-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:43:13-69
-186
-187        <uses-library
-187-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/bradd/.gradle/caches/transforms-4/f829947f2dc9ec5fb451d094e4098fdc/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
-188            android:name="android.ext.adservices"
-188-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/bradd/.gradle/caches/transforms-4/f829947f2dc9ec5fb451d094e4098fdc/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
-189            android:required="false" />
-189-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/bradd/.gradle/caches/transforms-4/f829947f2dc9ec5fb451d094e4098fdc/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
-190
-191        <provider
-191-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
-192            android:name="com.google.firebase.provider.FirebaseInitProvider"
-192-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
-193            android:authorities="com.application.aulafirebase.firebaseinitprovider"
-193-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
-194            android:directBootAware="true"
-194-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
-195            android:exported="false"
-195-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
-196            android:initOrder="100" />
-196-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
-197
-198        <activity
-198-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
-199            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
-199-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
-200            android:excludeFromRecents="true"
-200-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
-201            android:exported="false"
-201-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
-202            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-202-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
-203        <!--
-204            Service handling Google Sign-In user revocation. For apps that do not integrate with
-205            Google Sign-In, this service will never be started.
-206        -->
-207        <service
-207-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
-208            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
-208-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
-209            android:exported="true"
-209-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
-210            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
-210-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
-211            android:visibleToInstantApps="true" />
-211-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
-212
-213        <activity
-213-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
-214            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-214-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
-215            android:exported="false"
-215-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
-216            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-216-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
-217
-218        <meta-data
-218-->[com.google.android.gms:play-services-basement:18.4.0] /home/bradd/.gradle/caches/transforms-4/93664d535c8c59fe6581c1fe59e61e5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
-219            android:name="com.google.android.gms.version"
-219-->[com.google.android.gms:play-services-basement:18.4.0] /home/bradd/.gradle/caches/transforms-4/93664d535c8c59fe6581c1fe59e61e5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
-220            android:value="@integer/google_play_services_version" />
-220-->[com.google.android.gms:play-services-basement:18.4.0] /home/bradd/.gradle/caches/transforms-4/93664d535c8c59fe6581c1fe59e61e5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
-221
-222        <provider
-222-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
-223            android:name="androidx.startup.InitializationProvider"
-223-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
-224            android:authorities="com.application.aulafirebase.androidx-startup"
-224-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
-225            android:exported="false" >
-225-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
-226            <meta-data
-226-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
-227                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-227-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
-228                android:value="androidx.startup" />
-228-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
-229            <meta-data
-229-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/bradd/.gradle/caches/transforms-4/011da29d8f3d1859ca77d54cfa4b4cad/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
-230                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-230-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/bradd/.gradle/caches/transforms-4/011da29d8f3d1859ca77d54cfa4b4cad/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
-231                android:value="androidx.startup" />
-231-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/bradd/.gradle/caches/transforms-4/011da29d8f3d1859ca77d54cfa4b4cad/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
-232            <meta-data
-232-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
-233                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-233-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
-234                android:value="androidx.startup" />
-234-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
-235        </provider>
-236        <provider
-236-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:8:9-11:40
-237            android:name="com.squareup.picasso.PicassoProvider"
-237-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:9:13-64
-238            android:authorities="com.application.aulafirebase.com.squareup.picasso"
-238-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:10:13-72
-239            android:exported="false" />
-239-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:11:13-37
-240
-241        <receiver
-241-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
-242            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-242-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
-243            android:directBootAware="false"
-243-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
-244            android:enabled="true"
-244-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
-245            android:exported="true"
-245-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
-246            android:permission="android.permission.DUMP" >
-246-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
-247            <intent-filter>
-247-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
-248                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-248-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
-248-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
-249            </intent-filter>
-250            <intent-filter>
-250-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
-251                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-251-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
-251-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
-252            </intent-filter>
-253            <intent-filter>
-253-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
-254                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-254-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
-254-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
-255            </intent-filter>
-256            <intent-filter>
-256-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
-257                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-257-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
-257-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
-258            </intent-filter>
-259        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
-260        <activity
-260-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
-261            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
-261-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
-262            android:exported="false"
-262-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
-263            android:stateNotNeeded="true"
-263-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
-264            android:theme="@style/Theme.PlayCore.Transparent" />
-264-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
-265    </application>
-266
-267</manifest>
+173-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:37:13-35
+174            android:exported="false"
+174-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:38:13-37
+175            android:fitsSystemWindows="true"
+175-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:39:13-45
+176            android:theme="@style/Theme.Hidden" >
+176-->[androidx.credentials:credentials-play-services-auth:1.2.0-rc01] /home/bradd/.gradle/caches/transforms-4/0d850645f011dc9793145a85a568ebe8/transformed/credentials-play-services-auth-1.2.0-rc01/AndroidManifest.xml:40:13-48
+177        </activity>
+178
+179        <receiver
+179-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:29:9-33:20
+180            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+180-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:30:13-85
+181            android:enabled="true"
+181-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:31:13-35
+182            android:exported="false" >
+182-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:32:13-37
+183        </receiver>
+184
+185        <service
+185-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:35:9-38:40
+186            android:name="com.google.android.gms.measurement.AppMeasurementService"
+186-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:36:13-84
+187            android:enabled="true"
+187-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:37:13-35
+188            android:exported="false" />
+188-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:38:13-37
+189        <service
+189-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:39:9-43:72
+190            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+190-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:40:13-87
+191            android:enabled="true"
+191-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:41:13-35
+192            android:exported="false"
+192-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:42:13-37
+193            android:permission="android.permission.BIND_JOB_SERVICE" />
+193-->[com.google.android.gms:play-services-measurement:22.1.2] /home/bradd/.gradle/caches/transforms-4/bd080eaaa56263b248f59b38a93c861c/transformed/play-services-measurement-22.1.2/AndroidManifest.xml:43:13-69
+194
+195        <uses-library
+195-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/bradd/.gradle/caches/transforms-4/f829947f2dc9ec5fb451d094e4098fdc/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+196            android:name="android.ext.adservices"
+196-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/bradd/.gradle/caches/transforms-4/f829947f2dc9ec5fb451d094e4098fdc/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+197            android:required="false" />
+197-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /home/bradd/.gradle/caches/transforms-4/f829947f2dc9ec5fb451d094e4098fdc/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+198
+199        <provider
+199-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:23:9-28:39
+200            android:name="com.google.firebase.provider.FirebaseInitProvider"
+200-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:24:13-77
+201            android:authorities="com.application.aulafirebase.firebaseinitprovider"
+201-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:25:13-72
+202            android:directBootAware="true"
+202-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:26:13-43
+203            android:exported="false"
+203-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:27:13-37
+204            android:initOrder="100" />
+204-->[com.google.firebase:firebase-common:21.0.0] /home/bradd/.gradle/caches/transforms-4/b36fccdc5b670b6fd7663fcc52a760bf/transformed/firebase-common-21.0.0/AndroidManifest.xml:28:13-36
+205
+206        <activity
+206-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:23:9-27:75
+207            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+207-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:24:13-93
+208            android:excludeFromRecents="true"
+208-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:25:13-46
+209            android:exported="false"
+209-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:26:13-37
+210            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+210-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:27:13-72
+211        <!--
+212            Service handling Google Sign-In user revocation. For apps that do not integrate with
+213            Google Sign-In, this service will never be started.
+214        -->
+215        <service
+215-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:33:9-37:51
+216            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+216-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:34:13-89
+217            android:exported="true"
+217-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:35:13-36
+218            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION"
+218-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:36:13-107
+219            android:visibleToInstantApps="true" />
+219-->[com.google.android.gms:play-services-auth:20.7.0] /home/bradd/.gradle/caches/transforms-4/bc923ddf18506633c04a41fe8d97159f/transformed/play-services-auth-20.7.0/AndroidManifest.xml:37:13-48
+220
+221        <activity
+221-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:9-173
+222            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+222-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:19-85
+223            android:exported="false"
+223-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:146-170
+224            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+224-->[com.google.android.gms:play-services-base:18.5.0] /home/bradd/.gradle/caches/transforms-4/477ee8b0afab611daae71fe9d0441b3f/transformed/play-services-base-18.5.0/AndroidManifest.xml:5:86-145
+225
+226        <meta-data
+226-->[com.google.android.gms:play-services-basement:18.4.0] /home/bradd/.gradle/caches/transforms-4/93664d535c8c59fe6581c1fe59e61e5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:9-122
+227            android:name="com.google.android.gms.version"
+227-->[com.google.android.gms:play-services-basement:18.4.0] /home/bradd/.gradle/caches/transforms-4/93664d535c8c59fe6581c1fe59e61e5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:20-65
+228            android:value="@integer/google_play_services_version" />
+228-->[com.google.android.gms:play-services-basement:18.4.0] /home/bradd/.gradle/caches/transforms-4/93664d535c8c59fe6581c1fe59e61e5b/transformed/play-services-basement-18.4.0/AndroidManifest.xml:6:66-119
+229
+230        <provider
+230-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+231            android:name="androidx.startup.InitializationProvider"
+231-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+232            android:authorities="com.application.aulafirebase.androidx-startup"
+232-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+233            android:exported="false" >
+233-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+234            <meta-data
+234-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+235                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+235-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+236                android:value="androidx.startup" />
+236-->[androidx.emoji2:emoji2:1.3.0] /home/bradd/.gradle/caches/transforms-4/a436584f97b447da3a9e6e83c6724497/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+237            <meta-data
+237-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/bradd/.gradle/caches/transforms-4/011da29d8f3d1859ca77d54cfa4b4cad/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:29:13-31:52
+238                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+238-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/bradd/.gradle/caches/transforms-4/011da29d8f3d1859ca77d54cfa4b4cad/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:30:17-78
+239                android:value="androidx.startup" />
+239-->[androidx.lifecycle:lifecycle-process:2.6.2] /home/bradd/.gradle/caches/transforms-4/011da29d8f3d1859ca77d54cfa4b4cad/transformed/lifecycle-process-2.6.2/AndroidManifest.xml:31:17-49
+240            <meta-data
+240-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:29:13-31:52
+241                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+241-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:30:17-85
+242                android:value="androidx.startup" />
+242-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:31:17-49
+243        </provider>
+244        <provider
+244-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:8:9-11:40
+245            android:name="com.squareup.picasso.PicassoProvider"
+245-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:9:13-64
+246            android:authorities="com.application.aulafirebase.com.squareup.picasso"
+246-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:10:13-72
+247            android:exported="false" />
+247-->[com.squareup.picasso:picasso:2.8] /home/bradd/.gradle/caches/transforms-4/fda1f3b96b5e35c70473898239fe7fb8/transformed/picasso-2.8/AndroidManifest.xml:11:13-37
+248
+249        <receiver
+249-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:34:9-52:20
+250            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+250-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:35:13-76
+251            android:directBootAware="false"
+251-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:36:13-44
+252            android:enabled="true"
+252-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:37:13-35
+253            android:exported="true"
+253-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:38:13-36
+254            android:permission="android.permission.DUMP" >
+254-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:39:13-57
+255            <intent-filter>
+255-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:40:13-42:29
+256                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+256-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:17-91
+256-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:41:25-88
+257            </intent-filter>
+258            <intent-filter>
+258-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:43:13-45:29
+259                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+259-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:17-85
+259-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:44:25-82
+260            </intent-filter>
+261            <intent-filter>
+261-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:46:13-48:29
+262                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+262-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:17-88
+262-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:47:25-85
+263            </intent-filter>
+264            <intent-filter>
+264-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:49:13-51:29
+265                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+265-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:17-95
+265-->[androidx.profileinstaller:profileinstaller:1.4.0] /home/bradd/.gradle/caches/transforms-4/e53c794e542dcb211de1af278d7e1873/transformed/profileinstaller-1.4.0/AndroidManifest.xml:50:25-92
+266            </intent-filter>
+267        </receiver> <!-- The activities will be merged into the manifest of the hosting app. -->
+268        <activity
+268-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:14:9-18:65
+269            android:name="com.google.android.play.core.common.PlayCoreDialogWrapperActivity"
+269-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:15:13-93
+270            android:exported="false"
+270-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:16:13-37
+271            android:stateNotNeeded="true"
+271-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:17:13-42
+272            android:theme="@style/Theme.PlayCore.Transparent" />
+272-->[com.google.android.play:core-common:2.0.3] /home/bradd/.gradle/caches/transforms-4/8251cd9e66aafa06911908423a7c3d28/transformed/core-common-2.0.3/AndroidManifest.xml:18:13-62
+273    </application>
+274
+275</manifest>
