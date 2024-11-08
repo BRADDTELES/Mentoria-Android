@@ -1,14 +1,14 @@
 [
     {
-        "merged": "com.application.aulafirebase.app-mergeDebugResources-43:/layout/activity_principal.xml",
-        "source": "com.application.aulafirebase.app-main-46:/layout/activity_principal.xml"
+        "merged": "com.application.aulafirebase.app-mergeDebugResources-4:/layout/activity_principal.xml",
+        "source": "com.application.aulafirebase.app-main-7:/layout/activity_principal.xml"
     },
     {
-        "merged": "com.application.aulafirebase.app-mergeDebugResources-43:/layout/activity_upload_imagem.xml",
-        "source": "com.application.aulafirebase.app-main-46:/layout/activity_upload_imagem.xml"
+        "merged": "com.application.aulafirebase.app-mergeDebugResources-4:/layout/activity_main.xml",
+        "source": "com.application.aulafirebase.app-main-7:/layout/activity_main.xml"
     },
     {
-        "merged": "com.application.aulafirebase.app-mergeDebugResources-43:/layout/activity_main.xml",
-        "source": "com.application.aulafirebase.app-main-46:/layout/activity_main.xml"
+        "merged": "com.application.aulafirebase.app-mergeDebugResources-4:/layout/activity_upload_imagem.xml",
+        "source": "com.application.aulafirebase.app-main-7:/layout/activity_upload_imagem.xml"
     }
 ]

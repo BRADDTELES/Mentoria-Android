@@ -1,5 +1,6 @@
 package com.application.aulafirebase
 
+import android.Manifest
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
@@ -63,7 +64,10 @@ class UploadImagemActivity : AppCompatActivity() {
     }
 
     private val permissoes = listOf(
-        Manifest
+        Manifest.permission.CAMERA,
+        Manifest.permission.READ_EXTERNAL_STORAGE,
+        Manifest.permission.RECORD_AUDIO,
+        Manifest.permission.ACCESS_COARSE_LOCATION
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,7 +75,7 @@ class UploadImagemActivity : AppCompatActivity() {
         setContentView( binding.root )
 
         Permissao.requisitarPermissoes(
-            this,
+            this, permissoes
         )
 
         binding.btnGaleria.setOnClickListener {
