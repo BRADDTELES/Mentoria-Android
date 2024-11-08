@@ -2,6 +2,7 @@ package com.application.aulafirebase
 
 import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Bitmap.CompressFormat
 import android.net.Uri
@@ -12,6 +13,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.application.aulafirebase.databinding.ActivityUploadImagemBinding
 import com.application.aulafirebase.helper.Permissao
 import com.google.firebase.auth.FirebaseAuth
@@ -36,6 +38,7 @@ class UploadImagemActivity : AppCompatActivity() {
 
     private var uriImagemSelecionada: Uri? = null
     private var bitmapImagemSelecionada: Bitmap? = null
+
     private val abrirGaleria = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ){ uri ->
@@ -69,8 +72,10 @@ class UploadImagemActivity : AppCompatActivity() {
         Manifest.permission.RECORD_AUDIO,
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
+    private var temPermissaoCamera = false
+    private var temPermissaoGaleria = false
 
-    override fun onRequestPermissionsResult(
+    /*override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
         grantResults: IntArray,
@@ -88,22 +93,34 @@ class UploadImagemActivity : AppCompatActivity() {
             Log.i("permissao_app", "concedida: $indice) $valor")
         }
 
-    }
+    }*/
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
-        Permissao.requisitarPermissoes(
+        solicitarPermissoes()
+
+        /*Permissao.requisitarPermissoes(
             this, permissoes, 100
-        )
+        )*/
 
         binding.btnGaleria.setOnClickListener {
-            abrirGaleria.launch("image/*")//Mime Type
+            //abrirGaleria.launch("image/*")//Mime Type
+            if ( temPermissaoGaleria ){
+                abrirGaleria.launch("image/*")//Mime Type
+            }else {
+                Toast.makeText(this, "Voçê não tem permissão de galeria", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btnCamera.setOnClickListener {
-            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-            abrirCamera.launch( intent )
+            if ( temPermissaoCamera ){
+                val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+                abrirCamera.launch( intent )
+            }else {
+                Toast.makeText(this, "Voçê não tem permissão da camera", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.btnUpload.setOnClickListener {
@@ -116,6 +133,40 @@ class UploadImagemActivity : AppCompatActivity() {
             recuperarImagemFirebase()
         }
 
+    }
+
+    private fun solicitarPermissoes() {
+
+        //Verificar permissões que o usuário já tem
+        val permissoesNegadas = mutableListOf<String>()
+        temPermissaoCamera = ContextCompat.checkSelfPermission(
+            this, Manifest.permission.CAMERA
+        ) == PackageManager.PERMISSION_GRANTED
+
+        temPermissaoGaleria = ContextCompat.checkSelfPermission(
+            this, Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED
+
+        if ( !temPermissaoCamera )
+            permissoesNegadas.add(Manifest.permission.CAMERA)
+        if ( !temPermissaoGaleria )
+            permissoesNegadas.add(Manifest.permission.READ_EXTERNAL_STORAGE)
+
+        //Solicitar permissões
+        if ( permissoesNegadas.isNotEmpty() ){
+            val gerenciadorPermissoes = registerForActivityResult(
+                ActivityResultContracts.RequestMultiplePermissions()
+            ){ permissoes: Map<String, Boolean> ->
+                //camera - true
+                Log.i("novas_permissoes", "permissoes: $permissoes")
+                temPermissaoCamera = permissoes[Manifest.permission.CAMERA]
+                    ?: temPermissaoCamera
+
+                temPermissaoGaleria = permissoes[Manifest.permission.READ_EXTERNAL_STORAGE]
+                    ?: temPermissaoGaleria
+            }
+            gerenciadorPermissoes.launch( permissoesNegadas.toTypedArray() )
+        }
     }
 
     private fun recuperarImagemFirebase() {
