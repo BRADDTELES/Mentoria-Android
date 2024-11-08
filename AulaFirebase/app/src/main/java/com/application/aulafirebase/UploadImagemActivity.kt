@@ -1,15 +1,22 @@
 package com.application.aulafirebase
 
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Bitmap.CompressFormat
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulafirebase.databinding.ActivityUploadImagemBinding
+import com.application.aulafirebase.helper.Permissao
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import java.io.ByteArrayOutputStream
 import java.util.UUID
 
 class UploadImagemActivity : AppCompatActivity() {
@@ -27,6 +34,7 @@ class UploadImagemActivity : AppCompatActivity() {
     }
 
     private var uriImagemSelecionada: Uri? = null
+    private var bitmapImagemSelecionada: Bitmap? = null
     private val abrirGaleria = registerForActivityResult(
         ActivityResultContracts.GetContent()
     ){ uri ->
@@ -39,23 +47,50 @@ class UploadImagemActivity : AppCompatActivity() {
             Toast.makeText(this, "Nenhuma imagem selecionada", Toast.LENGTH_SHORT).show()
         }
     }
+    private val abrirCamera = registerForActivityResult(
+        //ActivityResultContracts.GetContent()
+        ActivityResultContracts.StartActivityForResult()
+    ){ resultadoActivity ->
+        //if ( resultadoActivity.resultCode == RESULT_OK ){ }else{ }
+        bitmapImagemSelecionada = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            resultadoActivity.data?.extras
+                ?.getParcelable("data", Bitmap::class.java)
+        }else{
+            resultadoActivity.data?.extras
+                ?.getParcelable("data")
+        }
+        binding.imageSelecionada.setImageBitmap( bitmapImagemSelecionada )
+    }
+
+    private val permissoes = listOf(
+        Manifest
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
+        Permissao.requisitarPermissoes(
+            this,
+        )
+
         binding.btnGaleria.setOnClickListener {
             abrirGaleria.launch("image/*")//Mime Type
         }
 
+        binding.btnCamera.setOnClickListener {
+            val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            abrirCamera.launch( intent )
+        }
+
         binding.btnUpload.setOnClickListener {
-            uploadGaleria()
+            //uploadGaleria()
             Log.d("info_upload", "Iniciando upload da imagem após o clique UPLOAD")
+            uploadCamera()
         }
 
         binding.btnRecuperar.setOnClickListener {
             recuperarImagemFirebase()
-
         }
 
     }
@@ -79,6 +114,42 @@ class UploadImagemActivity : AppCompatActivity() {
                     Log.d("info_upload", "Imagem recuperada com sucesso")
                 }
         }
+    }
+
+    private fun uploadCamera() {
+
+        val idUsuarioLogado = autenticacao.currentUser?.uid
+        Log.d("info_upload", "ID do usuário Logado ? $idUsuarioLogado")
+        //val nomeImagem = UUID.randomUUID().toString()
+
+        val outputStream = ByteArrayOutputStream()
+        bitmapImagemSelecionada?.compress(
+            CompressFormat.JPEG,
+            80,
+            outputStream
+        )
+
+        if ( bitmapImagemSelecionada != null && idUsuarioLogado != null ){
+            armazenamento
+                .getReference("fotos")
+                .child( idUsuarioLogado )
+                .child( "foto.jpg" )
+                //.child( nomeImagem )
+                .putBytes( outputStream.toByteArray() )
+                .addOnSuccessListener { task ->
+                    //Log.d("info_upload", "Com nome da imagem: $nomeImagem")
+                    Log.d("info_upload", "Upload da imagem bem-sucedido")
+                    Toast.makeText(this, "Sucesso ao fazer upload da imagem", Toast.LENGTH_SHORT).show()
+                    task.metadata?.reference?.downloadUrl
+                        ?.addOnSuccessListener { uriFirebase ->
+                            Toast.makeText(this, uriFirebase.toString(), Toast.LENGTH_SHORT).show()
+                        }
+                }.addOnFailureListener { erro ->
+                    Log.e("info_upload", "Erro ao fazer upload da imagem", erro)
+                    Toast.makeText(this, "Erro ao fazer upload da imagem $erro", Toast.LENGTH_SHORT).show()
+                }
+        }
+
     }
 
     private fun uploadGaleria() {
