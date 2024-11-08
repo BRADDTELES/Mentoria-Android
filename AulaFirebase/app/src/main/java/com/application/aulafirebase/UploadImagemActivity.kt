@@ -70,12 +70,31 @@ class UploadImagemActivity : AppCompatActivity() {
         Manifest.permission.ACCESS_COARSE_LOCATION
     )
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray,
+        deviceId: Int
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults, deviceId)
+
+        Log.i("permissao_app", "requestCode: $requestCode")
+
+        permissions.forEachIndexed { indice, valor ->
+            Log.i("permissao_app", "permission: $indice) $valor")
+        }
+
+        grantResults.forEachIndexed { indice, valor ->
+            Log.i("permissao_app", "concedida: $indice) $valor")
+        }
+
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
         Permissao.requisitarPermissoes(
-            this, permissoes
+            this, permissoes, 100
         )
 
         binding.btnGaleria.setOnClickListener {
