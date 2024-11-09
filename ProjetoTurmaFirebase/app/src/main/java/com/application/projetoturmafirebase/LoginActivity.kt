@@ -28,8 +28,10 @@ class LoginActivity : AppCompatActivity() {
                 logarUsuario()
             }
         }
+
     }
 
+    // onStart geralmente é o método para Recuperar os dados, ex.: dados de uma API, dados do banco de dados, etc
     override fun onStart() {
         super.onStart()
         verificarUsuarioLogado()
