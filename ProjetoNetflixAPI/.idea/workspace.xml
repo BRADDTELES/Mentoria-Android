@@ -32,8 +32,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db7533f9-b478-4d9d-8d8f-d239f04bfa82" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../exercicioGasolinaOuAlcool/.idea/caches/deviceStreaming.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../exercicioGasolinaOuAlcool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../exercicioGasolinaOuAlcool/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFirebase/.gradle/8.7/dependencies-accessors/d4b6d22156583c8b7b55c4fd04fbb4c58c762f42/metadata.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFirebase/.gradle/8.7/dependencies-accessors/d4b6d22156583c8b7b55c4fd04fbb4c58c762f42/metadata.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFirebase/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFirebase/.gradle/8.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFirebase/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFirebase/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFirebase/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFirebase/.gradle/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFirebase/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFirebase/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AulaFirebase/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AulaFirebase/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../InterfaceNetflix/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../InterfaceNetflix/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ProjetoNetflixAPI.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ProjetoNetflixAPI.app.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +57,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=/home/bradd/.android/avd/Pixel_3a_API_29.avd)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=LocalEmulator, isTemplate=false, identifier=path=C:\Users\bradd\.android\avd\Pixel_7_Pro_API_35.avd)]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -97,6 +111,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;BRADDTELES&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:BRADDTELES/Mentoria-Android.git&quot;,
+    &quot;accountId&quot;: &quot;0e77279c-acb4-4639-af03-acdd51dba3f7&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -119,12 +145,12 @@
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;kotlin-gradle-user-dirs&quot;: [
-      &quot;/home/bradd/.gradle&quot;
+      &quot;C:\\Users\\bradd\\.gradle&quot;
     ]
   }
 }</component>

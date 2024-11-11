@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.application.aulafirebase.app-mergeDebugResources-42:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+            "outputFile": "com.application.aulafirebase.app-mergeDebugResources-3:/values-w400dp-port-v13/values-w400dp-port-v13.xml",
             "map": [
                 {
-                    "source": "/home/bradd/.gradle/caches/transforms-4/26375a7bfa51d5cb04a6a9c3ed978635/transformed/material-1.12.0/res/values-w400dp-port-v13/values-w400dp-port-v13.xml",
+                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\26375a7bfa51d5cb04a6a9c3ed978635\\transformed\\material-1.12.0\\res\\values-w400dp-port-v13\\values-w400dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
