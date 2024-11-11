@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.application.aulawhatsapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.application.aulawhatsapp"
