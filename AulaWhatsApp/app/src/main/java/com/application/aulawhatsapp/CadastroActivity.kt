@@ -97,8 +97,8 @@ class CadastroActivity : AppCompatActivity() {
     private fun validarCampos(): Boolean {
 
         nome = binding.editNome.text.toString()
-        email = binding.editEmail.text.toString()
-        senha = binding.editSenha.text.toString()
+        email = binding.editLoginEmail.text.toString()
+        senha = binding.editLoginSenha.text.toString()
 
         if (nome.isNotEmpty()){
             binding.textInputNome.error = null
