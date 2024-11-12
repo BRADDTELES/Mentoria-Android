@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imgPerfil"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="32dp"
@@ -31,14 +31,14 @@
         app:srcCompat="@drawable/perfil" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/fabSelecionar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:clickable="true"
         app:backgroundTint="@color/primaria"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
+        app:layout_constraintEnd_toEndOf="@+id/imgPerfil"
         app:srcCompat="@drawable/ic_galeria_24"
         app:tint="@color/white" />
 
@@ -52,9 +52,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2">
+        app:layout_constraintTop_toBottomOf="@+id/imgPerfil">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editNomePerfil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Digite seu nome" />

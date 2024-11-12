@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.application.aulawhatsapp.databinding.ActivityMainBinding
 import com.application.aulawhatsapp.databinding.ActivityPerfilBinding
+import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
 
 class PerfilActivity : AppCompatActivity() {
@@ -19,11 +20,34 @@ class PerfilActivity : AppCompatActivity() {
     private var temPermissaoCamera = false
     private var temPermissaoGaleria = false
 
+    private val gerenciadorGaleria = registerForActivityResult(
+        ActivityResultContracts.GetContent()
+    ){ uri ->
+        if (uri != null){
+            binding.imgPerfil.setImageURI( uri )
+        }else{
+            exibirMensagem("Nenhuma imagem selecionada")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         inicializarToolbar()
         solicitarPermissoes()
+        inicializarEventosClique()
+    }
+
+    private fun inicializarEventosClique() {
+
+        binding.fabSelecionar.setOnClickListener {
+            if ( temPermissaoGaleria ){
+                gerenciadorGaleria.launch("image/*")
+            }else{
+                exibirMensagem("Não tem permissão para acessar galeria")
+                solicitarPermissoes()
+            }
+        }
 
     }
 
