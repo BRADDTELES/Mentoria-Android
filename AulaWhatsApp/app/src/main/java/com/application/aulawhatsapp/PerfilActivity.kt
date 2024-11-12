@@ -3,6 +3,7 @@ package com.application.aulawhatsapp
 import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
@@ -11,6 +12,7 @@ import com.application.aulawhatsapp.databinding.ActivityMainBinding
 import com.application.aulawhatsapp.databinding.ActivityPerfilBinding
 import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 
 class PerfilActivity : AppCompatActivity() {
 
@@ -25,9 +27,16 @@ class PerfilActivity : AppCompatActivity() {
     ){ uri ->
         if (uri != null){
             binding.imgPerfil.setImageURI( uri )
+            uploadImagemStorage( uri )
         }else{
             exibirMensagem("Nenhuma imagem selecionada")
         }
+    }
+    private val firebaseAuth by lazy {
+        FirebaseAuth.getInstance()
+    }
+    private val storage by lazy {
+        FirebaseStorage.getInstance()
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +45,28 @@ class PerfilActivity : AppCompatActivity() {
         inicializarToolbar()
         solicitarPermissoes()
         inicializarEventosClique()
+    }
+
+    private fun uploadImagemStorage(uri: Uri) {
+
+        // fotos -> usuarios -> id_usuario -> perfil.jpg
+        val idUsuario = firebaseAuth.currentUser?.uid
+        if (idUsuario != null){
+            storage
+                .getReference("fotos")
+                .child("usuarios")
+                .child(idUsuario)
+                .child("perfil.jpg")
+                .putFile(uri)
+                .addOnSuccessListener { task ->
+
+                    exibirMensagem("Sucesso ao fazer upload da imagem")
+
+                }.addOnFailureListener {
+                    exibirMensagem("Erro ao fazer upload da imagem")
+                }
+        }
+
     }
 
     private fun inicializarEventosClique() {
