@@ -14,6 +14,7 @@ import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
+import com.squareup.picasso.Picasso
 
 class PerfilActivity : AppCompatActivity() {
 
@@ -22,6 +23,7 @@ class PerfilActivity : AppCompatActivity() {
     }
     private var temPermissaoCamera = false
     private var temPermissaoGaleria = false
+    //private var idUsuario: String? = null
 
     private val gerenciadorGaleria = registerForActivityResult(
         ActivityResultContracts.GetContent()
@@ -49,6 +51,40 @@ class PerfilActivity : AppCompatActivity() {
         inicializarToolbar()
         solicitarPermissoes()
         inicializarEventosClique()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        recuperarDadosIniciaisUsuarios()
+    }
+
+    private fun recuperarDadosIniciaisUsuarios() {
+        val idUsuario = firebaseAuth.currentUser?.uid
+        if (idUsuario != null){
+            firestore
+                .collection("usuarios")
+                .document( idUsuario )
+                .get()
+                .addOnSuccessListener { documentSnapshot ->
+
+                    val dadosUsuario = documentSnapshot.data
+                    if ( dadosUsuario != null ){
+
+                        val nome = dadosUsuario["nome"] as String
+                        val foto = dadosUsuario["foto"] as String
+
+                        binding.editNomePerfil.setText( nome )
+                        if (foto.isNotEmpty()){
+                            Picasso.get()
+                                .load(foto)
+                                .into(binding.imgPerfil)
+                        }
+
+                    }
+
+                }
+        }
+
     }
 
     private fun uploadImagemStorage(uri: Uri) {
