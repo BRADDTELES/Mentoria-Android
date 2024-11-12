@@ -12,6 +12,7 @@ import com.application.aulawhatsapp.databinding.ActivityMainBinding
 import com.application.aulawhatsapp.databinding.ActivityPerfilBinding
 import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 
 class PerfilActivity : AppCompatActivity() {
@@ -38,6 +39,9 @@ class PerfilActivity : AppCompatActivity() {
     private val storage by lazy {
         FirebaseStorage.getInstance()
     }
+    private val firestore by lazy {
+        FirebaseFirestore.getInstance()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +56,7 @@ class PerfilActivity : AppCompatActivity() {
         // fotos -> usuarios -> id_usuario -> perfil.jpg
         val idUsuario = firebaseAuth.currentUser?.uid
         if (idUsuario != null){
+
             storage
                 .getReference("fotos")
                 .child("usuarios")
@@ -61,11 +66,36 @@ class PerfilActivity : AppCompatActivity() {
                 .addOnSuccessListener { task ->
 
                     exibirMensagem("Sucesso ao fazer upload da imagem")
+                    task.metadata
+                        ?.reference
+                        ?.downloadUrl
+                        ?.addOnSuccessListener { url ->
 
+                            val dados = mapOf(
+                                "foto" to url.toString()
+                            )
+                            atualizarDadosPerfil( idUsuario, dados)
+
+                        }
                 }.addOnFailureListener {
                     exibirMensagem("Erro ao fazer upload da imagem")
                 }
         }
+
+    }
+
+    private fun atualizarDadosPerfil(idUsuario: String, dados: Map<String, String>) {
+
+        firestore
+            .collection("usuarios")
+            .document( idUsuario )
+            .update( dados )
+            .addOnSuccessListener {
+                exibirMensagem("Sucesso ao atualizar perfil!")
+            }
+            .addOnFailureListener {
+                exibirMensagem("Erro ao atualizar perfil!")
+            }
 
     }
 
@@ -78,6 +108,25 @@ class PerfilActivity : AppCompatActivity() {
                 exibirMensagem("Não tem permissão para acessar galeria")
                 solicitarPermissoes()
             }
+        }
+
+        binding.btnAtualizar.setOnClickListener {
+
+            val nomeUsuario = binding.editNomePerfil.text.toString()
+            if (nomeUsuario.isNotEmpty()){
+
+                val idUsuario = firebaseAuth.currentUser?.uid
+                if (idUsuario != null){
+                    val dados = mapOf(
+                        "nome" to nomeUsuario
+                    )
+                    atualizarDadosPerfil( idUsuario, dados)
+                }
+
+            }else{
+                exibirMensagem("Preencha o nome para atualizar")
+            }
+
         }
 
     }
