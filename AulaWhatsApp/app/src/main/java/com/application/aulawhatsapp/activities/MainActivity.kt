@@ -1,4 +1,4 @@
-package com.application.aulawhatsapp
+package com.application.aulawhatsapp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
+import com.application.aulawhatsapp.R
 import com.application.aulawhatsapp.adapters.ViewPagerAdapter
 import com.application.aulawhatsapp.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 

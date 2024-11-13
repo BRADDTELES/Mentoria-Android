@@ -1,14 +1,12 @@
-package com.application.aulawhatsapp
+package com.application.aulawhatsapp.activities
 
 import android.Manifest
-import android.content.Context
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.application.aulawhatsapp.databinding.ActivityMainBinding
 import com.application.aulawhatsapp.databinding.ActivityPerfilBinding
 import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth

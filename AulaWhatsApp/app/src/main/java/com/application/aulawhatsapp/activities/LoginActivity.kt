@@ -1,4 +1,4 @@
-package com.application.aulawhatsapp
+package com.application.aulawhatsapp.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,6 @@ import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 
 class LoginActivity : AppCompatActivity() {
 

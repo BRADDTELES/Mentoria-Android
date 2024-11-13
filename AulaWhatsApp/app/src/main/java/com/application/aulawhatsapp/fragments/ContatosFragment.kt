@@ -1,5 +1,6 @@
 package com.application.aulawhatsapp.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,9 +10,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.aulawhatsapp.R
+import com.application.aulawhatsapp.activities.MensagensActivity
 import com.application.aulawhatsapp.adapters.ContatosAdapter
 import com.application.aulawhatsapp.databinding.FragmentContatosBinding
 import com.application.aulawhatsapp.model.Usuario
+import com.application.aulawhatsapp.utils.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
@@ -40,7 +43,12 @@ class ContatosFragment : Fragment() {
             inflater, container, false
         )
 
-        contatosAdapter = ContatosAdapter()
+        contatosAdapter = ContatosAdapter{ usuario ->
+            val intent = Intent(context, MensagensActivity::class.java)
+            intent.putExtra("dadosDestinatario", usuario)
+            intent.putExtra("origem", Constantes.ORIGEM_CONTATO)
+            startActivity( intent )
+        }
         binding.rvContatos.adapter = contatosAdapter
         binding.rvContatos.layoutManager = LinearLayoutManager(context)
         binding.rvContatos.addItemDecoration(
