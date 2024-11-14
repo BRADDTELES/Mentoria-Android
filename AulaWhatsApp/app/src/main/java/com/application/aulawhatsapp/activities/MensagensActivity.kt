@@ -1,14 +1,13 @@
 package com.application.aulawhatsapp.activities
 
-import android.net.nsd.NsdManager.RegistrationListener
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.application.aulawhatsapp.R
 import com.application.aulawhatsapp.adapters.ConversasAdapter
 import com.application.aulawhatsapp.databinding.ActivityMensagensBinding
+import com.application.aulawhatsapp.model.Conversa
 import com.application.aulawhatsapp.model.Mensagem
 import com.application.aulawhatsapp.model.Usuario
 import com.application.aulawhatsapp.utils.Constantes
@@ -32,12 +31,13 @@ class MensagensActivity : AppCompatActivity() {
     }
     private lateinit var listenerRegistration: ListenerRegistration
     private var dadosDestinatario: Usuario? = null
+    private var dadosUsuarioRemetente: Usuario? = null
     private lateinit var conversasAdapter: ConversasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        recuperarDadosUsuarioDestinatario()
+        recuperarDadosUsuarios()
         inicializarToolbar()
         inicializarEventoClique()
         inicializarListeners()
@@ -111,6 +111,7 @@ class MensagensActivity : AppCompatActivity() {
     private fun salvarMensagem(textoMensagem: String) {
 
         if (textoMensagem.isNotEmpty()){
+
             val idUsuarioRemetente = firebaseAuth.currentUser?.uid
             val idUsuarioDestinatario = dadosDestinatario?.id
             if (idUsuarioRemetente != null && idUsuarioDestinatario != null){
@@ -122,16 +123,44 @@ class MensagensActivity : AppCompatActivity() {
                 salvarMensagemFirestore(
                     idUsuarioRemetente, idUsuarioDestinatario, mensagem
                 )
+                //Jamilton -> Foto e nome Destinatario (ana)
+                val conversaRemetente = Conversa(
+                    idUsuarioRemetente, idUsuarioDestinatario,
+                    dadosDestinatario!!.foto, dadosDestinatario!!.nome,
+                    textoMensagem
+                )
+                salvarConversaFirestore( conversaRemetente )
 
                 //Salvar mensagem para o destinatário
                 salvarMensagemFirestore(
                     idUsuarioDestinatario, idUsuarioRemetente, mensagem
                 )
+                //Ana -> Foto e nome Remetente (jamilton)
+                val conversaDestinatario = Conversa(
+                    idUsuarioDestinatario, idUsuarioRemetente,
+                    dadosUsuarioRemetente!!.foto, dadosUsuarioRemetente!!.nome,
+                    textoMensagem
+                )
+                salvarConversaFirestore( conversaDestinatario )
 
                 binding.editMensagem.setText("")
 
             }
         }
+
+    }
+
+    private fun salvarConversaFirestore(conversa: Conversa) {
+
+        firestore
+            .collection( Constantes.CONVERSAS )
+            .document( conversa.idUsuarioRemetente )
+            .collection( Constantes.ULTIMAS_CONVERSAS )
+            .document( conversa.idUsuarioDestinatario )
+            .set( conversa )
+            .addOnFailureListener {
+                exibirMensagem("Erro ao salvar conversa")
+            }
 
     }
 
@@ -165,8 +194,27 @@ class MensagensActivity : AppCompatActivity() {
         }
     }
 
-    private fun recuperarDadosUsuarioDestinatario() {
+    private fun recuperarDadosUsuarios() {
 
+        //Dados do usuaŕio logado
+        val idUsuarioRemetente = firebaseAuth.currentUser?.uid
+        if ( idUsuarioRemetente != null ){
+            firestore
+                .collection(Constantes.USUARIOS)
+                .document(idUsuarioRemetente)
+                .get()
+                .addOnSuccessListener {  documentSnapshot ->
+
+                    val usuario = documentSnapshot.toObject(Usuario::class.java)
+                    if ( usuario != null ){
+                        dadosUsuarioRemetente = usuario
+                    }
+
+                }
+        }
+
+
+        //Recuperando dados destinatario
         val extras = intent.extras
         if (extras != null){
 
