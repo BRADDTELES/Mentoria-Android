@@ -85,6 +85,7 @@
             android:id="@+id/editMensagem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Digite sua mensagem" />
+            android:hint="Digite sua mensagem"
+            android:inputType="text|textLongMessage|textNoSuggestions" />
     </com.google.android.material.textfield.TextInputLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,7 +1,9 @@
 package com.application.aulawhatsapp.activities
 
+import android.net.nsd.NsdManager.RegistrationListener
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulawhatsapp.R
 import com.application.aulawhatsapp.databinding.ActivityMensagensBinding
@@ -11,6 +13,8 @@ import com.application.aulawhatsapp.utils.Constantes
 import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.Query
 import com.squareup.picasso.Picasso
 
 class MensagensActivity : AppCompatActivity() {
@@ -24,6 +28,7 @@ class MensagensActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMensagensBinding.inflate(layoutInflater)
     }
+    private lateinit var listenerRegistration: ListenerRegistration
     private var dadosDestinatario: Usuario? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,6 +37,51 @@ class MensagensActivity : AppCompatActivity() {
         recuperarDadosUsuarioDestinatario()
         inicializarToolbar()
         inicializarEventoClique()
+        inicializarListeners()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        listenerRegistration.remove()
+    }
+
+    private fun inicializarListeners() {
+
+        val idUsuarioRemetente = firebaseAuth.currentUser?.uid
+        val idUsuarioDestinatario = dadosDestinatario?.id
+        if (idUsuarioRemetente != null && idUsuarioDestinatario != null){
+
+            listenerRegistration = firestore
+                .collection(Constantes.MENSAGENS)
+                .document( idUsuarioRemetente )
+                .collection( idUsuarioDestinatario )
+                .orderBy("data", Query.Direction.ASCENDING)
+                .addSnapshotListener { querySnapshot, erro ->
+
+                    if (erro != null){
+                        exibirMensagem("Erro ao recuperar mensagens")
+                    }
+
+                    val listaMensagens = mutableListOf<Mensagem>()
+                    val documentos = querySnapshot?.documents
+
+                    documentos?.forEach { documentSnapshot ->
+                        val mensagem = documentSnapshot.toObject( Mensagem::class.java )
+                        if (mensagem != null){
+                            listaMensagens.add(mensagem)
+                            Log.i("exibicao_mensagens", mensagem.mensagem)
+                        }
+                    }
+
+                    //Lista
+                    if (listaMensagens.isNotEmpty()){
+                        //Carregar os dados Adapter
+                    }
+
+                }
+        }
+
+
     }
 
     private fun inicializarEventoClique() {
