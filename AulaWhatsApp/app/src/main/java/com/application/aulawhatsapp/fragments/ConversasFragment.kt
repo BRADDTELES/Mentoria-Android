@@ -23,6 +23,7 @@ import com.application.aulawhatsapp.utils.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.Query
 
 class ConversasFragment : Fragment() {
 
@@ -80,6 +81,7 @@ class ConversasFragment : Fragment() {
                 .collection(Constantes.CONVERSAS)
                 .document( idUsuarioRemetente )
                 .collection( Constantes.ULTIMAS_CONVERSAS )
+                .orderBy("data", Query.Direction.DESCENDING)
                 .addSnapshotListener { querySnapshot, erro ->
 
                     if ( erro != null ){
