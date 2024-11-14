@@ -25,7 +25,6 @@ class ContatosFragment : Fragment() {
     private lateinit var binding: FragmentContatosBinding
     private lateinit var eventoSnapshot: ListenerRegistration
     private lateinit var contatosAdapter: ContatosAdapter
-
     private val firebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }

@@ -5,7 +5,9 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.application.aulawhatsapp.R
+import com.application.aulawhatsapp.adapters.ConversasAdapter
 import com.application.aulawhatsapp.databinding.ActivityMensagensBinding
 import com.application.aulawhatsapp.model.Mensagem
 import com.application.aulawhatsapp.model.Usuario
@@ -30,6 +32,7 @@ class MensagensActivity : AppCompatActivity() {
     }
     private lateinit var listenerRegistration: ListenerRegistration
     private var dadosDestinatario: Usuario? = null
+    private lateinit var conversasAdapter: ConversasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +41,17 @@ class MensagensActivity : AppCompatActivity() {
         inicializarToolbar()
         inicializarEventoClique()
         inicializarListeners()
+        inicializarRecyclerview()
+    }
+
+    private fun inicializarRecyclerview() {
+
+        with(binding){
+            conversasAdapter = ConversasAdapter()
+            rvMensagens.adapter = conversasAdapter
+            rvMensagens.layoutManager = LinearLayoutManager(applicationContext)
+        }
+
     }
 
     override fun onDestroy() {
@@ -76,6 +90,7 @@ class MensagensActivity : AppCompatActivity() {
                     //Lista
                     if (listaMensagens.isNotEmpty()){
                         //Carregar os dados Adapter
+                        conversasAdapter.adicionarLista( listaMensagens )
                     }
 
                 }
