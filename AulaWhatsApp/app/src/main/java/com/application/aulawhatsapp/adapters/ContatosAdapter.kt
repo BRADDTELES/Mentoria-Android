@@ -2,6 +2,7 @@ package com.application.aulawhatsapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.application.aulawhatsapp.databinding.ItemContatosBinding
@@ -17,7 +18,9 @@ class ContatosAdapter(
         listaContatos = lista
         notifyDataSetChanged()
     }
-    inner class ContatosViewHoldder(private val binding: ItemContatosBinding) : ViewHolder(binding.root){
+    inner class ContatosViewHoldder(
+        private val binding: ItemContatosBinding
+    ) : RecyclerView.ViewHolder( binding.root ){
 
         fun bind( usuario: Usuario ){
 
