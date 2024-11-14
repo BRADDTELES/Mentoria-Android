@@ -4,15 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.application.aulawhatsapp.databinding.ItemContatosBinding
 import com.application.aulawhatsapp.databinding.ItemMensagensDestinatarioBinding
 import com.application.aulawhatsapp.databinding.ItemMensagensRemetenteBinding
 import com.application.aulawhatsapp.model.Mensagem
-import com.application.aulawhatsapp.model.Usuario
 import com.application.aulawhatsapp.utils.Constantes
 import com.google.firebase.auth.FirebaseAuth
 
-class ConversasAdapter : Adapter<ViewHolder>() {
+class MensagensAdapter : Adapter<ViewHolder>() {
 
     private var listaMensagens = emptyList<Mensagem>()
     fun adicionarLista( lista: List<Mensagem> ){

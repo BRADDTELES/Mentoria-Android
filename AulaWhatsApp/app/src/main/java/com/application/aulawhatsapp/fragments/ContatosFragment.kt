@@ -28,7 +28,6 @@ class ContatosFragment : Fragment() {
     private val firebaseAuth by lazy {
         FirebaseAuth.getInstance()
     }
-
     private val firestore by lazy {
         FirebaseFirestore.getInstance()
     }
@@ -66,9 +65,9 @@ class ContatosFragment : Fragment() {
     }
 
     private fun adicionarListenerContatos() {
-        // Recuperar os contatos do banco de dados
+
         eventoSnapshot = firestore
-            .collection("usuarios")
+            .collection(Constantes.USUARIOS)
             .addSnapshotListener { querySnapshot, erro -> 
 
                 val listaContatos = mutableListOf<Usuario>()
