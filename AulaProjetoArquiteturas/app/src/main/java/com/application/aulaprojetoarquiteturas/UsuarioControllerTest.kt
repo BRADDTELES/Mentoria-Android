@@ -1,22 +1,30 @@
 package com.application.aulaprojetoarquiteturas
 
+import android.util.Log
+import com.application.aulaprojetoarquiteturas.model.Usuario
+import com.application.aulaprojetoarquiteturas.presenter.IUsuario
 import com.application.aulaprojetoarquiteturas.presenter.UsuarioPresenter
 
 class UsuarioControllerTest {
 
+    inner class SimularActivity : IUsuario{
+        override fun exibirUsuarios(lista: List<Usuario>) {
+            Log.i("controller_test", "${lista.toString()}")
+        }
+    }
+
     fun testarRecuperarUsuarios(){
 
-        //Entrada
-
+        /*//Entrada
         //Processamento
-        /*val usuarioController = UsuarioController(
-            this
-        )
-        usuarioController.recuperarUsuario()*/
-        //Saida
+        val usuarioController = UsuarioController(this)
+        usuarioController.recuperarUsuario()
+        //Saida*/
 
-        /*val usuarioPresenter = UsuarioPresenter()
-        usuarioPresenter.recuperarUsuario()*/
+        //Facilitar os testes
+        val simularActivity = SimularActivity()
+        val usuarioPresenter = UsuarioPresenter( simularActivity )
+        usuarioPresenter.recuperarUsuario()
 
     }
 

@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import com.application.aulaprojetoarquiteturas.controller.UsuarioController
 import com.application.aulaprojetoarquiteturas.databinding.ActivityMainBinding
 import com.application.aulaprojetoarquiteturas.model.Usuario
+import com.application.aulaprojetoarquiteturas.presenter.IUsuario
 import com.application.aulaprojetoarquiteturas.presenter.UsuarioPresenter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IUsuario {
 
     private val binding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     //Passiva
-    fun exibirUsuarios(lista: List<Usuario> ){
+    override fun exibirUsuarios( lista: List<Usuario> ){
         //Log.i("teste", "${lista.toString()}")
 
         var textoUsuarios = ""
