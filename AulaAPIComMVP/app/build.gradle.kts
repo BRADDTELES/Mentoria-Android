@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.application.aulaapicommvp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.application.aulaapicommvp"

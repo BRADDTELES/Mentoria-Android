@@ -4,7 +4,7 @@ import com.application.aulaapicommvp.api.RetrofitService
 
 class PostagemAPI {
 
-    fun recuperarPostagens() : List<Postagem> {
+    suspend fun recuperarPostagens() : List<Postagem> {
 
         val jsonPlace = RetrofitService.recuperarJsonPlace()
 
