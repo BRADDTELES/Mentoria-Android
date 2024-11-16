@@ -3,10 +3,12 @@ package com.application.aulaapicommvp.view
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulaapicommvp.databinding.ActivityMainBinding
+import com.application.aulaapicommvp.model.Postagem
 import com.application.aulaapicommvp.model.PostagemAPI
+import com.application.aulaapicommvp.presenter.IPostagemPresenter
 import com.application.aulaapicommvp.presenter.PostagemPresenter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), IPostagemPresenter {
 
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
@@ -18,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView( binding.root )
 
         val postagemAPI = PostagemAPI()
-        postagemPresenter = PostagemPresenter( postagemAPI )
+        postagemPresenter = PostagemPresenter( this, postagemAPI )
 
     }
 
@@ -30,5 +32,14 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         postagemPresenter.onDestroy()
+    }
+
+    override fun exibirPostagens(lista: List<Postagem>) {
+
+        var textoResultado = ""
+        lista.forEach { postagem ->
+            textoResultado += "${postagem.id}) ${postagem.title} \n"
+        }
+        binding.textResultado.text = textoResultado
     }
 }
