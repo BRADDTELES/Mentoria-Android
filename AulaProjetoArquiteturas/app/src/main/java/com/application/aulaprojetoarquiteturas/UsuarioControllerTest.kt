@@ -1,4 +1,6 @@
-package com.application.aulaprojetoarquiteturas.controller
+package com.application.aulaprojetoarquiteturas
+
+import com.application.aulaprojetoarquiteturas.presenter.UsuarioPresenter
 
 class UsuarioControllerTest {
 
@@ -12,6 +14,9 @@ class UsuarioControllerTest {
         )
         usuarioController.recuperarUsuario()*/
         //Saida
+
+        /*val usuarioPresenter = UsuarioPresenter()
+        usuarioPresenter.recuperarUsuario()*/
 
     }
 

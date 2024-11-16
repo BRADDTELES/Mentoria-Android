@@ -1,17 +1,15 @@
-package com.application.aulaprojetoarquiteturas.controller
+package com.application.aulaprojetoarquiteturas.presenter
 
 import com.application.aulaprojetoarquiteturas.model.api.UsuarioAPI
 import com.application.aulaprojetoarquiteturas.view.MainActivity
 
-class UsuarioController(
-    private val mainActivity: MainActivity//Alta dependência / Alto acomplamento
+class UsuarioPresenter(
+    //Alta dependência / Alto acomplamento
+    private val mainActivity: MainActivity
 ) {
 
+    //Injeção de dependência
     private val usuarioAPI = UsuarioAPI()
-
-    init {
-        //recuperarUsuario()
-    }
 
     fun recuperarUsuario() {
 

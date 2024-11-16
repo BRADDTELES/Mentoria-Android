@@ -1,12 +1,11 @@
 package com.application.aulaprojetoarquiteturas.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import com.application.aulaprojetoarquiteturas.R
 import com.application.aulaprojetoarquiteturas.controller.UsuarioController
 import com.application.aulaprojetoarquiteturas.databinding.ActivityMainBinding
 import com.application.aulaprojetoarquiteturas.model.Usuario
+import com.application.aulaprojetoarquiteturas.presenter.UsuarioPresenter
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,24 +14,30 @@ class MainActivity : AppCompatActivity() {
     }
     // as 2 linhas abaixo podem ser utilizadas de uma ou de outra
     //private var usuarioController: UsuarioController? = null
-    private lateinit var usuarioController: UsuarioController
+    //private lateinit var usuarioController: UsuarioController
+    private lateinit var usuarioPresenter: UsuarioPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
-        usuarioController = UsuarioController(
+        /*usuarioController = UsuarioController(
             this
         )
         //usuarioController.recuperarUsuario()//Ativa
         binding.btnRecuperar.setOnClickListener {
             usuarioController.recuperarUsuario()
+        }*/
+
+        usuarioPresenter = UsuarioPresenter(this)
+        binding.btnRecuperar.setOnClickListener {
+            usuarioPresenter.recuperarUsuario()
         }
 
     }
 
     //Passiva
-    fun listarUsuarios( lista: List<Usuario> ){
+    fun exibirUsuarios(lista: List<Usuario> ){
         //Log.i("teste", "${lista.toString()}")
 
         var textoUsuarios = ""
