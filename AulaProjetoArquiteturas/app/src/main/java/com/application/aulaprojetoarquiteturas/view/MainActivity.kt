@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     //private var usuarioController: UsuarioController? = null
     private lateinit var usuarioController: UsuarioController
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
