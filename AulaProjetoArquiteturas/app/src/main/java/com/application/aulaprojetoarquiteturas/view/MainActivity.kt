@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(), IUsuario {
     // as 2 linhas abaixo podem ser utilizadas de uma ou de outra
     //private var usuarioController: UsuarioController? = null
     //private lateinit var usuarioController: UsuarioController
-    private lateinit var usuarioPresenter: UsuarioPresenter
+    private var usuarioPresenter: UsuarioPresenter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,9 +31,14 @@ class MainActivity : AppCompatActivity(), IUsuario {
 
         usuarioPresenter = UsuarioPresenter(this)
         binding.btnRecuperar.setOnClickListener {
-            usuarioPresenter.recuperarUsuario()
+            usuarioPresenter?.recuperarUsuario()
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        usuarioPresenter = null
     }
 
     //Passiva

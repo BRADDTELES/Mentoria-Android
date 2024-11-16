@@ -3,8 +3,7 @@ package com.application.aulaprojetoarquiteturas.presenter
 import com.application.aulaprojetoarquiteturas.model.api.UsuarioAPI
 
 class UsuarioPresenter(
-    //Alta dependência / Alto acomplamento
-    //private val mainActivity: MainActivity
+    //Baixa dependência / Baixo acomplamento
     private val activity: IUsuario // posso usar 'iUsuario' ou 'view' ou 'activity'
 ) {
 
