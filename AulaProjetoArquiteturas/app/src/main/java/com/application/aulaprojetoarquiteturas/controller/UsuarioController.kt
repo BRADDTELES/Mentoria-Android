@@ -11,7 +11,7 @@ class UsuarioController(
     private val usuarioAPI = UsuarioAPI()
 
     init {
-        recuperarUsuario()
+        //recuperarUsuario()
     }
 
     fun recuperarUsuario() {
