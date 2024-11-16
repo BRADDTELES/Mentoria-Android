@@ -1,7 +1,6 @@
 package com.application.aulaprojetoarquiteturas.presenter
 
 import com.application.aulaprojetoarquiteturas.model.api.UsuarioAPI
-import com.application.aulaprojetoarquiteturas.view.MainActivity
 
 class UsuarioPresenter(
     //Alta dependência / Alto acomplamento

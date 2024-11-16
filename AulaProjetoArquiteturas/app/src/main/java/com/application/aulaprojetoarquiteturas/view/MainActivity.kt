@@ -2,7 +2,6 @@ package com.application.aulaprojetoarquiteturas.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.application.aulaprojetoarquiteturas.controller.UsuarioController
 import com.application.aulaprojetoarquiteturas.databinding.ActivityMainBinding
 import com.application.aulaprojetoarquiteturas.model.Usuario
 import com.application.aulaprojetoarquiteturas.presenter.IUsuario
