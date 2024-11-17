@@ -5,7 +5,7 @@ import com.application.aulaprojetoarquiteturas.model.Usuario
 import com.application.aulaprojetoarquiteturas.presenter.IUsuario
 import com.application.aulaprojetoarquiteturas.presenter.UsuarioPresenter
 
-class UsuarioControllerTest {
+class UsuarioTest {
 
     inner class SimularActivity : IUsuario{
         override fun exibirUsuarios(lista: List<Usuario>) {

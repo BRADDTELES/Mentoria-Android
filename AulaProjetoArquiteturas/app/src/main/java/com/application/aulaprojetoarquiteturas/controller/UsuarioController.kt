@@ -4,7 +4,8 @@ import com.application.aulaprojetoarquiteturas.model.api.UsuarioAPI
 import com.application.aulaprojetoarquiteturas.view.MainActivity
 
 class UsuarioController(
-    private val mainActivity: MainActivity//Alta dependência / Alto acomplamento
+    //Alta dependência / Alto acomplamento
+    private val mainActivity: MainActivity
 ) {
 
     private val usuarioAPI = UsuarioAPI()
