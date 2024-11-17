@@ -19,12 +19,18 @@ class MainActivity : AppCompatActivity() {
         //mainViewModel = MainViewModel()
 
         mainViewModel = ViewModelProvider(this)[MainViewModel::class]
-        val textoContador = mainViewModel.eecuperarContador()
-        binding.textResultado.text = "cliques: $textoContador"
+        /*val textoContador = mainViewModel.recuperarLiveData()
+        binding.textResultado.text = "cliques: $textoContador"*/
+
+        //Observador
+        val liveData = mainViewModel.recuperarLiveData()
+        liveData.observe(this){ contador ->
+            binding.textResultado.text = "cliques: $contador"
+        }
 
         binding.btnClique.setOnClickListener {
             mainViewModel.incrementar()
-            binding.textResultado.text = "cliques: ${mainViewModel.eecuperarContador()}"
+            //binding.textResultado.text = "cliques: ${mainViewModel.recuperarLiveData()}"
         }
 
     }
