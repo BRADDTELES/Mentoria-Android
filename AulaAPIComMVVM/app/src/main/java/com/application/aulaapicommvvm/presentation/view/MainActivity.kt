@@ -7,6 +7,7 @@ import com.application.aulaapicommvvm.data.api.RetrofitService
 import com.application.aulaapicommvvm.data.repository.PostagemRepository
 import com.application.aulaapicommvvm.databinding.ActivityMainBinding
 import com.application.aulaapicommvvm.presentation.viewmodel.MainViewModel
+import com.application.aulaapicommvvm.presentation.viewmodel.MainViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         val jsonPlaceAPI = RetrofitService.recuperarJsonPlace()
         val postagemRepository = PostagemRepository( jsonPlaceAPI )
 
-        mainViewModel = ViewModelProvider(this)[MainViewModel::class]
+        mainViewModel = ViewModelProvider(
+            this,
+            MainViewModelFactory(postagemRepository)
+        )[MainViewModel::class]
+        //mainViewModel = ViewModelProvider(this)[MainViewModel::class]
 
         mainViewModel.listaPostagens.observe(this){ listaPostagens ->
 
