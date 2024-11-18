@@ -6,11 +6,11 @@ import com.application.aulaapicommvvm.data.model.Postagem
 
 class PostagemRepository(
     private val jsonPlaceAPI: JsonPlaceAPI
-) {
+) : IPostagemRepository {
 
-    val listaPostagensRepository = MutableLiveData<List<Postagem>>()
+    override val listaPostagensRepository = MutableLiveData<List<Postagem>>()
 
-    suspend fun recuperarPostagens() {
+    override suspend fun recuperarPostagens() {
 
         try {
             val retorno = jsonPlaceAPI.recuperarPostagens()
