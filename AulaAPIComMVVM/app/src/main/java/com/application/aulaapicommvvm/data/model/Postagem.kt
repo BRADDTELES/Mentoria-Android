@@ -1,4 +1,4 @@
-package com.application.aulaapicommvvm.model
+package com.application.aulaapicommvvm.data.model
 
 data class Postagem(
     val body: String,

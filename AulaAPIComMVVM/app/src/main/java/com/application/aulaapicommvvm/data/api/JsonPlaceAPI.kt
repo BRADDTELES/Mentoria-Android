@@ -1,6 +1,6 @@
-package com.application.aulaapicommvvm.api
+package com.application.aulaapicommvvm.data.api
 
-import com.application.aulaapicommvvm.model.Postagem
+import com.application.aulaapicommvvm.data.model.Postagem
 import retrofit2.Response
 import retrofit2.http.GET
 
