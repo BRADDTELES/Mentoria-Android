@@ -26,12 +26,12 @@ class MainActivity : AppCompatActivity(), IUsuario {
         )
         //usuarioController.recuperarUsuario()//Ativa
         binding.btnRecuperar.setOnClickListener {
-            usuarioController.recuperarUsuario()
+            usuarioController.recuperarUsuarios()
         }*/
 
         usuarioPresenter = UsuarioPresenter(this)
         binding.btnRecuperar.setOnClickListener {
-            usuarioPresenter?.recuperarUsuario()
+            usuarioPresenter?.recuperarUsuarios()
         }
 
     }

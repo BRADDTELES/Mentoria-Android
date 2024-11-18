@@ -2,7 +2,7 @@ package com.application.aulaprojetoarquiteturas.presenter
 
 import com.application.aulaprojetoarquiteturas.model.api.UsuarioAPI
 
-class UsuarioPresenter(
+class UsuarioPresenter(//Ativo
     //Baixa dependência / Baixo acomplamento
     private val activity: IUsuario // posso usar 'iUsuario' ou 'view' ou 'activity'
 ) {
@@ -10,7 +10,7 @@ class UsuarioPresenter(
     //Injeção de dependência
     private val usuarioAPI = UsuarioAPI()
 
-    fun recuperarUsuario() {
+    fun recuperarUsuarios() {
 
         //1) Regra de négocio
         val lista = usuarioAPI.recuperarUsuario()

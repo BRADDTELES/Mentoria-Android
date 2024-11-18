@@ -25,7 +25,7 @@ class FeedActivity : AppCompatActivity(), IUsuario {
 
     override fun onStart() {
         super.onStart()
-        usuarioPresenter.recuperarUsuario()
+        usuarioPresenter.recuperarUsuarios()
     }
 
     override fun exibirUsuarios( lista: List<Usuario> ){

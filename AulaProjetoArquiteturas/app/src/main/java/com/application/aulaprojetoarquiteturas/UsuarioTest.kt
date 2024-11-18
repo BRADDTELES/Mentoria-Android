@@ -4,6 +4,7 @@ import android.util.Log
 import com.application.aulaprojetoarquiteturas.model.Usuario
 import com.application.aulaprojetoarquiteturas.presenter.IUsuario
 import com.application.aulaprojetoarquiteturas.presenter.UsuarioPresenter
+import com.application.aulaprojetoarquiteturas.viewmodel.UsuarioViewModel
 
 class UsuarioTest {
 
@@ -24,7 +25,11 @@ class UsuarioTest {
         //Facilitar os testes
         val simularActivity = SimularActivity()
         val usuarioPresenter = UsuarioPresenter( simularActivity )
-        usuarioPresenter.recuperarUsuario()
+        usuarioPresenter.recuperarUsuarios()
+
+        //Simular testes com MVVM
+        val usuarioViewModel = UsuarioViewModel()
+        usuarioViewModel.recuperarUsuarios()
 
     }
 
