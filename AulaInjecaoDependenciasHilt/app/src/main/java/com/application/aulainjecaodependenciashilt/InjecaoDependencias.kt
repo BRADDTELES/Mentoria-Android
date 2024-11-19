@@ -1,5 +1,6 @@
 package com.application.aulainjecaodependenciashilt
 
+/*
 class Carro( private val motor: Motor ) { // Injeção de dependencia "Baixo acoplamento"
 //class Carro {
 
@@ -33,10 +34,12 @@ object LocalizadorServico{
         return MotorGasolina("Ferrari")
     }
 }
+*/
+
 
 fun main() {
 
-    //Tela 01
+    /*//Tela 01
     val motorGasolina = LocalizadorServico.proverMotorGasolina()
     val carro = Carro( motorGasolina )
     //val carro = Carro()
@@ -46,6 +49,6 @@ fun main() {
     //Tela 02
     val motorGasolina2 = LocalizadorServico.proverMotorGasolina()
     val carro2 = Carro( motorGasolina2 )
-    carro2.ligar()
+    carro2.ligar()*/
 
 }
