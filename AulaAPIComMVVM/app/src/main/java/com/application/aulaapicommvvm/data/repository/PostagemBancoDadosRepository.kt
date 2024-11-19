@@ -3,9 +3,11 @@ package com.application.aulaapicommvvm.data.repository
 import androidx.lifecycle.MutableLiveData
 import com.application.aulaapicommvvm.data.model.PostagemResposta
 
+/*
 class PostagemBancoDadosRepository() : IPostagemRepository {
 
     override val listaPostagensRepository = MutableLiveData<List<PostagemResposta>>()
+
     override suspend fun recuperarPostagens() {
         val lista = listOf(
             PostagemResposta(
@@ -20,4 +22,4 @@ class PostagemBancoDadosRepository() : IPostagemRepository {
         )
         listaPostagensRepository.value = lista
     }
-}
+}*/

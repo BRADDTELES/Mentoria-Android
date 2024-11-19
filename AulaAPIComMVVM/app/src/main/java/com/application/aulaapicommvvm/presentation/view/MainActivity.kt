@@ -4,10 +4,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.application.aulaapicommvvm.data.api.RetrofitService
-import com.application.aulaapicommvvm.data.repository.PostagemBancoDadosRepository
-import com.application.aulaapicommvvm.data.repository.PostagemFirebaseRepository
 import com.application.aulaapicommvvm.data.repository.PostagemRepository
 import com.application.aulaapicommvvm.databinding.ActivityMainBinding
+import com.application.aulaapicommvvm.domain.usecase.PostagemUseCase
 import com.application.aulaapicommvvm.presentation.viewmodel.MainViewModel
 import com.application.aulaapicommvvm.presentation.viewmodel.MainViewModelFactory
 
@@ -23,10 +22,11 @@ class MainActivity : AppCompatActivity() {
 
         val jsonPlaceAPI = RetrofitService.recuperarJsonPlace()
         val postagemRepository = PostagemRepository( jsonPlaceAPI )
+        val postagemUseCase = PostagemUseCase( postagemRepository )
 
         mainViewModel = ViewModelProvider(
             this,
-            MainViewModelFactory( postagemRepository )
+            MainViewModelFactory( postagemUseCase )
         )[MainViewModel::class]
         //mainViewModel = ViewModelProvider(this)[MainViewModel::class]
 
@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
 
             var listaResultado = ""
             listaPostagens.forEach { postagem ->
-                listaResultado += "${postagem.id}) ${postagem.title} \n"
+                listaResultado += "${postagem.codigo}) ${postagem.titulo} \n"
             }
             binding.textResultado.text = listaResultado
 

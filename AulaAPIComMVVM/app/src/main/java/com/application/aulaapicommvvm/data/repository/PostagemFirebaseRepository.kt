@@ -3,6 +3,7 @@ package com.application.aulaapicommvvm.data.repository
 import androidx.lifecycle.MutableLiveData
 import com.application.aulaapicommvvm.data.model.PostagemResposta
 
+/*
 class PostagemFirebaseRepository : IPostagemRepository {
 
     override val listaPostagensRepository = MutableLiveData<List<PostagemResposta>>()
@@ -15,6 +16,4 @@ class PostagemFirebaseRepository : IPostagemRepository {
         listaPostagensRepository.value = lista
     }
 
-
-
-}
+}*/
