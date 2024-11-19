@@ -1,4 +1,4 @@
-package com.application.aulainjecaodependenciashilt
+package com.application.aulainjecaodependenciashilt.classes
 
 import android.util.Log
 

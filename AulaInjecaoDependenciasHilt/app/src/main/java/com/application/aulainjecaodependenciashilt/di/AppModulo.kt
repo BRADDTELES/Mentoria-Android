@@ -1,11 +1,14 @@
 package com.application.aulainjecaodependenciashilt.di
 
-import com.application.aulainjecaodependenciashilt.Carro
-import com.application.aulainjecaodependenciashilt.Motor
-import com.application.aulainjecaodependenciashilt.MotorGasolina
+import android.content.Context
+import com.application.aulainjecaodependenciashilt.classes.Carro
+import com.application.aulainjecaodependenciashilt.classes.Motor
+import com.application.aulainjecaodependenciashilt.classes.MotorEnergiaSolar
+import com.application.aulainjecaodependenciashilt.classes.MotorGasolina
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 
 @Module
@@ -13,13 +16,14 @@ import dagger.hilt.components.SingletonComponent
 object AppModulo {
 
     @Provides
-    fun proverCarro( motor: Motor ) : Carro {//Veiculo
-        return Carro( motor )
+    fun proverCarro( motor: Motor, @ApplicationContext context: Context ) : Carro {//Veiculo
+        return Carro( motor, context )
     }
 
     @Provides
     fun proverMotor() : Motor {
-        return MotorGasolina()
+        //return MotorGasolina()
+        return MotorEnergiaSolar()
     }
 
 }
