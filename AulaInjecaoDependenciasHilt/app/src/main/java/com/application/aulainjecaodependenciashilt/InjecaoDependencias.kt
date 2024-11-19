@@ -16,9 +16,9 @@ interface Motor {
     fun acionar()
 }
 
-class MotorGasolina( val nome: String) : Motor{
+class MotorGasolina(val marca: String) : Motor{
     override fun acionar(){
-        println("Motor ligado a gasolina")
+        println("Motor ligado a gasolina $marca")
     }
 }
 
@@ -28,17 +28,23 @@ class MotorEletrico() : Motor{
     }
 }
 
+object LocalizadorServico{
+    fun proverMotorGasolina() : Motor {
+        return MotorGasolina("Ferrari")
+    }
+}
+
 fun main() {
 
     //Tela 01
-    val motorGasolina = MotorGasolina("GHT2.0")
+    val motorGasolina = LocalizadorServico.proverMotorGasolina()
     val carro = Carro( motorGasolina )
     //val carro = Carro()
     //carro.motor = motorGasolina // Injeção de campo
     carro.ligar()
 
     //Tela 02
-    val motorGasolina2 = MotorGasolina("GHT2.0")
+    val motorGasolina2 = LocalizadorServico.proverMotorGasolina()
     val carro2 = Carro( motorGasolina2 )
     carro2.ligar()
 
