@@ -22,9 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView( binding.root )
 
         val jsonPlaceAPI = RetrofitService.recuperarJsonPlace()
-        //val postagemRepository = PostagemRepository( jsonPlaceAPI )
-        //val postagemRepository = PostagemFirebaseRepository(  )
-        val postagemRepository = PostagemBancoDadosRepository(  )
+        val postagemRepository = PostagemRepository( jsonPlaceAPI )
 
         mainViewModel = ViewModelProvider(
             this,
