@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.danilloteles.myapplication.R
 import dagger.hilt.android.AndroidEntryPoint
 
+//DTO -> Data Transfer Object (Objeto de Transferência de Dados) é como se fosse um Model
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
