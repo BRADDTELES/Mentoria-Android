@@ -1,5 +1,7 @@
 package com.danilloteles.projetomvvmcleanhilt.data.dto
 
+import com.danilloteles.projetomvvmcleanhilt.domain.model.Usuario
+
 data class UsuarioDTO(
     val address: Address,
     val age: Int,
@@ -30,3 +32,16 @@ data class UsuarioDTO(
     val username: String,
     val weight: Double
 )
+
+// Função de extensão para converter um objeto UsuarioDTO em um objeto Usuario
+fun UsuarioDTO.toUsuario() : Usuario {
+    return Usuario(
+        nome = this.firstName,
+        sobrenome = this.lastName,
+        endereco = this.address.address,
+        idade = this.age,
+        email = this.email,
+        telefone = this.phone,
+        imagem = this.image
+    )
+}

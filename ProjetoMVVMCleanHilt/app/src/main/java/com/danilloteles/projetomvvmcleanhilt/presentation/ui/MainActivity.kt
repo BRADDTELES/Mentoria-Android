@@ -6,7 +6,7 @@ import com.danilloteles.myapplication.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 //DTO -> Data Transfer Object (Objeto de Transferência de Dados) é como se fosse um Model
-//Util -> Classe de utilitários que pode se chamar também de Helper
+//Util -> Classe de utilitários, que pode ser chamada também de Helper
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
