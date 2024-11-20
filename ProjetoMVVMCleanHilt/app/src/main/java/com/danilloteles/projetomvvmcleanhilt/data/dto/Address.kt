@@ -1,4 +1,4 @@
-package com.danilloteles.myapplication.data.dto
+package com.danilloteles.projetomvvmcleanhilt.data.dto
 
 data class Address(
     val address: String,

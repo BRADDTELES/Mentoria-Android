@@ -1,6 +1,6 @@
-package com.danilloteles.myapplication.data.remote
+package com.danilloteles.projetomvvmcleanhilt.data.remote
 
-import com.danilloteles.myapplication.data.dto.ResultadoAPIDTO
+import com.danilloteles.projetomvvmcleanhilt.data.dto.ResultadoAPIDTO
 import retrofit2.Response
 import retrofit2.http.GET
 

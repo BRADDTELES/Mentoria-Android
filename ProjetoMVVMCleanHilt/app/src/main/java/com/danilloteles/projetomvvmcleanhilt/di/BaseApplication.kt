@@ -1,4 +1,4 @@
-package com.danilloteles.myapplication.di
+package com.danilloteles.projetomvvmcleanhilt.di
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

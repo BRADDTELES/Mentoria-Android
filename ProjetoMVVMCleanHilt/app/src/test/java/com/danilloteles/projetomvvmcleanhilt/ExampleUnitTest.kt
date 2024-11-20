@@ -1,4 +1,4 @@
-package com.danilloteles.myapplication
+package com.danilloteles.projetomvvmcleanhilt
 
 import org.junit.Test
 

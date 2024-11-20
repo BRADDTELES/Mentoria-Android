@@ -1,4 +1,4 @@
-package com.danilloteles.myapplication
+package com.danilloteles.projetomvvmcleanhilt
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
