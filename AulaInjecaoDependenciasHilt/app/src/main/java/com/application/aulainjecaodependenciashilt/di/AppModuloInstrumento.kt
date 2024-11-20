@@ -6,11 +6,15 @@ import com.application.aulainjecaodependenciashilt.classes.Musico
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.components.FragmentComponent
+import dagger.hilt.android.components.ServiceComponent
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Named
 
 @Module
-@InstallIn(SingletonComponent::class )
+@InstallIn( ActivityComponent::class )
 object AppModuloInstrumento {
 
     @Provides
