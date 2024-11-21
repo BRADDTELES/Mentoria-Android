@@ -46,6 +46,14 @@ class UsuarioViewModel{
         val listaUsuarios = usuarioRepository.salvarUsuario( usuario, retornoRequisicao )
     }
 }
+open class Veiculo //Supertipo (Veiculo)
+class Carro : Veiculo() //Subtipo (Veiculo e também carro)
+
+/*open class Supertipo //pai
+class Subtipo : Supertipo() //filha
+
+interface Corariant<out T>
+interface ContraCorariant<in T>*/
 
 fun main() {
 
@@ -62,18 +70,25 @@ fun main() {
 
 
 
+    //val supertipo: Corariant<Supertipo> = object : Corariant<Subtipo>{}
+    //val supertipo: ContraCorariant<Subtipo> = object : ContraCorariant<Supertipo>{}
+
+    //val veiculo: Carro = Veiculo()
+
+
+
 
     /*val status = StatusPedido.AGUARDANDO
     if ( status == StatusPedido.AGUARDANDO ){}*/
 
     //Sealed Class
-    /*val statusRequisicao: StatusRequisicao = StatusRequisicao.Sucesso(
+    val statusRequisicao: StatusRequisicao = StatusRequisicao.Sucesso(
         listOf("jamilton", "ana", "maria")
     )
     when ( statusRequisicao ){
         is StatusRequisicao.Sucesso -> println("Sucesso lista: ${statusRequisicao.lista}")
         is StatusRequisicao.Erro -> println("Erro: ${statusRequisicao.codigo} desc: ${statusRequisicao.descricao}")
-    }*/
+    }
 
     //Enum
     /*val statusRequisicao = StatusRequisicaoEnum.Sucesso
