@@ -23,3 +23,5 @@ rootProject.name = "AulaModulos"
 include(":clientes")
 include(":lojas")
 include(":entregas")
+include(":core:autenticacao")
+include(":core:validacoes")

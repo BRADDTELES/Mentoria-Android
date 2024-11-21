@@ -10,6 +10,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/clientes" />
+            <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core/autenticacao" />
+            <option value="$PROJECT_DIR$/core/validacoes" />
             <option value="$PROJECT_DIR$/entregas" />
             <option value="$PROJECT_DIR$/lojas" />
           </set>
