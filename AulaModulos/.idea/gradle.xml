@@ -13,6 +13,9 @@
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/autenticacao" />
             <option value="$PROJECT_DIR$/core/validacoes" />
+            <option value="$PROJECT_DIR$/data" />
+            <option value="$PROJECT_DIR$/data/api" />
+            <option value="$PROJECT_DIR$/data/banco" />
             <option value="$PROJECT_DIR$/entregas" />
             <option value="$PROJECT_DIR$/lojas" />
           </set>
