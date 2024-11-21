@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -46,6 +49,7 @@ dependencies {
     implementation(project(":core:autenticacao"))
     implementation(project(":data:banco"))
     implementation(project(":data:api"))
+    implementation(project(":feature:autenticacao"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

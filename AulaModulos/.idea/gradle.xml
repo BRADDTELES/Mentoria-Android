@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/data/api" />
             <option value="$PROJECT_DIR$/data/banco" />
             <option value="$PROJECT_DIR$/entregas" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/autenticacao" />
             <option value="$PROJECT_DIR$/lojas" />
           </set>
         </option>
