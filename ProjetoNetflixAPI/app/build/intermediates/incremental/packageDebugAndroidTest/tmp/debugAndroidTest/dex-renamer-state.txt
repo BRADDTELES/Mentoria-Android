@@ -1,8 +1,8 @@
-#Mon Oct 28 10:02:34 BRT 2024
-base.0=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debugAndroidTest/mergeExtDexDebugAndroidTest/classes.dex
-base.1=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/0/classes.dex
-base.2=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/10/classes.dex
-base.3=/home/bradd/Documentos/AndroidStudioProjects/Mentoria-Android/ProjetoNetflixAPI/app/build/intermediates/dex/debugAndroidTest/mergeProjectDexDebugAndroidTest/3/classes.dex
+#Sun Nov 24 18:48:26 BRT 2024
+base.0=C\:\\AndroidStudioProjects\\Mentoria-Android\\ProjetoNetflixAPI\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeExtDexDebugAndroidTest\\classes.dex
+base.1=C\:\\AndroidStudioProjects\\Mentoria-Android\\ProjetoNetflixAPI\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\0\\classes.dex
+base.2=C\:\\AndroidStudioProjects\\Mentoria-Android\\ProjetoNetflixAPI\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\10\\classes.dex
+base.3=C\:\\AndroidStudioProjects\\Mentoria-Android\\ProjetoNetflixAPI\\app\\build\\intermediates\\dex\\debugAndroidTest\\mergeProjectDexDebugAndroidTest\\3\\classes.dex
 path.0=classes.dex
 path.1=0/classes.dex
 path.2=10/classes.dex

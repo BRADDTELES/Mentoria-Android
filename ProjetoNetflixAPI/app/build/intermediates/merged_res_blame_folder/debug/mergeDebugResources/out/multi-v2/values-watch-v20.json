@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-26:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-2:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/home/bradd/.gradle/caches/transforms-4/12b7c3c44d39700b8f66cff66d9923d0/transformed/appcompat-1.5.1/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\12b7c3c44d39700b8f66cff66d9923d0\\transformed\\appcompat-1.5.1\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",
