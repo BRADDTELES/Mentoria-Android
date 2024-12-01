@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-2:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-26:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\12b7c3c44d39700b8f66cff66d9923d0\\transformed\\appcompat-1.5.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/89e5d74e4aefd0480743db9d1328449c/transformed/appcompat-1.5.1/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10",
                         "startColumns": "4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\71b8977ebec30b9ca336243e4b9bd37d\\transformed\\material-1.6.1\\res\\values-large-v4\\values-large-v4.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/f8fa8f144eaee788e98b69553adbab19/transformed/material-1.6.1/res/values-large-v4/values-large-v4.xml",
                     "from": {
                         "startLines": "2,3,4,10",
                         "startColumns": "4,4,4,4",
