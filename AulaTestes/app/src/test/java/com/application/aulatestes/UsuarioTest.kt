@@ -1,12 +1,20 @@
 package com.application.aulatestes
 
+import org.junit.After
 import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Test
 
 class UsuarioTest{
 
+    @Before
+    fun setUp() {}
+
+    @After
+    fun tearDown() {}
+
     @Test
-    fun validarCadastroUsuarioRetornaVerdadeiro(){
+    fun cadastrar_ValidarCadastroUsuario_RetornaVerdadeiro(){
 
         //Dado
         val email = "jamilton@gmail.com"
@@ -23,7 +31,7 @@ class UsuarioTest{
     }
 
     @Test
-    fun validarConfirmacaoSenhaRetornaTrue(){
+    fun cadastrar_ConfirmacaoSenha_RetornaTrue(){
 
         //Dado
         val usuario = Usuario()
@@ -40,7 +48,7 @@ class UsuarioTest{
     }
 
     @Test
-    fun calcularDescontoSalarioRetornaTrue(){
+    fun calcular_DescontoSalario_RetornaTrue(){
 
         //Dado
         val usuario = Usuario()
