@@ -50,6 +50,7 @@ dependencies {
     implementation(project(":data:banco"))
     implementation(project(":data:api"))
     implementation(project(":feature:autenticacao"))
+    implementation(project(":domain"))
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-2:/values-pt-rBR/values-pt-rBR.xml",
+            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-26:/values-pt-rBR/values-pt-rBR.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\228d96c8d65df4c54d777d664213f7ab\\transformed\\core-1.8.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/c9564862f43412c031136791b339fc78/transformed/core-1.8.0/res/values-pt-rBR/values-pt-rBR.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\71b8977ebec30b9ca336243e4b9bd37d\\transformed\\material-1.6.1\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/f8fa8f144eaee788e98b69553adbab19/transformed/material-1.6.1/res/values-pt-rBR/values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -40,7 +40,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\12b7c3c44d39700b8f66cff66d9923d0\\transformed\\appcompat-1.5.1\\res\\values-pt-rBR\\values-pt-rBR.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/89e5d74e4aefd0480743db9d1328449c/transformed/appcompat-1.5.1/res/values-pt-rBR/values-pt-rBR.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

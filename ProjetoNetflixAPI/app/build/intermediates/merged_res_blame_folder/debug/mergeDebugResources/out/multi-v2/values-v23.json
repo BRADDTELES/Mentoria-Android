@@ -1,29 +1,21 @@
 {
     "logs": [
         {
-            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-2:/values-v23/values-v23.xml",
+            "outputFile": "com.jamiltondamasceno.projetonetflixapi.app-mergeDebugResources-26:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\71b8977ebec30b9ca336243e4b9bd37d\\transformed\\material-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/89e5d74e4aefd0480743db9d1328449c/transformed/appcompat-1.5.1/res/values-v23/values-v23.xml",
                     "from": {
-                        "startLines": "2,5,8,13,17,20,23,26,31,34,38",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,271,481,801,1038,1245,1452,1655,1987,2189,2454",
-                        "endLines": "4,7,12,16,19,22,25,30,33,37,41",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "266,476,796,1033,1240,1447,1650,1982,2184,2449,2722"
-                    },
-                    "to": {
-                        "startLines": "53,56,59,64,68,71,74,77,82,85,89",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3382,3598,3808,4128,4365,4572,4779,4982,5314,5516,5781",
-                        "endLines": "55,58,63,67,70,73,76,81,84,88,92",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "3593,3803,4123,4360,4567,4774,4977,5309,5511,5776,6049"
+                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
+                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
+                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
                     }
                 },
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\b7775b9415c833e0f2fb1e654c33997c\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/dd3b3b48165c5e3cbd2dbba7d1ad3a66/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,14 +34,22 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\bradd\\.gradle\\caches\\transforms-4\\12b7c3c44d39700b8f66cff66d9923d0\\transformed\\appcompat-1.5.1\\res\\values-v23\\values-v23.xml",
+                    "source": "/home/bradd/.gradle/caches/transforms-4/f8fa8f144eaee788e98b69553adbab19/transformed/material-1.6.1/res/values-v23/values-v23.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,190,325,400,487,1225,1975,2094,2221,2443,2667,2782,2889,3002",
-                        "endLines": "2,3,4,5,19,33,34,35,38,42,43,44,45,49",
-                        "endColumns": "134,134,74,86,12,12,118,126,12,12,114,106,112,12",
-                        "endOffsets": "185,320,395,482,1220,1970,2089,2216,2438,2662,2777,2884,2997,3227"
+                        "startLines": "2,5,8,13,17,20,23,26,31,34,38",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,481,801,1038,1245,1452,1655,1987,2189,2454",
+                        "endLines": "4,7,12,16,19,22,25,30,33,37,41",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,476,796,1033,1240,1447,1650,1982,2184,2449,2722"
+                    },
+                    "to": {
+                        "startLines": "53,56,59,64,68,71,74,77,82,85,89",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3382,3598,3808,4128,4365,4572,4779,4982,5314,5516,5781",
+                        "endLines": "55,58,63,67,70,73,76,81,84,88,92",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "3593,3803,4123,4360,4567,4774,4977,5309,5511,5776,6049"
                     }
                 }
             ]
