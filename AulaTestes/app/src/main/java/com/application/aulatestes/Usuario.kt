@@ -5,7 +5,10 @@ class Usuario {
     fun cadastrarUsuario(
         email: String,
         senha: String
-    ){
+    ) : Boolean {
+
+        //Cadastro de usuario
+        return true
 
     }
 
