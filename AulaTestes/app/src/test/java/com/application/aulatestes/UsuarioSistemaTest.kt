@@ -5,7 +5,7 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
-class UsuarioTest{
+class UsuarioSistemaTest{
 
     @Before
     fun setUp() {}
@@ -22,7 +22,7 @@ class UsuarioTest{
         val senhaConfirmacao = "1234@ja"
 
         //Quando
-        val usuario = Usuario()
+        val usuario = UsuarioSistema()
         val retorno = usuario.cadastrarUsuario(email, senha, senhaConfirmacao)
 
         //Então
@@ -34,7 +34,7 @@ class UsuarioTest{
     fun cadastrar_ConfirmacaoSenha_RetornaTrue(){
 
         //Dado
-        val usuario = Usuario()
+        val usuario = UsuarioSistema()
         val email = "jamilton@gmail.com"
         val senha = "1234@ja"
         val senhaConfirmacao = "1234@ja"
@@ -51,7 +51,7 @@ class UsuarioTest{
     fun calcular_DescontoSalario_RetornaTrue(){
 
         //Dado
-        val usuario = Usuario()
+        val usuario = UsuarioSistema()
         val salario = 1000.0
         val desconto = 100.0
         val esperado = 900.0

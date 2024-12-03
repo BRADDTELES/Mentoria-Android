@@ -1,6 +1,6 @@
 package com.application.aulatestes
 
-class Usuario {
+class UsuarioSistema {
 
     fun cadastrarUsuario(
         email: String,
