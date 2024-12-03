@@ -43,7 +43,12 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
+    //Biblioteca Truth
     testImplementation("com.google.truth:truth:1.4.4")
+
+    //Coroutine test
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+
     //testImplementation(libs.junit)
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
