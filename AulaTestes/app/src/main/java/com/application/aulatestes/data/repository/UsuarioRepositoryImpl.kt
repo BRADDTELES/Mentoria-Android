@@ -33,7 +33,11 @@ class UsuarioRepositoryImpl : UsuarioRepository {
         }
          */
 
-      return emptyList()
+      println("executar o metodo real")
+      return listOf(
+         Usuario("jamilton", "j@gmail.com")
+      )
+      //return emptyList()
 
    }
 }

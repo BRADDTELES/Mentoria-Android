@@ -4,6 +4,7 @@ import com.application.aulatestes.data.model.Usuario
 import com.google.common.truth.Truth.assertThat
 import com.application.aulatestes.data.repository.UsuarioRepository
 import com.application.aulatestes.data.repository.FakeUsuarioRepository
+import com.application.aulatestes.data.repository.UsuarioRepositoryImpl
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runTest
 
@@ -23,7 +24,8 @@ class UsuariosViewModelTest {
    private lateinit var usuariosViewModel: UsuariosViewModel
 
    @Mock
-   private lateinit var usuarioRepository: UsuarioRepository
+   //private lateinit var mockUsuarioRepository: UsuarioRepository
+   private lateinit var mockUsuarioRepository: UsuarioRepositoryImpl
 
 
    @Before
@@ -37,13 +39,16 @@ class UsuariosViewModelTest {
    @Test
    fun recuperarUsuarios() = runTest(){
 
-      usuariosViewModel = UsuariosViewModel( usuarioRepository )
-      Mockito.`when`( usuarioRepository.listar() ).thenReturn(
+      usuariosViewModel = UsuariosViewModel( mockUsuarioRepository )
+      Mockito.`when`( mockUsuarioRepository.listar() ).thenReturn(
          listOf(
             Usuario("jamilton", "j@gmail.com")
          )
          //emptyList()
       )//Dados Ficticios
+      /*Mockito.`when`( mockUsuarioRepository.listar() )
+         .thenCallRealMethod()//Dados Reais
+       */
 
       val lista = usuariosViewModel.recuperarUsuarios()
 
