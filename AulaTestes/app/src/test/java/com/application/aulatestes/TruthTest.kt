@@ -55,12 +55,13 @@ class TruthTest {
          numero
       //).isNotNull()// Não é Nulo
       ).isNull()// É Nulo
-      val resultado: Boolean? = true
+      */
+      val resultado: Boolean = true
       assertThat(// Afirmar que
          resultado
-      //).isTrue()
-      ).isFalse()
-      */
+      //).isFalse()
+      ).isTrue()
+
 
    }
 

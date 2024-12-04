@@ -12,10 +12,28 @@ class UsuarioRepositoryImpl : UsuarioRepository {
    }
 
    override suspend fun listar(): List<Usuario> {
-      return listOf(
+
+      /*return listOf(
          Usuario("Jamilton", "jamilton@gmail.com"),
          Usuario("Ana", "ana@gmail.com"),
          Usuario("Carlos", "carlos@gmail.com"),
-      )
+      )*/
+
+      /* CÓDIGO REAL
+
+        val listaResposta = api.getUsuarios()
+        if ( listaResposta.isSuccessful ){
+            val listaUsuariosDto = listaResposta.body()
+            if( listaUsuariosDto != null ){// List<UsuarioDTO>
+                /*val listaUsuarios = listaUsuariosDto.map { usuarioDTO ->
+                    usuarioDTO.toUsuario()
+                }*/
+                return listaUsuariosDto.map {it.toUsuario()}
+            }
+        }
+         */
+
+      return emptyList()
+
    }
 }

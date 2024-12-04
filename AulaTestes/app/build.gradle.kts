@@ -49,7 +49,11 @@ dependencies {
     //Coroutine test
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
 
+    //Mockito
+    testImplementation("org.mockito:mockito-core:5.5.0")
+
     //testImplementation(libs.junit)
+    testImplementation(libs.junit.junit)
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
