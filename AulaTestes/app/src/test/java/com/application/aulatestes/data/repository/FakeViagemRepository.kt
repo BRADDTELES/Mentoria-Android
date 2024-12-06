@@ -1,7 +1,5 @@
 package com.application.aulatestes.data.repository
 
-import com.application.aulatestes.exercicio.InterfaceViagemRepository
-
 class FakeViagemRepository : InterfaceViagemRepository {
    override suspend fun listarLocais(): List<Pair<String, String>> {
       return listOf(
@@ -11,6 +9,7 @@ class FakeViagemRepository : InterfaceViagemRepository {
    }
 
    override suspend fun calcularPrecoViagem(distancia: Double, precoKM: Double): Double {
-      return distancia * precoKM
+      //return distancia * precoKM
+      return 50.0
    }
 }

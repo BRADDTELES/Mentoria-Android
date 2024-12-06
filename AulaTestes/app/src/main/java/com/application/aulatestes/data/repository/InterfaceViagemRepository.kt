@@ -1,4 +1,4 @@
-package com.application.aulatestes.exercicio
+package com.application.aulatestes.data.repository
 
 interface InterfaceViagemRepository {
    suspend fun listarLocais() : List<Pair<String, String>>
