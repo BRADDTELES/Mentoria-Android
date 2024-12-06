@@ -4,5 +4,5 @@ data class ResultadoDummyAPI(
     val limit: Int,
     val skip: Int,
     val total: Int,
-    val users: List<User>
+    val users: List<Usuario>
 )

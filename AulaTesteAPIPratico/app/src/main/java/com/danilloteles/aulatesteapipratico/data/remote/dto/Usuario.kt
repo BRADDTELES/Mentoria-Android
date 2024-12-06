@@ -1,6 +1,6 @@
 package com.danilloteles.aulatesteapipratico.data.remote.dto
 
-data class User(
+data class Usuario(
     //val address: Address,
     val age: Int,
     //val bank: Bank,
