@@ -31,6 +31,7 @@ class OperacoesBasicasTest {
 
    @Test
    fun exibirAlerta() {
+      /* Minha Resposta
       // Dado
       val mensagem = "Mensagem de Alerta"
       val mensagemEsperada = true
@@ -39,11 +40,17 @@ class OperacoesBasicasTest {
       operacoesBasicas.exibirAlerta(mensagem)
 
       // Então
-      assertThat(mensagemEsperada).isTrue()
+      assertThat(mensagemEsperada).isTrue()*/
+
+      /* Resposta do Professor */
+      val retorno = operacoesBasicas.exibirAlerta()
+
+      assertThat(retorno).isTrue()
    }
 
    @Test
    fun recuperarDadosAPI() = runTest() {
+      /* Minha Resposta
       // Dado
       val lista = listOf(
          "jamilton", "ana", "maria", "pedro"
@@ -54,7 +61,12 @@ class OperacoesBasicasTest {
       // Então
       assertThat(
          nomesRecebidos
-      ).isNotEmpty()
+      ).isNotEmpty()*/
+
+      /* Resposta do Professor */
+      val lista = operacoesBasicas.recuperarDadosAPI()
+
+      assertThat(lista).isNotEmpty()
    }
 
    @After

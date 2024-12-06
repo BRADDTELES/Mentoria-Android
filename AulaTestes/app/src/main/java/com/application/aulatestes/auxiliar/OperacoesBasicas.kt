@@ -7,11 +7,15 @@ class OperacoesBasicas {
       return "22/10/2025"
    }
 
-   fun exibirAlerta(mensagem: String): Boolean{
+   fun exibirAlerta(
+      //mensagem: String
+   ): Boolean{
       return true
    }
 
-   suspend fun recuperarDadosAPI(lista: List<String>): List<String> {
+   suspend fun recuperarDadosAPI(
+      //lista: List<String>
+   ): List<String> {
       return listOf(
          "jamilton", "ana", "maria", "pedro"
       )
