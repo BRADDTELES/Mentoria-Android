@@ -11,6 +11,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
+import org.mockito.ArgumentMatchers.anyDouble
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
@@ -85,8 +86,16 @@ class ViagemUseCaseTest {
       val precoKM = 5.0
       val retornoEsperado = 50.0
 
-      val retorno = viagemUseCase.calcularPrecoViagem(distancia, precoKM)
+      //anyString, anytInt, anyBoolean...
+      Mockito.`when`(
+         mockViagemRepositoryImpl.calcularPrecoViagem(
+            anyDouble(), anyDouble()
+         )
+      ).thenReturn(
+         50.0
+      )
 
+      val retorno = viagemUseCase.calcularPrecoViagem(distancia, precoKM)
       assertThat(retorno).isEqualTo(retornoEsperado)
    }
 
