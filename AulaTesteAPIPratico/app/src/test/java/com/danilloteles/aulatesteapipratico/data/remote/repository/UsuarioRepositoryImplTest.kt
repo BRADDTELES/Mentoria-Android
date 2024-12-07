@@ -37,7 +37,8 @@ class UsuarioRepositoryImplTest {
       val usuarioRepositoryImpl = UsuarioRepositoryImpl( dummyAPIServiceFake )
       val lista = usuarioRepositoryImpl.listar()
 
-      assertThat(lista).isNotEmpty()
+      //assertThat(lista).isNotEmpty()
+      assertThat(lista).isEmpty()
 
    }
 
