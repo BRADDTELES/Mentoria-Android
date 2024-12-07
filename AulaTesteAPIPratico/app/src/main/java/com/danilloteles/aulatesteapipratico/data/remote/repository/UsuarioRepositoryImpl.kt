@@ -15,8 +15,6 @@ class UsuarioRepositoryImpl(
                 return listaUsuarios
             }
         }
-
         return emptyList()
-
     }
 }
