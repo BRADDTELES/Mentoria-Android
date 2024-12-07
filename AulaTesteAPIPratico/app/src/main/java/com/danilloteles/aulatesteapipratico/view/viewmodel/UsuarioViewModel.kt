@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aulatesteapipratico.data.remote.dto.Usuario
 import com.danilloteles.aulatesteapipratico.domain.UsuarioUseCase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UsuarioViewModel(
@@ -18,8 +19,8 @@ class UsuarioViewModel(
 
 
     fun recuperarListaUsuarios(){
-        viewModelScope.launch {
-            val listaUsuarios = usuarioUseCase()
+        viewModelScope.launch( Dispatchers.IO ) {
+            val listaUsuarios = usuarioUseCase()//Fake ou Mock
             _listaUsuarios.postValue( listaUsuarios )
         }
     }

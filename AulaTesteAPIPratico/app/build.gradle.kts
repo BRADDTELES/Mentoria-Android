@@ -57,12 +57,19 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
     //Truth Google
     testImplementation("com.google.truth:truth:1.4.4")
+
     //Corotina runTest
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.9.0")
+
     //Mockito
     testImplementation("org.mockito:mockito-core:5.7.0")
+
+    //Core Testing
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
