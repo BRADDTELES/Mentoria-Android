@@ -1,8 +1,13 @@
 package com.application.aulatesteexpresso
 
+import android.view.KeyEvent
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.clearText
 import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.doubleClick
+import androidx.test.espresso.action.ViewActions.longClick
+import androidx.test.espresso.action.ViewActions.pressKey
+import androidx.test.espresso.action.ViewActions.replaceText
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers
@@ -48,8 +53,21 @@ class LoginActivityTest {
    @Test
    fun verificarLogin_preencheDadosUsuario() {
 
+      //Eventos de clique
+      onView( withId(R.id.editEmail) )
+      //onView( withId(R.id.btnLogar) )
+         .perform(
+            //click()
+            //doubleClick()
+            //longClick()
+            //pressKey(KeyEvent.KEYCODE_PASTE)
+            //clearText()
+            //typeText("jamilton@gmail.com")
+            replaceText("ja@gmail.com")
+         )
+
       //Hamcrest Matchers
-      onView( withText(
+      /*onView( withText(
          //startsWith("ja")
          //equalTo("Logar")
          //equalToIgnoringCase("logar")
@@ -57,7 +75,7 @@ class LoginActivityTest {
       ) )
          //.check( matches( not( isDisplayed() ) ) )
          //.check( matches( not( isChecked() ) ) )
-         .check( matches( isDisplayed() ) )
+         .check( matches( isDisplayed() ) )*/
 
       //onView( withId(R.id.btnLogar) )
          //.check( matches( isDisplayed() ) )
