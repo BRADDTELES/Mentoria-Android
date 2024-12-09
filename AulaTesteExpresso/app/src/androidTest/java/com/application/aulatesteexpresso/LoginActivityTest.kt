@@ -53,8 +53,14 @@ class LoginActivityTest {
    @Test
    fun verificarLogin_preencheDadosUsuario() {
 
+      //View Assertions
+      onView( withId(R.id.btnLogar) )
+         //.check(matches( isDisplayed() ) )
+         .check(matches( withText("Logar ") ) )
+         .perform( click() )
+
       //Eventos de clique
-      onView( withId(R.id.editEmail) )
+      /*onView( withId(R.id.editEmail) )
       //onView( withId(R.id.btnLogar) )
          .perform(
             //click()
@@ -64,7 +70,7 @@ class LoginActivityTest {
             //clearText()
             //typeText("jamilton@gmail.com")
             replaceText("ja@gmail.com")
-         )
+         )*/
 
       //Hamcrest Matchers
       /*onView( withText(
