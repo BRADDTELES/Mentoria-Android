@@ -17,7 +17,11 @@ import androidx.test.espresso.matcher.ViewMatchers.withHint
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.CoreMatchers.not
+import org.hamcrest.CoreMatchers.startsWith
+import org.hamcrest.Matchers.equalToIgnoringCase
+import org.hamcrest.Matchers.equalToIgnoringWhiteSpace
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -44,13 +48,24 @@ class LoginActivityTest {
    @Test
    fun verificarLogin_preencheDadosUsuario() {
 
-      onView( withId(R.id.btnLogar) )
+      //Hamcrest Matchers
+      onView( withText(
+         //startsWith("ja")
+         //equalTo("Logar")
+         //equalToIgnoringCase("logar")
+         equalToIgnoringWhiteSpace("logar")
+      ) )
+         //.check( matches( not( isDisplayed() ) ) )
+         //.check( matches( not( isChecked() ) ) )
+         .check( matches( isDisplayed() ) )
+
+      //onView( withId(R.id.btnLogar) )
          //.check( matches( isDisplayed() ) )
          //.check( matches( isCompletelyDisplayed() ) )
          //.check( matches( isEnabled() ) )
          //.check( matches( isClickable() ) )
          //.check( matches( withEffectiveVisibility( ViewMatchers.Visibility.VISIBLE ) ) )
-         .check( matches( isChecked() ) )// Verifica se o item selecionado está marcado
+         //.check( matches( isChecked() ) )// Verifica se o item selecionado está marcado
 
       /*onView( withHint("Digite seu e-mail") )
          .perform( typeText("j@gmail.com") )*/
