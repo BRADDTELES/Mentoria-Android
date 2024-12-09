@@ -8,6 +8,9 @@
       <SelectionState runConfigName="verificarLogin_preencheDadosUsuario()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="verificarLogin_preencheDadosUsuario_check()">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>

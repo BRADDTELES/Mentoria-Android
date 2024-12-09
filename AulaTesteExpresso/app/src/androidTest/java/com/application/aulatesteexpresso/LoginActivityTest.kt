@@ -5,9 +5,12 @@ import androidx.test.espresso.action.ViewActions.clearText
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.typeText
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withHint
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.rules.ActivityScenarioRule
+import org.hamcrest.CoreMatchers.not
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -16,6 +19,20 @@ class LoginActivityTest {
 
    @get:Rule
    val activityScenarioRule = ActivityScenarioRule( LoginActivity::class.java )
+
+   @Test
+   fun verificarLogin_preencheDadosUsuario_check() {
+
+      onView( withId(R.id.editSenha) )
+         //.check( matches( withText("Logar") ) )
+         //.check( matches( withHint("Digite seu e-mail") ) )
+         //.check( matches( not(isDisplayed()) ) )
+         .check( matches( isDisplayed() ) )
+
+      /*onView( withId(R.id.btnLogar) )
+         .check( matches( withText("Logar") ) )*/
+
+   }
 
    @Test
    fun verificarLogin_preencheDadosUsuario() {
