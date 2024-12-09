@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- cores customizadas #CE4001 -->
+    <color name="primaria">#FF5617</color>
+    <color name="primaria_variacao">#E34D0B</color>
+
+    <color name="secundaria">#FF6F3A</color>
+    <color name="secundaria_variacao">#FF8051</color>
+
+    <color name="fundo">#EFEFEF</color>
+
+</resources>
