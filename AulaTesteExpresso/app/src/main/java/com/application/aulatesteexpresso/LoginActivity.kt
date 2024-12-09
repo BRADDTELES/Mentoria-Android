@@ -1,5 +1,6 @@
 package com.application.aulatesteexpresso
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,13 @@ class LoginActivity : AppCompatActivity() {
       setContentView( binding.root )
       
       binding.btnLogar.setOnClickListener {
-         Toast.makeText(this, "Botão clicado", Toast.LENGTH_SHORT).show()
+         //Toast.makeText(this, "Botão clicado", Toast.LENGTH_SHORT).show()
+
+         val email = binding.editEmail.text.toString()
+         val intent = Intent(this, MainActivity::class.java)
+         intent.putExtra("email", email)
+         startActivity(intent)
+
       }
       
    }
