@@ -4,8 +4,16 @@ import android.app.Service
 import android.content.Intent
 import android.os.IBinder
 import android.util.Log
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import java.lang.Thread.sleep
 
 class MeuServico : Service() {
+   
+   private val coroutine = CoroutineScope( Dispatchers.IO )
 
    override fun onBind(intent: Intent?): IBinder? {
       return null
@@ -18,8 +26,20 @@ class MeuServico : Service() {
 
    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
       //CÓDIGOS DO SERVIÇO
+      /*
+      Thread para execução
       val minhaThread = MinhaThread()
-      minhaThread.run()
+      minhaThread.run()*/
+
+      coroutine.launch {
+         repeat(15){ contador ->
+            sleep(2000)
+            //delay(2000)
+            Log.i("servico_android", "executando serviço: $contador")
+         }
+         stopSelf()//Parar o serviço
+      }
+
       return super.onStartCommand(intent, flags, startId)
    }
 
@@ -36,6 +56,7 @@ class MeuServico : Service() {
 
    override fun onDestroy() {//DESTRUI O SERVIÇO
       Log.i("servico_android", "onDestroy")
+      coroutine.cancel()
       super.onDestroy()
    }
 
