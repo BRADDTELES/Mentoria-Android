@@ -2,6 +2,7 @@ package com.application.aulaserviceandroid
 
 import android.app.Service
 import android.content.Intent
+import android.os.Binder
 import android.os.IBinder
 import android.util.Log
 import kotlinx.coroutines.CoroutineScope
@@ -13,9 +14,16 @@ import kotlinx.coroutines.launch
 class MinhaConexao : Service() {
 
    private val coroutine = CoroutineScope( Dispatchers.IO )
+   var contador = 0
+
+   inner class CustomBinder : Binder(){
+      fun recuperarServico() : MinhaConexao{
+         return this@MinhaConexao
+      }
+   }
 
    override fun onBind(intent: Intent): IBinder? {
-      return null
+      return CustomBinder()
    }
 
    override fun onCreate() {
@@ -27,7 +35,8 @@ class MinhaConexao : Service() {
       Log.i("servico_android", "onStartCommand")
 
       coroutine.launch {
-         repeat(20){ contador ->
+         repeat(20){ i ->
+            contador = i
             //sleep(2000)
             delay(2000)
             Log.i("servico_android", "executando: $contador")
