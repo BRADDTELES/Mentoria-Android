@@ -36,6 +36,8 @@ class MinhaConexao : Service() {
       }
 
       return super.onStartCommand(intent, flags, startId)
+      //return START_NOT_STICKY
+      //return START_REDELIVER_INTENT
    }
 
    override fun onDestroy() {
