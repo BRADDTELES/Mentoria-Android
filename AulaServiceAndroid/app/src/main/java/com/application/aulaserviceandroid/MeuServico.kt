@@ -30,12 +30,15 @@ class MeuServico : Service() {
       Thread para execução
       val minhaThread = MinhaThread()
       minhaThread.run()*/
+      val bundle = intent?.extras
+      val tempoDuracao = bundle?.getLong("tempoDuracao")
+      val tempo = tempoDuracao ?: 2000L
 
       coroutine.launch {
          repeat(15){ contador ->
-            sleep(2000)
-            //delay(2000)
-            Log.i("servico_android", "executando serviço: $contador")
+            //sleep(2000)
+            delay(tempo)
+            Log.i("servico_android", "executando: $contador tempo: $tempo")
          }
          stopSelf()//Parar o serviço
       }

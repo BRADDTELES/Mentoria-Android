@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
       val meuServico = Intent(this, MeuServico::class.java)
       binding.btnIniciarService.setOnClickListener {
+         meuServico.putExtra("tempoDuracao",3000L)
          startService( meuServico )
       }
 
