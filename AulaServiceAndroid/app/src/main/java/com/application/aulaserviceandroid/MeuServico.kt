@@ -10,4 +10,18 @@ class MeuServico : Service() {
       return null
    }
 
+   override fun onCreate() {
+      super.onCreate()
+
+   }
+
+   override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+      //CÓDIGOS DO SERVIÇO
+      return super.onStartCommand(intent, flags, startId)
+   }
+
+   override fun onDestroy() {//DESTRUI O SERVIÇO
+      super.onDestroy()
+   }
+
 }

@@ -19,5 +19,6 @@ class MainActivity : AppCompatActivity() {
       binding.btnIniciarService.setOnClickListener {
          startService( meuServico )
       }
+
    }
 }
