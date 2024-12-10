@@ -15,10 +15,13 @@ class MainActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       setContentView(binding.root)
 
-      val meuServico = Intent(this, MeuServico::class.java)
+      //val meuServico = Intent(this, MeuServico::class.java)
+      val minhaConexaoServico = Intent(this, MinhaConexao::class.java)
       binding.btnIniciarService.setOnClickListener {
-         meuServico.putExtra("tempoDuracao",3000L)
-         startService( meuServico )
+         /*meuServico.putExtra("tempoDuracao",3000L)
+         startService( meuServico )*/
+         minhaConexaoServico.putExtra("tempoDuracao",3000L)
+         startService( minhaConexaoServico )
       }
 
    }
