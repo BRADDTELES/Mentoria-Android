@@ -24,5 +24,10 @@ class MainActivity : AppCompatActivity() {
          startService( minhaConexaoServico )
       }
 
+      binding.btnPararService.setOnClickListener {
+         /*stopService( meuServico )*/
+         stopService( minhaConexaoServico )
+      }
+
    }
 }

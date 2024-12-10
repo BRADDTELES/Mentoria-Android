@@ -27,7 +27,7 @@ class MinhaConexao : Service() {
       Log.i("servico_android", "onStartCommand")
 
       coroutine.launch {
-         repeat(15){ contador ->
+         repeat(20){ contador ->
             //sleep(2000)
             delay(2000)
             Log.i("servico_android", "executando: $contador")
