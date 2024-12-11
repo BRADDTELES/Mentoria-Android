@@ -57,6 +57,7 @@ class MinhaConexao : Service() {
 
       startForeground(1, notificacao.build())
 
+
       coroutine.launch {
          repeat(20){ i ->
             contador = i
