@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
+import android.os.Build
 import android.os.Bundle
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
@@ -38,7 +39,12 @@ class MusicaActivity : AppCompatActivity() {
 
         val musicaService = Intent(this, MusicaService::class.java)
         binding.btnIniciarServicoMusica.setOnClickListener {
-            startService( musicaService )
+            //startService( musicaService )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                startForegroundService( musicaService )
+            }else{
+                startService( musicaService )//Inicia um serviço Background
+            }
         }
 
         binding.btnPararSercvicoMusica.setOnClickListener {
