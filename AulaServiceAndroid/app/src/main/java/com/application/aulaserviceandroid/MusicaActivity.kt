@@ -1,6 +1,7 @@
 package com.application.aulaserviceandroid
 
 import android.content.Context
+import android.content.Intent
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
@@ -30,6 +31,20 @@ class MusicaActivity : AppCompatActivity() {
         binding.btnPausar.setOnClickListener { pause() }
         binding.btnParar.setOnClickListener { stop() }
         inicializarControleVolume()
+        executarServicoMusica()
+    }
+
+    private fun executarServicoMusica() {
+
+        val musicaService = Intent(this, MusicaService::class.java)
+        binding.btnIniciarServicoMusica.setOnClickListener {
+            startService( musicaService )
+        }
+
+        binding.btnPararSercvicoMusica.setOnClickListener {
+            stopService( musicaService )
+        }
+
     }
 
     private fun inicializarControleVolume() {
