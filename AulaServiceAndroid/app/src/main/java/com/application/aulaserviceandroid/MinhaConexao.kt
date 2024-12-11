@@ -2,9 +2,11 @@ package com.application.aulaserviceandroid
 
 import android.app.Service
 import android.content.Intent
+import android.graphics.BitmapFactory
 import android.os.Binder
 import android.os.IBinder
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
@@ -31,8 +33,29 @@ class MinhaConexao : Service() {
       Log.i("servico_android", "onCreate")
    }
 
+
    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
       Log.i("servico_android", "onStartCommand")
+
+      val idCanal = "notificacaoLembrete"
+      val dataAtual = System.currentTimeMillis()
+      val notificacao = NotificationCompat.Builder(this, idCanal)
+         .apply {
+            setSmallIcon(R.drawable.ic_localizacao_24)
+            //setWhen( dataAtual )
+            setShowWhen(true)
+            //setChannelId()
+            setLargeIcon(
+               BitmapFactory.decodeResource(
+                  resources,
+                  R.drawable.perfil
+               )
+            )
+            setContentTitle("Acompanhando localização")
+            setContentText("Necessário para acompanhar os seus passos")
+         }
+
+      startForeground(1, notificacao.build())
 
       coroutine.launch {
          repeat(20){ i ->
