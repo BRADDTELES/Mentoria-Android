@@ -1,7 +1,11 @@
 package com.application.aulaserviceandroid
 
+import android.content.Context
+import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
+import android.widget.SeekBar
+import android.widget.SeekBar.OnSeekBarChangeListener
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.application.aulaserviceandroid.databinding.ActivityMusicaBinding
@@ -25,6 +29,44 @@ class MusicaActivity : AppCompatActivity() {
         binding.btnTocar.setOnClickListener { play() }
         binding.btnPausar.setOnClickListener { pause() }
         binding.btnParar.setOnClickListener { stop() }
+        inicializarControleVolume()
+    }
+
+    private fun inicializarControleVolume() {
+
+        //val audioManager = getSystemService( Context.AUDIO_SERVICE ) as AudioManager
+        val audioManager = getSystemService( AudioManager::class.java )
+
+        binding.seekVolume.max = audioManager
+            .getStreamMaxVolume( AudioManager.STREAM_MUSIC )
+        binding.seekVolume.progress = audioManager
+            .getStreamVolume( AudioManager.STREAM_MUSIC )
+
+        binding.seekVolume.setOnSeekBarChangeListener( object  : OnSeekBarChangeListener{
+            override fun onProgressChanged(
+                seekBar: SeekBar?,
+                progress: Int,
+                fromUser: Boolean
+            ) {
+
+                audioManager.setStreamVolume(
+                    AudioManager.STREAM_MUSIC,
+                    progress,
+                    0
+                )
+
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+        })
+
     }
 
     private fun stop() {
