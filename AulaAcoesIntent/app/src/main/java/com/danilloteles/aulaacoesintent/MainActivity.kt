@@ -21,8 +21,21 @@ class MainActivity : AppCompatActivity() {
         verificarPermissao()
 
         binding.btnExecutar.setOnClickListener {
-            chamadaTelefonica()
+            //chamadaTelefonica()
+            compartilharTexto()
         }
+    }
+
+    private fun compartilharTexto() {
+
+        val intent = Intent(Intent.ACTION_SEND).apply {
+            putExtra(Intent.EXTRA_TEXT, "Olá, Danillo")
+            type = "text/plain"
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        }
+        val intentCompartilhar = Intent.createChooser(intent, "Compartilhar")
+        startActivity(intentCompartilhar)
+
     }
 
     private fun verificarPermissao() {
