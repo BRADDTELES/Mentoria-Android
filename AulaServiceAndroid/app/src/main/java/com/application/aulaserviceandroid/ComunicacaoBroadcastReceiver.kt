@@ -8,8 +8,9 @@ import android.util.Log
 class ComunicacaoBroadcastReceiver : BroadcastReceiver() {
 
    override fun onReceive(context: Context, intent: Intent) {
-      if (intent.action == "com.application.aulaserviceandroid.ABRIR_ARQUIVO_PDF") {
-         Log.i("broadcast_android", "abriu arquivo PDF")
+      if ( intent.action == "com.application.aulaserviceandroid.ABRIR_ARQUIVO_PDF" ) {
+         val localPdf = intent.getStringExtra("ARQUIVO") //Ação de Receber o arquivo, com o nome do arquivo, processando o arquivo
+         Log.i("broadcast_android", "abriu arquivo PDF: $localPdf")
       }
    }
 }

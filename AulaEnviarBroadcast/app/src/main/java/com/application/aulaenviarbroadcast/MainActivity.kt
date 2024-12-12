@@ -2,10 +2,8 @@ package com.application.aulaenviarbroadcast
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.application.aulaenviarbroadcast.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
       binding.btnAbrirPdf.setOnClickListener {
          val intent = Intent("com.application.aulaserviceandroid.ABRIR_ARQUIVO_PDF")
+         intent.putExtra("ARQUIVO", "local/perfil.pdf") //Ação de Enviar o arquivo do PDF, com o nome do arquivo e o local aonde está o arquivo
          sendBroadcast( intent )
       }
 
