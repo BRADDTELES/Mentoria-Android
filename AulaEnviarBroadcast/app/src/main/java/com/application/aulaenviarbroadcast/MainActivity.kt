@@ -18,15 +18,16 @@ class MainActivity : AppCompatActivity() {
       setContentView(binding.root)
 
       binding.btnAbrirPdf.setOnClickListener {
-         val intent = Intent("com.application.aulaserviceandroid.ABRIR_ARQUIVO_PDF")
+         //val intent = Intent("com.application.aulaserviceandroid.ABRIR_ARQUIVO_PDF")
+         val intent = Intent("com.application.aulaserviceandroid.ACAO_ORDENADA")
          intent.putExtra("ARQUIVO", "local/perfil.pdf") //Ação de Enviar o arquivo do PDF, com o nome do arquivo e o local aonde está o arquivo
 
-         val componente = ComponentName(
+         /*val componente = ComponentName(
             "com.application.aulaserviceandroid",
             "com.application.aulaserviceandroid.ComunicacaoBroadcastActivity"
          )
-         intent.component = componente
-         sendBroadcast( intent )
+         intent.component = componente*/
+         sendOrderedBroadcast( intent, null )
 
          //startActivity(Intent(this, MainActivity::class.java))
       }

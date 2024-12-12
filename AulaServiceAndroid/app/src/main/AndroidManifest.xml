@@ -19,10 +19,26 @@
         android:theme="@style/Theme.AulaServiceAndroid"
         tools:targetApi="31">
         <receiver
+            android:name=".BroadcastReceiver03"
+            android:enabled="true"
+            android:exported="true"></receiver>
+        <receiver
+            android:name=".BroadcastReceiver02"
+            android:enabled="true"
+            android:exported="true" />
+        <receiver
+            android:name=".BroadcastReceiver01"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity
+            android:name=".ComunicacaoBroadcastActivity"
+            android:exported="false" />
+
+        <receiver
             android:name=".ComunicacaoBroadcastReceiver"
             android:enabled="true"
-            android:exported="true">
-        </receiver>
+            android:exported="true" />
 
         <activity
             android:name=".BroadcastActivity"
@@ -45,28 +61,26 @@
         <activity
             android:name=".MusicaActivity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-
+        <service
+            android:name=".MusicaService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="shortService" />
         <service
             android:name=".MinhaConexao"
             android:description="@string/descricao_meu_servico"
-            android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="shortService" />
         <service
             android:name=".MeuServico"
             android:description="@string/descricao_meu_servico"
             android:exported="false" />
-        <service
-            android:name=".MusicaService"
-            android:enabled="true"
-            android:exported="false"
-            android:foregroundServiceType="shortService" />
 
         <activity
-            android:name=".ComunicacaoBroadcastActivity"
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BroadcastOrdenadoActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
