@@ -19,6 +19,15 @@
         android:theme="@style/Theme.AulaServiceAndroid"
         tools:targetApi="31">
         <receiver
+            android:name=".ComunicacaoBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name=".BroadcastActivity"
+            android:exported="false" />
+
+        <receiver
             android:name=".ReinicializacaoReceiver"
             android:enabled="true"
             android:exported="false">
@@ -56,7 +65,7 @@
             android:foregroundServiceType="shortService" />
 
         <activity
-            android:name=".BroadcastActivity"
+            android:name=".ComunicacaoBroadcastActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
