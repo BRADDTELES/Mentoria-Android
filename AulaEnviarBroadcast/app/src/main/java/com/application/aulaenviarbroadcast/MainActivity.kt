@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
          sendOrderedBroadcast(
             intent,
             null,
-            null,
+            CapturaResultadoReceiver(),
             null,
             0,
             "MainActivity",
