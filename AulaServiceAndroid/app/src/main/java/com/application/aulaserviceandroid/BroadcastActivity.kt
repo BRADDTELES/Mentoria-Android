@@ -1,5 +1,7 @@
 package com.application.aulaserviceandroid
 
+import android.app.NotificationManager
+import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
 import android.net.wifi.WifiManager
@@ -38,9 +40,18 @@ class BroadcastActivity : AppCompatActivity() {
          addAction( Intent.ACTION_BATTERY_CHANGED )
          addAction( Intent.ACTION_POWER_CONNECTED )
          addAction( Intent.ACTION_POWER_DISCONNECTED )
+         addAction( WifiManager.WIFI_STATE_CHANGED_ACTION )
       }.also { intentFilter ->
          registerReceiver( meuBroadcastReceiver, intentFilter )
       }
+
+      //val wifiManager = getSystemService( Context.WIFI_SERVICE ) as WifiManager
+      /*val wifiManager = getSystemService( WifiManager::class.java )
+      if ( wifiManager.isWifiEnabled ) {
+         binding.textResultado.text = "Habilitado"
+      }else{
+         binding.textResultado.text = "Desabilitado"
+      }*/
 
    }
 
