@@ -27,7 +27,19 @@ class MainActivity : AppCompatActivity() {
             "com.application.aulaserviceandroid.ComunicacaoBroadcastActivity"
          )
          intent.component = componente*/
-         sendOrderedBroadcast( intent, null )
+         //sendOrderedBroadcast( intent, null )
+         val bundle = Bundle().apply {
+            putString("dadosExtra", "jamilton")
+         }
+         sendOrderedBroadcast(
+            intent,
+            null,
+            null,
+            null,
+            0,
+            "MainActivity",
+            bundle
+         )
 
          //startActivity(Intent(this, MainActivity::class.java))
       }

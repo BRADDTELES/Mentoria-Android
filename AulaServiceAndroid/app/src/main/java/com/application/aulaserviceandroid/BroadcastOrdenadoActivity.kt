@@ -17,7 +17,7 @@ class BroadcastOrdenadoActivity : AppCompatActivity() {
 
         IntentFilter().apply {
             addAction("com.application.aulaserviceandroid.ACAO_ORDENADA")
-            priority = 1
+            priority = 3
         }.also { intentFilter ->
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 registerReceiver( broadcastReceiver01, intentFilter, RECEIVER_EXPORTED)
@@ -27,7 +27,7 @@ class BroadcastOrdenadoActivity : AppCompatActivity() {
         }
         IntentFilter().apply {
             addAction("com.application.aulaserviceandroid.ACAO_ORDENADA")
-            priority = 10
+            priority = 2
         }.also { intentFilter ->
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 registerReceiver( broadcastReceiver02, intentFilter, RECEIVER_EXPORTED)
@@ -37,7 +37,7 @@ class BroadcastOrdenadoActivity : AppCompatActivity() {
         }
         IntentFilter().apply {
             addAction("com.application.aulaserviceandroid.ACAO_ORDENADA")
-            priority = 3
+            priority = 1
         }.also { intentFilter ->
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 registerReceiver( broadcastReceiver03, intentFilter, RECEIVER_EXPORTED)
