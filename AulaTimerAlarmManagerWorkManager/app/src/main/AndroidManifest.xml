@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -14,10 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaTimerAlarmManagerWorkManager"
         tools:targetApi="31">
+        <service
+            android:name=".MeuService"
+            android:enabled="true"
+            android:exported="true"
+            android:foregroundServiceType="shortService">
+
+        </service>
+
         <receiver
             android:name=".AgendamentoBroadcastReceiver"
             android:enabled="true"
-            android:exported="false"></receiver>
+            android:exported="false" />
 
         <activity
             android:name=".CronometroActivity"
