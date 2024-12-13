@@ -51,8 +51,8 @@ class MeuService : Service() {
     private fun executarAcao() {
 
         coroutineScope.launch {
-            repeat(10){ contador ->
-                delay(2000L)
+            repeat(5){ contador ->
+                delay(1000L)
                 Log.i("agendamento_android", "ação: $contador")
             }
         }

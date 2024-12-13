@@ -54,8 +54,8 @@ class Agendamento(
       alarmeManager = context.getSystemService( AlarmManager::class.java )
       alarmeManager.setInexactRepeating(// set -> é um Alarme Inexato
          AlarmManager.RTC,
-         System.currentTimeMillis() + 4_000,
-         30_000,
+         System.currentTimeMillis() + 2_000,
+         10_000,
          pendingIntent
       )
       /*alarmeManager.setInexactRepeating(// set -> é um Alarme Inexato
