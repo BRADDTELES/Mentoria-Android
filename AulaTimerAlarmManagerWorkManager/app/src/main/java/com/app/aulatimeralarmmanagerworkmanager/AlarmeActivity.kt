@@ -39,7 +39,7 @@ class AlarmeActivity : AppCompatActivity() {
 
       Log.i("agendamento_android", "data: $dataFormatada")
 
-      solicitarPermissao()
+      solicitarPermissao()// Solcitar permissão para Android API 33+
 
       binding.btnAgendamento.setOnClickListener {
          agendamento.agendar()
