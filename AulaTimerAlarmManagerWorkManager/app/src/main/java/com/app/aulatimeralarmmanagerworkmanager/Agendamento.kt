@@ -17,8 +17,8 @@ class Agendamento(
 
       alarmeManager = context.getSystemService( AlarmManager::class.java )
       alarmeManager.set(
-         AlarmManager.RTC,//Data e hora para execução
-         System.currentTimeMillis() + 5000,
+         AlarmManager.RTC_WAKEUP,//Data e hora para execução
+         System.currentTimeMillis() + 20000,
          PendingIntent.getBroadcast(
             context,
             1,
