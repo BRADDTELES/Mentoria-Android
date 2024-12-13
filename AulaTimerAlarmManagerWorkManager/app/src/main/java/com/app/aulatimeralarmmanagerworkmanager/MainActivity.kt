@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
       }
 
       binding.btnCancelar.setOnClickListener {
+         binding.textContador.text = "Finalizou"
          timer.cancel()
       }
 
