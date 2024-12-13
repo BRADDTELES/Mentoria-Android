@@ -1,6 +1,7 @@
 package com.app.aulatimeralarmmanagerworkmanager
 
 import android.os.Bundle
+import android.os.CountDownTimer
 import androidx.appcompat.app.AppCompatActivity
 import com.app.aulatimeralarmmanagerworkmanager.databinding.ActivityMainBinding
 import java.util.Timer
@@ -12,12 +13,31 @@ class MainActivity : AppCompatActivity() {
        ActivityMainBinding.inflate( layoutInflater )
    }
    private lateinit var timer: Timer
+   private lateinit var countDownTimer: CountDownTimer //Temporizador
    private var contator = 0
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView(binding.root)
 
+      binding.btnIniciar.setOnClickListener {
+         countDownTimer = object : CountDownTimer(5000, 1000){
+            override fun onTick(millisUntilFinished: Long) {
+               runOnUiThread {
+                  binding.textContador.text = millisUntilFinished.toString()
+               }
+            }
+
+            override fun onFinish() {
+               binding.textContador.text = "Finalizado"
+            }
+
+         }
+         countDownTimer.start()
+      }
+
+
+      /*
       timer = Timer()
       binding.btnIniciar.setOnClickListener {
          timer.schedule(
@@ -30,11 +50,11 @@ class MainActivity : AppCompatActivity() {
                }
             }, 1000, 2000//10 segundos -> 30 segundos
          )
-      }
+      }*/
 
       binding.btnCancelar.setOnClickListener {
-         binding.textContador.text = "Finalizou"
-         timer.cancel()
+         //binding.textContador.text = "Finalizou"
+         //timer.cancel()
       }
 
    }
