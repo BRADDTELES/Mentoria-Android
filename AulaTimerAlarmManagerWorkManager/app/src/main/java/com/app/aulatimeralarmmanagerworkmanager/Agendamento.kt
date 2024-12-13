@@ -12,6 +12,7 @@ class Agendamento(
 ) {
 
    private lateinit var alarmeManager: AlarmManager
+   private lateinit var pendingIntent: PendingIntent
 
    fun agendar() {
 
@@ -34,7 +35,7 @@ class Agendamento(
          set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY)
       }
 
-      val pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+      pendingIntent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
          PendingIntent.getForegroundService( // getForegroundService -> para versões acima do Oreo
             context,
             1,
@@ -51,9 +52,10 @@ class Agendamento(
       }
 
       alarmeManager = context.getSystemService( AlarmManager::class.java )
-      alarmeManager.set(// set -> é um Alarme Inexato
+      alarmeManager.setInexactRepeating(// set -> é um Alarme Inexato
          AlarmManager.RTC,
-         System.currentTimeMillis() + 4000,
+         System.currentTimeMillis() + 4_000,
+         30_000,
          pendingIntent
       )
       /*alarmeManager.setInexactRepeating(// set -> é um Alarme Inexato
@@ -82,6 +84,6 @@ class Agendamento(
    }
 
    fun cancelar() {
-
+      alarmeManager.cancel( pendingIntent )
    }
 }
