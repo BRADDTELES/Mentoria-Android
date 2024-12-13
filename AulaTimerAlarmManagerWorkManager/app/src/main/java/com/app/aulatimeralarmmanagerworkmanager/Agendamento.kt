@@ -23,9 +23,9 @@ class Agendamento(
          set(Calendar.MONTH, 0)
          set(Calendar.HOUR_OF_DAY, 22)*/
          //add(Calendar.YEAR, 1)// 20/10/2026 10:20:30
-         //add(Calendar.SECOND, 10)// 20/10/2025 10:20:40
-         set(Calendar.HOUR_OF_DAY, 11)
-         set(Calendar.MINUTE, 20)
+         add(Calendar.SECOND, 10)// 20/10/2025 10:20:40
+         //set(Calendar.HOUR_OF_DAY, 11)
+         //set(Calendar.MINUTE, 20)
       }
 
       alarmeManager = context.getSystemService( AlarmManager::class.java )
