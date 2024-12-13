@@ -37,7 +37,7 @@ class AlarmeActivity : AppCompatActivity() {
       val formatador = SimpleDateFormat("dd/MM/yyyy HH:mm:ss")
       val dataFormatada = formatador.format( dataMili )
 
-      Log.i("agendamento_android", "data: $dataFormatada")
+      //Log.i("agendamento_android", "data: $dataFormatada")
 
       solicitarPermissao()// Solcitar permissão para Android API 33+
 

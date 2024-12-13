@@ -23,13 +23,30 @@ class Agendamento(
          set(Calendar.MONTH, 0)
          set(Calendar.HOUR_OF_DAY, 22)*/
          //add(Calendar.YEAR, 1)// 20/10/2026 10:20:30
-         add(Calendar.SECOND, 10)// 20/10/2025 10:20:40
+         //add(Calendar.SECOND, 10)// 20/10/2025 10:20:40
          //set(Calendar.HOUR_OF_DAY, 11)
          //set(Calendar.MINUTE, 20)
       }
 
+      val calendarIntervalo = Calendar.getInstance().apply {
+         set(Calendar.DAY_OF_WEEK, Calendar.FRIDAY)
+      }
+
       alarmeManager = context.getSystemService( AlarmManager::class.java )
-      alarmeManager.set(
+      alarmeManager.setInexactRepeating(// set -> é um Alarme Inexato
+         AlarmManager.RTC,
+         calendar.timeInMillis, // 20/10/2025 10:20:30
+         //calendarIntervalo.timeInMillis,
+         //AlarmManager.INTERVAL_DAY,
+         5000,// 5 segundos
+         PendingIntent.getBroadcast(
+            context,
+            1,
+            intent,
+            PendingIntent.FLAG_IMMUTABLE
+         )
+      )
+      /*alarmeManager.set(
          AlarmManager.RTC_WAKEUP,//Data e hora para execução
          calendar.timeInMillis,
          PendingIntent.getBroadcast(
@@ -38,7 +55,7 @@ class Agendamento(
             intent,
             PendingIntent.FLAG_IMMUTABLE
          )
-      )
+      )*/
    }
 
    fun cancelar() {
