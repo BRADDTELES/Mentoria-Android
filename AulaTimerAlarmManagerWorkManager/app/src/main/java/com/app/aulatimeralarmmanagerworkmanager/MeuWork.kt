@@ -32,8 +32,12 @@ class MeuWork(
           .build()
       )
     )
+    val nome = workerParameters.inputData.getString("nome")
+    val tempo = workerParameters.inputData.getInt("tempo", 0)
 
-    repeat(20){ contador ->
+    Log.i("workmanager_android","nome: $nome tempo: $tempo")
+
+    repeat(5){ contador ->
       delay(1000)
       Log.i("workmanager_android","executando: $contador")
     }

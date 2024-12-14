@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
+import androidx.work.workDataOf
 import com.app.aulatimeralarmmanagerworkmanager.databinding.ActivityWorkmanagerBinding
 
 class WorkmanagerActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class WorkmanagerActivity : AppCompatActivity() {
     solicitarPermissao()
 
     val oneTimeWorkRequest = OneTimeWorkRequestBuilder<MeuWork>()
+      .setInputData( workDataOf("nome" to "jamilton", "tempo" to 1000) )
       .build()
     val workManager = WorkManager.getInstance( applicationContext )
 
