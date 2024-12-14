@@ -5,6 +5,8 @@ import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.work.Constraints
+import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import androidx.work.workDataOf
@@ -24,6 +26,15 @@ class WorkmanagerActivity : AppCompatActivity() {
 
     val oneTimeWorkRequest = OneTimeWorkRequestBuilder<MeuWork>()
       .setInputData( workDataOf("nome" to "jamilton", "tempo" to 1000) )
+      .setConstraints(
+        Constraints.Builder()
+          //.setRequiredNetworkType( NetworkType.UNMETERED )
+          //.setRequiresCharging(true)
+          //.setRequiresBatteryNotLow(true)
+          //.setRequiresDeviceIdle(true)
+          //.setRequiresStorageNotLow(true)
+          .build()
+      )
       .build()
     val workManager = WorkManager.getInstance( applicationContext )
 
