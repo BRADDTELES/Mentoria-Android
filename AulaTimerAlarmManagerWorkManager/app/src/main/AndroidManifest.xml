@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaTimerAlarmManagerWorkManager"
         tools:targetApi="31">
+        <activity
+            android:name=".AlarmeActivity"
+            android:exported="false" />
 
         <receiver
             android:name=".ReinicializacaoReceiver"
@@ -30,9 +33,7 @@
             android:name=".MeuService"
             android:enabled="true"
             android:exported="true"
-            android:foregroundServiceType="shortService">
-
-        </service>
+            android:foregroundServiceType="shortService" />
 
         <receiver
             android:name=".AgendamentoBroadcastReceiver"
@@ -46,7 +47,7 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".AlarmeActivity"
+            android:name=".WorkmanagerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

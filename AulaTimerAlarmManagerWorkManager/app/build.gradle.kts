@@ -33,12 +33,21 @@ android {
    kotlinOptions {
       jvmTarget = "1.8"
    }
-   buildFeatures{
+   buildFeatures {
       viewBinding = true
    }
 }
 
 dependencies {
+
+   //WorkManager
+   val workVersion = "2.9.1"
+
+   // (Java only)
+   implementation("androidx.work:work-runtime:$workVersion")
+
+   // Kotlin + coroutines
+   implementation("androidx.work:work-runtime-ktx:$workVersion")
 
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
