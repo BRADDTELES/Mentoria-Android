@@ -2,7 +2,9 @@ package com.app.aulatimeralarmmanagerworkmanager
 
 import android.content.Context
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
+import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
 import kotlinx.coroutines.delay
 import kotlin.math.log
@@ -18,7 +20,20 @@ class MeuWork(
   }
 
   private suspend fun executarAcao(){
-    repeat(5){ contador ->
+
+    setForeground(
+      ForegroundInfo(
+        System.currentTimeMillis().toInt(),
+        NotificationCompat.Builder(applicationContext, Constantes.ID_CANAL)
+          .setSmallIcon(R.drawable.ic_lembrete_24)
+          .setShowWhen(true)
+          .setContentTitle("Lembrete")
+          .setContentText("Lembre-se de fazer alguma coisa")
+          .build()
+      )
+    )
+
+    repeat(20){ contador ->
       delay(1000)
       Log.i("workmanager_android","executando: $contador")
     }

@@ -24,20 +24,7 @@ class MeuService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
 
-        //Criar canal
-        val idCanal = "lembrete"
-        val notificationManager = applicationContext.getSystemService( NotificationManager::class.java )
-
-        if ( Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ) {
-            val canal = NotificationChannel(
-                idCanal,
-                "Lembretes",
-                NotificationManager.IMPORTANCE_HIGH
-            )
-            notificationManager.createNotificationChannel( canal )
-        }
-
-        val notificacaoBuilder = NotificationCompat.Builder(applicationContext, idCanal).apply {
+        val notificacaoBuilder = NotificationCompat.Builder(applicationContext, Constantes.ID_CANAL).apply {
             setSmallIcon(R.drawable.ic_lembrete_24)
             setShowWhen(true)
             setContentTitle("Lembrete")
