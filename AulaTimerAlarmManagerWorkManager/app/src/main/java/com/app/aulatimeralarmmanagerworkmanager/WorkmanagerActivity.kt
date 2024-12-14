@@ -10,10 +10,12 @@ import androidx.work.Constraints
 import androidx.work.ExistingWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkInfo
 import androidx.work.WorkManager
 import androidx.work.workDataOf
 import com.app.aulatimeralarmmanagerworkmanager.databinding.ActivityWorkmanagerBinding
+import java.util.concurrent.TimeUnit
 
 class WorkmanagerActivity : AppCompatActivity() {
 
@@ -26,11 +28,14 @@ class WorkmanagerActivity : AppCompatActivity() {
     setContentView( binding.root )
 
     solicitarPermissao()
-
-    val oneTimeWorkRequest = OneTimeWorkRequestBuilder<MeuWork>()
+    // 3 trabalhos -> "usuario" -> 2 trabalhos
+    // t1 - t2
+    // OneTimeWorkRequest -> WorkRequest
+    // PeriodicWorkRequest (periodo) -> WorkRequest
+    /*val oneTimeWorkRequest = OneTimeWorkRequestBuilder<MeuWork>()
       .setInputData( workDataOf("nome" to "jamilton", "tempo" to 1000) )
       //.addTag("execucaoUsuarios")
-      /*.setConstraints(
+      .setConstraints(
         Constraints.Builder()
           //.setRequiredNetworkType( NetworkType.UNMETERED )
           //.setRequiresCharging(true)
@@ -38,25 +43,32 @@ class WorkmanagerActivity : AppCompatActivity() {
           //.setRequiresDeviceIdle(true)
           //.setRequiresStorageNotLow(true)
           .build()
-      )*/
+      )
+      .build()*/
+
+    val periodicWorkRequest = PeriodicWorkRequestBuilder<MeuWork>(
+      15, TimeUnit.MINUTES)
+      .setInitialDelay( 20, TimeUnit.SECONDS )
       .build()
+
     val workManager = WorkManager.getInstance( applicationContext )
 
     //Informações
     workManager
-      .getWorkInfoByIdLiveData( oneTimeWorkRequest.id )
+      .getWorkInfoByIdLiveData( periodicWorkRequest.id )
       .observe(this){ workInfo ->
         //Log.i("workmanager_android","dados: $workInfo")
         if ( workInfo != null ) {
 
           val dadosProgresso = workInfo.progress
           val progresso = dadosProgresso.getInt("progresso", 0)
-          Log.i("workmanager_android","progresso: $progresso")
+          //Log.i("workmanager_android","progresso: $progresso")
         }
       }
 
     binding.btnExecutarWork.setOnClickListener {
-      workManager.enqueue( oneTimeWorkRequest )
+
+      workManager.enqueue( periodicWorkRequest )
       /*workManager.enqueueUniqueWork(
         "nomeTrabalhoExecucaoUsuario",
         ExistingWorkPolicy.KEEP, //tarefa1 - tarefa2
@@ -65,7 +77,7 @@ class WorkmanagerActivity : AppCompatActivity() {
     }
 
     binding.btnCancelarWork.setOnClickListener {
-      workManager.cancelWorkById( oneTimeWorkRequest.id )
+      workManager.cancelWorkById( periodicWorkRequest.id )
       //workManager.cancelAllWorkByTag( "execucaoUsuarios" )
       //workManager.cancelUniqueWork("nomeTrabalhoExecucaoUsuario")
       //workManager.cancelAllWork()

@@ -40,7 +40,7 @@ class MeuWork(
     repeat(100){ contador ->
       delay(1000)
       setProgress( workDataOf("progresso" to contador) )
-      //Log.i("workmanager_android","executando: $contador")
+      Log.i("workmanager_android","executando: $contador")
     }
   }
 
