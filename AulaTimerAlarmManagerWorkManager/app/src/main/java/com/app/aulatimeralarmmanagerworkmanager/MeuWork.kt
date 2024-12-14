@@ -6,6 +6,7 @@ import androidx.core.app.NotificationCompat
 import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
+import androidx.work.workDataOf
 import kotlinx.coroutines.delay
 import kotlin.math.log
 
@@ -16,7 +17,7 @@ class MeuWork(
 
   override suspend fun doWork(): Result {
     executarAcao()
-    return Result.success()
+    return Result.success( workDataOf("retorno" to 200) )
   }
 
   private suspend fun executarAcao(){
@@ -32,14 +33,14 @@ class MeuWork(
           .build()
       )
     )
-    val nome = workerParameters.inputData.getString("nome")
-    val tempo = workerParameters.inputData.getInt("tempo", 0)
-
-    Log.i("workmanager_android","nome: $nome tempo: $tempo")
-
-    repeat(5){ contador ->
+    /*val nome = workerParameters.inputData.getString("nome")
+    val tempo = workerParameters.inputData.getInt("tempo", 0)*/
+    //Log.i("workmanager_android","nome: $nome tempo: $tempo")
+    setProgress( workDataOf("progresso" to 0) )
+    repeat(100){ contador ->
       delay(1000)
-      Log.i("workmanager_android","executando: $contador")
+      setProgress( workDataOf("progresso" to contador) )
+      //Log.i("workmanager_android","executando: $contador")
     }
   }
 

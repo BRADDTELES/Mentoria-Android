@@ -42,12 +42,20 @@ dependencies {
 
    //WorkManager
    val workVersion = "2.9.1"
+   //LiveData
+   val lifecycle_version = "2.8.7"
 
    // (Java only)
    implementation("androidx.work:work-runtime:$workVersion")
 
    // Kotlin + coroutines
    implementation("androidx.work:work-runtime-ktx:$workVersion")
+
+   // LiveData
+   implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+   // Lifecycles only (without ViewModel or LiveData)
+   implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
 
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
