@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.work.Constraints
+import androidx.work.ExistingWorkPolicy
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
@@ -26,7 +27,8 @@ class WorkmanagerActivity : AppCompatActivity() {
 
     val oneTimeWorkRequest = OneTimeWorkRequestBuilder<MeuWork>()
       .setInputData( workDataOf("nome" to "jamilton", "tempo" to 1000) )
-      .setConstraints(
+      //.addTag("execucaoUsuarios")
+      /*.setConstraints(
         Constraints.Builder()
           //.setRequiredNetworkType( NetworkType.UNMETERED )
           //.setRequiresCharging(true)
@@ -34,12 +36,24 @@ class WorkmanagerActivity : AppCompatActivity() {
           //.setRequiresDeviceIdle(true)
           //.setRequiresStorageNotLow(true)
           .build()
-      )
+      )*/
       .build()
     val workManager = WorkManager.getInstance( applicationContext )
 
     binding.btnExecutarWork.setOnClickListener {
       workManager.enqueue( oneTimeWorkRequest )
+      /*workManager.enqueueUniqueWork(
+        "nomeTrabalhoExecucaoUsuario",
+        ExistingWorkPolicy.KEEP, //tarefa1 - tarefa2
+        oneTimeWorkRequest
+      )*/
+    }
+
+    binding.btnExecutarWork.setOnClickListener {
+      workManager.cancelWorkById( oneTimeWorkRequest.id )
+      //workManager.cancelAllWorkByTag( "execucaoUsuarios" )
+      //workManager.cancelUniqueWork("nomeTrabalhoExecucaoUsuario")
+      //workManager.cancelAllWork()
     }
 
   }
