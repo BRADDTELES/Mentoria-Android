@@ -16,6 +16,9 @@
             android:name=".ChatActivity"
             android:exported="false" />
         <activity
+            android:name=".PagementoActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
