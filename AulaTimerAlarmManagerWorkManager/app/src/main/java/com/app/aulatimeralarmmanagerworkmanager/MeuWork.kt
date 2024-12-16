@@ -7,6 +7,7 @@ import androidx.work.CoroutineWorker
 import androidx.work.ForegroundInfo
 import androidx.work.WorkerParameters
 import androidx.work.workDataOf
+import com.app.aulatimeralarmmanagerworkmanager.api.CustomRetrofit
 import kotlinx.coroutines.delay
 import kotlin.math.log
 
@@ -16,8 +17,43 @@ class MeuWork(
 ) : CoroutineWorker( context, workerParameters ) {
 
   override suspend fun doWork(): Result {
-    executarAcao()
-    return Result.success( workDataOf("retorno" to 200) )
+
+    setForeground(
+      ForegroundInfo(
+        System.currentTimeMillis().toInt(),
+        NotificationCompat.Builder(applicationContext, Constantes.ID_CANAL)
+          .setSmallIcon(R.drawable.ic_lembrete_24)
+          .setShowWhen(true)
+          .setContentTitle("Últimas postagens")
+          .setContentText("Recuperando postagens da web")
+          .build()
+      )
+    )
+
+    val jsonPlaceAPI = CustomRetrofit.jsonPlaceApi
+    val resposta = jsonPlaceAPI.recuperarPostagens()
+
+    if (resposta != null && resposta.isSuccessful) {
+      
+      resposta?.body().let { listaPostagem ->
+        listaPostagem?.forEach { postagem ->
+          delay(250)
+          Log.i("workmanager_android","${postagem.id}) ${postagem.title}\n")
+        }
+      }
+
+      return Result.success( workDataOf("sucesso" to "Sucesso ao recuperar postagem") )
+
+    }else{
+
+      if (  resposta.code().toString().startsWith("5")  ) {
+          Result.retry()
+      }else{
+        return Result.failure( workDataOf("erro" to "Erro ao recuperar postagem") )
+      }
+
+    }
+    return Result.failure( workDataOf("erro" to "Erro ao recuperar postagem") )
   }
 
   private suspend fun executarAcao(){
@@ -40,7 +76,7 @@ class MeuWork(
     repeat(100){ contador ->
       delay(1000)
       setProgress( workDataOf("progresso" to contador) )
-      //Log.i("workmanager_android","executando: $contador")
+      Log.i("workmanager_android","executando: $contador")
     }
   }
 

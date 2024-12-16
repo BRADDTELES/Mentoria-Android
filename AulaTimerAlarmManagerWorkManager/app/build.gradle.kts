@@ -10,7 +10,7 @@ android {
    defaultConfig {
       applicationId = "com.app.aulatimeralarmmanagerworkmanager"
       minSdk = 24
-      targetSdk = 34
+      targetSdk = 33
       versionCode = 1
       versionName = "1.0"
 
@@ -56,6 +56,10 @@ dependencies {
 
    // Lifecycles only (without ViewModel or LiveData)
    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+
+   //Retrofit
+   implementation("com.squareup.retrofit2:retrofit:2.11.0")
+   implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
