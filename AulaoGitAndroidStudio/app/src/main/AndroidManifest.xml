@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AulaoGitAndroidStudio"
         tools:targetApi="31">
         <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".PagementoActivity"
             android:exported="false" />
         <activity
