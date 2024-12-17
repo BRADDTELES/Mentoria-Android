@@ -1,7 +1,7 @@
 /*
 Abstração
 Herança
-Polimorfismo
+Poli -> muitas  - morfismo -> formas
 Encapsulamento
 */
 
@@ -22,11 +22,20 @@ class Usuario {
 
     //Métodos = "Com retorno" e "Sem retorno"
     void cadastrar(){
-        System.out.println("usuário cadastrado: " + email + " senha: ");
+        System.out.println("usuário cadastrado email: " + email + " senha: " + senha );
     }
 
+    //Assinatura de métodos: nome + parametros e tipo
     void logar(){
-        System.out.println("usuário logado");
+        System.out.println("logar usuário email: " + email + " senha: " + senha);
+    }
+
+    void logar( String telefone ){//Sobrecargas de métodos
+        System.out.println("Envia SMS, confirma SMS aí sim logado com telefone: " + telefone);
+    }
+
+    void logar( int token ){//Sobrecargas de métodos
+        System.out.println("logar usuário por token: " + token);
     }
 
     /*void calcularIMC(double peso, double altura){
@@ -50,7 +59,10 @@ class Scratch {
 
         //Instaciar na tela de cadastro
         Usuario usuario = new Usuario("danillo@gmail.com", "1234");//Instanciando, construindo o objeto
-        usuario.cadastrar();
+        usuario.logar();
+        usuario.logar("1199999999999");
+        usuario.logar(1234456789);
+        //usuario.cadastrar();
 
         /*usuario.calcularIMC(70, 1.72);
         double imcComRetorno = usuario.calcularIMC(70, 1.72);
