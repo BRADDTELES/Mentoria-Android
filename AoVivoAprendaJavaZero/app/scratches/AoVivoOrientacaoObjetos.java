@@ -28,6 +28,11 @@ class Usuario {
     }*/
 
     double calcularIMC(double peso, double altura){
+        /* Pode se ter dentro de métodos com retorno, por exemplo:
+        Listar usuário,
+        pode ter if/else, pode ter o for, pode ter try/catch,
+        pode ter um método que retorna um boolean, uma String, um Double e assim por diante...
+        */
         double imc = peso / (altura * altura);
         return imc;
     }
