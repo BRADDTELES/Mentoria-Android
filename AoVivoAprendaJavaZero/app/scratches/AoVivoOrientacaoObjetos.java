@@ -21,6 +21,16 @@ class Usuario {
     void logar(){
         System.out.println("usuário logado");
     }
+
+    /*void calcularIMC(double peso, double altura){
+        double imc = peso / (altura * altura);
+        System.out.println("imc: " + imc);
+    }*/
+
+    double calcularIMC(double peso, double altura){
+        double imc = peso / (altura * altura);
+        return imc;
+    }
 }
 
 class Scratch {
@@ -28,8 +38,11 @@ class Scratch {
 
         //Instaciar na tela de cadastro
         Usuario usuario = new Usuario();
+        //usuario.calcularIMC(70, 1.72);
+        double imcComRetorno = usuario.calcularIMC(70, 1.72);
+        System.out.println("imc: " + imcComRetorno);
 
-        //Variáveis de instância
+        /*//Variáveis de instância
         String nome = "danillo";
         usuario.email = "danillo@gmail.com";
         usuario.senha = "1234";
@@ -41,7 +54,7 @@ class Scratch {
         //Variáveis de instância
         usuario.email = "danillo@gmail.com";
         usuario.senha = "1234";
-        usuario.logar();
+        usuario.logar();*/
 
     }
 }

@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId = "com.app.aovivoaprendajavazero"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
