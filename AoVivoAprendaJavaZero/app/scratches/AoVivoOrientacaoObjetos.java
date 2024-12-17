@@ -60,7 +60,7 @@ class Animal {//Super classe, classe pai
     String cor;
 
     void correr(){
-        System.out.println("Correr");
+        System.out.println("Correr como um ");
     }
 
 }
@@ -71,6 +71,13 @@ class Cachorro extends Animal {//Filha, subclasse
         System.out.println("latir");
     }
 
+    @Override
+    void correr() {
+        /*Animal animal = new Animal();
+        animal.correr();*/
+        super.correr();
+        System.out.println(" cachorro com 4 patas ");
+    }
 }
 
 class Passaro extends Animal {
@@ -79,17 +86,24 @@ class Passaro extends Animal {
         System.out.println("Voar");
     }
 
+    @Override
+    void correr() {
+        super.correr();
+        System.out.println(" passaro utilizando asas ");
+    }
+
 }
 
 class Scratch {
     public static void main(String[] args) {
 
         Cachorro cachorro = new Cachorro();
-        cachorro.latir();
         cachorro.correr();
 
+        System.out.println("+++++++++++");
+
         Passaro passaro = new Passaro();
-        passaro.voar();
+        passaro.correr();
 
         //Instaciar na tela de cadastro
         /*Usuario usuario = new Usuario("danillo@gmail.com", "1234");//Instanciando, construindo o objeto
