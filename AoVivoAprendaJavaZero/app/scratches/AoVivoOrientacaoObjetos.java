@@ -54,8 +54,9 @@ class Usuario {
     }
 }
 
-//abstract class Animal {//Classe Abstrata
-class Animal {//Super classe, classe pai
+
+//class Animal {//Super classe, classe pai
+abstract class Animal {//Classe Abstrata
     String nome;
     String cor;
 
@@ -63,6 +64,25 @@ class Animal {//Super classe, classe pai
         System.out.println("Correr como um ");
     }
 
+    abstract void respirar();//Contrato e obrigando a usar o método respirar
+
+}
+
+abstract interface Aquatico {
+    abstract void nadar();
+}
+
+class Peixe extends Animal implements Aquatico {
+
+    @Override
+    void respirar() {
+        System.out.println("Respirar como um peixe");
+    }
+
+    @Override
+    public void nadar() {
+        System.out.println("Nadar como um peixe");
+    }
 }
 
 class Cachorro extends Animal {//Filha, subclasse
@@ -78,6 +98,11 @@ class Cachorro extends Animal {//Filha, subclasse
         super.correr();
         System.out.println(" cachorro com 4 patas ");
     }
+
+    @Override
+    void respirar() {
+        System.out.println("Respirar como um cachorro");
+    }
 }
 
 class Passaro extends Animal {
@@ -92,6 +117,11 @@ class Passaro extends Animal {
         System.out.println(" passaro utilizando asas ");
     }
 
+    @Override
+    void respirar() {
+        System.out.println("Respirar como um passaro");
+    }
+
 }
 
 class Scratch {
@@ -101,11 +131,18 @@ class Scratch {
 
         Cachorro cachorro = new Cachorro();
         cachorro.correr();
+        cachorro.respirar();
 
         System.out.println("+++++++++++");
 
         Passaro passaro = new Passaro();
         passaro.correr();
+        passaro.respirar();
+
+        System.out.println("+++++++++++");
+
+        Peixe peixe = new Peixe();
+        peixe.nadar();
 
         //Instaciar na tela de cadastro
         /*Usuario usuario = new Usuario("danillo@gmail.com", "1234");//Instanciando, construindo o objeto
