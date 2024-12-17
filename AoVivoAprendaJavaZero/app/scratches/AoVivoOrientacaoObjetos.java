@@ -54,15 +54,49 @@ class Usuario {
     }
 }
 
+class Animal {//Super classe, classe pai
+
+    String nome;
+    String cor;
+
+    void correr(){
+        System.out.println("Correr");
+    }
+
+}
+
+class Cachorro extends Animal {//Filha, subclasse
+    public void latir(){
+        correr();
+        System.out.println("latir");
+    }
+
+}
+
+class Passaro extends Animal {
+
+    public void voar(){
+        System.out.println("Voar");
+    }
+
+}
+
 class Scratch {
     public static void main(String[] args) {
 
+        Cachorro cachorro = new Cachorro();
+        cachorro.latir();
+        cachorro.correr();
+
+        Passaro passaro = new Passaro();
+        passaro.voar();
+
         //Instaciar na tela de cadastro
-        Usuario usuario = new Usuario("danillo@gmail.com", "1234");//Instanciando, construindo o objeto
+        /*Usuario usuario = new Usuario("danillo@gmail.com", "1234");//Instanciando, construindo o objeto
         usuario.logar();
         usuario.logar("1199999999999");
         usuario.logar(1234456789);
-        //usuario.cadastrar();
+        //usuario.cadastrar();*/
 
         /*usuario.calcularIMC(70, 1.72);
         double imcComRetorno = usuario.calcularIMC(70, 1.72);
