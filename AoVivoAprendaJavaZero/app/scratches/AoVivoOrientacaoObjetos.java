@@ -54,8 +54,8 @@ class Usuario {
     }
 }
 
+//abstract class Animal {//Classe Abstrata
 class Animal {//Super classe, classe pai
-
     String nome;
     String cor;
 
@@ -96,6 +96,8 @@ class Passaro extends Animal {
 
 class Scratch {
     public static void main(String[] args) {
+
+        //Animal animal = new Animal();// Classe abstrata não pode ser Instanciada
 
         Cachorro cachorro = new Cachorro();
         cachorro.correr();
