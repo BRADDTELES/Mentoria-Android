@@ -13,9 +13,16 @@ class Usuario {
     String usuario;
     String senha;
 
+    //Construtor
+    //Usuario(){} //Construtor Vazio
+    Usuario( String email, String senha ){
+        this.email = email;
+        this.senha = senha;
+    }
+
     //Métodos = "Com retorno" e "Sem retorno"
     void cadastrar(){
-        System.out.println("usuário cadastrado");
+        System.out.println("usuário cadastrado: " + email + " senha: ");
     }
 
     void logar(){
@@ -42,10 +49,12 @@ class Scratch {
     public static void main(String[] args) {
 
         //Instaciar na tela de cadastro
-        Usuario usuario = new Usuario();
-        //usuario.calcularIMC(70, 1.72);
+        Usuario usuario = new Usuario("danillo@gmail.com", "1234");//Instanciando, construindo o objeto
+        usuario.cadastrar();
+
+        /*usuario.calcularIMC(70, 1.72);
         double imcComRetorno = usuario.calcularIMC(70, 1.72);
-        System.out.println("imc: " + imcComRetorno);
+        System.out.println("imc: " + imcComRetorno);*/
 
         /*//Variáveis de instância
         String nome = "danillo";
