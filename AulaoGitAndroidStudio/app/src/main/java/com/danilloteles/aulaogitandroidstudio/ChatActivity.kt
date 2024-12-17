@@ -24,5 +24,5 @@ class ChatActivity : AppCompatActivity() {
     }
 
     fun enviarImagem() {}
-
+    
 }
