@@ -17,10 +17,11 @@ class ChatActivity : AppCompatActivity() {
             insets
         }
 
-        fun enviarMensagem() {
-
-        }
-
-        fun enviarImagem() {}
     }
+
+    fun enviarMensagem() {
+
+    }
+
+    fun enviarImagem() {}
 }
