@@ -16,7 +16,7 @@
             android:name=".ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".PagementoActivity"
+            android:name=".PagamentoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
