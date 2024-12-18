@@ -1,19 +1,45 @@
 package com.app.aulakotlinago24
 
+class Produto {
+    fun cadastrar(){}
+    fun adicionarNoCarrinho(){
+        //Códigos
+    }
+}
+
+// Usuário
+class Usuario {
+
+    var email: String = ""//Propriedades -> variável
+    val produto = Produto()
+
+    fun adicionar(){
+        produto.adicionarNoCarrinho()
+    }
+
+    fun cadastrar() {
+        email = "danillo@gmail.com"
+    }
+    fun logar() {//Métodos -> Função
+        email = "danillo@gmail.com"
+    }
+    fun deslogar() {}
+}
+
 fun main() {
 
-     /*// Null Safety (segurança de nulos)
-    var nome: String? = null
+    /*// Null Safety (segurança de nulos)
+   var nome: String? = null
 
-    nome = "jamilton"
+   nome = "jamilton"
 
-    nome?.length
+   nome?.length
 
-    if ( nome != null ) {
-        nome.length
-    }*/
+   if ( nome != null ) {
+       nome.length
+   }*/
 
-    /* // Operadores relacionais e lógicos */
+    /* // Operadores relacionais e lógicos
     val idade = 18
     val compras = 100
     val frete = 20
@@ -33,6 +59,10 @@ fun main() {
     }else{
         val precisaComprar =  200 - compras
         println( "NÃO tem frete GRÁTIS, compre: $precisaComprar" )
-    }
+    }*/
+
+    /* Classes, métodos e orientação a objetos */
+    val variavelUsuario = Usuario()
+    variavelUsuario.logar()
 
 }
