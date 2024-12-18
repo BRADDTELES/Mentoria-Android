@@ -5,12 +5,12 @@ plugins {
 
 android {
     namespace = "com.app.aulakotlinago24"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.app.aulakotlinago24"
         minSdk = 24
-        targetSdk = 34
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
 
