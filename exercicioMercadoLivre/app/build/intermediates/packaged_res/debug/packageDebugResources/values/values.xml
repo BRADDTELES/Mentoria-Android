@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">exercicioMercadoLivre</string>
+    <string name="btn_comprar">COMPRAR</string>
+    <string name="text_descricaoProduto">Fritadeira Elétrica Multilaser Air Fryer 4l Preta 1500WPrepare deliciosas receiras de forma mais saudável</string>
+    <string name="text_ofertaDoDia">Oferta do dia</string>
+    <string name="text_tituloProduto">Fritadeira Elétrica Multilaser Air Fryer</string>
+    <style name="Base.Theme.ExercicioMercadoLivre" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.ExercicioMercadoLivre" parent="Base.Theme.ExercicioMercadoLivre"/>
+</resources>

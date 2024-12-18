@@ -1,0 +1,4 @@
+com.jamiltondamasceno.projetonetflixapi.test.app-androidTest-0 C:\AndroidStudioProjects\Mentoria-Android\ProjetoNetflixAPI\app\build\generated\res\resValues\androidTest\debug
+com.jamiltondamasceno.projetonetflixapi.test.app-mergeDebugAndroidTestResources-1 C:\AndroidStudioProjects\Mentoria-Android\ProjetoNetflixAPI\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.jamiltondamasceno.projetonetflixapi.test.app-mergeDebugAndroidTestResources-2 C:\AndroidStudioProjects\Mentoria-Android\ProjetoNetflixAPI\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.jamiltondamasceno.projetonetflixapi.test.app-debugAndroidTest-3 C:\AndroidStudioProjects\Mentoria-Android\ProjetoNetflixAPI\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources

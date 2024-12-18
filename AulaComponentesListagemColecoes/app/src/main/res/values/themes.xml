@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.AulaComponentesListagemColecoes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/principal</item>
+        <item name="colorPrimaryVariant">@color/principal_variante</item>
+
+        <item name="android:windowBackground">@color/cinza</item>
+    </style>
+
+    <style name="Theme.AulaComponentesListagemColecoes" parent="Base.Theme.AulaComponentesListagemColecoes" />
+</resources>

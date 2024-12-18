@@ -1,0 +1,123 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <meta http-equiv="Content-Type" content="text/html;charset=windows-1252"> 
+  <title>Coverage Report > RetrofitCustom</title>
+  <style type="text/css">
+    @import "../../css/coverage.css";
+    @import "../../css/idea.min.css";
+  </style>
+  <script type="text/javascript" src="../../js/highlight.min.js"></script>
+  <script type="text/javascript" src="../../js/highlightjs-line-numbers.min.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">com.danilloteles.aulatesteapipratico.data.remote.api</a>
+</div>
+
+<h1>Coverage Summary for Class: RetrofitCustom (com.danilloteles.aulatesteapipratico.data.remote.api)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">RetrofitCustom</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/5)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<code class="sourceCode" id="sourceCode">&nbsp;package com.danilloteles.aulatesteapipratico.data.remote.api
+&nbsp;
+&nbsp;import retrofit2.Retrofit
+&nbsp;import retrofit2.converter.gson.GsonConverterFactory
+&nbsp;
+&nbsp;object RetrofitCustom {
+&nbsp;
+&nbsp;    fun recuperarRetrofit(    ) : Retrofit {
+<b class="nc">&nbsp;        return Retrofit.Builder()</b>
+<b class="nc">&nbsp;            .baseUrl(&quot;https://dummyjson.com/&quot;)//users</b>
+<b class="nc">&nbsp;            .addConverterFactory( GsonConverterFactory.create() )</b>
+<b class="nc">&nbsp;            .build()</b>
+&nbsp;    }
+&nbsp;
+&nbsp;    fun recuperarDumyAPI(    ) : DummyAPIService {
+<b class="nc">&nbsp;        return recuperarRetrofit().create( DummyAPIService::class.java )</b>
+&nbsp;    }
+&nbsp;
+&nbsp;}
+</code>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+      hljs.highlightAll()
+      hljs.initLineNumbersOnLoad();
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2024-12-07 07:12</div>
+</div>
+</body>
+</html>

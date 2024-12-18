@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "365019017887",
+    "project_id": "aulawhatsapp-cb550",
+    "storage_bucket": "aulawhatsapp-cb550.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365019017887:android:168aecfd1b613b06ae68aa",
+        "android_client_info": {
+          "package_name": "com.application.aulawhatsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Rru_y755xLAeeV6Z2KNJ7mAuaDcVmEE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

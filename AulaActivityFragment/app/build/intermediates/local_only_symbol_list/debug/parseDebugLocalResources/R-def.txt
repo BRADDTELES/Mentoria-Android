@@ -1,0 +1,20 @@
+R_DEF: Internal format may change without notice
+local
+color black
+color principal
+color white
+drawable ic_launcher_background
+drawable ic_launcher_foreground
+id button_abrir
+id button_fechar
+id main
+id textFilme
+layout activity_detalhes
+layout activity_main
+mipmap ic_launcher
+mipmap ic_launcher_round
+string app_name
+style Base.Theme.AulaActivityFragment
+style Theme.AulaActivityFragment
+xml backup_rules
+xml data_extraction_rules
