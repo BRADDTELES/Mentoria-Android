@@ -1,3 +1,0 @@
-com.application.aulafragment.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

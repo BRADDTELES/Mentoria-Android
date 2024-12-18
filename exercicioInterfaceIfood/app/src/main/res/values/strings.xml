@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">exercicioInterfaceIfood</string>
-    <string name="btn_retirar">PARA RETIRAR</string>
-    <string name="btn_entrega_gratis">ENTREGA GRÁTIS</string>
-    <string name="text_endereco">Rua Almeida filho, 1015</string>
-    <string name="image_mercado">TODO</string>
-</resources>

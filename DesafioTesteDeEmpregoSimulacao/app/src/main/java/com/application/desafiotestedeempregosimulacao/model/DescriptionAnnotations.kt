@@ -1,3 +1,0 @@
-package com.application.desafiotestedeempregosimulacao.model
-
-class DescriptionAnnotations

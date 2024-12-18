@@ -1,5 +1,0 @@
-com.application.aulafragment.test.app-core-1.6.1-0 C:\Users\bradd\.gradle\caches\transforms-4\96736f29a8c5a94f362b7bc4969770b5\transformed\core-1.6.1\res
-com.application.aulafragment.test.app-androidTest-1 C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaFragment\app\build\generated\res\resValues\androidTest\debug
-com.application.aulafragment.test.app-mergeDebugAndroidTestResources-2 C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaFragment\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-com.application.aulafragment.test.app-mergeDebugAndroidTestResources-3 C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaFragment\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-com.application.aulafragment.test.app-debugAndroidTest-4 C:\Users\bradd\AndroidStudioProjects\Mentoria-Android\AulaFragment\app\build\intermediates\merged_res\debugAndroidTest\mergeDebugAndroidTestResources
