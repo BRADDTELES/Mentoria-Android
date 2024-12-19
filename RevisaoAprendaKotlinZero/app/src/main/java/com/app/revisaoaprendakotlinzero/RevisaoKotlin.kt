@@ -26,10 +26,22 @@ open class Animal {
     open fun correr(){
         print("Correr como")
     }
+
+}
+
+interface Aquatico {
+    fun nadar()
+}
+
+class Hipopotomo : Animal(), Aquatico {
+    override fun nadar() {
+        println("Nadar")
+    }
+
 }
 
 class Passaro(
-    var cor: String
+    private val cor: String
     //cor: String
 ) : Animal() {
 
