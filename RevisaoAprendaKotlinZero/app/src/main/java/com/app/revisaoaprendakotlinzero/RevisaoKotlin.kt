@@ -21,28 +21,47 @@ const val pi = 3.14
 
 fun main() {
 
-    //val nome = "Danillo"//Variável imutável
-    /*var nome = "Danillo"//Variável mutável
-    nome = "Maria"
-    println( nome )
-    println( pi )*/
+    /* if else when
+    val idade = 16 // <= 17 Adolescente - >= 18 35 - 35 ate 65
 
-    /*val nome: String? = null
+    var resultado = if (  idade >= 17  ) {
+        "Adolescente"
+    }else if (idade in 18..35) {// <- Range
+        "Adulto"
+    }else{
+        "Melhor idade"
+    }
+    println( resultado )
+    val opcao = 1
+    when ( opcao ){
+        1 -> {
+            println("Cartão de crédito")
+        }
+        2 -> println("extrato")
+        3 -> println("saldo")
+        else -> println("Nenhuma opção escolhida")
+    }*/
+    /* Null Safety
+    val nome: String? = null
     if ( nome != null ){
         println( nome.length )
     }
-    println( nome?.length )*/
+    println( nome?.length )
 
     var saldo: Double? = null
-
     //verificação de saldo
     //Recupera o saldo
     if ( saldo == null ){
         saldo = 0.0
     }
     val saldoRecuperado = saldo ?: 0.0 //Elvis opereitor
-
     //Exibir o saldo
-    println( saldo )
+    println( saldo )*/
+    /* Variáveis e constantes
+    //val nome = "Danillo"//Variável imutável
+    var nome = "Danillo"//Variável mutável
+    nome = "Maria"
+    println( nome )
+    println( pi )*/
 
 }
