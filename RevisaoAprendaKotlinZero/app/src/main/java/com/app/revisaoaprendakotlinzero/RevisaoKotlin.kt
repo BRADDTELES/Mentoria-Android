@@ -3,7 +3,7 @@ package com.app.revisaoaprendakotlinzero
 /*
 Resumão Aprenda Kotlin do zero
 + Variáveis e constantes
-+ Null Safety
++ Null Safety - chamada segura (?)
 + Operadores aritiméticos, relacionais e lógicos
 + if else when
 + Arrays & Loops: while e for
@@ -22,11 +22,27 @@ const val pi = 3.14
 fun main() {
 
     //val nome = "Danillo"//Variável imutável
-    var nome = "Danillo"//Variável mutável
-
+    /*var nome = "Danillo"//Variável mutável
     nome = "Maria"
-
     println( nome )
-    println( pi )
+    println( pi )*/
+
+    /*val nome: String? = null
+    if ( nome != null ){
+        println( nome.length )
+    }
+    println( nome?.length )*/
+
+    var saldo: Double? = null
+
+    //verificação de saldo
+    //Recupera o saldo
+    if ( saldo == null ){
+        saldo = 0.0
+    }
+    val saldoRecuperado = saldo ?: 0.0 //Elvis opereitor
+
+    //Exibir o saldo
+    println( saldo )
 
 }

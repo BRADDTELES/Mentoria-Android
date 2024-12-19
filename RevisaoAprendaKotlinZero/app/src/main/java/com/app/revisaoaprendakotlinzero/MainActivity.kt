@@ -21,8 +21,14 @@ Resumão Aprenda Kotlin do zero
 * */
 
 class MainActivity : AppCompatActivity() {
+
+    val nome: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        println( nome?.length )
+
     }
 }

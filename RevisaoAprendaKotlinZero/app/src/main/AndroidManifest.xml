@@ -13,6 +13,9 @@
         android:theme="@style/Theme.RevisaoAprendaKotlinZero"
         tools:targetApi="31">
         <activity
+            android:name=".JavaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
