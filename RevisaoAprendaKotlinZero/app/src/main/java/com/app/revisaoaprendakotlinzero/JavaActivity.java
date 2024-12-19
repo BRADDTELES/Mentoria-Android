@@ -8,6 +8,14 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+class AnimalJava {
+
+}
+
+class PassaroJava extends AnimalJava {
+
+}
+
 public class JavaActivity extends AppCompatActivity {
 
     String nome;//null

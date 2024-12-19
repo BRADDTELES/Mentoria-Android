@@ -19,8 +19,51 @@ Resumão Aprenda Kotlin do zero
 
 const val pi = 3.14
 
+open class Animal {
+
+    protected var raca: String = "" //Imutavél
+
+    open fun correr(){
+        print("Correr como")
+    }
+}
+
+class Passaro(
+    var cor: String
+    //cor: String
+) : Animal() {
+
+    val corParamentro: String
+
+    init {
+        corParamentro = cor
+    }
+
+    public fun respirar(){}
+
+    override fun correr(){
+        super.correr()
+        this.raca = "Bemtevi"
+        println(" um passaro com a cor: $cor")
+        //println(" um passaro com a cor: $corParamentro")
+    }
+}
+
+/*fun executar( nome: String, idade: Int = 0){
+    println("Nome: $nome idade: $idade")
+}*/
+
 fun main() {
 
+    /* Classes e objetos, Herança */
+    val passaro = Passaro("Marrom")
+    passaro.correr()
+    //passaro.cor = "Amarelo"
+    //println(passaro.cor)
+
+    /* Funções em Kotlin
+    val al idade: Int = 0
+    executar("Danillo")*/
     /* Arrays & Loops: while e for
     /*val totalPostagens = 2
     var contador = 0
