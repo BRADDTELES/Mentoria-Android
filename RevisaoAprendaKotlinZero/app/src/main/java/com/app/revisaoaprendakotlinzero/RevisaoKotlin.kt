@@ -61,18 +61,45 @@ class Passaro(
     }
 }
 
+//Atributo ou método de instancia
+//Atributo ou método de classe
+class Usuario(
+    val nome: String
+) {
+
+    companion object {
+        val totalAbasUsuario: Int = 1
+        fun recuperarDadosUsuarioLogado(){
+
+            // Pega dados de um banco de dados (apenas por 15 dias)
+            println("Jamilton está logado ")
+
+        }
+    }
+
+    fun logar(){
+        println("Logar usuário: $nome")
+    }
+
+}
+
 /*fun executar( nome: String, idade: Int = 0){
     println("Nome: $nome idade: $idade")
 }*/
 
 fun main() {
 
-    /* Classes e objetos, Herança */
+    /* Companion Object
+    //val usuario1 = Usuario("Danillo")//Objeto Danillo
+    //usuario1.logar()
+    //val usuario2 = Usuario("Adriana")//Objeto Adriana
+    //usuario2.logar()
+    Usuario.recuperarDadosUsuarioLogado()*/
+    /* Classes e objetos, Herança
     val passaro = Passaro("Marrom")
     passaro.correr()
     //passaro.cor = "Amarelo"
-    //println(passaro.cor)
-
+    //println(passaro.cor)*/
     /* Funções em Kotlin
     val al idade: Int = 0
     executar("Danillo")*/
