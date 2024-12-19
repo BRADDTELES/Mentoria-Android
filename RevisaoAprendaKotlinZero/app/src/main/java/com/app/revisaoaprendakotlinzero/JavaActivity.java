@@ -17,9 +17,14 @@ public class JavaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_java);
 
-        if ( nome != null ){
-            System.out.println( nome.length() );
+        int total = 10;
+        for (int i = 0; i < total; i++) {
+            System.out.println("Iteracao: " + i);
         }
+
+        /*if ( nome != null ){
+            System.out.println( nome.length() );
+        }*/
 
     }
 }

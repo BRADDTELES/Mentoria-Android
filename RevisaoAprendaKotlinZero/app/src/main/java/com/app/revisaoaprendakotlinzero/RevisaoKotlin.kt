@@ -21,6 +21,25 @@ const val pi = 3.14
 
 fun main() {
 
+    /* Arrays & Loops: while e for
+    /*val totalPostagens = 2
+    var contador = 0
+    while ( contador <= totalPostagens ){
+        println( listaPostagens[contador] )
+        contador++
+    }*/
+    for ( postagem in listaPostagens ){
+        println( postagem )
+    }
+    for ( indice in listaPostagens.indices ){
+        println( indice )
+    }
+    for ( (indice, postagem) in listaPostagens.withIndex() ){
+        println( "$indice - $postagem" )
+    }
+    for ( item in 1..10){
+        println( item )
+    }*/
     /* if else when
     val idade = 16 // <= 17 Adolescente - >= 18 35 - 35 ate 65
 
