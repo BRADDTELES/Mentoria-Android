@@ -2,7 +2,13 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.AulaReceitasVo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/primaria</item>
+        <item name="colorPrimaryVariant">@color/primaria_variacao</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/secundaria</item>
+        <item name="colorSecondaryVariant">@color/secundaria_variacao</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:windowBackground">@color/fundo</item>
     </style>
 
     <style name="Theme.AulaReceitasVo" parent="Base.Theme.AulaReceitasVo" />
