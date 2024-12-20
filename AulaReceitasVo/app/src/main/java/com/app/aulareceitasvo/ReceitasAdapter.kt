@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class ReceitasAdapter(
-    val cliqueBotao: () -> Unit
+    val cliqueBotao: (Receita) -> Unit
 ) : Adapter<ReceitasAdapter.ReceitaViewHolder>(){
 
     private var listaReceitas = listOf<Receita>()
@@ -48,7 +48,7 @@ class ReceitasAdapter(
 
             //Evento de clique
             clItem.setOnClickListener {
-                cliqueBotao()
+                cliqueBotao( receita )
             }
 
         }
