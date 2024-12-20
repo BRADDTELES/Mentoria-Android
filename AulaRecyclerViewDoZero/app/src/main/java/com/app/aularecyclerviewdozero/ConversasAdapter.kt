@@ -1,14 +1,14 @@
 package com.app.aularecyclerviewdozero
 
+import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class ConversasAdapter: Adapter<ConversasAdapter.ConversaViewHolder>() {
 
     //View Holder -> Dono da visualização, o responsável pela visualização
-    inner class ConversaViewHolder : ViewHolder {
+    inner class ConversaViewHolder( itemView: View ) : ViewHolder( itemView ) {
 
     }
 
