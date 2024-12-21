@@ -37,12 +37,20 @@ class MainActivity : AppCompatActivity() {
 
             btnClique.setOnClickListener {
 
-                val marcado = cbNotificacao.isChecked//true -> Marcado false -> desmarcado
+                val masculinoMarcado = rbMasculino.isChecked
+                if (masculinoMarcado) {
+                    textResultado.text = "Masculino"
+                }else{
+                    textResultado.text = "Feminino"
+                }
+                radioGroupSexo.clearCheck()
+
+                /*val marcado = cbNotificacao.isChecked//true -> Marcado false -> desmarcado
                 if (marcado) {
                     textResultado.text = "Marcado : $marcado"
                 }else{
                     textResultado.text = "Desmarcado : $marcado"
-                }
+                }*/
 
             }
         }
