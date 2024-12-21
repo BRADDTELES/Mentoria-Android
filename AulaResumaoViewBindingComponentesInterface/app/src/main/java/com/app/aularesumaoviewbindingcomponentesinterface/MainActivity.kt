@@ -2,6 +2,7 @@ package com.app.aularesumaoviewbindingcomponentesinterface
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.aularesumaoviewbindingcomponentesinterface.databinding.ActivityMainBinding
 
@@ -32,7 +33,18 @@ class MainActivity : AppCompatActivity() {
         //binding?.btnClique?.setOnClickListener {  }
         with(binding){
             //btnClique.setOnClickListener {  }
-            fabAdicionar.setOnClickListener {  }
+            //fabAdicionar.setOnClickListener {  }
+
+            btnClique.setOnClickListener {
+
+                val marcado = cbNotificacao.isChecked//true -> Marcado false -> desmarcado
+                if (marcado) {
+                    textResultado.text = "Marcado : $marcado"
+                }else{
+                    textResultado.text = "Desmarcado : $marcado"
+                }
+
+            }
         }
 
     }
