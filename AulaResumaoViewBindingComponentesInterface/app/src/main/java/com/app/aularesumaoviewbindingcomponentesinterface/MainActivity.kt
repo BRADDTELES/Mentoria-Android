@@ -5,6 +5,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.app.aularesumaoviewbindingcomponentesinterface.databinding.ActivityMainBinding
+import com.google.android.material.snackbar.Snackbar
 
 /*
 View Binding (jetpack)
@@ -35,15 +36,22 @@ class MainActivity : AppCompatActivity() {
             //btnClique.setOnClickListener {  }
             //fabAdicionar.setOnClickListener {  }
 
-            btnClique.setOnClickListener {
+            btnClique.setOnClickListener { view ->
+                //Toast.makeText(applicationContext, "mensagem", Toast.LENGTH_SHORT).show()
 
-                val masculinoMarcado = rbMasculino.isChecked
+                Snackbar.make(
+                    view,
+                    "Sucesso ao fazer algo!",
+                    Snackbar.LENGTH_SHORT
+                ).show()
+
+                /*val masculinoMarcado = rbMasculino.isChecked
                 if (masculinoMarcado) {
                     textResultado.text = "Masculino"
                 }else{
                     textResultado.text = "Feminino"
                 }
-                radioGroupSexo.clearCheck()
+                radioGroupSexo.clearCheck()*/
 
                 /*val marcado = cbNotificacao.isChecked//true -> Marcado false -> desmarcado
                 if (marcado) {
