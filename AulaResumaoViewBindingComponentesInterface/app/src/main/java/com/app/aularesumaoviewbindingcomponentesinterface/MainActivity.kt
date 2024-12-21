@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         //binding?.btnClique?.setOnClickListener {  }
         with(binding){
             //btnClique.setOnClickListener {  }
+            fabAdicionar.setOnClickListener {  }
         }
 
     }
