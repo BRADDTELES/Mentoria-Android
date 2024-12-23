@@ -34,13 +34,13 @@ data class Artigo(
     }
 }*/
 
-data class Produto(
+/*data class Produto(
     var nome: String,
     var quantidade: Int,
     var preco: Double
-)
+)*/
 
-class Pedido {
+/*class Pedido {
     fun calcularPrecoTotalItens( itens: List<Produto> ) : Double {
         //for -> quantidade * preço -> calcular o total dos itens
         //Retorna o total
@@ -50,17 +50,17 @@ class Pedido {
         //código de regras
         return total - desconto
     }
-}
+}*/
 
 fun main() {
 
-    val itens = listOf(
+    /*val itens = listOf(
         Produto("notebook", 1, 1200.0),
         Produto("celular", 2, 1000.0),
-    )
-    val pedido = Pedido()
-    val totalPedido = pedido.calcularPrecoTotalItens( itens )
-    val totalComDesconto = pedido.aplicarDesconto( totalPedido, 200.0 )
+    )*/
+    //val pedido = Pedido()
+    /*val totalPedido = pedido.calcularPrecoTotalItens( itens )
+    val totalComDesconto = pedido.aplicarDesconto( totalPedido, 200.0 )*/
 
     /*val nomesUsuarios = listOf("jamilton", "marcos", "mariana")
 
