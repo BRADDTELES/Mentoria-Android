@@ -25,24 +25,63 @@ data class Artigo(
     }
 }*/
 
-data class Funcionario(
+/*data class Funcionario(
     var salario: Double,
     var margemContribuição: Double
 ){
     fun isentoDescontoSalario() : Boolean {
         return this.salario <= 2000 && this.margemContribuição <= 12
     }
+}*/
+
+data class Produto(
+    var nome: String,
+    var quantidade: Int,
+    var preco: Double
+)
+
+class Pedido {
+    fun calcularPrecoTotalItens( itens: List<Produto> ) : Double {
+        //for -> quantidade * preço -> calcular o total dos itens
+        //Retorna o total
+        return 3200.0
+    }
+    fun aplicarDesconto ( total: Double, desconto: Double ) : Double{
+        //código de regras
+        return total - desconto
+    }
 }
 
 fun main() {
 
-    val funcionario = Funcionario(1200.0, 10.0)
+    val itens = listOf(
+        Produto("notebook", 1, 1200.0),
+        Produto("celular", 2, 1000.0),
+    )
+    val pedido = Pedido()
+    val totalPedido = pedido.calcularPrecoTotalItens( itens )
+    val totalComDesconto = pedido.aplicarDesconto( totalPedido, 200.0 )
+
+    /*val nomesUsuarios = listOf("jamilton", "marcos", "mariana")
+
+    val nomesFormatados = nomesUsuarios.map { nome ->
+        "+) $nome"
+    }
+    println(nomesFormatados)*/
+
+    /*val nomesUsuariosFormatados = mutableListOf<String>()
+    for (nome in nomesUsuarios){
+        nomesUsuariosFormatados.add("+) $nome")
+    }
+    println(nomesUsuariosFormatados)*/
+
+    /*val funcionario = Funcionario(1200.0, 10.0)
 
     if ( funcionario.isentoDescontoSalario() ) {
         //Quem é isento
     }else{
 
-    }
+    }*/
 
     //Nomes significativos
 
