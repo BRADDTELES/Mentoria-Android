@@ -12,7 +12,7 @@ fun contemNomePesquisa( nome: String, listaNomes: List<String> ) : Boolean {
     return listaNomes.contains(nome)
 }*/
 
-enum class StatusArtigo {
+/*enum class StatusArtigo {
     RASCUNHO, PUBLICADO, DESPUBLICADO
 }
 
@@ -23,11 +23,30 @@ data class Artigo(
     fun estaPublicado() : Boolean{
         return this.status == StatusArtigo.PUBLICADO
     }
+}*/
+
+data class Funcionario(
+    var salario: Double,
+    var margemContribuição: Double
+){
+    fun isentoDescontoSalario() : Boolean {
+        return this.salario <= 2000 && this.margemContribuição <= 12
+    }
 }
 
 fun main() {
 
+    val funcionario = Funcionario(1200.0, 10.0)
+
+    if ( funcionario.isentoDescontoSalario() ) {
+        //Quem é isento
+    }else{
+
+    }
+
     //Nomes significativos
+
+    /*
     val artigo = Artigo("Teste")
     artigo.status = StatusArtigo.PUBLICADO
 
@@ -35,8 +54,7 @@ fun main() {
 
     }
 
-
-    /*val usuarioEstaLogado = true
+    val usuarioEstaLogado = true
     if ( !usuarioEstaLogado ) {//usuário NÃO está logado
 
     }*/
