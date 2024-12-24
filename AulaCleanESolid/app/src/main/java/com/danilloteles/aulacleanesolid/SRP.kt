@@ -92,7 +92,7 @@ class EmailServico {
 
 fun main() {
 
-    val carrinho = CarrinhoCompras()
+    /*val carrinho = CarrinhoCompras()
     val emailServico = EmailServico()
     val pedido = Pedido( carrinho, emailServico )
 
@@ -100,11 +100,11 @@ fun main() {
     val caneca = Item("Caneca", 40.0, 2)
 
     carrinho.adicionarItem( notebook )
-    carrinho.adicionarItem( caneca )
+    carrinho.adicionarItem( caneca )*/
 
     /*carinho.confirmarPedidos()
     carinho.exibirStatusPedido()*/
-    pedido.confirmarPedidos()
-    carrinho.recuperarItens()
+    /*pedido.confirmarPedidos()
+    carrinho.recuperarItens()*/
 
 }
