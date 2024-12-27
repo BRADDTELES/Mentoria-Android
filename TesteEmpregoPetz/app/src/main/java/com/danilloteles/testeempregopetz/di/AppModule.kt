@@ -1,6 +1,9 @@
 package com.danilloteles.testeempregopetz.di
 
 import com.danilloteles.testeempregopetz.data.api.BaseInterceptor
+import com.danilloteles.testeempregopetz.data.api.HearthstoneService
+import com.danilloteles.testeempregopetz.data.repository.CartaRepository
+import com.danilloteles.testeempregopetz.data.repository.CartaRepositoryImpl
 import com.danilloteles.testeempregopetz.utils.Constantes
 import dagger.Module
 import dagger.Provides
@@ -28,6 +31,18 @@ object AppModule {
         return OkHttpClient.Builder()
             .addInterceptor( BaseInterceptor() )
             .build()
+    }
+
+    @Provides
+    fun provideHearthstoneService( retrofit: Retrofit ) : HearthstoneService {
+        return retrofit.create( HearthstoneService::class.java )
+    }
+
+    @Provides
+    fun provideCartaRepository(
+        hearthstoneService: HearthstoneService
+    ) : CartaRepository {
+        return CartaRepositoryImpl( hearthstoneService )
     }
 
 }

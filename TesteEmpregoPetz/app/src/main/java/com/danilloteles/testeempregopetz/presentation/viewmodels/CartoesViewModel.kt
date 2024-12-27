@@ -8,9 +8,10 @@ import com.danilloteles.testeempregopetz.data.model.Carta
 import com.danilloteles.testeempregopetz.data.repository.CartaRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class CartoesViewModel(
+class CartoesViewModel @Inject constructor(
     private val cartaRepository: CartaRepository
 ) : ViewModel() {
 

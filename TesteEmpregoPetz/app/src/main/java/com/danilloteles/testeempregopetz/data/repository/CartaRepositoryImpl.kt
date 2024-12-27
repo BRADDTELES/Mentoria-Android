@@ -3,8 +3,9 @@ package com.danilloteles.testeempregopetz.data.repository
 import android.util.Log
 import com.danilloteles.testeempregopetz.data.api.HearthstoneService
 import com.danilloteles.testeempregopetz.data.model.Carta
+import javax.inject.Inject
 
-class CartaRepositoryImpl(
+class CartaRepositoryImpl @Inject constructor(
     private val hearthstoneService: HearthstoneService
 ) : CartaRepository {
     override suspend fun recuperarCartas(): List<Carta> {
