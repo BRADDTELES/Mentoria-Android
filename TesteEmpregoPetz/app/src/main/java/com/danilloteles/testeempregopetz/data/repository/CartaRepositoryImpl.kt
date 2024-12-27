@@ -25,4 +25,5 @@ class CartaRepositoryImpl @Inject constructor(
         return emptyList()
 
     }
+
 }

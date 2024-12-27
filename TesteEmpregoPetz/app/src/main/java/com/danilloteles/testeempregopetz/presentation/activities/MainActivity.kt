@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        cartoesViewModel.recuperarCartoes()
         cartoesViewModel.listaCartas.observe(this){ listaCartas ->
             var lista = ""
             listaCartas.forEach { carta ->
@@ -25,5 +24,10 @@ class MainActivity : AppCompatActivity() {
             }
             Log.i("mensagem_api_cartas", lista )
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        cartoesViewModel.recuperarCartoes()
     }
 }
