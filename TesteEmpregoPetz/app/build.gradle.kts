@@ -47,6 +47,8 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     //Picasso
     implementation("com.squareup.picasso:picasso:2.8")
+    //Glide
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     //Lifecycle
     val lifecycle_version = "2.8.7"

@@ -10,7 +10,7 @@ class CartaRepositoryImpl @Inject constructor(
 ) : CartaRepository {
     override suspend fun recuperarCartas(): List<Carta> {
 
-        val resposta = hearthstoneService.recuperarCartoes("Basic")
+        val resposta = hearthstoneService.recuperarCartoes("Legacy")
         if ( resposta.isSuccessful  ) {
 
             val listaCartas = resposta.body()

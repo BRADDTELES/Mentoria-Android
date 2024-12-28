@@ -20,7 +20,7 @@ object AppModule {
     @Provides
     fun provideRetrofit( okHttpClient: OkHttpClient ) : Retrofit {
         return Retrofit.Builder()
-            .baseUrl( Constantes.BASE_URAL )
+            .baseUrl( Constantes.BASE_URL )
             .addConverterFactory( GsonConverterFactory.create() )
             .client( okHttpClient )
             .build()
