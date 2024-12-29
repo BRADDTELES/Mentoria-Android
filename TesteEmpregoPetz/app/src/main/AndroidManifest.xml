@@ -16,6 +16,9 @@
         android:theme="@style/Theme.TesteEmpregoPetz"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.activities.DetalhesActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.activities.MainActivity"
             android:exported="true">
             <intent-filter>

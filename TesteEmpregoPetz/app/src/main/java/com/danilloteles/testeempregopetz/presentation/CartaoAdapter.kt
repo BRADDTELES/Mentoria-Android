@@ -10,7 +10,9 @@ import com.danilloteles.testeempregopetz.data.model.Carta
 import com.danilloteles.testeempregopetz.databinding.ItemRvCartaBinding
 import com.squareup.picasso.Picasso
 
-class CartaoAdapter : Adapter<CartaoAdapter.CartaoViewHolder>(){
+class CartaoAdapter(
+    private val onClick: (Carta) -> Unit
+) : Adapter<CartaoAdapter.CartaoViewHolder>(){
 
     inner class CartaoViewHolder(
         private val binding: ItemRvCartaBinding
@@ -22,13 +24,16 @@ class CartaoAdapter : Adapter<CartaoAdapter.CartaoViewHolder>(){
 
                 textNome.text = carta.name
 
+                clItemCarta.setOnClickListener {
+                    onClick( carta )
+                }
                 Log.i("mensagem_api_cartas", "url: ${carta.img} \n" )
-                /*Picasso.get()
-                    .load( carta.img )
-                    .into( imageCarta )*/
-                Glide.with( binding.root.context )
+                Picasso.get()
                     .load( carta.img )
                     .into( imageCarta )
+                /*Glide.with( binding.root.context )
+                    .load( carta.img )
+                    .into( imageCarta )*/
 
             }
 

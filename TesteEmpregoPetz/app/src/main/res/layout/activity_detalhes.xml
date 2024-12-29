@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.activities.DetalhesActivity">
+
+    <ImageView
+        android:id="@+id/imageUrl"
+        android:layout_width="300dp"
+        android:layout_height="380dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/carta" />
+
+    <TextView
+        android:id="@+id/textId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="ID:10MKLM12"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/imageUrl"
+        app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="NOME: NOBLE SACRIFICE"
+        app:layout_constraintEnd_toEndOf="@+id/imageUrl"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textId"
+        app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
+
+    <TextView
+        android:id="@+id/textSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SET: TESTE"
+        app:layout_constraintStart_toStartOf="@+id/textId"
+        app:layout_constraintTop_toBottomOf="@+id/textId" />
+
+    <TextView
+        android:id="@+id/textAttack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Attack: TESTE"
+        app:layout_constraintStart_toEndOf="@+id/textSet"
+        app:layout_constraintTop_toBottomOf="@+id/textName" />
+
+    <TextView
+        android:id="@+id/textCost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cost: TESTE"
+        app:layout_constraintStart_toStartOf="@+id/textSet"
+        app:layout_constraintTop_toBottomOf="@+id/textSet" />
+
+    <TextView
+        android:id="@+id/textHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Health: TESTE"
+        app:layout_constraintStart_toEndOf="@+id/textCost"
+        app:layout_constraintTop_toBottomOf="@+id/textAttack" />
+
+    <TextView
+        android:id="@+id/textClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Class: TESTE"
+        app:layout_constraintStart_toStartOf="@+id/textCost"
+        app:layout_constraintTop_toBottomOf="@+id/textCost" />
+
+    <TextView
+        android:id="@+id/textRace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="race: TESTE"
+        app:layout_constraintStart_toEndOf="@+id/textClass"
+        app:layout_constraintTop_toBottomOf="@+id/textHealth" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Text: TESTE"
+        app:layout_constraintStart_toStartOf="@+id/textClass"
+        app:layout_constraintTop_toBottomOf="@+id/textClass" />
+
+    <TextView
+        android:id="@+id/textType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Type: TESTE"
+        app:layout_constraintStart_toStartOf="@+id/textDescription"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

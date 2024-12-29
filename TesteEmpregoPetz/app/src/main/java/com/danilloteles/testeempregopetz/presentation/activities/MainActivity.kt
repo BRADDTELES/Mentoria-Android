@@ -1,5 +1,6 @@
 package com.danilloteles.testeempregopetz.presentation.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
@@ -30,7 +31,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun incializarRecyclerView() {
 
-        cartaoAdapter = CartaoAdapter()
+        cartaoAdapter = CartaoAdapter { carta ->
+            val intent = Intent(applicationContext, DetalhesActivity::class.java)
+            intent.putExtra("carta", carta)
+            startActivity(intent)
+        }
         binding.rvCartas.adapter = cartaoAdapter
         binding.rvCartas.layoutManager = GridLayoutManager(this, 3)
 

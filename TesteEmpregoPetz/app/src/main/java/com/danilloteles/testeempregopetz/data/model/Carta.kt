@@ -1,5 +1,9 @@
 package com.danilloteles.testeempregopetz.data.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Carta(
     val artist: String,
     val attack: Int,
@@ -10,11 +14,10 @@ data class Carta(
     val health: Int,
     val img: String,
     val locale: String,
-    val mechanics: List<Mechanic>,
     val name: String,
     val playerClass: String,
     val race: String,
     val rarity: String,
     val text: String,
     val type: String
-)
+) : Parcelable
