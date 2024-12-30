@@ -27,10 +27,17 @@ class CartaoAdapter(
                 clItemCarta.setOnClickListener {
                     onClick( carta )
                 }
-                Log.i("mensagem_api_cartas", "url: ${carta.img} \n" )
-                Picasso.get()
+
+                if( carta.img.isNotEmpty() ){
+                    Picasso.get()
+                        .load( carta.img )
+                        .into( imageCarta )
+                }
+
+                /*Picasso.get()
                     .load( carta.img )
-                    .into( imageCarta )
+                    .into( imageCarta )*/
+
                 /*Glide.with( binding.root.context )
                     .load( carta.img )
                     .into( imageCarta )*/
@@ -68,12 +75,12 @@ class CartaoAdapter(
 
     }
 
-    override fun getItemCount(): Int {
-        return listaCartas.size
-    }
-
     override fun onBindViewHolder(holder: CartaoViewHolder, position: Int) {
         val carta = listaCartas[position]
         holder.bind( carta )
+    }
+
+    override fun getItemCount(): Int {
+        return listaCartas.size
     }
 }

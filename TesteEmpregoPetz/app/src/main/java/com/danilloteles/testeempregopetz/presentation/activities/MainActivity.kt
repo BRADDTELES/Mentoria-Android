@@ -27,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         setContentView( binding.root )
         incializarRecyclerView()
         inicializarObservables()
+
     }
 
     private fun incializarRecyclerView() {
@@ -52,10 +53,11 @@ class MainActivity : AppCompatActivity() {
 
             val listaCartasNova = mutableListOf<Carta>()
             listaCartas.forEach { carta ->
-                if (carta.img != null) {
+                /*if ( carta.img != null ) {
                     listaCartasNova.add(carta)
-                }
-
+                }*/
+                if ( carta.img.isNotEmpty() || carta.img != null )
+                    listaCartasNova.add(carta)
             }
 
             if ( listaCartasNova.isNotEmpty() ) {

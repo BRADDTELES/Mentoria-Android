@@ -10,11 +10,12 @@
         android:id="@+id/imageCarta"
         android:layout_width="110dp"
         android:layout_height="150dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/carta" />
+        app:srcCompat="@drawable/imagem_padrao2" />
 
     <TextView
         android:id="@+id/textNome"

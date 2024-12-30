@@ -12,18 +12,19 @@
         android:layout_width="300dp"
         android:layout_height="380dp"
         android:layout_marginTop="16dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/carta" />
+        app:srcCompat="@drawable/imagem_padrao2" />
 
     <TextView
         android:id="@+id/textId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="ID:10MKLM12"
+        android:text="ID:10MKLM23"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/imageUrl"
         app:layout_constraintTop_toBottomOf="@+id/imageUrl" />
@@ -74,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Health: TESTE"
+        android:text="health: TESTE"
         app:layout_constraintStart_toEndOf="@+id/textCost"
         app:layout_constraintTop_toBottomOf="@+id/textAttack" />
 
@@ -88,18 +89,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textCost" />
 
     <TextView
-        android:id="@+id/textRace"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="race: TESTE"
-        app:layout_constraintStart_toEndOf="@+id/textClass"
-        app:layout_constraintTop_toBottomOf="@+id/textHealth" />
-
-    <TextView
         android:id="@+id/textDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Text: TESTE"
@@ -114,4 +105,14 @@
         android:text="Type: TESTE"
         app:layout_constraintStart_toStartOf="@+id/textDescription"
         app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+    <TextView
+        android:id="@+id/textRace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="race: TESTE"
+        app:layout_constraintStart_toEndOf="@+id/textClass"
+        app:layout_constraintTop_toBottomOf="@+id/textHealth" />
 </androidx.constraintlayout.widget.ConstraintLayout>
