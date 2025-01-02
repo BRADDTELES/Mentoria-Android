@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.danilloteles.aulapokemonapiturma04.data.remote.dto.PokemonDTO
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
 import com.danilloteles.aulapokemonapiturma04.databinding.ItemRvPokemonBinding
 import com.squareup.picasso.Picasso
 
@@ -19,7 +19,7 @@ class PokemonAdapter : Adapter<PokemonAdapter.PokemonViewHolder>() {
     inner class PokemonViewHolder(
         private val binding: ItemRvPokemonBinding
     ) : ViewHolder( binding.root ){
-        fun bind( pokemonDTO: PokemonDTO ){
+        fun bind( pokemonDTO: PokemonDTO){
             binding.textNomePokemon.text = pokemonDTO.name
             if (pokemonDTO.url.isNotEmpty()) {
                 Picasso.get()

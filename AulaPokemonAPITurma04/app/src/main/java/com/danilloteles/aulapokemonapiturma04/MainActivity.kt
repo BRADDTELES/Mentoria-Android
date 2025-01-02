@@ -6,7 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import com.danilloteles.aulapokemonapiturma04.data.remote.dto.PokemonDTO
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
 import com.danilloteles.aulapokemonapiturma04.databinding.ActivityMainBinding
 import com.danilloteles.aulapokemonapiturma04.presentation.adapter.PokemonAdapter
 import dagger.hilt.android.AndroidEntryPoint
