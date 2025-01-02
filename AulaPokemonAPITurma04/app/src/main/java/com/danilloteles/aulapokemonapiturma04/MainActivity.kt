@@ -2,6 +2,7 @@ package com.danilloteles.aulapokemonapiturma04
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
 import com.danilloteles.aulapokemonapiturma04.databinding.ActivityMainBinding
 import com.danilloteles.aulapokemonapiturma04.presentation.adapter.PokemonAdapter
+import com.danilloteles.aulapokemonapiturma04.presentation.viewmodel.PokemonViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -18,11 +20,26 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate( layoutInflater )
     }
     private lateinit var pokemonAdapter: PokemonAdapter
+    private val pokemonViewModel: PokemonViewModel by viewModels()
+
+    override fun onStart() {
+        super.onStart()
+        pokemonViewModel.recuperarPokemons()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
         inicializarComponentesInterface()
+        inicializarObservaveis()
+
+    }
+
+    private fun inicializarObservaveis() {
+
+        pokemonViewModel.listaPokemons.observe(this){ lista ->
+            pokemonAdapter.adicionarLista( lista )
+        }
 
     }
 
@@ -34,7 +51,7 @@ class MainActivity : AppCompatActivity() {
             rvPokemons.layoutManager = GridLayoutManager(
                 applicationContext, 3
             )
-            pokemonAdapter.adicionarLista(
+            /*pokemonAdapter.adicionarLista(
                 listOf(
                     PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
                     PokemonDTO("Pikachu", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
@@ -44,9 +61,7 @@ class MainActivity : AppCompatActivity() {
                     PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
                     PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
                 )
-            )
+            )*/
         }
-
-
     }
 }

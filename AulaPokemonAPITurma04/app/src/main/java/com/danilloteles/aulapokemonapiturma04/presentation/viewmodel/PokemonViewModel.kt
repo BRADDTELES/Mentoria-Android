@@ -1,7 +1,10 @@
 package com.danilloteles.aulapokemonapiturma04.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.repository.IPokemonRepository
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.repository.PokemonRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -13,9 +16,14 @@ class PokemonViewModel @Inject constructor(
     val pokemonRepositoryImpl: IPokemonRepository
 ): ViewModel(){
 
+    private val _listaPokemons = MutableLiveData<List<PokemonDTO>>()
+    val listaPokemons: LiveData<List<PokemonDTO>>
+        get() = _listaPokemons
+
     fun recuperarPokemons() {
         viewModelScope.launch {
             val lista = pokemonRepositoryImpl.recuperarPokemons()
+            _listaPokemons.postValue( lista )
         }
     }
 

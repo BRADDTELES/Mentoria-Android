@@ -1,6 +1,9 @@
 package com.danilloteles.aulapokemonapiturma04.di
 
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.PokemonAPI
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonResultado
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.repository.IPokemonRepository
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.repository.PokemonRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +27,15 @@ object AppModule {
     fun providePokemonAPI(
         retrofit: Retrofit
     ) : PokemonAPI {
-        return retrofit.create( PokemonAPI::class.java )
+        return retrofit
+            .create( PokemonAPI::class.java )
+    }
+
+    @Provides
+    fun providePokemonRepositoryy(
+        pokemonAPI: PokemonAPI
+    ) : IPokemonRepository {
+        return PokemonRepositoryImpl( pokemonAPI )
     }
 
 }
