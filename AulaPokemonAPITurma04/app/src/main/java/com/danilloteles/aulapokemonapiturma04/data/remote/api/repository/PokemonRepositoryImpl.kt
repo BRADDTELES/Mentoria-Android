@@ -3,6 +3,7 @@ package com.danilloteles.aulapokemonapiturma04.data.remote.api.repository
 import android.util.Log
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.PokemonAPI
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDetalheDTO
 import javax.inject.Inject
 
 class PokemonRepositoryImpl @Inject constructor(
@@ -39,7 +40,21 @@ class PokemonRepositoryImpl @Inject constructor(
         return emptyList()
     }
 
-    override suspend fun recuperarPokemon( nomePokemon: String ): PokemonDTO {
-        return PokemonDTO("", "")
+    override suspend fun recuperarPokemonDetalhe(nomePokemon: String ): PokemonDetalheDTO? {
+        try {
+            val resultado = pokemonAPI.recuperarPokemonDetalhe( nomePokemon.lowercase() )
+            if ( resultado.isSuccessful ) {
+
+                val pokemonDetalhe = resultado.body()
+                if (pokemonDetalhe != null) return pokemonDetalhe
+
+            }else{
+                Log.i("info_pokemon","erro sucesso: ${resultado.errorBody()}")
+            }
+        }catch ( erro: Exception ){
+            erro.printStackTrace()
+            Log.i("info_pokemon","erro: ${erro.message}")
+        }
+        return null
     }
 }

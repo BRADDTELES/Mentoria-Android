@@ -5,10 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDetalheDTO
 import com.danilloteles.aulapokemonapiturma04.databinding.ItemRvPokemonBinding
 import com.squareup.picasso.Picasso
 
-class PokemonAdapter : Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonAdapter(
+    private val onClick: ( PokemonDTO ) -> Unit
+) : Adapter<PokemonAdapter.PokemonViewHolder>() {
 
     private var listaPokemons = listOf<PokemonDTO>()
     fun adicionarLista( lista: List<PokemonDTO> ){
@@ -25,6 +28,9 @@ class PokemonAdapter : Adapter<PokemonAdapter.PokemonViewHolder>() {
                 Picasso.get()
                     .load( pokemonDTO.url )
                     .into( binding.imagePokemon )
+            }
+            binding.cardItemPokemon.setOnClickListener {
+                onClick( pokemonDTO )
             }
         }
     }

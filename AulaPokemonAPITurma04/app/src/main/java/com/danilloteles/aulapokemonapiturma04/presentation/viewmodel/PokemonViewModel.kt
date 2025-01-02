@@ -5,8 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
+import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDetalheDTO
 import com.danilloteles.aulapokemonapiturma04.data.remote.api.repository.IPokemonRepository
-import com.danilloteles.aulapokemonapiturma04.data.remote.api.repository.PokemonRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -20,6 +20,10 @@ class PokemonViewModel @Inject constructor(
     val listaPokemons: LiveData<List<PokemonDTO>>
         get() = _listaPokemons
 
+    private val _pokemonDetalhe = MutableLiveData<PokemonDetalheDTO?>()
+    val pokemonDetalhe: LiveData<PokemonDetalheDTO?>
+        get() = _pokemonDetalhe
+
     fun recuperarPokemons() {
         viewModelScope.launch {
             val lista = pokemonRepositoryImpl.recuperarPokemons()
@@ -28,6 +32,13 @@ class PokemonViewModel @Inject constructor(
                 val pokemonDetalhe = pokemonRepositoryImpl.recuperarPokemon( pokemon.name )
             }*/
             _listaPokemons.postValue( lista )
+        }
+    }
+
+    fun recuperarPokemonDetalhe( nomePokemon: String ) {
+        viewModelScope.launch {
+            val pokemonDetalhe = pokemonRepositoryImpl.recuperarPokemonDetalhe( nomePokemon )
+            _pokemonDetalhe.postValue( pokemonDetalhe )
         }
     }
 

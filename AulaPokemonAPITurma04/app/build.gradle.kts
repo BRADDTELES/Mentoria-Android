@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -63,6 +64,9 @@ dependencies {
 
     //Picasso
     implementation(libs.picasso)
+
+    //Glide para carregar imagens
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 
     //Coil
     implementation(libs.coil.svg)

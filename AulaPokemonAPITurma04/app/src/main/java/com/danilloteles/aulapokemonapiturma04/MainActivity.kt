@@ -1,5 +1,6 @@
 package com.danilloteles.aulapokemonapiturma04
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
@@ -46,7 +47,11 @@ class MainActivity : AppCompatActivity() {
     private fun inicializarComponentesInterface() {
 
         with( binding ){
-            pokemonAdapter = PokemonAdapter()
+            pokemonAdapter = PokemonAdapter{ pokemonDTO ->
+                val intent = Intent(applicationContext, PokemonDetalheActivity::class.java)
+                intent.putExtra("pokemon", pokemonDTO)
+                startActivity( intent )
+            }
             rvPokemons.adapter = pokemonAdapter
             rvPokemons.layoutManager = GridLayoutManager(
                 applicationContext, 3
