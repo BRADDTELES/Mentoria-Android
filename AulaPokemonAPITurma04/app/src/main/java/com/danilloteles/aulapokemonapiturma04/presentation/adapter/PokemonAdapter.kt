@@ -24,6 +24,7 @@ class PokemonAdapter : Adapter<PokemonAdapter.PokemonViewHolder>() {
             if (pokemonDTO.url.isNotEmpty()) {
                 Picasso.get()
                     .load( pokemonDTO.url )
+                    .into( binding.imagePokemon )
             }
         }
     }

@@ -51,17 +51,7 @@ class MainActivity : AppCompatActivity() {
             rvPokemons.layoutManager = GridLayoutManager(
                 applicationContext, 3
             )
-            /*pokemonAdapter.adicionarLista(
-                listOf(
-                    PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                    PokemonDTO("Pikachu", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                    PokemonDTO("Charmander", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                    PokemonDTO("Onix", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                    PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                    PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                    PokemonDTO("Bulbasauro", "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"),
-                )
-            )*/
+
         }
     }
 }

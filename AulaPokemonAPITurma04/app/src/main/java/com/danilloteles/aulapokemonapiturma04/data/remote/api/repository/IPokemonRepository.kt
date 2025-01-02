@@ -5,4 +5,5 @@ import com.danilloteles.aulapokemonapiturma04.data.remote.api.dto.PokemonDTO
 //recuperarPokemons, SalvarPokemon, AtualizarPokemon
 interface IPokemonRepository {
     suspend fun recuperarPokemons() : List<PokemonDTO>
+    suspend fun recuperarPokemon( nomePokemon: String ) : PokemonDTO
 }

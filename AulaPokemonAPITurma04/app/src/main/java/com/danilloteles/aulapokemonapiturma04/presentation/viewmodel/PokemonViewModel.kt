@@ -23,6 +23,10 @@ class PokemonViewModel @Inject constructor(
     fun recuperarPokemons() {
         viewModelScope.launch {
             val lista = pokemonRepositoryImpl.recuperarPokemons()
+            /*lista.forEach { pokemon ->
+                //PokemonDetalhe
+                val pokemonDetalhe = pokemonRepositoryImpl.recuperarPokemon( pokemon.name )
+            }*/
             _listaPokemons.postValue( lista )
         }
     }

@@ -64,6 +64,9 @@ dependencies {
     //Picasso
     implementation(libs.picasso)
 
+    //Coil
+    implementation(libs.coil.svg)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
