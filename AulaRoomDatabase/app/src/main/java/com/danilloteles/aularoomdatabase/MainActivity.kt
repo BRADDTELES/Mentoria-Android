@@ -76,7 +76,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btnListar.setOnClickListener {
             CoroutineScope(Dispatchers.IO).launch {
-                val listaUsuarios = usuarioDAO.listar()
+                //val listaUsuarios = usuarioDAO.listar()
+                val textoPesquisa = binding.editNome.text.toString()
+                val listaUsuarios = usuarioDAO.filtrar( textoPesquisa )
                 var textoUsuarios = ""
                 listaUsuarios.forEach { usuario ->
                     textoUsuarios += "${usuario.id}) ${usuario.nomeSobrenome} \n"
