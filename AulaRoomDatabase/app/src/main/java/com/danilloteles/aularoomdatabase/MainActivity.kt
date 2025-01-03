@@ -45,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                 30.5,
                 Endereco("Rua tal", 10),
                 Date(),
-                "M"
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.salvar( usuario )
@@ -79,7 +78,6 @@ class MainActivity : AppCompatActivity() {
                 30.5,
                 Endereco("Rua atualizada", 300),
                 Date(),
-                ""
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.atualizar( usuario )

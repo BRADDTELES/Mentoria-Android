@@ -23,9 +23,9 @@ data class Usuario(
     //@Ignore val imc: Double
     @Embedded
     val endereco: Endereco,
-    val data: Date?,//Banco: long - App: Date
+    val data: Date?/*,//Banco: long - App: Date
     @ColumnInfo(name = "sexo_usuario", defaultValue = "")
-    var sexoUsuario: String = ""
+    var sexoUsuario: String = ""*/
 )
 
 @ProvidedTypeConverter
