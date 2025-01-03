@@ -23,7 +23,7 @@ data class Usuario(
     //@Ignore val imc: Double
     @Embedded
     val endereco: Endereco,
-    val data: Date?
+    val data: Date?,//Banco: long - App: Date
 )
 
 @ProvidedTypeConverter

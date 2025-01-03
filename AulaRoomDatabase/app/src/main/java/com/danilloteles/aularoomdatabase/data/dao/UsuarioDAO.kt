@@ -18,14 +18,15 @@ interface UsuarioDAO {
     @Update
     fun atualizar( usuario : Usuario )
 
-    @Query("SELECT * FROM usuarios ORDER BY nome_sobrenome ASC")
+    //@Query("SELECT * FROM usuarios ORDER BY nome_sobrenome ASC")
+    @Query("SELECT * FROM usuarios ")
     fun listar() : List<Usuario>
 
-    //@Query("SELECT * FROM usuarios WHERE id = :textoPesquisa ")
     //@Query("SELECT * FROM usuarios WHERE id >= :textoPesquisa AND id <= 10")
+    //@Query("SELECT * FROM usuarios WHERE nome_sobrenome LIKE '%' || :textoPesquisa || '%' ")
     //@Query("SELECT * FROM usuarios WHERE id BETWEEN 1 AND 20 ")
     //@Query("SELECT * FROM usuarios WHERE id IN(1, 2 , 6) ")
-    @Query("SELECT * FROM usuarios WHERE nome_sobrenome LIKE '%' || :textoPesquisa || '%' ")
+    @Query("SELECT * FROM usuarios WHERE id = :textoPesquisa ")
     fun filtrar( textoPesquisa: String ) : List<Usuario>
 
 }
