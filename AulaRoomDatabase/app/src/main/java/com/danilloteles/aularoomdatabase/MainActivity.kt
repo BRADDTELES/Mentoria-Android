@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoomdatabase.data.BandoDados
+import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
 import com.danilloteles.aularoomdatabase.data.model.Endereco
 import com.danilloteles.aularoomdatabase.data.model.Usuario
@@ -24,13 +25,16 @@ class MainActivity : AppCompatActivity() {
     }
     private lateinit var bancoDados: BandoDados
     private lateinit var usuarioDAO: UsuarioDAO
+    private lateinit var enderecoDAO: EnderecoDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
         bancoDados = BandoDados.recuperarInstanciaRoom( this )
-        usuarioDAO = bancoDados.recuperarUsuarioDao()
+        //usuarioDAO = bancoDados.recuperarUsuarioDao()
+        usuarioDAO = bancoDados.usuarioDAO
+        enderecoDAO = bancoDados.enderecoDAO
 
 
         binding.btnSalvar.setOnClickListener {
@@ -43,11 +47,14 @@ class MainActivity : AppCompatActivity() {
                 "1234",
                 20,
                 30.5,
-                Endereco("Rua tal", 10),
                 Date(),
+            )
+            val endereco = Endereco(
+                0, "Rua tal, número 20"
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.salvar( usuario )
+                enderecoDAO.salvar( endereco )
             }
 
         }
@@ -59,7 +66,6 @@ class MainActivity : AppCompatActivity() {
                 "1234",
                 20,
                 30.5,
-                Endereco("Rua tal", 10),
                 Date()
             )
             CoroutineScope(Dispatchers.IO).launch {
@@ -76,7 +82,6 @@ class MainActivity : AppCompatActivity() {
                 "1234",
                 20,
                 30.5,
-                Endereco("Rua atualizada", 300),
                 Date(),
             )
             CoroutineScope(Dispatchers.IO).launch {

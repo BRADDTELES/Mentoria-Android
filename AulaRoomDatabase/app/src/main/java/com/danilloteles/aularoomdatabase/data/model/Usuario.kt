@@ -21,8 +21,8 @@ data class Usuario(
     val idade: Int,
     val peso: Double,
     //@Ignore val imc: Double
-    @Embedded
-    val endereco: Endereco,
+    /*@Embedded
+    val endereco: Endereco,*/
     val data: Date?/*,//Banco: long - App: Date
     @ColumnInfo(name = "sexo_usuario", defaultValue = "")
     var sexoUsuario: String = ""*/
@@ -43,7 +43,8 @@ class Conversor {
     }
 }
 
+/*
 data class Endereco (
     val rua: String,
     val numero: Int
-)
+)*/
