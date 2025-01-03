@@ -14,6 +14,8 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.text.SimpleDateFormat
+import java.util.Date
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,7 +43,8 @@ class MainActivity : AppCompatActivity() {
                 "1234",
                 20,
                 30.5,
-                Endereco("Rua tal", 10)
+                Endereco("Rua tal", 10),
+                Date()
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.salvar( usuario )
@@ -56,7 +59,8 @@ class MainActivity : AppCompatActivity() {
                 "1234",
                 20,
                 30.5,
-                Endereco("Rua tal", 10)
+                Endereco("Rua tal", 10),
+                Date()
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.remover( usuario )
@@ -72,7 +76,8 @@ class MainActivity : AppCompatActivity() {
                 "1234",
                 20,
                 30.5,
-                Endereco("Rua atualizada", 300)
+                Endereco("Rua atualizada", 300),
+                Date()
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.atualizar( usuario )
@@ -85,7 +90,11 @@ class MainActivity : AppCompatActivity() {
                 val listaUsuarios = usuarioDAO.filtrar( textoPesquisa )
                 var textoUsuarios = ""
                 listaUsuarios.forEach { usuario ->
-                    textoUsuarios += "${usuario.id}) ${usuario.nomeSobrenome} \n"
+
+                    val formatador = SimpleDateFormat("dd/MM/yyyy hh:mm")
+                    val dataFormatada = formatador.format( usuario.data )
+
+                    textoUsuarios += "${usuario.id}) ${usuario.nomeSobrenome} dt: $dataFormatada \n"
                 }
                 withContext( Dispatchers.Main ){
                     binding.textListaUsuarios.text = textoUsuarios

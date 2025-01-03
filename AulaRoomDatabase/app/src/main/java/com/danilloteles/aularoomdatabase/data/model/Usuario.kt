@@ -5,6 +5,10 @@ import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
+import androidx.room.ProvidedTypeConverter
+import androidx.room.TypeConverter
+import androidx.room.TypeConverters
+import java.util.Date
 
 @Entity(tableName = "usuarios")
 data class Usuario(
@@ -18,8 +22,24 @@ data class Usuario(
     val peso: Double,
     //@Ignore val imc: Double
     @Embedded
-    val endereco: Endereco
+    val endereco: Endereco,
+    val data: Date?
 )
+
+@ProvidedTypeConverter
+class Conversor {
+    @TypeConverter
+    fun converterParaLong( data: Date ) : Long? {
+        return data?.time
+    }
+
+    @TypeConverter
+    fun converterParaDate( data: Long ) : Date? {
+        return data?.let { dtLong ->
+            Date( data )
+        }
+    }
+}
 
 data class Endereco (
     val rua: String,
