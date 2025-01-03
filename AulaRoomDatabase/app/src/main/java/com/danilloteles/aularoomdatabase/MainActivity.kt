@@ -12,6 +12,7 @@ import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -73,7 +74,18 @@ class MainActivity : AppCompatActivity() {
                 usuarioDAO.atualizar( usuario )
             }
         }
-        binding.btnListar.setOnClickListener {  }
+        binding.btnListar.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                val listaUsuarios = usuarioDAO.listar()
+                var textoUsuarios = ""
+                listaUsuarios.forEach { usuario ->
+                    textoUsuarios += "${usuario.id}) ${usuario.nomeSobrenome} \n"
+                }
+                withContext( Dispatchers.Main ){
+                    binding.textListaUsuarios.text = textoUsuarios
+                }
+            }
+        }
 
     }
 }
