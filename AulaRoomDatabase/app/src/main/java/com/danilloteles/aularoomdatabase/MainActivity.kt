@@ -45,8 +45,34 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
-        binding.btnRemover.setOnClickListener {  }
-        binding.btnAtualizar.setOnClickListener {  }
+        binding.btnRemover.setOnClickListener {
+            val usuario = Usuario(
+                3,
+                "j@gmail.com",
+                "Maria",
+                "1234",
+                20,
+                30.5
+            )
+            CoroutineScope(Dispatchers.IO).launch {
+                usuarioDAO.remover( usuario )
+            }
+        }
+        binding.btnAtualizar.setOnClickListener {
+
+            val nome = binding.editNome.text.toString()
+            val usuario = Usuario(
+                2,
+                "j@gmail.com",
+                nome,
+                "1234",
+                20,
+                30.5
+            )
+            CoroutineScope(Dispatchers.IO).launch {
+                usuarioDAO.atualizar( usuario )
+            }
+        }
         binding.btnListar.setOnClickListener {  }
 
     }
