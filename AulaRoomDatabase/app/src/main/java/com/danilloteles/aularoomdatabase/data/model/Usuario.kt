@@ -24,6 +24,8 @@ data class Usuario(
     @Embedded
     val endereco: Endereco,
     val data: Date?,//Banco: long - App: Date
+    @ColumnInfo(defaultValue = "")
+    var sexo: String = ""
 )
 
 @ProvidedTypeConverter
