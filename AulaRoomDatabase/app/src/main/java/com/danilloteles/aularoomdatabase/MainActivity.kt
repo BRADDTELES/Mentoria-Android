@@ -79,7 +79,7 @@ class MainActivity : AppCompatActivity() {
                 30.5,
                 Endereco("Rua atualizada", 300),
                 Date(),
-                "F"
+                ""
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.atualizar( usuario )
