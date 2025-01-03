@@ -1,12 +1,13 @@
 package com.danilloteles.aularoomdatabase.data.model
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Ignore
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "usuarios")
-class Usuario(
+data class Usuario(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val email: String,
@@ -16,5 +17,11 @@ class Usuario(
     val idade: Int,
     val peso: Double,
     //@Ignore val imc: Double
-) {
-}
+    @Embedded
+    val endereco: Endereco
+)
+
+data class Endereco (
+    val rua: String,
+    val numero: Int
+)

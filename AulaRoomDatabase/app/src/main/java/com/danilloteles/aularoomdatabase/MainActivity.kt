@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoomdatabase.data.BandoDados
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
+import com.danilloteles.aularoomdatabase.data.model.Endereco
 import com.danilloteles.aularoomdatabase.data.model.Usuario
 import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -39,7 +40,8 @@ class MainActivity : AppCompatActivity() {
                 nome,
                 "1234",
                 20,
-                30.5
+                30.5,
+                Endereco("Rua tal", 10)
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.salvar( usuario )
@@ -53,7 +55,8 @@ class MainActivity : AppCompatActivity() {
                 "Maria",
                 "1234",
                 20,
-                30.5
+                30.5,
+                Endereco("Rua tal", 10)
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.remover( usuario )
@@ -68,7 +71,8 @@ class MainActivity : AppCompatActivity() {
                 nome,
                 "1234",
                 20,
-                30.5
+                30.5,
+                Endereco("Rua atualizada", 300)
             )
             CoroutineScope(Dispatchers.IO).launch {
                 usuarioDAO.atualizar( usuario )
