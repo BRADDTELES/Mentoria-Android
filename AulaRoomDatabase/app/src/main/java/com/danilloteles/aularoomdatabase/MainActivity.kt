@@ -7,7 +7,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoomdatabase.data.BandoDados
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
+import com.danilloteles.aularoomdatabase.data.model.Usuario
 import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +28,23 @@ class MainActivity : AppCompatActivity() {
         bancoDados = BandoDados.recuperarInstanciaRoom( this )
         usuarioDAO = bancoDados.recuperarUsuarioDao()
 
-        binding.btnSalvar.setOnClickListener {  }
+
+        binding.btnSalvar.setOnClickListener {
+
+            val nome = binding.editNome.text.toString()
+            val usuario = Usuario(
+                0,
+                "j@gmail.com",
+                nome,
+                "1234",
+                20,
+                30.5
+            )
+            CoroutineScope(Dispatchers.IO).launch {
+                usuarioDAO.salvar( usuario )
+            }
+
+        }
         binding.btnRemover.setOnClickListener {  }
         binding.btnAtualizar.setOnClickListener {  }
         binding.btnListar.setOnClickListener {  }
