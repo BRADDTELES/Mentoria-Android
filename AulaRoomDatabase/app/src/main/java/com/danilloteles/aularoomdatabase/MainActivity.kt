@@ -103,6 +103,23 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+        binding.btnFiltrar.setOnClickListener {
+            CoroutineScope( Dispatchers.IO ).launch {
+                val textoPesquisa = binding.editNome.text.toString()
+                val listaUsuarios = usuarioDAO.filtrar( textoPesquisa )
+                var textoUsuarios = ""
+                listaUsuarios.forEach { usuario ->
+
+                    val formatador = SimpleDateFormat("dd/MM/yyyy hh:mm")
+                    val dataFormatada = formatador.format( usuario.data )
+
+                    textoUsuarios += "${usuario.nomeSobrenome} Data: $dataFormatada \n"
+                }
+                withContext( Dispatchers.Main ){
+                    binding.textListaUsuarios.text = textoUsuarios
+                }
+            }
+        }
 
     }
 }
