@@ -22,9 +22,37 @@ class AnotacaoViewModel @Inject constructor(
         get() = _resultadoOperacao
 
     fun salvar( anotacao: Anotacao ) {
-        viewModelScope.launch( Dispatchers.IO ){
-            val resultadoOperacao = anotacaoRepository.salvar( anotacao )
-            _resultadoOperacao.postValue( resultadoOperacao )
+        if ( validarDadosAnotacao( anotacao ) ) {
+            viewModelScope.launch( Dispatchers.IO ){
+                val resultadoOperacao = anotacaoRepository.salvar( anotacao )
+                _resultadoOperacao.postValue( resultadoOperacao )
+            }
         }
+    }
+
+    private fun validarDadosAnotacao(anotacao: Anotacao ) : Boolean {
+
+        if ( anotacao.titulo.isEmpty() ) {
+            _resultadoOperacao.value = ResultadoOperacao(
+                false, "Preencha o titulo da anotação!"
+            )
+            return false
+        }
+
+        if ( anotacao.idCategoria.toString().isEmpty() ) {
+            _resultadoOperacao.value = ResultadoOperacao(
+                false, "Preencha a categoria da anotação!"
+            )
+            return false
+        }
+
+        if ( anotacao.descricao.isEmpty() ) {
+            _resultadoOperacao.value = ResultadoOperacao(
+                false, "Preencha o descrição da anotação!"
+            )
+            return false
+        }
+
+        return true
     }
 }
