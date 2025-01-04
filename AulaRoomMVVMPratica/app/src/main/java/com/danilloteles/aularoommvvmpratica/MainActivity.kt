@@ -1,5 +1,6 @@
 package com.danilloteles.aularoommvvmpratica
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -25,6 +26,17 @@ class MainActivity : AppCompatActivity() {
         setContentView( binding.root )
 
         inicializarBarraNavegacao()
+        inicializarEventosClique()
+
+    }
+
+    private fun inicializarEventosClique() {
+
+        binding.fabAdicionar.setOnClickListener {
+            startActivity(
+                Intent(this, CadastroAnotacaoActivity::class.java)
+            )
+        }
 
     }
 
