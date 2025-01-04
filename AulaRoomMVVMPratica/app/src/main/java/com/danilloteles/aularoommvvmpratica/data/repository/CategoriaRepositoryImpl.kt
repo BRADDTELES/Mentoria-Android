@@ -20,4 +20,8 @@ class CategoriaRepositoryImpl @Inject constructor(
         )
 
     }
+
+    override suspend fun listar(): List<Categoria> {
+        return categoriaDao.listar()
+    }
 }

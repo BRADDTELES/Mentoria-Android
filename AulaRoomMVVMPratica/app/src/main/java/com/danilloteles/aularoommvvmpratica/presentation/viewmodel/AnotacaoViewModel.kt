@@ -39,7 +39,7 @@ class AnotacaoViewModel @Inject constructor(
             return false
         }
 
-        if ( anotacao.idCategoria.toString().isEmpty() ) {
+        if ( anotacao.idCategoria <= 0 ) {
             _resultadoOperacao.value = ResultadoOperacao(
                 false, "Preencha a categoria da anotação!"
             )
