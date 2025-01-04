@@ -47,8 +47,10 @@ dependencies {
     kapt(libs.androidx.room.compiler)
 
     //Hilt
-    implementation(libs.hilt.android)
-    kapt(libs.hilt.android.compiler)
+    /*implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)*/
+    implementation(libs.hilt.android.v248)
+    kapt(libs.hilt.android.compiler.v248)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

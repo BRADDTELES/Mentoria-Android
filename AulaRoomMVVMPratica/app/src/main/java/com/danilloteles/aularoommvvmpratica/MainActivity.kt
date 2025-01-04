@@ -13,17 +13,26 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
     }
 
+    @Inject
+    lateinit var bancoDados: BancoDados
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
+
+
 
         inicializarBarraNavegacao()
         inicializarEventosClique()

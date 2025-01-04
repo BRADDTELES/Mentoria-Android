@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityCadastroAnotacaoBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CadastroAnotacaoActivity : AppCompatActivity() {
 
     private val binding by lazy {
