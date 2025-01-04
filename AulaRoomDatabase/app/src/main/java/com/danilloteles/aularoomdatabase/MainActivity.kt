@@ -9,8 +9,6 @@ import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
 import com.danilloteles.aularoomdatabase.data.entity.Cliente
 import com.danilloteles.aularoomdatabase.data.entity.Pedido
-import com.danilloteles.aularoomdatabase.data.entity.Produto
-import com.danilloteles.aularoomdatabase.data.entity.ProdutoDetalhe
 import com.danilloteles.aularoomdatabase.data.entity.Usuario
 import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -131,6 +129,31 @@ class MainActivity : AppCompatActivity() {
         binding.btnListar.setOnClickListener {
 
             CoroutineScope(Dispatchers.IO).launch {
+                val listaClientesPedidos = clientePedidoDAO.listarClientesComPedidos()
+                var textoClientes = ""
+                listaClientesPedidos.forEach { clienteComPedidos ->
+
+                    val idCliente = clienteComPedidos.cliente.idCliente
+                    val nome = clienteComPedidos.cliente.nome
+                    textoClientes += "$idCliente) $nome \n"
+
+                    val listaPedidos = clienteComPedidos.pedidos
+                    listaPedidos.forEach { pedido ->
+                        val idPedido = pedido.idPedido
+                        val produto = pedido.produto
+                        val preco = pedido.preco
+                        textoClientes += "  + $idPedido) $produto R$ $preco \n"
+                    }
+
+                }
+                withContext( Dispatchers.Main ){
+                    binding.textListaUsuarios.text = textoClientes
+                }
+
+            }
+
+            /*//Minha Resposta do Desafio
+            CoroutineScope(Dispatchers.IO).launch {
                 val listaClientePedidos = clientePedidoDAO.listarClientePedidos()
                 var textoUsuarios = ""
                 listaClientePedidos.forEach { clientePedidos ->
@@ -145,7 +168,7 @@ class MainActivity : AppCompatActivity() {
                 withContext( Dispatchers.Main ){
                     binding.textListaUsuarios.text = textoUsuarios
                 }
-            }
+            }*/
 
             /*CoroutineScope(Dispatchers.IO).launch {
                 val listaProdutosDetalhes = produtoDAO.listarProdutosEProdutoDetalhes()
