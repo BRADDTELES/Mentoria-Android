@@ -52,6 +52,16 @@ dependencies {
     implementation(libs.hilt.android.v248)
     kapt(libs.hilt.android.compiler.v248)
 
+    //Lifecycles
+    val lifecycle_version = "2.8.7"
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    // LiveData
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+
+    //Fragment KTX
+    implementation(libs.androidx.fragment.ktx)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

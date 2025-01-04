@@ -1,4 +1,4 @@
-package com.danilloteles.aularoommvvmpratica
+package com.danilloteles.aularoommvvmpratica.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,14 +8,14 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.SearchView.OnQueryTextListener
-import androidx.activity.enableEdgeToEdge
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.danilloteles.aularoommvvmpratica.R
 import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
 import com.danilloteles.aularoommvvmpratica.data.entity.Categoria
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityMainBinding
+import com.danilloteles.aularoommvvmpratica.presentation.viewmodel.CategoriaViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -28,9 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
     }
-
-    @Inject
-    lateinit var bancoDados: BancoDados
+    private val categoriaViewModel: CategoriaViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,14 +37,19 @@ class MainActivity : AppCompatActivity() {
         inicializarBarraNavegacao()
         inicializarEventosClique()
 
-        //Teste ROOM
-        val categoriaDAO = bancoDados.categoriaDAO
+        categoriaViewModel.salvar(
+            Categoria(
+                0, "Teste ViewRepo"
+            )
+        )
+
+        /*val categoriaDAO = bancoDados.categoriaDAO
         CoroutineScope( Dispatchers.IO ).launch {
             val categoria = Categoria(
                 0, "Mercado"
             )
             categoriaDAO.salvar( categoria )
-        }
+        }*/
 
     }
 
@@ -65,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         addMenuProvider( object  : MenuProvider {
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
                 menuInflater.inflate(R.menu.menu_principal, menu)
-                val itemPesquisa = menu.findItem( R.id.item_pesquisa)
+                val itemPesquisa = menu.findItem(R.id.item_pesquisa)
                 val searchView = itemPesquisa.actionView as SearchView
 
                 searchView.queryHint = "Digite algo para pesquisar"
