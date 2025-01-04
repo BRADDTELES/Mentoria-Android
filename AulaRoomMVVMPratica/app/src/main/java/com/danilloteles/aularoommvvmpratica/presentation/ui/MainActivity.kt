@@ -11,10 +11,13 @@ import android.widget.SearchView.OnQueryTextListener
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.danilloteles.aularoommvvmpratica.R
 import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
 import com.danilloteles.aularoommvvmpratica.data.entity.Categoria
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityMainBinding
+import com.danilloteles.aularoommvvmpratica.presentation.ui.adapter.AnotacaoAdapter
 import com.danilloteles.aularoommvvmpratica.presentation.viewmodel.CategoriaViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -28,15 +31,14 @@ class MainActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
     }
-
+    private lateinit var anotacaoAdapter: AnotacaoAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
-
+        inicializarUI()
         inicializarBarraNavegacao()
         inicializarEventosClique()
-
 
 
         /*val categoriaDAO = bancoDados.categoriaDAO
@@ -46,6 +48,20 @@ class MainActivity : AppCompatActivity() {
             )
             categoriaDAO.salvar( categoria )
         }*/
+
+    }
+
+    private fun inicializarUI() {
+
+        with( binding ){
+
+            anotacaoAdapter = AnotacaoAdapter()
+            rvAnotacoes.adapter = anotacaoAdapter
+            rvAnotacoes.layoutManager = StaggeredGridLayoutManager(
+                2, LinearLayoutManager.VERTICAL
+            )
+
+        }
 
     }
 
