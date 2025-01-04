@@ -1,8 +1,11 @@
 package com.danilloteles.aularoommvvmpratica.di
 
 import android.content.Context
+import com.danilloteles.aularoommvvmpratica.data.dao.AnotacaoDAO
 import com.danilloteles.aularoommvvmpratica.data.dao.CategoriaDAO
 import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
+import com.danilloteles.aularoommvvmpratica.data.repository.AnotacaoRepository
+import com.danilloteles.aularoommvvmpratica.data.repository.AnotacaoRepositoryImpl
 import com.danilloteles.aularoommvvmpratica.data.repository.CategoriaRepository
 import com.danilloteles.aularoommvvmpratica.data.repository.CategoriaRepositoryImpl
 import dagger.Module
@@ -28,6 +31,16 @@ object AppModule {
     @Provides
     fun provideCategoriaRepository( categoriaDao: CategoriaDAO ) : CategoriaRepository {
         return CategoriaRepositoryImpl( categoriaDao )
+    }
+
+    @Provides
+    fun provideAnotacaoDAO( bancoDados: BancoDados ) : AnotacaoDAO {
+        return bancoDados.anotacaoDAO
+    }
+
+    @Provides
+    fun provideAnotacaoRepository( anotacaoDao: AnotacaoDAO ) : AnotacaoRepository {
+        return AnotacaoRepositoryImpl( anotacaoDao )
     }
 
 }
