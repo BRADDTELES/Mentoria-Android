@@ -16,4 +16,5 @@ object AppModule {
     fun provideBancoDados( @ApplicationContext context: Context ) : BancoDados {
         return BancoDados.getInstance( context )
     }
+
 }

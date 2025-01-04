@@ -14,8 +14,12 @@ import androidx.core.view.MenuProvider
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
+import com.danilloteles.aularoommvvmpratica.data.entity.Categoria
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -32,10 +36,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
 
-
-
         inicializarBarraNavegacao()
         inicializarEventosClique()
+
+        //Teste ROOM
+        val categoriaDAO = bancoDados.categoriaDAO
+        CoroutineScope( Dispatchers.IO ).launch {
+            val categoria = Categoria(
+                0, "Mercado"
+            )
+            categoriaDAO.salvar( categoria )
+        }
 
     }
 
