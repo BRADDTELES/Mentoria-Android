@@ -13,12 +13,16 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.danilloteles.aularoomdatabase.data.dao.ClientePedidoDAO
 import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
+import com.danilloteles.aularoomdatabase.data.dao.PessoaComputadorDAO
 import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
 import com.danilloteles.aularoomdatabase.data.entity.Cliente
+import com.danilloteles.aularoomdatabase.data.entity.Computador
 import com.danilloteles.aularoomdatabase.data.entity.Conversor
 import com.danilloteles.aularoomdatabase.data.entity.Endereco
 import com.danilloteles.aularoomdatabase.data.entity.Pedido
+import com.danilloteles.aularoomdatabase.data.entity.Pessoa
+import com.danilloteles.aularoomdatabase.data.entity.PessoaComputador
 import com.danilloteles.aularoomdatabase.data.entity.Produto
 import com.danilloteles.aularoomdatabase.data.entity.ProdutoDetalhe
 import com.danilloteles.aularoomdatabase.data.entity.Usuario
@@ -27,7 +31,8 @@ import com.danilloteles.aularoomdatabase.data.entity.Usuario
     entities = [
         Usuario::class, Endereco::class,
         Produto::class, ProdutoDetalhe::class,
-        Cliente::class, Pedido::class
+        Cliente::class, Pedido::class,
+        Pessoa::class, Computador::class, PessoaComputador::class
     ],
     version = 6,
     autoMigrations = [
@@ -45,6 +50,7 @@ abstract class BandoDados : RoomDatabase() {
     abstract val enderecoDAO: EnderecoDAO //instancioando com atributo
     abstract val produtoDAO: ProdutoDAO
     abstract val clientePedidoDAO: ClientePedidoDAO
+    abstract val pessoaComputadorDAO: PessoaComputadorDAO
 
     //@RenameTable(fromTableName = "usuarios", toTableName = "usuarios_app")
     @RenameColumn(tableName = "usuarios", fromColumnName = "sexo", toColumnName = "sexo_usuario")

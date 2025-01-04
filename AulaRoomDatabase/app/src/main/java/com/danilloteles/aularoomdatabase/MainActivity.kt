@@ -5,10 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import com.danilloteles.aularoomdatabase.data.BandoDados
 import com.danilloteles.aularoomdatabase.data.dao.ClientePedidoDAO
 import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
+import com.danilloteles.aularoomdatabase.data.dao.PessoaComputadorDAO
 import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
 import com.danilloteles.aularoomdatabase.data.entity.Cliente
+import com.danilloteles.aularoomdatabase.data.entity.Computador
 import com.danilloteles.aularoomdatabase.data.entity.Pedido
+import com.danilloteles.aularoomdatabase.data.entity.Pessoa
+import com.danilloteles.aularoomdatabase.data.entity.PessoaComputador
 import com.danilloteles.aularoomdatabase.data.entity.Usuario
 import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -28,6 +32,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var enderecoDAO: EnderecoDAO
     private lateinit var produtoDAO: ProdutoDAO
     private lateinit var clientePedidoDAO: ClientePedidoDAO
+    private lateinit var pessoaComputadorDAO: PessoaComputadorDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +44,38 @@ class MainActivity : AppCompatActivity() {
         enderecoDAO = bancoDados.enderecoDAO
         produtoDAO = bancoDados.produtoDAO
         clientePedidoDAO = bancoDados.clientePedidoDAO
+        pessoaComputadorDAO = bancoDados.pessoaComputadorDAO
 
 
         binding.btnSalvar.setOnClickListener {
 
-            val nome = binding.editNome.text.toString()
+            CoroutineScope(Dispatchers.IO).launch {
+
+                //Pessoa
+                val pessoa = Pessoa(
+                    0, "Jamilton", "M"
+                )
+                val idPessoa = pessoaComputadorDAO.salvarPessoa( pessoa )
+
+                //Adicionar computador para pessoa
+                val computador1 = Computador(
+                    0, "Macbook Pro 15", "Apple"
+                )
+                val computador2 = Computador(
+                    0, "Dell Inspiron", "Dell"
+                )
+                val idComputador1 = pessoaComputadorDAO.salvarComputador( computador1 )
+                val idComputador2 = pessoaComputadorDAO.salvarComputador( computador2 )
+
+                //Tabela intermediária pessoas_computadores
+                val pessoaComputador1 = PessoaComputador(idPessoa, idComputador1)
+                val pessoaComputador2 = PessoaComputador(idPessoa, idComputador2)
+                pessoaComputadorDAO.salvarPessoaComputador( pessoaComputador1 )
+                pessoaComputadorDAO.salvarPessoaComputador( pessoaComputador2 )
+
+            }
+
+            /*val nome = binding.editNome.text.toString()
             CoroutineScope(Dispatchers.IO).launch {
                 val cliente = Cliente(
                     0,
@@ -62,7 +94,8 @@ class MainActivity : AppCompatActivity() {
                     )
                     clientePedidoDAO.salvarPedido( pedido )
                 }
-            }
+            }*/
+
             /*val nome = binding.editNome.text.toString()
             CoroutineScope(Dispatchers.IO).launch {
                 val idProdutoInserido = produtoDAO.salvarProduto(

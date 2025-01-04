@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 6,
-    "identityHash": "1b5720fce52ad85b52be1eb226a6ae73",
+    "identityHash": "ffe098536da64fe2ae380d1ba517284f",
     "entities": [
       {
         "tableName": "usuarios",
@@ -259,12 +259,103 @@
             ]
           }
         ]
+      },
+      {
+        "tableName": "pessoas",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_pessoa` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL, `sexo` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idPessoa",
+            "columnName": "id_pessoa",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sexo",
+            "columnName": "sexo",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id_pessoa"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "computadores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_computador` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `modelo` TEXT NOT NULL, `marca` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idComputador",
+            "columnName": "id_computador",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "modelo",
+            "columnName": "modelo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marca",
+            "columnName": "marca",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id_computador"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "pessoas_computadores",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_pessoa` INTEGER NOT NULL, `id_computador` INTEGER NOT NULL, PRIMARY KEY(`id_pessoa`, `id_computador`))",
+        "fields": [
+          {
+            "fieldPath": "idPessoa",
+            "columnName": "id_pessoa",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idComputador",
+            "columnName": "id_computador",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id_pessoa",
+            "id_computador"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1b5720fce52ad85b52be1eb226a6ae73')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'ffe098536da64fe2ae380d1ba517284f')"
     ]
   }
 }
