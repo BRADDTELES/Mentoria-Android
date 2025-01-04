@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityMainBinding.inflate( layoutInflater )
     }
-    private val categoriaViewModel: CategoriaViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,11 +37,7 @@ class MainActivity : AppCompatActivity() {
         inicializarBarraNavegacao()
         inicializarEventosClique()
 
-        categoriaViewModel.salvar(
-            Categoria(
-                0, "Teste ViewRepo"
-            )
-        )
+
 
         /*val categoriaDAO = bancoDados.categoriaDAO
         CoroutineScope( Dispatchers.IO ).launch {
