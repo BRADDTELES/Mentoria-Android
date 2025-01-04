@@ -8,9 +8,7 @@ import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
 import com.danilloteles.aularoomdatabase.data.dao.PessoaComputadorDAO
 import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
-import com.danilloteles.aularoomdatabase.data.entity.Cliente
 import com.danilloteles.aularoomdatabase.data.entity.Computador
-import com.danilloteles.aularoomdatabase.data.entity.Pedido
 import com.danilloteles.aularoomdatabase.data.entity.Pessoa
 import com.danilloteles.aularoomdatabase.data.entity.PessoaComputador
 import com.danilloteles.aularoomdatabase.data.entity.Usuario
@@ -52,26 +50,26 @@ class MainActivity : AppCompatActivity() {
             CoroutineScope(Dispatchers.IO).launch {
 
                 //Pessoa
-                val pessoa = Pessoa(
-                    0, "Jamilton", "M"
+                /*val pessoa = Pessoa(
+                    0, "Ana", "F"
                 )
-                val idPessoa = pessoaComputadorDAO.salvarPessoa( pessoa )
+                val idPessoa = pessoaComputadorDAO.salvarPessoa( pessoa )*/
 
                 //Adicionar computador para pessoa
-                val computador1 = Computador(
+                /*val computador1 = Computador(
                     0, "Macbook Pro 15", "Apple"
                 )
                 val computador2 = Computador(
                     0, "Dell Inspiron", "Dell"
                 )
                 val idComputador1 = pessoaComputadorDAO.salvarComputador( computador1 )
-                val idComputador2 = pessoaComputadorDAO.salvarComputador( computador2 )
+                val idComputador2 = pessoaComputadorDAO.salvarComputador( computador2 )*/
 
                 //Tabela intermediária pessoas_computadores
-                val pessoaComputador1 = PessoaComputador(idPessoa, idComputador1)
-                val pessoaComputador2 = PessoaComputador(idPessoa, idComputador2)
+                val pessoaComputador1 = PessoaComputador(2, 1)
+                //val pessoaComputador2 = PessoaComputador(idPessoa, idComputador2)
                 pessoaComputadorDAO.salvarPessoaComputador( pessoaComputador1 )
-                pessoaComputadorDAO.salvarPessoaComputador( pessoaComputador2 )
+                //pessoaComputadorDAO.salvarPessoaComputador( pessoaComputador2 )
 
             }
 
@@ -162,6 +160,30 @@ class MainActivity : AppCompatActivity() {
         binding.btnListar.setOnClickListener {
 
             CoroutineScope(Dispatchers.IO).launch {
+                val listaPessoasComputadores = pessoaComputadorDAO.listarPessoasComComputadores()
+                var textoPessoas = ""
+                listaPessoasComputadores.forEach { pesssoaComcomputadores ->
+
+                    val idPessoa = pesssoaComcomputadores.pessoa.idPessoa
+                    val nome = pesssoaComcomputadores.pessoa.nome
+                    textoPessoas += "$idPessoa) $nome \n"
+
+                    val listaComputadores = pesssoaComcomputadores.computadores
+                    listaComputadores.forEach { computador ->
+                        val idComputador = computador.idComputador
+                        val modelo = computador.modelo
+                        val marca = computador.marca
+                        textoPessoas += "  + $idComputador) $modelo - $marca \n"
+                    }
+
+                }
+                withContext( Dispatchers.Main ){
+                    binding.textListaUsuarios.text = textoPessoas
+                }
+
+            }
+
+            /*CoroutineScope(Dispatchers.IO).launch {
                 val listaClientesPedidos = clientePedidoDAO.listarClientesComPedidos()
                 var textoClientes = ""
                 listaClientesPedidos.forEach { clienteComPedidos ->
@@ -183,7 +205,7 @@ class MainActivity : AppCompatActivity() {
                     binding.textListaUsuarios.text = textoClientes
                 }
 
-            }
+            }*/
 
             /*//Minha Resposta do Desafio
             CoroutineScope(Dispatchers.IO).launch {

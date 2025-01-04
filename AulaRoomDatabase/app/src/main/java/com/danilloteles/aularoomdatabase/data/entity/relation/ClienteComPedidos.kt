@@ -9,8 +9,8 @@ data class ClienteComPedidos(
     @Embedded
     val cliente: Cliente,
     @Relation(
-        parentColumn = "id_cliente",
-        entityColumn = "id_cliente",
+        parentColumn = "id_cliente",//Chave primária
+        entityColumn = "id_cliente",//chave estrangeira
         entity = Pedido::class
     )
     val pedidos: List<Pedido>
