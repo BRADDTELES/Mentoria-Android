@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 6,
-    "identityHash": "9299b744f6efb185cf347aa34b4c7321",
+    "identityHash": "1b5720fce52ad85b52be1eb226a6ae73",
     "entities": [
       {
         "tableName": "usuarios",
@@ -177,12 +177,94 @@
             ]
           }
         ]
+      },
+      {
+        "tableName": "clientes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_cliente` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL, `sobrenome` TEXT NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idCliente",
+            "columnName": "id_cliente",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sobrenome",
+            "columnName": "sobrenome",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id_cliente"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "pedidos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_pedido` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id_cliente` INTEGER NOT NULL, `produto` TEXT NOT NULL, `preco` REAL NOT NULL, FOREIGN KEY(`id_cliente`) REFERENCES `clientes`(`id_cliente`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "idPedido",
+            "columnName": "id_pedido",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idCliente",
+            "columnName": "id_cliente",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "produto",
+            "columnName": "produto",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preco",
+            "columnName": "preco",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id_pedido"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": [
+          {
+            "table": "clientes",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "id_cliente"
+            ],
+            "referencedColumns": [
+              "id_cliente"
+            ]
+          }
+        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9299b744f6efb185cf347aa34b4c7321')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '1b5720fce52ad85b52be1eb226a6ae73')"
     ]
   }
 }
