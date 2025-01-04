@@ -1,18 +1,14 @@
 package com.danilloteles.aularoomdatabase
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoomdatabase.data.BandoDados
 import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
 import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
-import com.danilloteles.aularoomdatabase.data.model.Endereco
-import com.danilloteles.aularoomdatabase.data.model.Produto
-import com.danilloteles.aularoomdatabase.data.model.ProdutoDetalhe
-import com.danilloteles.aularoomdatabase.data.model.Usuario
+import com.danilloteles.aularoomdatabase.data.entity.Produto
+import com.danilloteles.aularoomdatabase.data.entity.ProdutoDetalhe
+import com.danilloteles.aularoomdatabase.data.entity.Usuario
 import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -107,7 +103,26 @@ class MainActivity : AppCompatActivity() {
             }
         }
         binding.btnListar.setOnClickListener {
+
             CoroutineScope(Dispatchers.IO).launch {
+                val listaProdutosDetalhes = produtoDAO.listarProdutosEProdutoDetalhes()
+                var textoUsuarios = ""
+                listaProdutosDetalhes.forEach { produtoEProdutoDetalhe ->
+
+                    val idProduto = produtoEProdutoDetalhe.produto.idProduto
+                    val nome = produtoEProdutoDetalhe.produto.nome
+
+                    val marca = produtoEProdutoDetalhe.produtoDetalhe.marca
+                    val descricao = produtoEProdutoDetalhe.produtoDetalhe.descricao
+
+                    textoUsuarios += "$idProduto) $nome + $marca + $descricao \n"
+                }
+                withContext( Dispatchers.Main ){
+                    binding.textListaUsuarios.text = textoUsuarios
+                }
+            }
+
+            /*CoroutineScope(Dispatchers.IO).launch {
                 val listaUsuarios = usuarioDAO.listar()
                 //val textoPesquisa = binding.editNome.text.toString()
                 //val listaUsuarios = usuarioDAO.filtrar( textoPesquisa )
@@ -122,7 +137,7 @@ class MainActivity : AppCompatActivity() {
                 withContext( Dispatchers.Main ){
                     binding.textListaUsuarios.text = textoUsuarios
                 }
-            }
+            }*/
         }
         binding.btnFiltrar.setOnClickListener {
             CoroutineScope( Dispatchers.IO ).launch {

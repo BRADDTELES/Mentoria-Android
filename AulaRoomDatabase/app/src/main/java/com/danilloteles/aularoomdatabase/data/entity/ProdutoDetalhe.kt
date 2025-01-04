@@ -1,4 +1,4 @@
-package com.danilloteles.aularoomdatabase.data.model
+package com.danilloteles.aularoomdatabase.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

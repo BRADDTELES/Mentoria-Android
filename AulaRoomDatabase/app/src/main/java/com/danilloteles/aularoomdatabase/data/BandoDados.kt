@@ -4,9 +4,7 @@ import android.content.Context
 import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.DeleteColumn
-import androidx.room.DeleteTable
 import androidx.room.RenameColumn
-import androidx.room.RenameTable
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
@@ -16,11 +14,11 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
 import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
-import com.danilloteles.aularoomdatabase.data.model.Conversor
-import com.danilloteles.aularoomdatabase.data.model.Endereco
-import com.danilloteles.aularoomdatabase.data.model.Produto
-import com.danilloteles.aularoomdatabase.data.model.ProdutoDetalhe
-import com.danilloteles.aularoomdatabase.data.model.Usuario
+import com.danilloteles.aularoomdatabase.data.entity.Conversor
+import com.danilloteles.aularoomdatabase.data.entity.Endereco
+import com.danilloteles.aularoomdatabase.data.entity.Produto
+import com.danilloteles.aularoomdatabase.data.entity.ProdutoDetalhe
+import com.danilloteles.aularoomdatabase.data.entity.Usuario
 
 @Database(
     entities = [

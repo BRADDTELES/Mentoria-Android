@@ -4,8 +4,7 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Update
-import com.danilloteles.aularoomdatabase.data.model.Endereco
-import com.danilloteles.aularoomdatabase.data.model.Usuario
+import com.danilloteles.aularoomdatabase.data.entity.Endereco
 
 @Dao
 interface EnderecoDAO {

@@ -1,13 +1,10 @@
-package com.danilloteles.aularoomdatabase.data.model
+package com.danilloteles.aularoomdatabase.data.entity
 
 import androidx.room.ColumnInfo
-import androidx.room.Embedded
 import androidx.room.Entity
-import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import androidx.room.ProvidedTypeConverter
 import androidx.room.TypeConverter
-import androidx.room.TypeConverters
 import java.util.Date
 
 @Entity(tableName = "usuarios")

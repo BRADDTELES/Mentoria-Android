@@ -2,9 +2,11 @@ package com.danilloteles.aularoomdatabase.data.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
-import com.danilloteles.aularoomdatabase.data.model.Produto
-import com.danilloteles.aularoomdatabase.data.model.ProdutoDetalhe
-import com.danilloteles.aularoomdatabase.data.model.Usuario
+import androidx.room.Query
+import androidx.room.Transaction
+import com.danilloteles.aularoomdatabase.data.entity.Produto
+import com.danilloteles.aularoomdatabase.data.entity.ProdutoDetalhe
+import com.danilloteles.aularoomdatabase.data.entity.relation.ProdutoEProdutoDetalhe
 
 @Dao
 interface ProdutoDAO {
@@ -14,5 +16,15 @@ interface ProdutoDAO {
 
     @Insert
     fun salvarProdutoDetalhe( produtoDetalhe: ProdutoDetalhe ) : Long
+
+    @Query("SELECT * FROM produtos")
+    fun listarProdutos() : List<Produto>
+
+    @Query("SELECT * FROM produto_datalhes")
+    fun listarProdutoDetalhes() : List<ProdutoDetalhe>
+
+    @Transaction
+    @Query("SELECT * FROM produtos")
+    fun listarProdutosEProdutoDetalhes() : List<ProdutoEProdutoDetalhe>
 
 }
