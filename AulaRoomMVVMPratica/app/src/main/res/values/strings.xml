@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AulaRoomMVVMPratica</string>
+    <string name="pesquisa">Pesquisa</string>
 </resources>
