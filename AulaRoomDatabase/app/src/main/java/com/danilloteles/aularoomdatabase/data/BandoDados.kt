@@ -14,13 +14,19 @@ import androidx.room.migration.AutoMigrationSpec
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
+import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
 import com.danilloteles.aularoomdatabase.data.model.Conversor
 import com.danilloteles.aularoomdatabase.data.model.Endereco
+import com.danilloteles.aularoomdatabase.data.model.Produto
+import com.danilloteles.aularoomdatabase.data.model.ProdutoDetalhe
 import com.danilloteles.aularoomdatabase.data.model.Usuario
 
 @Database(
-    entities = [Usuario::class, Endereco::class],
+    entities = [
+        Usuario::class, Endereco::class,
+        Produto::class, ProdutoDetalhe::class
+    ],
     version = 6,
     autoMigrations = [
         AutoMigration(from = 1, to = 2),
@@ -35,6 +41,7 @@ abstract class BandoDados : RoomDatabase() {
     //abstract fun recuperarUsuarioDao() : UsuarioDAO //instanciando com método
     abstract val usuarioDAO: UsuarioDAO //instancioando com atributo
     abstract val enderecoDAO: EnderecoDAO //instancioando com atributo
+    abstract val produtoDAO: ProdutoDAO
 
     //@RenameTable(fromTableName = "usuarios", toTableName = "usuarios_app")
     @RenameColumn(tableName = "usuarios", fromColumnName = "sexo", toColumnName = "sexo_usuario")

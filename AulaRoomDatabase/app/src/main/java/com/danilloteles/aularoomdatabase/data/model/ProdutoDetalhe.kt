@@ -3,10 +3,14 @@ package com.danilloteles.aularoomdatabase.data.model
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
+import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(
     tableName = "produto_datalhes",
+    indices = [
+        Index(value = ["id_produto"], unique = true)
+    ],
     foreignKeys = [
         ForeignKey(
             entity = Produto::class, //parent Entity
@@ -22,6 +26,7 @@ data class ProdutoDetalhe(
     @PrimaryKey( autoGenerate = true )
     @ColumnInfo( name = "id_produto_detalhe" )
     val idProdutoDetalhe: Long,
+    @ColumnInfo( name = "id_produto" )
     val idProduto: Long,
     val marca: String,
     val descricao: String

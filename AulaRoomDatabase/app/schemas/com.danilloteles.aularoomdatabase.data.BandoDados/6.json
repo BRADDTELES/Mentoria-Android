@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 6,
-    "identityHash": "89436fd6a43dabed1b918e35b0228bd2",
+    "identityHash": "9299b744f6efb185cf347aa34b4c7321",
     "entities": [
       {
         "tableName": "usuarios",
@@ -85,12 +85,104 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "produtos",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_produto` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `nome` TEXT NOT NULL, `preco` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "idProduto",
+            "columnName": "id_produto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nome",
+            "columnName": "nome",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "preco",
+            "columnName": "preco",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id_produto"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "produto_datalhes",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id_produto_detalhe` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id_produto` INTEGER NOT NULL, `marca` TEXT NOT NULL, `descricao` TEXT NOT NULL, FOREIGN KEY(`id_produto`) REFERENCES `produtos`(`id_produto`) ON UPDATE CASCADE ON DELETE CASCADE )",
+        "fields": [
+          {
+            "fieldPath": "idProdutoDetalhe",
+            "columnName": "id_produto_detalhe",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "idProduto",
+            "columnName": "id_produto",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "marca",
+            "columnName": "marca",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "descricao",
+            "columnName": "descricao",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id_produto_detalhe"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_produto_datalhes_id_produto",
+            "unique": true,
+            "columnNames": [
+              "id_produto"
+            ],
+            "orders": [],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_produto_datalhes_id_produto` ON `${TABLE_NAME}` (`id_produto`)"
+          }
+        ],
+        "foreignKeys": [
+          {
+            "table": "produtos",
+            "onDelete": "CASCADE",
+            "onUpdate": "CASCADE",
+            "columns": [
+              "id_produto"
+            ],
+            "referencedColumns": [
+              "id_produto"
+            ]
+          }
+        ]
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '89436fd6a43dabed1b918e35b0228bd2')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9299b744f6efb185cf347aa34b4c7321')"
     ]
   }
 }

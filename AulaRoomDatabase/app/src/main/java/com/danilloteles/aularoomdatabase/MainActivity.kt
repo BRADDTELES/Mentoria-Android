@@ -7,8 +7,11 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aularoomdatabase.data.BandoDados
 import com.danilloteles.aularoomdatabase.data.dao.EnderecoDAO
+import com.danilloteles.aularoomdatabase.data.dao.ProdutoDAO
 import com.danilloteles.aularoomdatabase.data.dao.UsuarioDAO
 import com.danilloteles.aularoomdatabase.data.model.Endereco
+import com.danilloteles.aularoomdatabase.data.model.Produto
+import com.danilloteles.aularoomdatabase.data.model.ProdutoDetalhe
 import com.danilloteles.aularoomdatabase.data.model.Usuario
 import com.danilloteles.aularoomdatabase.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
@@ -26,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var bancoDados: BandoDados
     private lateinit var usuarioDAO: UsuarioDAO
     private lateinit var enderecoDAO: EnderecoDAO
+    private lateinit var produtoDAO: ProdutoDAO
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,27 +39,41 @@ class MainActivity : AppCompatActivity() {
         //usuarioDAO = bancoDados.recuperarUsuarioDao()
         usuarioDAO = bancoDados.usuarioDAO
         enderecoDAO = bancoDados.enderecoDAO
+        produtoDAO = bancoDados.produtoDAO
 
 
         binding.btnSalvar.setOnClickListener {
 
             val nome = binding.editNome.text.toString()
-            val usuario = Usuario(
-                0,
-                "j@gmail.com",
-                nome,
-                "1234",
-                20,
-                30.5,
-                Date(),
-            )
-            val endereco = Endereco(
-                0, "Rua tal, número 20"
-            )
             CoroutineScope(Dispatchers.IO).launch {
-                usuarioDAO.salvar( usuario )
-                enderecoDAO.salvar( endereco )
+                val idProdutoInserido = produtoDAO.salvarProduto(
+                    Produto(0, nome, 1200.90)
+                )
+                produtoDAO.salvarProdutoDetalhe(
+                    ProdutoDetalhe(
+                        0,
+                        idProdutoInserido,
+                        "Acer",
+                        "Notebook acer descrição completa..."
+                    )
+                )
             }
+                /*val usuario = Usuario(
+                    0,
+                    "j@gmail.com",
+                    nome,
+                    "1234",
+                    20,
+                    30.5,
+                    Date(),
+                )
+                val endereco = Endereco(
+                    0, "Rua tal, número 20"
+                )
+                CoroutineScope(Dispatchers.IO).launch {
+                    usuarioDAO.salvar( usuario )
+                    enderecoDAO.salvar( endereco )
+                }*/
 
         }
         binding.btnRemover.setOnClickListener {
