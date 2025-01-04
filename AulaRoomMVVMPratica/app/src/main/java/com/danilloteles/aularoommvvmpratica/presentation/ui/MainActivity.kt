@@ -18,6 +18,7 @@ import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
 import com.danilloteles.aularoommvvmpratica.data.entity.Categoria
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityMainBinding
 import com.danilloteles.aularoommvvmpratica.presentation.ui.adapter.AnotacaoAdapter
+import com.danilloteles.aularoommvvmpratica.presentation.viewmodel.AnotacaoViewModel
 import com.danilloteles.aularoommvvmpratica.presentation.viewmodel.CategoriaViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
@@ -32,23 +33,30 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate( layoutInflater )
     }
     private lateinit var anotacaoAdapter: AnotacaoAdapter
+    private val anotacaoViewModel: AnotacaoViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
         inicializarUI()
-        inicializarBarraNavegacao()
         inicializarEventosClique()
+        inicializarObservables()
 
+    }
 
-        /*val categoriaDAO = bancoDados.categoriaDAO
-        CoroutineScope( Dispatchers.IO ).launch {
-            val categoria = Categoria(
-                0, "Mercado"
-            )
-            categoriaDAO.salvar( categoria )
-        }*/
+    private fun inicializarObservables() {
 
+        anotacaoViewModel
+            .listaAnotacaoECategorias
+            .observe(this){ listaAnotacaoECategoria ->
+                anotacaoAdapter.configurarLista( listaAnotacaoECategoria )
+            }
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        anotacaoViewModel.listarAnotacaoECategoria()
     }
 
     private fun inicializarUI() {
@@ -62,6 +70,7 @@ class MainActivity : AppCompatActivity() {
             )
 
         }
+        inicializarBarraNavegacao()
 
     }
 

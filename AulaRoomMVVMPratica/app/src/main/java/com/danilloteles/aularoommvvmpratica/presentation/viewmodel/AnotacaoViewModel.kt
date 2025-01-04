@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aularoommvvmpratica.data.entity.Anotacao
+import com.danilloteles.aularoommvvmpratica.data.entity.relacionamentos.AnotacaoECategoria
 import com.danilloteles.aularoommvvmpratica.data.repository.AnotacaoRepository
 import com.danilloteles.aularoommvvmpratica.data.repository.ResultadoOperacao
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,12 +22,23 @@ class AnotacaoViewModel @Inject constructor(
     val resultadoOperacao: LiveData<ResultadoOperacao>
         get() = _resultadoOperacao
 
+    private val _listaAnotacaoECategorias = MutableLiveData<List<AnotacaoECategoria>>()
+    val listaAnotacaoECategorias: LiveData<List<AnotacaoECategoria>>
+        get() = _listaAnotacaoECategorias
+
     fun salvar( anotacao: Anotacao ) {
         if ( validarDadosAnotacao( anotacao ) ) {
             viewModelScope.launch( Dispatchers.IO ){
                 val resultadoOperacao = anotacaoRepository.salvar( anotacao )
                 _resultadoOperacao.postValue( resultadoOperacao )
             }
+        }
+    }
+
+    fun listarAnotacaoECategoria() {
+        viewModelScope.launch( Dispatchers.IO ){
+            val lista = anotacaoRepository.listarAnotacaoECategoria()
+            _listaAnotacaoECategorias.postValue( lista )
         }
     }
 

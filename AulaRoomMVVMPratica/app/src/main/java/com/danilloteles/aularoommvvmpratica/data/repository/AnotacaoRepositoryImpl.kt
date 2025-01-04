@@ -2,6 +2,7 @@ package com.danilloteles.aularoommvvmpratica.data.repository
 
 import com.danilloteles.aularoommvvmpratica.data.dao.AnotacaoDAO
 import com.danilloteles.aularoommvvmpratica.data.entity.Anotacao
+import com.danilloteles.aularoommvvmpratica.data.entity.relacionamentos.AnotacaoECategoria
 import javax.inject.Inject
 
 class AnotacaoRepositoryImpl @Inject constructor (
@@ -17,5 +18,9 @@ class AnotacaoRepositoryImpl @Inject constructor (
         return ResultadoOperacao(
             true, "Erro ao cadastrar Anotação"
         )
+    }
+
+    override suspend fun listarAnotacaoECategoria(): List<AnotacaoECategoria> {
+        return anotacaoDAO.listarAnotacaoECategoria()
     }
 }

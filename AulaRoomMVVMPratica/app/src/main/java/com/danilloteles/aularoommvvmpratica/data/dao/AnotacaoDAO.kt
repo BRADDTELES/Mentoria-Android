@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import com.danilloteles.aularoommvvmpratica.data.entity.Anotacao
 import com.danilloteles.aularoommvvmpratica.data.entity.Categoria
+import com.danilloteles.aularoommvvmpratica.data.entity.relacionamentos.AnotacaoECategoria
 
 @Dao
 interface AnotacaoDAO {
@@ -14,5 +15,8 @@ interface AnotacaoDAO {
 
     @Query("SELECT * FROM anotacoes")
     fun listar() : List<Anotacao>
+
+    @Query("SELECT * FROM anotacoes")
+    fun listarAnotacaoECategoria() : List<AnotacaoECategoria>
 
 }
