@@ -93,18 +93,20 @@ class MainActivity : AppCompatActivity() {
                 val searchView = itemPesquisa.actionView as SearchView
 
                 searchView.queryHint = "Digite algo para pesquisar"
-                searchView.setOnCloseListener {
+                /*searchView.setOnCloseListener {
                     Log.i("pesquisa_search", "Saiu do SearchView")
                     true
-                }
+                }*/
                 searchView.setOnQueryTextListener( object : OnQueryTextListener {
                     override fun onQueryTextSubmit(query: String?): Boolean {
                         Log.i("pesquisa_search", "onQueryTextSubmit: $query")
                         return true
                     }
 
-                    override fun onQueryTextChange(newText: String?): Boolean {
-                        Log.i("pesquisa_search", "onQueryTextChange: $newText")
+                    override fun onQueryTextChange(texto: String?): Boolean {
+                        if (texto != null) {
+                            anotacaoViewModel.pesquisarAnotacaoECategoria( texto )
+                        }
                         return true
                     }
 

@@ -42,6 +42,13 @@ class AnotacaoViewModel @Inject constructor(
         }
     }
 
+    fun pesquisarAnotacaoECategoria( texto: String ) {
+        viewModelScope.launch( Dispatchers.IO ){
+            val lista = anotacaoRepository.pesquisarAnotacaoECategoria(texto)
+            _listaAnotacaoECategorias.postValue( lista )
+        }
+    }
+
     private fun validarDadosAnotacao(anotacao: Anotacao ) : Boolean {
 
         if ( anotacao.titulo.isEmpty() ) {

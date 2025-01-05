@@ -23,4 +23,8 @@ class AnotacaoRepositoryImpl @Inject constructor (
     override suspend fun listarAnotacaoECategoria(): List<AnotacaoECategoria> {
         return anotacaoDAO.listarAnotacaoECategoria()
     }
+
+    override suspend fun pesquisarAnotacaoECategoria(texto: String): List<AnotacaoECategoria> {
+        return anotacaoDAO.pesquisarAnotacaoECategoria( texto )
+    }
 }

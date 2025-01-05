@@ -19,4 +19,8 @@ interface AnotacaoDAO {
     @Query("SELECT * FROM anotacoes")
     fun listarAnotacaoECategoria() : List<AnotacaoECategoria>
 
+    @Query("SELECT * FROM anotacoes a " +
+            "WHERE a.titulo LIKE '%' || :texto || '%' " +
+            "OR a.descricao LIKE '%' || :texto || '%' ")
+    fun pesquisarAnotacaoECategoria( texto: String ) : List<AnotacaoECategoria>
 }
