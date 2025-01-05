@@ -20,6 +20,18 @@ class AnotacaoRepositoryImpl @Inject constructor (
         )
     }
 
+    override suspend fun remover(anotacao: Anotacao): ResultadoOperacao {
+        val qtdRegistros = anotacaoDAO.remover( anotacao )
+        if ( qtdRegistros > 0) {
+            return ResultadoOperacao(
+                true, "Anotação removida com sucesso"
+            )
+        }
+        return ResultadoOperacao(
+            true, "Erro ao remover Anotação"
+        )
+    }
+
     override suspend fun listarAnotacaoECategoria(): List<AnotacaoECategoria> {
         return anotacaoDAO.listarAnotacaoECategoria()
     }

@@ -6,11 +6,15 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.danilloteles.aularoommvvmpratica.R
+import com.danilloteles.aularoommvvmpratica.data.entity.Anotacao
 import com.danilloteles.aularoommvvmpratica.data.entity.relacionamentos.AnotacaoECategoria
 import com.danilloteles.aularoommvvmpratica.databinding.ItemAnotacaoBinding
 import kotlin.random.Random
 
-class AnotacaoAdapter : Adapter<AnotacaoAdapter.AnotacaoViewHolder>(){
+class AnotacaoAdapter(
+    private val onClickRemover: (Anotacao) -> Unit,
+    private val onClickAtualizar: (Anotacao) -> Unit
+) : Adapter<AnotacaoAdapter.AnotacaoViewHolder>(){
 
     private var listaAnotacoesCategoria = listOf<AnotacaoECategoria>()
 
@@ -35,6 +39,10 @@ class AnotacaoAdapter : Adapter<AnotacaoAdapter.AnotacaoViewHolder>(){
                     gerarCorAleatoria()
                 )
             )
+
+            binding.btnRemoverAnotacao.setOnClickListener {
+                onClickRemover( anotacao )
+            }
 
         }
     }

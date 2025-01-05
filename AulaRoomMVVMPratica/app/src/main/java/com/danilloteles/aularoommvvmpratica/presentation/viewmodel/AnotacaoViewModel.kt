@@ -35,6 +35,13 @@ class AnotacaoViewModel @Inject constructor(
         }
     }
 
+    fun remover( anotacao: Anotacao ) {
+        viewModelScope.launch( Dispatchers.IO ){
+            val resultadoOperacao = anotacaoRepository.remover( anotacao )
+            _resultadoOperacao.postValue( resultadoOperacao )
+        }
+    }
+
     fun listarAnotacaoECategoria() {
         viewModelScope.launch( Dispatchers.IO ){
             val lista = anotacaoRepository.listarAnotacaoECategoria()

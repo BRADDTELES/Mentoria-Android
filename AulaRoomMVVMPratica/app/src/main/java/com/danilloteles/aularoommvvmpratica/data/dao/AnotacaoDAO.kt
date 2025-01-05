@@ -1,6 +1,7 @@
 package com.danilloteles.aularoommvvmpratica.data.dao
 
 import androidx.room.Dao
+import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import com.danilloteles.aularoommvvmpratica.data.entity.Anotacao
@@ -12,6 +13,9 @@ interface AnotacaoDAO {
 
     @Insert
     fun salvar( anotacao: Anotacao ) : Long
+
+    @Delete
+    fun remover( anotacao: Anotacao ) : Int//quantidade de registros atualizados
 
     @Query("SELECT * FROM anotacoes")
     fun listar() : List<Anotacao>

@@ -8,6 +8,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.SearchView
 import android.widget.SearchView.OnQueryTextListener
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuProvider
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.danilloteles.aularoommvvmpratica.R
 import com.danilloteles.aularoommvvmpratica.data.database.BancoDados
+import com.danilloteles.aularoommvvmpratica.data.entity.Anotacao
 import com.danilloteles.aularoommvvmpratica.data.entity.Categoria
 import com.danilloteles.aularoommvvmpratica.databinding.ActivityMainBinding
 import com.danilloteles.aularoommvvmpratica.presentation.ui.adapter.AnotacaoAdapter
@@ -46,6 +48,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun inicializarObservables() {
 
+        anotacaoViewModel.resultadoOperacao.observe(this){ resultado ->
+            if ( resultado.sucesso ) {
+                Toast.makeText(this, resultado.mensagem, Toast.LENGTH_SHORT).show()
+                anotacaoViewModel.listarAnotacaoECategoria()
+            }else{
+                Toast.makeText(this, resultado.mensagem, Toast.LENGTH_SHORT).show()
+            }
+        }
+
         anotacaoViewModel
             .listaAnotacaoECategorias
             .observe(this){ listaAnotacaoECategoria ->
@@ -63,7 +74,16 @@ class MainActivity : AppCompatActivity() {
 
         with( binding ){
 
-            anotacaoAdapter = AnotacaoAdapter()
+            val onClickRemover = { anotacao: Anotacao ->
+                anotacaoViewModel.remover( anotacao )
+            }
+            val onClickAtualizar = { anotacao: Anotacao ->
+
+            }
+
+            anotacaoAdapter = AnotacaoAdapter(
+                onClickRemover, onClickAtualizar
+            )
             rvAnotacoes.adapter = anotacaoAdapter
             rvAnotacoes.layoutManager = StaggeredGridLayoutManager(
                 2, LinearLayoutManager.VERTICAL
