@@ -20,6 +20,18 @@ class AnotacaoRepositoryImpl @Inject constructor (
         )
     }
 
+    override suspend fun atualizar(anotacao: Anotacao): ResultadoOperacao {
+        val qtdRegistros = anotacaoDAO.atualizar( anotacao )
+        if ( qtdRegistros > 0) {
+            return ResultadoOperacao(
+                true, "Anotação atualizada com sucesso"
+            )
+        }
+        return ResultadoOperacao(
+            true, "Erro ao atualizar Anotação"
+        )
+    }
+
     override suspend fun remover(anotacao: Anotacao): ResultadoOperacao {
         val qtdRegistros = anotacaoDAO.remover( anotacao )
         if ( qtdRegistros > 0) {

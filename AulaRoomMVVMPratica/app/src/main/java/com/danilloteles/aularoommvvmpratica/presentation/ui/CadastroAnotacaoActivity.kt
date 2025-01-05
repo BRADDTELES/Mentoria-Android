@@ -1,6 +1,7 @@
 package com.danilloteles.aularoommvvmpratica.presentation.ui
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.SpinnerAdapter
@@ -24,11 +25,11 @@ class CadastroAnotacaoActivity : AppCompatActivity() {
     private val categoriaViewModel: CategoriaViewModel by viewModels()
     private lateinit var spinnerAdapter: ArrayAdapter<String>
     private lateinit var listaCategorias: List<Categoria>
+    private var anotacao: Anotacao? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView( binding.root )
-
         inicializarUI()
         inicializarListeners()
         inicializarObservables()
@@ -43,6 +44,22 @@ class CadastroAnotacaoActivity : AppCompatActivity() {
     private fun inicializarUI() {
 
         with( binding ){
+
+            val bundle = intent.extras
+            if (bundle != null) {
+
+                anotacao = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+                    bundle.getParcelable("anotacao", Anotacao::class.java)
+                }else{
+                    bundle.getParcelable("anotacao")
+                }
+
+                if (anotacao != null) {
+                    binding.editTituloAnotacao.setText( anotacao!!.titulo )
+                    binding.editDescricaoAnotacao.setText( anotacao!!.descricao )
+                }
+
+            }
 
             spinnerAdapter = ArrayAdapter(
                 applicationContext,
@@ -75,6 +92,21 @@ class CadastroAnotacaoActivity : AppCompatActivity() {
                 spinnerAdapter.clear()
                 spinnerAdapter.addAll( listaSpinner )
 
+                var posicaoAnotacaoSelecionada = 0
+                if (anotacao != null) {
+                    val idCategoriaAnotacaoEdicao = anotacao!!.idCategoria
+                    var posicaoAtual = 0
+                    listaCategorias.forEach { categoria ->
+                        if ( idCategoriaAnotacaoEdicao == categoria.idCategoria ) {
+                            posicaoAnotacaoSelecionada = posicaoAtual + 1
+                            return@forEach
+                        }
+                        posicaoAtual++
+                    }
+                }
+
+                binding.spinnerCategorias.setSelection( posicaoAnotacaoSelecionada )
+
         }
 
         anotacaoViewModel.resultadoOperacao.observe(this){ resultado ->
@@ -104,10 +136,17 @@ class CadastroAnotacaoActivity : AppCompatActivity() {
                     idCategoria = categoria.idCategoria
                 }
 
-                val anotacao = Anotacao(
-                    0, idCategoria, titulo, descricao
-                )
-                anotacaoViewModel.salvar( anotacao )
+                if ( anotacao != null) {//editando
+                    val anotacao = Anotacao(
+                        anotacao!!.idAnotacao, idCategoria, titulo, descricao
+                    )
+                    anotacaoViewModel.atualizar( anotacao )
+                }else{//salvando
+                    val anotacao = Anotacao(
+                        0, idCategoria, titulo, descricao
+                    )
+                    anotacaoViewModel.salvar( anotacao )
+                }
             }
 
             btnAdicionarCategoria.setOnClickListener {

@@ -1,9 +1,11 @@
 package com.danilloteles.aularoommvvmpratica.data.entity
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+import kotlinx.parcelize.Parcelize
 
 @Entity(
     tableName = "anotacoes",
@@ -15,6 +17,7 @@ import androidx.room.PrimaryKey
         )
     ]
 )
+@Parcelize
 data class Anotacao(
     @PrimaryKey( autoGenerate = true )
     @ColumnInfo( name = "id_anotacao" )
@@ -23,4 +26,4 @@ data class Anotacao(
     val idCategoria: Long,
     val titulo: String,
     val descricao: String
-)
+) : Parcelable

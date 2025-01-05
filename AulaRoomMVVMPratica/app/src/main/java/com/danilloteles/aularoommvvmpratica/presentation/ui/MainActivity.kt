@@ -78,7 +78,9 @@ class MainActivity : AppCompatActivity() {
                 anotacaoViewModel.remover( anotacao )
             }
             val onClickAtualizar = { anotacao: Anotacao ->
-
+                val intent = Intent(applicationContext, CadastroAnotacaoActivity::class.java)
+                intent.putExtra("anotacao", anotacao)
+                startActivity(intent)
             }
 
             anotacaoAdapter = AnotacaoAdapter(
