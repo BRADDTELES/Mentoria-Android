@@ -69,6 +69,13 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     testImplementation(libs.junit)
+
+    //Room testes - de Banco de dados em memoria
+    androidTestImplementation(libs.androidx.room.testing)
+
+    //Truth
+    androidTestImplementation(libs.truth)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 }
