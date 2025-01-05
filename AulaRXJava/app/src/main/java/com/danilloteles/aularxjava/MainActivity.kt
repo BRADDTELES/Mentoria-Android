@@ -27,8 +27,14 @@ class MainActivity : AppCompatActivity() {
   private fun criarObersavadorObservavel() {
 
     //Observável - ViewModel
-    val listaNomes = listOf("Jamilton", "Ana", "Maria")//API, Banco dados
-    val obersavel = Observable.fromIterable( listaNomes )
+    /*val listaNomes = listOf("Jamilton", "Ana", "Maria")//API, Banco dados
+    val obersavel = Observable.fromIterable( listaNomes )*///maneira estática
+    val obersavel = Observable.create<String> { emissor -> //maneira dinâmica
+      emissor.onNext("Jamilton")
+      emissor.onNext("Ana")
+      emissor.onNext("Marcos")
+      emissor.onComplete()
+    }
 
     //Observador - Activity
     val observador = object : Observer<String> {
