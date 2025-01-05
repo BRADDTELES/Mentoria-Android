@@ -41,6 +41,11 @@ dependencies {
   implementation(libs.rxjava)
   implementation(libs.rxandroid)
 
+  //Retrofit - Gson converter - RxJava3 Adapter de Retrofit
+  implementation(libs.retrofit)
+  implementation(libs.converter.gson)
+  implementation(libs.adapter.rxjava3)
+
   implementation(libs.androidx.core.ktx)
   implementation(libs.androidx.appcompat)
   implementation(libs.material)

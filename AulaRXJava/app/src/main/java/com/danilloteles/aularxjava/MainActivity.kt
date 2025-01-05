@@ -6,6 +6,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.danilloteles.aularxjava.api.RetrofitCustom
 import com.danilloteles.aularxjava.databinding.ActivityMainBinding
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
@@ -20,7 +21,17 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView( binding.root )
 
-    criarObersavadorObservavel()
+    //criarObersavadorObservavel()
+    binding.btnExecutar.setOnClickListener {
+      listarDadosApi()
+    }
+
+  }
+
+  private fun listarDadosApi() {
+
+    val jsonPlaceApi = RetrofitCustom.jsonPlace
+
 
   }
 
