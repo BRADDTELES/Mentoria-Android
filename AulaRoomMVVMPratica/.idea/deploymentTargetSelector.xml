@@ -11,6 +11,9 @@
       <SelectionState runConfigName="salvarAnotacao_verificaAnotacaoCadastrada_retornaTrue()">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
+      <SelectionState runConfigName="AnotacaoDAOTest">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
     </selectionStates>
   </component>
 </project>
