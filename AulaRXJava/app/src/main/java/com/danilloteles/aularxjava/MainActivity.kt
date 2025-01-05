@@ -6,11 +6,14 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.danilloteles.aularxjava.api.Postagem
 import com.danilloteles.aularxjava.api.RetrofitCustom
 import com.danilloteles.aularxjava.databinding.ActivityMainBinding
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
+import io.reactivex.rxjava3.schedulers.Schedulers
 
 class MainActivity : AppCompatActivity() {
 
@@ -32,6 +35,34 @@ class MainActivity : AppCompatActivity() {
 
     val jsonPlaceApi = RetrofitCustom.jsonPlace
 
+    //Observador -> Activity
+    val observador = object : Observer<List<Postagem>> {
+
+      override fun onNext(listaPostagens: List<Postagem>) {
+        var textoResultado = ""
+        listaPostagens.forEach {  postagem ->
+          textoResultado += " ${postagem.id}) ${postagem.title}  \n"
+        }
+        binding.textResultado.text = textoResultado
+        Log.i("info_rxjava", textoResultado)
+      }
+
+      override fun onSubscribe(d: Disposable) {}
+      override fun onError(e: Throwable) {}
+      override fun onComplete() {}
+
+
+
+    }
+
+    //Observável -> ViewModel
+    val observavel = jsonPlaceApi.recuperarPostagens()
+
+    //Activity
+    observavel
+      .subscribeOn( Schedulers.io() )//Carregando dados -> Executado observável
+      .observeOn( AndroidSchedulers.mainThread() )//Exibição -> Observando em
+      .subscribe( observador )
 
   }
 
