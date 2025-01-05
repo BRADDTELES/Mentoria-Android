@@ -4,4 +4,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="vermelho">#d61e1e</color>
     <color name="cinza">#bebebe</color>
+
+    <!-- cores claras -->
+    <color name="laranja">#F5AE75</color>
+    <color name="roxo">#CABAFA</color>
+    <color name="azul">#b2f7ef</color>
+    <color name="rosa">#f7d6e0</color>
+    <color name="amarelo">#e9c46a</color>
+    <color name="bege">#fefae0</color>
 </resources>

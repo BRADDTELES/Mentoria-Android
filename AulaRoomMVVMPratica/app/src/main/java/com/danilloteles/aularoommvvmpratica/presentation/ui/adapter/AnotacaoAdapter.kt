@@ -2,10 +2,13 @@ package com.danilloteles.aularoommvvmpratica.presentation.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.danilloteles.aularoommvvmpratica.R
 import com.danilloteles.aularoommvvmpratica.data.entity.relacionamentos.AnotacaoECategoria
 import com.danilloteles.aularoommvvmpratica.databinding.ItemAnotacaoBinding
+import kotlin.random.Random
 
 class AnotacaoAdapter : Adapter<AnotacaoAdapter.AnotacaoViewHolder>(){
 
@@ -26,7 +29,23 @@ class AnotacaoAdapter : Adapter<AnotacaoAdapter.AnotacaoViewHolder>(){
             binding.textDescricaoAnotacao.text = anotacao.descricao
             binding.textCategoriaAnotacao.text = anotacaoECategoria.categoria.nome
 
+            binding.cardItem.setCardBackgroundColor(
+                ContextCompat.getColor(
+                    binding.root.context,
+                    gerarCorAleatoria()
+                )
+            )
+
         }
+    }
+
+    private fun gerarCorAleatoria(): Int {
+        val listaCores = listOf(
+            R.color.laranja, R.color.roxo, R.color.azul,
+            R.color.rosa, R.color.amarelo, R.color.bege,
+        )
+        val numeroAleatorio = Random.nextInt( listaCores.size )
+        return listaCores[ numeroAleatorio ]
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnotacaoViewHolder {
