@@ -1,6 +1,7 @@
 package com.danilloteles.aulajetpackcompose
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -14,8 +15,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.CardElevation
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -30,6 +37,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.danilloteles.aulajetpackcompose.model.Usuario
 import com.danilloteles.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
@@ -77,6 +85,48 @@ class MainActivity : ComponentActivity() {
    }//Fim OnCreate
 
    @Composable
+   fun itemCartao( usuario: Usuario ){
+      Card(
+         modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+         onClick = {
+            Toast.makeText(applicationContext, "Clicado", Toast.LENGTH_SHORT).show()
+         },
+         /*colors = CardDefaults.cardColors(
+            containerColor = Color.Magenta,
+            contentColor = Color.Green
+         )*/
+         //shape = RoundedCornerShape(20.dp)
+         /*elevation = CardDefaults.cardElevation(
+            defaultElevation = 8.dp
+         )*/
+      ) {
+         Row(
+            modifier = Modifier
+               .padding(16.dp, 8.dp),
+            verticalAlignment = Alignment.CenterVertically
+         ) {
+
+            Image(
+               painter = painterResource(id = R.drawable.carro),
+               contentDescription = null,
+               modifier = Modifier
+                  .height(60.dp)
+                  .width(60.dp),
+               contentScale = ContentScale.Crop,
+            )
+            Text(
+               text = "${usuario.nome} - ${usuario.idade}",
+               fontSize = 22.sp,
+               modifier = Modifier
+                  .padding(start = 16.dp)
+            )
+         }
+      }
+   }
+
+   @Composable
    fun SegundoApp(){
 
       var contador by remember {
@@ -107,7 +157,15 @@ class MainActivity : ComponentActivity() {
             .fillMaxHeight()
       ) {
 
-         opcoesRadio.forEach { opcao ->
+         LazyColumn {
+            items( usuarios ){ usuario ->
+               itemCartao(usuario = usuario)
+            }
+         }
+
+         //Mais componentes de interface: FAB, CheckBox, Switch, Radio
+
+         /*opcoesRadio.forEach { opcao ->
 
             Row(
                verticalAlignment = Alignment.CenterVertically
@@ -121,9 +179,7 @@ class MainActivity : ComponentActivity() {
             }
 
          }
-         Text(text = "alterado: $radioSelecionado")
-
-         //Mais componentes de interface: FAB, CheckBox, Switch, Radio
+         Text(text = "alterado: $radioSelecionado")*/
 
          //Switch(
          /*Checkbox(
