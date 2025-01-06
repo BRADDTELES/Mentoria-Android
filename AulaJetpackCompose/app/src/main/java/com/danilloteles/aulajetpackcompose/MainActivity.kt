@@ -1,5 +1,6 @@
 package com.danilloteles.aulajetpackcompose
 
+import android.inputmethodservice.Keyboard.Row
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -8,6 +9,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -17,6 +19,10 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
@@ -98,19 +104,68 @@ class MainActivity : ComponentActivity() {
             .fillMaxHeight()
       ) {
 
-         LazyColumn(
+         //LazyRow(
+         //LazyColumn(
+         /*LazyVerticalGrid(
+            //columns = GridCells.Adaptive(122.dp),
+            columns = GridCells.Fixed(3),
             modifier = Modifier
                .padding(16.dp)
+         )*/
+         LazyHorizontalGrid(
+            //rows = GridCells.Adaptive(122.dp),
+            rows = GridCells.Fixed(3),
+            modifier = Modifier
+               .padding(16.dp)
+               //.height(300.dp)
          ) {
             items( usuarios.size ){ indice ->
 
                val nome = usuarios[indice].nome
                val idade = usuarios[indice].idade
 
-               Text(
-                  text = "$nome - $idade",
-                  fontSize = 32.sp
-               )
+               Column {
+                  Image(
+                     painter = painterResource(id = R.drawable.carro),
+                     contentDescription = null,
+                     modifier = Modifier
+                        .height(80.dp)
+                        .width(80.dp),
+                     contentScale = ContentScale.Crop,
+                  )
+                  Text(
+                     text = "$nome"
+                  )
+               }
+
+               /*Row(
+                  modifier = Modifier
+                     .padding(top = 16.dp, bottom = 16.dp),
+                  verticalAlignment = Alignment.CenterVertically
+               ) {
+                  Image(
+                     painter = painterResource(id = R.drawable.carro),
+                     contentDescription = null,
+                     modifier = Modifier
+                        .height(80.dp)
+                        .width(80.dp),
+                     contentScale = ContentScale.Crop,
+                     //alignment = Alignment.TopCenter
+                  )
+                  Text(
+                     text = "$nome - $idade",
+                     fontSize = 32.sp,
+                     modifier = Modifier
+                        .padding(start = 16.dp)
+                  )
+               }*///Fim Row
+
+               /*Box(
+                  modifier = Modifier
+                     .fillMaxWidth()
+                     .height(1.dp)
+                     .background( Color.Red )
+               )*/
 
             }
          }
