@@ -1,4 +1,4 @@
-package com.danilloteles.aulajetpackcompose.model
+package com.danilloteles.aulajetpackcompose.data.model
 
 data class Usuario(
    val nome: String,

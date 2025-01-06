@@ -1,4 +1,4 @@
-package com.danilloteles.aulajetpackcompose.componentes
+package com.danilloteles.aulajetpackcompose.ui.view.componentes
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material.icons.Icons

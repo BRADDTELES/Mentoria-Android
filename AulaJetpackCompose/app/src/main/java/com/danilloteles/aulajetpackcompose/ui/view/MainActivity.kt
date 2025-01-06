@@ -1,4 +1,4 @@
-package com.danilloteles.aulajetpackcompose
+package com.danilloteles.aulajetpackcompose.ui.view
 
 import android.os.Bundle
 import android.widget.Toast
@@ -19,11 +19,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyHorizontalGrid
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.CardElevation
-import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -38,7 +34,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.danilloteles.aulajetpackcompose.model.Usuario
+import com.danilloteles.aulajetpackcompose.R
+import com.danilloteles.aulajetpackcompose.data.model.Usuario
 import com.danilloteles.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -85,7 +82,7 @@ class MainActivity : ComponentActivity() {
    }//Fim OnCreate
 
    @Composable
-   fun itemCartao( usuario: Usuario ){
+   fun itemCartao( usuario: Usuario){
       Card(
          modifier = Modifier
             .padding(8.dp)
