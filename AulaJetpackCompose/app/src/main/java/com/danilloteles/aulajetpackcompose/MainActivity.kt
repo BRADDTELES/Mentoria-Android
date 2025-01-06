@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
+import com.danilloteles.aulajetpackcompose.componentes.Botao
 import com.danilloteles.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -39,20 +40,22 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun PrimeiroApp() {
 
-   Row (
+   Column (
       modifier = Modifier
          .fillMaxWidth()
          .fillMaxHeight()
-         .background( Color.Gray ),
-      /*verticalArrangement = Arrangement.SpaceAround,
-      horizontalAlignment = Alignment.CenterHorizontally*/
-      horizontalArrangement = Arrangement.SpaceEvenly,
-      verticalAlignment = Alignment.CenterVertically
+         .background(Color.Gray),
+      verticalArrangement = Arrangement.SpaceAround,
+      horizontalAlignment = Alignment.CenterHorizontally
+      //horizontalArrangement = Arrangement.SpaceEvenly,
+      //verticalAlignment = Alignment.CenterVertically
    ) {
 
       Text(text = "Jamilton", fontSize = 20.sp)
       Text(text = "Ana", fontSize = 20.sp)
-      Text(text = "João", fontSize = 20.sp)
+      Botao(texto = "Jamilton") {
+         println("executou")
+      }
 
    } //Fim Column
 
