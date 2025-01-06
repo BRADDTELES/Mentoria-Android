@@ -2,6 +2,7 @@ package com.danilloteles.aulajetpackcompose
 
 import android.inputmethodservice.Keyboard.Row
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -36,6 +37,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -83,10 +88,36 @@ class MainActivity : ComponentActivity() {
       enableEdgeToEdge()
       setContent {
          AulaJetpackComposeTheme {
-            PrimeiroApp()
+            SegundoApp()
          }//Fechamento theme
       }
    }//Fim OnCreate
+
+   @Composable
+   fun SegundoApp(){
+
+      var contador by remember {
+         mutableStateOf(0)
+      }
+
+      Column(
+         modifier = Modifier
+            .background(Color.Gray)
+            .padding(30.dp)
+            .fillMaxWidth()
+            .fillMaxHeight()
+      ) {
+
+         Button(onClick = {
+            contador++
+            Log.i("contador","contador: $contador")
+         }) {
+            Text(text = "Clique")
+         }
+         Text(text = "Contador: ${contador}")
+
+      }//Fim column
+   }//Fim método segundoApp
 
    @Composable
    fun PrimeiroApp() {
@@ -278,8 +309,8 @@ class MainActivity : ComponentActivity() {
 
    @Preview
    @Composable
-   fun PrimeiroAppPreview() {
-      PrimeiroApp()
+   fun AppPreview() {
+      SegundoApp()
    }
 
 }//fechamento MainActivity
