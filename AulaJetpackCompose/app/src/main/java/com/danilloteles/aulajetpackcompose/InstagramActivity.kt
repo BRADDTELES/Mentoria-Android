@@ -19,10 +19,34 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
+import com.danilloteles.aulajetpackcompose.componentes.AreaDestaque
 import com.danilloteles.aulajetpackcompose.componentes.BarraSuperior
+import com.danilloteles.aulajetpackcompose.model.Destaque
 import com.danilloteles.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class InstagramActivity : ComponentActivity() {
+
+   private val listaDestaques = listOf(
+      Destaque(R.drawable.perfil_01, "Jamilton"),
+      Destaque(R.drawable.perfil_02, "João"),
+      Destaque(R.drawable.perfil_03, "Ana"),
+      Destaque(R.drawable.perfil_01, "Mario"),
+      Destaque(R.drawable.perfil_02, "Pedro"),
+      Destaque(R.drawable.perfil_03, "Marcela"),
+      Destaque(R.drawable.perfil_01, "Jamilton"),
+      Destaque(R.drawable.perfil_02, "João"),
+      Destaque(R.drawable.perfil_03, "Ana"),
+      Destaque(R.drawable.perfil_01, "Mario"),
+      Destaque(R.drawable.perfil_02, "Pedro"),
+      Destaque(R.drawable.perfil_03, "Marcela"),
+      Destaque(R.drawable.perfil_01, "Jamilton"),
+      Destaque(R.drawable.perfil_02, "João"),
+      Destaque(R.drawable.perfil_03, "Ana"),
+      Destaque(R.drawable.perfil_01, "Mario"),
+      Destaque(R.drawable.perfil_02, "Pedro"),
+      Destaque(R.drawable.perfil_03, "Marcela"),
+   )
 
    @OptIn(ExperimentalMaterial3Api::class)
    override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,7 +86,9 @@ class InstagramActivity : ComponentActivity() {
       Column(
          modifier = modifier
       ) {
-         Text(text = "Olá App")
+         //Área destaque
+         AreaDestaque( listaDestaques )
+         //Postagens
       }
    }//Fim Home
 
