@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -33,6 +34,7 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
@@ -106,34 +108,62 @@ class MainActivity : ComponentActivity() {
          mutableStateOf("")
       }
 
+      var listaUsuarios by remember {
+         mutableStateOf( listOf<Usuario>() )
+      }
+
       Column(
          modifier = Modifier
             .background(Color.White)
-            .padding(30.dp)
+            .padding(start = 16.dp, top = 53.dp)
             .fillMaxWidth()
             .fillMaxHeight()
       ) {
 
-         //TextField(
-         OutlinedTextField(
-            value = nome,
-            onValueChange = { texto ->
-               nome = texto
-               //Log.i("digitado","digitado: $texto")
-            },
-            placeholder = {
-               Text(text = "Digite seu nome")
-            }
-         )
+         Row(
 
-         Button(onClick = {
-            contador++
-            Log.i("contador","contador: $contador")
-         }) {
-            Text(text = "Clique")
+         ) {
+            //TextField(
+            OutlinedTextField(
+               value = nome,
+               onValueChange = { texto ->
+                  nome = texto
+               },
+               placeholder = {
+                  Text(text = "Digite seu nome")
+               }
+            )
+
+            Spacer(modifier = Modifier.width(8.dp))
+
+            Button(onClick = {
+               //Adicionar na lista
+               val usuario = Usuario(nome, 0)
+               listaUsuarios = listaUsuarios + usuario
+               nome = ""
+            }) {
+               Icon(
+                  painter = painterResource(id = R.drawable.ic_adicionar_24),
+                  contentDescription = null
+               )
+            }
+         }//Fim Row
+
+         LazyColumn(
+            modifier = Modifier
+               .padding(top = 16.dp, bottom = 16.dp)
+         ) {
+            items(listaUsuarios){ usuario ->
+               Text(
+                  text = "+) ${usuario.nome} ",
+                  modifier = Modifier.padding(8.dp)
+               )
+               Divider()
+            }
          }
+
          //Text(text = "Contador: ${contador}")
-         Text(text = "nome: ${nome}")
+         //Text(text = "nome: ${nome}")
 
       }//Fim column
    }//Fim método segundoApp
