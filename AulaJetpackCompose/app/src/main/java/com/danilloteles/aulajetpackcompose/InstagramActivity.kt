@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.danilloteles.aulajetpackcompose.componentes.AreaDestaque
 import com.danilloteles.aulajetpackcompose.componentes.AreaPostagem
+import com.danilloteles.aulajetpackcompose.componentes.BarraInferior
 import com.danilloteles.aulajetpackcompose.componentes.BarraSuperior
 import com.danilloteles.aulajetpackcompose.model.Destaque
 import com.danilloteles.aulajetpackcompose.model.Postagem
@@ -80,11 +81,7 @@ class InstagramActivity : ComponentActivity() {
          AulaJetpackComposeTheme {
             Scaffold(
                topBar = { BarraSuperior() },
-               bottomBar = {
-                  BottomAppBar {
-                     Text(text = "Bottom App Bar")
-                  }
-               },
+               bottomBar = { BarraInferior() },
                /*floatingActionButton = {
                   FloatingActionButton(
                      onClick = {
