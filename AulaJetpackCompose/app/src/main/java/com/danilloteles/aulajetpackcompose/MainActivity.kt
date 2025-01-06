@@ -34,8 +34,10 @@ import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -100,13 +102,29 @@ class MainActivity : ComponentActivity() {
          mutableStateOf(0)
       }
 
+      var nome by remember {
+         mutableStateOf("")
+      }
+
       Column(
          modifier = Modifier
-            .background(Color.Gray)
+            .background(Color.White)
             .padding(30.dp)
             .fillMaxWidth()
             .fillMaxHeight()
       ) {
+
+         //TextField(
+         OutlinedTextField(
+            value = nome,
+            onValueChange = { texto ->
+               nome = texto
+               //Log.i("digitado","digitado: $texto")
+            },
+            placeholder = {
+               Text(text = "Digite seu nome")
+            }
+         )
 
          Button(onClick = {
             contador++
@@ -114,7 +132,8 @@ class MainActivity : ComponentActivity() {
          }) {
             Text(text = "Clique")
          }
-         Text(text = "Contador: ${contador}")
+         //Text(text = "Contador: ${contador}")
+         Text(text = "nome: ${nome}")
 
       }//Fim column
    }//Fim método segundoApp
