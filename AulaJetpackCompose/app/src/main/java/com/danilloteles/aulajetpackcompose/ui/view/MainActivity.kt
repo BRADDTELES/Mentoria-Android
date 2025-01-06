@@ -35,7 +35,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.danilloteles.aulajetpackcompose.R
-import com.danilloteles.aulajetpackcompose.data.model.Usuario
+import com.danilloteles.aulajetpackcompose.data.remote.model.Usuario
 import com.danilloteles.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 
 class MainActivity : ComponentActivity() {

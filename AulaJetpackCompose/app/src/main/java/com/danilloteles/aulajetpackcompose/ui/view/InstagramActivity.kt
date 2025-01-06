@@ -17,8 +17,8 @@ import com.danilloteles.aulajetpackcompose.ui.view.componentes.AreaDestaque
 import com.danilloteles.aulajetpackcompose.ui.view.componentes.AreaPostagem
 import com.danilloteles.aulajetpackcompose.ui.view.componentes.BarraInferior
 import com.danilloteles.aulajetpackcompose.ui.view.componentes.BarraSuperior
-import com.danilloteles.aulajetpackcompose.data.model.Destaque
-import com.danilloteles.aulajetpackcompose.data.model.Postagem
+import com.danilloteles.aulajetpackcompose.data.remote.model.Destaque
+import com.danilloteles.aulajetpackcompose.data.remote.model.Postagem
 import com.danilloteles.aulajetpackcompose.ui.theme.AulaJetpackComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
 
