@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aulajetpackcompose.data.remote.dto.User
 import com.danilloteles.aulajetpackcompose.data.remote.repository.IUsuarioRepository
-import com.danilloteles.aulajetpackcompose.data.remote.repository.UsuarioRepositoryImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject

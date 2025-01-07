@@ -9,6 +9,4 @@ interface DummyAPI {
    @GET("users")
    suspend fun recuperarUsuarios() : Response<UsuarioResultado>
 
-
-
 }
