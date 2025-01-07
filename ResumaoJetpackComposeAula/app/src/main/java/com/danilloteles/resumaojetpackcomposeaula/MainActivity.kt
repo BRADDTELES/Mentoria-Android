@@ -19,29 +19,23 @@ class MainActivity : ComponentActivity() {
       enableEdgeToEdge()
       setContent {
          ResumaoJetpackComposeAulaTheme {
-            Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-               Greeting(
-                  name = "Android",
-                  modifier = Modifier.padding(innerPadding)
-               )
-            }
+            Home()
          }
       }
-   }
-}
+   }//Fim onCreate
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-   Text(
-      text = "Hello $name!",
-      modifier = modifier
-   )
-}
+   @Composable
+   fun Home() {
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-   ResumaoJetpackComposeAulaTheme {
-      Greeting("Android")
    }
-}
+
+   @Preview(showBackground = true)
+   @Composable
+   fun GreetingPreview() {
+      ResumaoJetpackComposeAulaTheme {
+         Home()
+      }
+   }
+
+}//Fim Activity
+
