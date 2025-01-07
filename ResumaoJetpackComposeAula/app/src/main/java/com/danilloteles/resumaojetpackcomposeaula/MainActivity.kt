@@ -18,12 +18,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.CutCornerShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Button
+import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -40,6 +44,35 @@ import androidx.compose.ui.unit.sp
 import com.danilloteles.resumaojetpackcomposeaula.ui.theme.ResumaoJetpackComposeAulaTheme
 
 class MainActivity : ComponentActivity() {
+
+   private val usuarios = listOf(
+      Usuario("Jamilton", "36"),
+      Usuario("Ana", "36"),
+      Usuario("Maria", "36"),
+      Usuario("Pedro", "36"),
+      Usuario("João", "36"),
+      Usuario("Jamilton", "36"),
+      Usuario("Ana", "36"),
+      Usuario("Maria", "36"),
+      Usuario("Pedro", "36"),
+      Usuario("João", "36"),
+      Usuario("Jamilton", "36"),
+      Usuario("Ana", "36"),
+      Usuario("Maria", "36"),
+      Usuario("Pedro", "36"),
+      Usuario("João", "36"),
+      Usuario("Jamilton", "36"),
+      Usuario("Ana", "36"),
+      Usuario("Maria", "36"),
+      Usuario("Pedro", "36"),
+      Usuario("João", "36"),
+      Usuario("Jamilton", "36"),
+      Usuario("Ana", "36"),
+      Usuario("Maria", "36"),
+      Usuario("Pedro", "36"),
+      Usuario("João", "36"),
+   )
+
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       enableEdgeToEdge()
@@ -60,7 +93,7 @@ class MainActivity : ComponentActivity() {
             .fillMaxHeight()
             .border(2.dp, Color.Red)
             .background(Color.Magenta)
-            .padding(30.dp, 30.dp),
+            .padding(30.dp, 50.dp),
          verticalArrangement = Arrangement.Top,
          horizontalAlignment = Alignment.Start
          /* Para Row
@@ -68,7 +101,17 @@ class MainActivity : ComponentActivity() {
          horizontalArrangement = Arrangement.SpaceEvenly*/
       ) {
 
-         Icon(
+         LazyRow {
+            items(usuarios){ usuario ->
+               Row {
+                  Text(text = "+ ${usuario.nome}")
+                  Text(text = " - idade: ${usuario.idade}")
+               }
+               Divider()
+            }
+         }
+
+         /*Icon(
             imageVector = Icons.Default.Add,
             contentDescription = null
          )
@@ -82,7 +125,7 @@ class MainActivity : ComponentActivity() {
                .border(2.dp, Color.Yellow, CircleShape)
                .clip(CircleShape),
             contentScale = ContentScale.Crop
-         )
+         )*/
 
          /*Column(
             modifier = Modifier
@@ -100,7 +143,7 @@ class MainActivity : ComponentActivity() {
             )
          }*/
 
-         Text(
+         /*Text(
             modifier = Modifier
                .padding(top = 5.dp),
             text = "Danillo",
@@ -113,7 +156,7 @@ class MainActivity : ComponentActivity() {
          Text(
             text = "Ana",
             fontSize = 20.sp,
-         )
+         )*/
       }//Fim Column
 
       /*
