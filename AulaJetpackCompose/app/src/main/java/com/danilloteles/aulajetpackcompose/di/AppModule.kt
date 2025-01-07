@@ -1,6 +1,8 @@
 package com.danilloteles.aulajetpackcompose.di
 
 import com.danilloteles.aulajetpackcompose.data.remote.api.DummyAPI
+import com.danilloteles.aulajetpackcompose.data.remote.repository.IUsuarioRepository
+import com.danilloteles.aulajetpackcompose.data.remote.repository.UsuarioRepositoryImpl
 import com.danilloteles.aulajetpackcompose.utils.Constantes
 import dagger.Module
 import dagger.Provides
@@ -24,6 +26,11 @@ object AppModule {
    @Provides
    fun provideDummyAPI( retrofit: Retrofit ) : DummyAPI {
       return retrofit.create( DummyAPI::class.java )
+   }
+
+   @Provides
+   fun provideUsuariosRepository( dummyAPI: DummyAPI ) : IUsuarioRepository {
+      return UsuarioRepositoryImpl( dummyAPI )
    }
 
 }

@@ -13,11 +13,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import com.danilloteles.aulajetpackcompose.data.remote.dto.User
 import com.danilloteles.aulajetpackcompose.data.remote.model.Destaque
 
 @Composable
 fun ItemDestaque(
-   destaque: Destaque,
+   //destaque: Destaque,
+   usuario: User,
    modifier: Modifier = Modifier
 ) {
    
@@ -25,16 +27,17 @@ fun ItemDestaque(
       modifier = modifier.padding(8.dp)
    ) {
       
-      Image(
+      /*Image(
          modifier = Modifier
             .size(56.dp)
             .clip(CircleShape),
          painter = painterResource(id = destaque.imagemPerfilRes),
          contentDescription = null,
          contentScale = ContentScale.Crop
-      )
+      )*/
       Text(
-         text = destaque.nome,
+         //text = destaque.nome,
+         text = usuario.firstName,
          style = MaterialTheme.typography.titleMedium
       )
    }
