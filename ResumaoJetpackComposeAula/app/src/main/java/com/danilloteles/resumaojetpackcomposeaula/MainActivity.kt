@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import com.danilloteles.resumaojetpackcomposeaula.ui.theme.ResumaoJetpackComposeAulaTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +27,10 @@ class MainActivity : ComponentActivity() {
 
    @Composable
    fun Home() {
-
+      Text(
+         text = "Danillo",
+         fontSize = 20.sp,
+      )
    }
 
    @Preview(showBackground = true)
