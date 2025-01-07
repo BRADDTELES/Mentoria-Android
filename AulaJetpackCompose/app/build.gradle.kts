@@ -75,6 +75,13 @@ dependencies {
    implementation(libs.hilt.android)
    kapt(libs.hilt.android.compiler)
 
+   //Coil - Compose
+   implementation("io.coil-kt.coil3:coil-compose:3.0.4")
+   implementation("io.coil-kt.coil3:coil-network-okhttp:3.0.4")
+
+   //Glide
+   implementation("com.github.bumptech.glide:compose:1.0.0-beta01")
+
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.lifecycle.runtime.ktx)
    implementation(libs.androidx.activity.compose)
