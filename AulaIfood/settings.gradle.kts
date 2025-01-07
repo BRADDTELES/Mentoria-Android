@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "AulaIfood"
-include(":app")
+include(":cliente")
