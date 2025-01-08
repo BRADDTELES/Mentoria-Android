@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aulaifood.databinding.ActivityCadastroBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
+import com.danilloteles.core.exibirMensagem
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,7 +49,7 @@ class CadastroActivity : AppCompatActivity() {
             //Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
             navegarTelaPrincipal()
          }else{
-            Toast.makeText(this, "Erro ao realizar cadastro", Toast.LENGTH_SHORT).show()
+            exibirMensagem("Erro ao realizar cadastro")
          }
       }
 

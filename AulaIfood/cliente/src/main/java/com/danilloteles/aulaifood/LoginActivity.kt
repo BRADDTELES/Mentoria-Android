@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
+import com.danilloteles.core.exibirMensagem
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
          if ( sucesso ) {
             navegarTelaPrincipal()
          }else{
-            Toast.makeText(this, "Erro ao fazer login", Toast.LENGTH_SHORT).show()
+            exibirMensagem("Erro ao fazer login")
          }
       }
 

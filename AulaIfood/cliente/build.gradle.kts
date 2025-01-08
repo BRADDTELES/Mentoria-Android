@@ -58,6 +58,7 @@ dependencies {
 
    //Hilt
    implementation("com.google.dagger:hilt-android:2.51.1")
+   implementation(project(":core"))
    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
    //Fragment KTX
