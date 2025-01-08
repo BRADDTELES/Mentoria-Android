@@ -1,10 +1,7 @@
-package com.danilloteles.aulaifood
+package com.danilloteles.aulaifood.presentation.ui
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aulaifood.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

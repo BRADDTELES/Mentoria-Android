@@ -1,19 +1,17 @@
-package com.danilloteles.aulaifood
+package com.danilloteles.aulaifood.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.danilloteles.aulaifood.R
 import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.exibirMensagem
+import com.danilloteles.core.navegarPara
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -33,14 +31,17 @@ class LoginActivity : AppCompatActivity() {
       val splashScreen = installSplashScreen()
       //Thread.sleep(3000)
       splashScreen.setKeepOnScreenCondition{
-         //Executar algo -> Verificar usuário logado
+         val usuarioLogado = autenticacaoViewModel.verificarUsuarioLogado()
+         if ( usuarioLogado ) {
+            navegarPara( MainActivity::class.java )
+         }
          false
       }
 
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
-      FirebaseAuth.getInstance().signOut()
+      //FirebaseAuth.getInstance().signOut()
    }
 
    private fun inicializar() {
@@ -66,12 +67,6 @@ class LoginActivity : AppCompatActivity() {
             alertaCarregamento.exibir("Efetuando login!")
          }else{
             alertaCarregamento.fechar()
-         }
-      }
-
-      autenticacaoViewModel.usuarioEstaLogado.observe(this){ usuarioEstaLogado ->
-         if ( usuarioEstaLogado ) {
-            navegarTelaPrincipal()
          }
       }
 

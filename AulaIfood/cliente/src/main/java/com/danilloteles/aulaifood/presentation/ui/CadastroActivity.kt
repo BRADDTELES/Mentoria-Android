@@ -1,20 +1,15 @@
-package com.danilloteles.aulaifood
+package com.danilloteles.aulaifood.presentation.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.danilloteles.aulaifood.R
 import com.danilloteles.aulaifood.databinding.ActivityCadastroBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.exibirMensagem
-import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

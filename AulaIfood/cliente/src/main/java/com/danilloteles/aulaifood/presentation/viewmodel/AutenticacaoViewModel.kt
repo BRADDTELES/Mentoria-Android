@@ -26,10 +26,6 @@ class AutenticacaoViewModel @Inject constructor(
    val sucesso: LiveData<Boolean>
       get() = _sucesso
 
-   private val _usuarioEstaLogado = MutableLiveData<Boolean>()
-   val usuarioEstaLogado: LiveData<Boolean>
-      get() = _usuarioEstaLogado
-
    private val _carregando = MutableLiveData<Boolean>()
    val carregando: LiveData<Boolean>
       get() = _carregando
@@ -60,11 +56,8 @@ class AutenticacaoViewModel @Inject constructor(
       }
    }
 
-   fun verificarUsuarioLogado() {
-      viewModelScope.launch {
-         val retorno = autenticacaoRepositoryImpl.verificarUsuarioLogado()
-         _usuarioEstaLogado.postValue( retorno )
-      }
+   fun verificarUsuarioLogado() : Boolean {
+      return autenticacaoRepositoryImpl.verificarUsuarioLogado()
    }
 
 }
