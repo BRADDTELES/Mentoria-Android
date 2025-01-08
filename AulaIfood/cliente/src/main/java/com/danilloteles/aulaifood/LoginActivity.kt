@@ -1,5 +1,6 @@
 package com.danilloteles.aulaifood
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,14 @@ class LoginActivity : AppCompatActivity() {
    }
 
    private fun inicializar() {
+      inicializarEventosClique()
+   }
 
+   private fun inicializarEventosClique() {
+      binding.textCadastro.setOnClickListener {
+         startActivity(
+            Intent(this, CadastroActivity::class.java)
+         )
+      }
    }
 }
