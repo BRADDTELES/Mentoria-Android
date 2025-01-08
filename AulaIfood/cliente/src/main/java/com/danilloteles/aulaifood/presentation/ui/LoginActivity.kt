@@ -10,6 +10,7 @@ import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
+import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import com.google.firebase.auth.FirebaseAuth
@@ -41,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
-      //FirebaseAuth.getInstance().signOut()
+      FirebaseAuth.getInstance().signOut()
    }
 
    private fun inicializar() {
@@ -70,17 +71,8 @@ class LoginActivity : AppCompatActivity() {
          }
       }
 
-      autenticacaoViewModel.sucesso.observe(this){ sucesso ->
-         if ( sucesso ) {
-            navegarTelaPrincipal()
-         }else{
-            exibirMensagem("Erro ao fazer login")
-         }
-      }
-
       autenticacaoViewModel.resultadoValidacao
          .observe(this){ resultadoValidacao ->
-
             with( binding ){
 
                editLoginEmail.error =
@@ -106,7 +98,16 @@ class LoginActivity : AppCompatActivity() {
             val usuario = Usuario(
                email, senha
             )
-            autenticacaoViewModel.logarUsuario( usuario )
+            autenticacaoViewModel.logarUsuario( usuario ){ uiStatus ->
+               when( uiStatus ){
+                  is UIStatus.Sucesso -> {
+                     navegarPara( MainActivity::class.java )
+                  }
+                  is UIStatus.Erro -> {
+                     exibirMensagem( uiStatus.erro )
+                  }
+               }
+            }
          }
       }
    }

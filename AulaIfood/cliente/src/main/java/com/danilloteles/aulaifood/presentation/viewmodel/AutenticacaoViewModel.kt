@@ -8,6 +8,7 @@ import com.danilloteles.aulaifood.data.remote.firebase.repository.IAutenticacaoR
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.domain.usecase.AutenticacaoUseCase
 import com.danilloteles.aulaifood.domain.usecase.ResultadoValidacao
+import com.danilloteles.core.UIStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -43,14 +44,13 @@ class AutenticacaoViewModel @Inject constructor(
       }
    }
 
-   fun logarUsuario( usuario: Usuario ) {
+   fun logarUsuario( usuario: Usuario, uiStatus: (UIStatus<Boolean>) -> Unit ) {
       val retornoValidacao = autenticacaoUseCase.validarLoginUsuario( usuario )
       _resultadoValidacao.postValue( retornoValidacao )
       if ( retornoValidacao.sucessoValidacaoLogin ){
          _carregando.value = true
          viewModelScope.launch {
-            val retorno = autenticacaoRepositoryImpl.logarUsuario( usuario )
-            _sucesso.postValue( retorno )
+           autenticacaoRepositoryImpl.logarUsuario( usuario, uiStatus )
             _carregando.postValue( false )
          }
       }
