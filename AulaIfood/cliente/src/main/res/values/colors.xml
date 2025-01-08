@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="preto">#FF000000</color>
+    <color name="branco">#FFFFFFFF</color>
+
+    <!-- cores customizadas -->
+    <color name="primaria">#EA1D2D</color>
+
 </resources>
