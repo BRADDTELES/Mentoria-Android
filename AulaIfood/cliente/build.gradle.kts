@@ -51,6 +51,10 @@ dependencies {
    //Dependência de máscara
    implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
 
+   //Dependência de validação
+   val ev_version = "1.0.4"
+   implementation ("com.wajahatkarim:easyvalidation-core:$ev_version")
+
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
    implementation(libs.material)

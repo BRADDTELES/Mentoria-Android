@@ -94,7 +94,7 @@
             android:layout_height="wrap_content"
             android:hint="Digite seu telefone"
             android:inputType="phone"
-            app:mask="##-#####.####" />
+            app:mask="##*#########" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
