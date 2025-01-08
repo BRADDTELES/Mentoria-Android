@@ -2,6 +2,8 @@ plugins {
    alias(libs.plugins.android.application)
    alias(libs.plugins.jetbrains.kotlin.android)
    id("com.google.gms.google-services")
+   id("kotlin-kapt")
+   id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -52,8 +54,22 @@ dependencies {
    implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
 
    //Dependência de validação
-   val ev_version = "1.0.4"
-   implementation ("com.wajahatkarim:easyvalidation-core:$ev_version")
+   implementation (libs.easyvalidation.core)
+
+   //Hilt
+   implementation(libs.hilt.android)
+   kapt(libs.hilt.android.compiler)
+
+   //Fragment KTX
+   implementation(libs.androidx.fragment.ktx)//by viewModels()
+
+   //Ciclo de vida - Lifecycles
+   // ViewModel
+   implementation(libs.androidx.lifecycle.viewmodel.ktx)
+   // LiveData
+   implementation(libs.androidx.lifecycle.livedata.ktx)
+   // Lifecycles only (without ViewModel or LiveData)
+   implementation(libs.androidx.lifecycle.runtime.ktx)
 
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
@@ -63,4 +79,7 @@ dependencies {
    testImplementation(libs.junit)
    androidTestImplementation(libs.androidx.junit)
    androidTestImplementation(libs.androidx.espresso.core)
+}
+kapt {
+   correctErrorTypes = true
 }
