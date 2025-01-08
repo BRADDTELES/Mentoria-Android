@@ -20,6 +20,16 @@ class CadastroActivity : AppCompatActivity() {
    }
 
    private fun inicializar() {
+      inicializarToolbar()
+   }
 
+   private fun inicializarToolbar() {
+      val toolbar = binding.includeTbPrincipal.tbPrincipal
+      setSupportActionBar( toolbar )
+
+      supportActionBar?.apply {
+         title = "Cadastro de usuário"
+         setDisplayHomeAsUpEnabled(true)
+      }
    }
 }
