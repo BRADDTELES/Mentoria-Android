@@ -19,9 +19,15 @@ class AutenticacaoViewModel @Inject constructor(
       get() = _resultadoValidacao
 
    fun cadastrarUsuario( usuario: Usuario ) {
-      val retornoValidacao = autenticacaoUseCase.validarDadosUsuario( usuario )
+      val retornoValidacao = autenticacaoUseCase.validarCadastroUsuario( usuario )
       _resultadoValidacao.postValue( retornoValidacao )
-      //Cadastro usuário
+      //Cadastro usuário no Firebase
+   }
+
+   fun logarUsuario( usuario: Usuario ) {
+      val retornoValidacao = autenticacaoUseCase.validarLoginUsuario( usuario )
+      _resultadoValidacao.postValue( retornoValidacao )
+      //Logar usuário no Firebase
    }
 
 }
