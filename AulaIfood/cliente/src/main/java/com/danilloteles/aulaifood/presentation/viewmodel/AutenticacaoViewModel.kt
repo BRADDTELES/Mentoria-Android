@@ -30,14 +30,19 @@ class AutenticacaoViewModel @Inject constructor(
    val usuarioEstaLogado: LiveData<Boolean>
       get() = _usuarioEstaLogado
 
+   private val _carregando = MutableLiveData<Boolean>()
+   val carregando: LiveData<Boolean>
+      get() = _carregando
+
    fun cadastrarUsuario( usuario: Usuario ) {
       val retornoValidacao = autenticacaoUseCase.validarCadastroUsuario( usuario )
       _resultadoValidacao.postValue( retornoValidacao )
-      //Cadastro usuário no Firebase
       if ( retornoValidacao.sucessoValidacaoCadastro ){
+         _carregando.value = true
          viewModelScope.launch {
             val retorno = autenticacaoRepositoryImpl.cadastrarUsuario( usuario )
             _sucesso.postValue( retorno )
+            _carregando.postValue( false )
          }
       }
    }
@@ -45,11 +50,12 @@ class AutenticacaoViewModel @Inject constructor(
    fun logarUsuario( usuario: Usuario ) {
       val retornoValidacao = autenticacaoUseCase.validarLoginUsuario( usuario )
       _resultadoValidacao.postValue( retornoValidacao )
-      //Logar usuário no Firebase
       if ( retornoValidacao.sucessoValidacaoLogin ){
+         _carregando.value = true
          viewModelScope.launch {
             val retorno = autenticacaoRepositoryImpl.logarUsuario( usuario )
             _sucesso.postValue( retorno )
+            _carregando.postValue( false )
          }
       }
    }

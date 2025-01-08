@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
+import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.exibirMensagem
 import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,6 +21,9 @@ class LoginActivity : AppCompatActivity() {
 
    private val binding by lazy {
          ActivityLoginBinding.inflate( layoutInflater )
+   }
+   private val alertaCarregamento by lazy {
+      AlertaCarregamento(this)
    }
    private val autenticacaoViewModel: AutenticacaoViewModel by viewModels()
 
@@ -47,6 +51,14 @@ class LoginActivity : AppCompatActivity() {
    }
 
    private fun inicializarObservaveis() {
+
+      autenticacaoViewModel.carregando.observe(this){ carregando ->
+         if ( carregando ) {
+            alertaCarregamento.exibir("Efetuando login!")
+         }else{
+            alertaCarregamento.fechar()
+         }
+      }
 
       autenticacaoViewModel.usuarioEstaLogado.observe(this){ usuarioEstaLogado ->
          if ( usuarioEstaLogado ) {

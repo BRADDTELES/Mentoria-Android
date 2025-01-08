@@ -12,6 +12,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aulaifood.databinding.ActivityCadastroBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
+import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.exibirMensagem
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +22,9 @@ class CadastroActivity : AppCompatActivity() {
 
    private val binding by lazy {
          ActivityCadastroBinding.inflate( layoutInflater )
+   }
+   private val alertaCarregamento by lazy {
+      AlertaCarregamento(this)
    }
    private val autenticacaoViewModel: AutenticacaoViewModel by viewModels()
 
@@ -43,10 +47,17 @@ class CadastroActivity : AppCompatActivity() {
    }
 
    private fun inicializarObservaveis() {
+
+      autenticacaoViewModel.carregando.observe(this){ carregando ->
+         if ( carregando ) {
+            alertaCarregamento.exibir("Fazendo seu cadastro!")
+         }else{
+            alertaCarregamento.fechar()
+         }
+      }
       
       autenticacaoViewModel.sucesso.observe(this){ sucesso ->
          if ( sucesso ) {
-            //Toast.makeText(this, "Cadastro realizado com sucesso", Toast.LENGTH_SHORT).show()
             navegarTelaPrincipal()
          }else{
             exibirMensagem("Erro ao realizar cadastro")
