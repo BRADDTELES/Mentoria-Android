@@ -4,7 +4,10 @@ import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.core.UIStatus
 
 interface IAutenticacaoRepository {
-   suspend fun cadastrarUsuario( usuario: Usuario ) : Boolean
+   suspend fun cadastrarUsuario(
+      usuario: Usuario,
+      uiStatus: (UIStatus<Boolean>) -> Unit
+   )
    suspend fun logarUsuario(
       usuario: Usuario,
       uiStatus: (UIStatus<Boolean>) -> Unit

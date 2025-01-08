@@ -23,22 +23,18 @@ class AutenticacaoViewModel @Inject constructor(
    val resultadoValidacao: LiveData<ResultadoValidacao>
       get() = _resultadoValidacao
 
-   private val _sucesso = MutableLiveData<Boolean>()
-   val sucesso: LiveData<Boolean>
-      get() = _sucesso
-
    private val _carregando = MutableLiveData<Boolean>()
    val carregando: LiveData<Boolean>
       get() = _carregando
 
-   fun cadastrarUsuario( usuario: Usuario ) {
+   fun cadastrarUsuario( usuario: Usuario, uiStatus: (UIStatus<Boolean>) -> Unit  ) {
+
       val retornoValidacao = autenticacaoUseCase.validarCadastroUsuario( usuario )
       _resultadoValidacao.postValue( retornoValidacao )
       if ( retornoValidacao.sucessoValidacaoCadastro ){
          _carregando.value = true
          viewModelScope.launch {
-            val retorno = autenticacaoRepositoryImpl.cadastrarUsuario( usuario )
-            _sucesso.postValue( retorno )
+            autenticacaoRepositoryImpl.cadastrarUsuario( usuario, uiStatus )
             _carregando.postValue( false )
          }
       }

@@ -9,7 +9,9 @@ import com.danilloteles.aulaifood.databinding.ActivityCadastroBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
+import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
+import com.danilloteles.core.navegarPara
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -50,14 +52,6 @@ class CadastroActivity : AppCompatActivity() {
             alertaCarregamento.fechar()
          }
       }
-      
-      autenticacaoViewModel.sucesso.observe(this){ sucesso ->
-         if ( sucesso ) {
-            navegarTelaPrincipal()
-         }else{
-            exibirMensagem("Erro ao realizar cadastro")
-         }
-      }
 
       autenticacaoViewModel.resultadoValidacao
          .observe(this){ resultadoValidacao ->
@@ -94,7 +88,16 @@ class CadastroActivity : AppCompatActivity() {
             val usuario = Usuario(
                email, senha, nome, telefone
             )
-            autenticacaoViewModel.cadastrarUsuario( usuario )
+            autenticacaoViewModel.cadastrarUsuario( usuario ){ uiStatus ->
+               when( uiStatus ){
+                  is UIStatus.Sucesso -> {
+                     navegarPara( MainActivity::class.java )
+                  }
+                  is UIStatus.Erro -> {
+                     exibirMensagem( uiStatus.erro )
+                  }
+               }
+            }
 
          }
       }
