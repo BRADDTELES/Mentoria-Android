@@ -48,6 +48,9 @@ dependencies {
    implementation(libs.firebase.firestore)
    implementation(libs.firebase.storage)
 
+   //Dependência de máscara
+   implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
+
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
    implementation(libs.material)
