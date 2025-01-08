@@ -43,6 +43,12 @@ class AutenticacaoViewModel @Inject constructor(
       val retornoValidacao = autenticacaoUseCase.validarLoginUsuario( usuario )
       _resultadoValidacao.postValue( retornoValidacao )
       //Logar usuário no Firebase
+      if ( retornoValidacao.sucessoValidacaoLogin ){
+         viewModelScope.launch {
+            val retorno = autenticacaoRepositoryImpl.logarUsuario( usuario )
+            _sucesso.postValue( retorno )
+         }
+      }
    }
 
 }

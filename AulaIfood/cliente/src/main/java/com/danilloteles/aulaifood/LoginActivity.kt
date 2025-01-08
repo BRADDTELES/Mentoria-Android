@@ -2,6 +2,7 @@ package com.danilloteles.aulaifood
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -31,7 +32,22 @@ class LoginActivity : AppCompatActivity() {
       inicializarObservaveis()
    }
 
+   fun navegarTelaPrincipal() {
+      startActivity(
+         Intent(this, MainActivity::class.java)
+      )
+   }
+
    private fun inicializarObservaveis() {
+
+      autenticacaoViewModel.sucesso.observe(this){ sucesso ->
+         if ( sucesso ) {
+            navegarTelaPrincipal()
+         }else{
+            Toast.makeText(this, "Erro ao fazer login", Toast.LENGTH_SHORT).show()
+         }
+      }
+
       autenticacaoViewModel.resultadoValidacao
          .observe(this){ resultadoValidacao ->
 
