@@ -19,4 +19,8 @@ class AutenticacaoRepositoryImpl @Inject constructor(
          usuario.email, usuario.senha
       ).await() != null
    }
+
+   override suspend fun verificarUsuarioLogado(): Boolean {
+      return firebaseAuth.currentUser != null
+   }
 }

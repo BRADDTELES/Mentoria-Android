@@ -12,6 +12,7 @@ import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.exibirMensagem
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -26,11 +27,17 @@ class LoginActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
+      FirebaseAuth.getInstance().signOut()
    }
 
    private fun inicializar() {
       inicializarEventosClique()
       inicializarObservaveis()
+   }
+
+   override fun onStart() {
+      super.onStart()
+      autenticacaoViewModel.verificarUsuarioLogado()
    }
 
    fun navegarTelaPrincipal() {
@@ -40,6 +47,12 @@ class LoginActivity : AppCompatActivity() {
    }
 
    private fun inicializarObservaveis() {
+
+      autenticacaoViewModel.usuarioEstaLogado.observe(this){ usuarioEstaLogado ->
+         if ( usuarioEstaLogado ) {
+            navegarTelaPrincipal()
+         }
+      }
 
       autenticacaoViewModel.sucesso.observe(this){ sucesso ->
          if ( sucesso ) {
