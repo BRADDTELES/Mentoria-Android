@@ -72,6 +72,9 @@ dependencies {
    // Lifecycles only (without ViewModel or LiveData)
    implementation(libs.androidx.lifecycle.runtime.ktx)
 
+   //SplashScreen
+   implementation(libs.androidx.core.splashscreen)
+
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
    implementation(libs.material)

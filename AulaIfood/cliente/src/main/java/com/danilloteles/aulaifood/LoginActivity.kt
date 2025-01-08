@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
@@ -28,6 +29,14 @@ class LoginActivity : AppCompatActivity() {
    private val autenticacaoViewModel: AutenticacaoViewModel by viewModels()
 
    override fun onCreate(savedInstanceState: Bundle?) {
+
+      val splashScreen = installSplashScreen()
+      //Thread.sleep(3000)
+      splashScreen.setKeepOnScreenCondition{
+         //Executar algo -> Verificar usuário logado
+         false
+      }
+
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
