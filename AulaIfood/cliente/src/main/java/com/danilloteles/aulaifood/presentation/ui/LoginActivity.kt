@@ -11,6 +11,7 @@ import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.UIStatus
+import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import com.google.firebase.auth.FirebaseAuth
@@ -92,7 +93,15 @@ class LoginActivity : AppCompatActivity() {
                Intent(applicationContext, CadastroActivity::class.java)
             )
          }
-         btnLogin.setOnClickListener {
+         btnLogin.setOnClickListener { view ->
+
+            //Esconder o Teclado
+            view.esconderTeclado()
+
+            //Remover Focus
+            editLoginEmail.clearFocus()
+            editLoginSenha.clearFocus()
+
             val email = editLoginEmail.text.toString()
             val senha = editLoginSenha.text.toString()
             val usuario = Usuario(

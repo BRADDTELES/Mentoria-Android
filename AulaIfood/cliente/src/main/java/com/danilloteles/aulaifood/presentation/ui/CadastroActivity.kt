@@ -10,6 +10,7 @@ import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.UIStatus
+import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import dagger.hilt.android.AndroidEntryPoint
@@ -78,7 +79,16 @@ class CadastroActivity : AppCompatActivity() {
 
    private fun inicializarEventosClique() {
       with( binding ){
-         btnCadastrar.setOnClickListener {
+         btnCadastrar.setOnClickListener { view ->
+
+            //Esconder o Teclado
+            view.esconderTeclado()
+
+            //Remover Focus
+            editCadastroNome.clearFocus()
+            editCadastroEmail.clearFocus()
+            editCadastroSenha.clearFocus()
+            editCadastroTelefone.clearFocus()
 
             val nome = editCadastroNome.text.toString()
             val email = editCadastroEmail.text.toString()
