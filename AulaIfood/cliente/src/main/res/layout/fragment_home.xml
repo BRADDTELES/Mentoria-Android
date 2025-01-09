@@ -69,8 +69,10 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Últimas lojas"
-            android:textSize="@dimen/titulo02" />
+            android:textSize="@dimen/titulo02"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvUltimasLojas"
@@ -83,7 +85,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Lojas"
-            android:textSize="@dimen/titulo02" />
+            android:textSize="@dimen/titulo02"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLojas"

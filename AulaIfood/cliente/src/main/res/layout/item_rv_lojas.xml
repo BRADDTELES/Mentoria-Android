@@ -8,7 +8,7 @@
     android:padding="8dp">
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/imageLoja"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:scaleType="centerCrop"
@@ -20,61 +20,61 @@
         app:srcCompat="@drawable/mcdonalds" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textTituloLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="MC Donalds"
         android:textSize="@dimen/titulo03"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4" />
+        app:layout_constraintStart_toEndOf="@+id/imageLoja"
+        app:layout_constraintTop_toTopOf="@+id/imageLoja" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textAvaliacaoLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:drawableLeft="@drawable/ic_avaliacoes_24"
         android:text="4.8"
         android:textColor="#FECE00"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/imageLoja"
+        app:layout_constraintTop_toBottomOf="@+id/textTituloLoja" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textCategoriaLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Lanche"
-        app:layout_constraintStart_toEndOf="@+id/textView6"
-        app:layout_constraintTop_toTopOf="@+id/textView6" />
+        app:layout_constraintStart_toEndOf="@+id/textAvaliacaoLoja"
+        app:layout_constraintTop_toTopOf="@+id/textAvaliacaoLoja" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textDistanciaLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="1km"
-        app:layout_constraintStart_toEndOf="@+id/textView7"
-        app:layout_constraintTop_toTopOf="@+id/textView7" />
+        app:layout_constraintStart_toEndOf="@+id/textCategoriaLoja"
+        app:layout_constraintTop_toTopOf="@+id/textCategoriaLoja" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textTempoEntregaLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="40-50min"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+        app:layout_constraintStart_toEndOf="@+id/imageLoja"
+        app:layout_constraintTop_toBottomOf="@+id/textAvaliacaoLoja" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textFreteLoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="R$ 9,90"
-        app:layout_constraintStart_toEndOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/textTempoEntregaLoja"
+        app:layout_constraintTop_toTopOf="@+id/textTempoEntregaLoja" />
 
     <ImageView
         android:id="@+id/imageView5"
