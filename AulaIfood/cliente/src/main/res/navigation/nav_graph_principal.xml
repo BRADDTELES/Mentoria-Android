@@ -8,12 +8,7 @@
         android:id="@+id/homeFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_lojaFragment"
-            app:destination="@id/lojaFragment"
-            app:enterAnim="@android:anim/slide_in_left" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/buscaFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.BuscaFragment"

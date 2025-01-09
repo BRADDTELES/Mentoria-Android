@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
 
       binding.textLoja.setOnClickListener {
          val navController = findNavController()
-         navController.navigate(R.id.action_homeFragment_to_lojaFragment)
+         navController.navigate(R.id.lojaFragment)
       }
 
       return binding.root
