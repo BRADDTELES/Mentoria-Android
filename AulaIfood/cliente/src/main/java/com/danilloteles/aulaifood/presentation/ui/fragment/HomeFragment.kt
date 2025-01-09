@@ -3,8 +3,10 @@ package com.danilloteles.aulaifood.presentation.ui.fragment
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.danilloteles.aulaifood.R
@@ -13,6 +15,10 @@ import com.danilloteles.aulaifood.databinding.FragmentHomeBinding
 import com.danilloteles.aulaifood.domain.model.FiltroCategoria
 import com.danilloteles.aulaifood.presentation.ui.adapter.CategoriaAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.FiltroCategoriaAdapter
+import com.denzcoskun.imageslider.constants.AnimationTypes
+import com.denzcoskun.imageslider.constants.ScaleTypes
+import com.denzcoskun.imageslider.interfaces.ItemClickListener
+import com.denzcoskun.imageslider.models.SlideModel
 
 class HomeFragment : Fragment() {
 
@@ -43,6 +49,7 @@ class HomeFragment : Fragment() {
       /* Visualização do meu RecyclerView
       inicializarComponentesInterfaceCategorias()*/
       inicializarFiltrosCategoria()
+      inicializarSlider()
 
       /*binding.textLoja.setOnClickListener {
          val navController = findNavController()
@@ -50,6 +57,35 @@ class HomeFragment : Fragment() {
       }*/
 
       return binding.root
+   }
+
+   private fun inicializarSlider() {
+
+      val tipoEscalaImagem = ScaleTypes.CENTER_CROP
+      val listaSlides = ArrayList<SlideModel>()
+      listaSlides.add( SlideModel(
+         "https://static.ifood-static.com.br/image/upload/t_high/discoveries/1908SMHOUSE12788PromotionsEntregaGratiscapaprincipal_VvdQ.png?imwidth=1080",
+         //title = "Título para o slide",
+         //scaleType = tipoEscalaImagem
+      ) )
+      listaSlides.add( SlideModel(
+         "https://static.ifood-static.com.br/image/upload/t_high/discoveries/Banner_cl20_22_10.png?imwidth=1080",
+      ) )
+      listaSlides.add( SlideModel(
+         "https://static.ifood-static.com.br/image/upload/t_high/discoveries/CapaPrincipalGenericoPedeiFoodJaRoxo_kpHr.png?imwidth=1080",
+      ) )
+
+      binding.imageSlider.setImageList( listaSlides, tipoEscalaImagem )
+      //binding.imageSlider.setSlideAnimation( AnimationTypes.FLIP_HORIZONTAL )//1º-> FLIP_HORIZONTAL | 2º-> TOSS | 3º-> FIDGET_SPINNER
+      /*binding.imageSlider.setItemClickListener(object : ItemClickListener{
+         override fun doubleClick(position: Int) {
+
+         }
+         override fun onItemSelected(position: Int) {
+            Toast.makeText(context, "posição: ${position}", Toast.LENGTH_SHORT).show()
+         }
+      })*/
+
    }
 
    private fun inicializarFiltrosCategoria() {
