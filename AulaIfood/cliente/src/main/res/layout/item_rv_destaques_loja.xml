@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageDestaqueLoja"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/CantosArredondados"
+        app:srcCompat="@drawable/produto_destaque" />
+
+    <TextView
+        android:id="@+id/textDescontoDestaqueLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 99,90"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/imageDestaqueLoja"
+        app:layout_constraintTop_toBottomOf="@+id/imageDestaqueLoja" />
+
+    <TextView
+        android:id="@+id/textPrecoDestaqueLoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 129,90"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageDestaqueLoja"
+        app:layout_constraintTop_toBottomOf="@+id/imageDestaqueLoja" />
+
+    <TextView
+        android:id="@+id/textDescricaoDestaqueLoja"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="São 4 Mcofertas para você compartilhar com quem preferir"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageDestaqueLoja"
+        app:layout_constraintStart_toStartOf="@+id/imageDestaqueLoja"
+        app:layout_constraintTop_toBottomOf="@+id/textDescontoDestaqueLoja" />
+</androidx.constraintlayout.widget.ConstraintLayout>
