@@ -16,14 +16,14 @@
         android:theme="@style/Theme.AulaIfood"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.ui.CadastroActivity"
-            android:parentActivityName=".presentation.ui.LoginActivity"
+            android:name=".presentation.ui.activity.CadastroActivity"
+            android:parentActivityName=".presentation.ui.activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.ui.MainActivity"
+            android:name=".presentation.ui.activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.ui.LoginActivity"
+            android:name=".presentation.ui.activity.LoginActivity"
             android:theme="@style/Theme.Splash"
             android:exported="true">
             <intent-filter>

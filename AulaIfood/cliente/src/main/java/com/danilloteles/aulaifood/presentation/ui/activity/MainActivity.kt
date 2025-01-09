@@ -1,4 +1,4 @@
-package com.danilloteles.aulaifood.presentation.ui
+package com.danilloteles.aulaifood.presentation.ui.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

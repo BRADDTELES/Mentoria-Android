@@ -7,5 +7,7 @@
     <string name="erro_cadastro_email">Digite um e-mail válido</string>
     <string name="erro_cadastro_senha">Digite uma senha com no mínimo 06 caracteres</string>
     <string name="erro_cadastro_telefone">Digite telefone válido</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

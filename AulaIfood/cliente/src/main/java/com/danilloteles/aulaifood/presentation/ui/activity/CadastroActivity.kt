@@ -1,12 +1,11 @@
-package com.danilloteles.aulaifood.presentation.ui
+package com.danilloteles.aulaifood.presentation.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.danilloteles.aulaifood.R
-import com.danilloteles.aulaifood.databinding.ActivityLoginBinding
+import com.danilloteles.aulaifood.databinding.ActivityCadastroBinding
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
@@ -14,14 +13,13 @@ import com.danilloteles.core.UIStatus
 import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
-import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LoginActivity : AppCompatActivity() {
+class CadastroActivity : AppCompatActivity() {
 
    private val binding by lazy {
-         ActivityLoginBinding.inflate( layoutInflater )
+         ActivityCadastroBinding.inflate( layoutInflater )
    }
    private val alertaCarregamento by lazy {
       AlertaCarregamento(this)
@@ -29,31 +27,15 @@ class LoginActivity : AppCompatActivity() {
    private val autenticacaoViewModel: AutenticacaoViewModel by viewModels()
 
    override fun onCreate(savedInstanceState: Bundle?) {
-
-      val splashScreen = installSplashScreen()
-      //Thread.sleep(3000)
-      splashScreen.setKeepOnScreenCondition{
-         val usuarioLogado = autenticacaoViewModel.verificarUsuarioLogado()
-         if ( usuarioLogado ) {
-            navegarPara( MainActivity::class.java )
-         }
-         false
-      }
-
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
-      FirebaseAuth.getInstance().signOut()
    }
 
    private fun inicializar() {
+      inicializarToolbar()
       inicializarEventosClique()
       inicializarObservaveis()
-   }
-
-   override fun onStart() {
-      super.onStart()
-      autenticacaoViewModel.verificarUsuarioLogado()
    }
 
    fun navegarTelaPrincipal() {
@@ -66,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
 
       autenticacaoViewModel.carregando.observe(this){ carregando ->
          if ( carregando ) {
-            alertaCarregamento.exibir("Efetuando login!")
+            alertaCarregamento.exibir("Fazendo seu cadastro!")
          }else{
             alertaCarregamento.fechar()
          }
@@ -74,40 +56,49 @@ class LoginActivity : AppCompatActivity() {
 
       autenticacaoViewModel.resultadoValidacao
          .observe(this){ resultadoValidacao ->
+
             with( binding ){
 
-               editLoginEmail.error =
+               editCadastroNome.error =
+                  if (resultadoValidacao.nome) null else getString(R.string.erro_cadastro_nome)
+
+               editCadastroEmail.error =
                   if (resultadoValidacao.email) null else getString(R.string.erro_cadastro_email)
 
-               editLoginSenha.error =
+               editCadastroSenha.error =
                   if (resultadoValidacao.senha) null else getString(R.string.erro_cadastro_senha)
 
+               editCadastroTelefone.error =
+                  if (resultadoValidacao.telefone) null else getString(R.string.erro_cadastro_telefone)
+
             }
-         }
+
+      }
+
    }
 
    private fun inicializarEventosClique() {
-      with( binding ) {
-         textCadastro.setOnClickListener {
-            startActivity(
-               Intent(applicationContext, CadastroActivity::class.java)
-            )
-         }
-         btnLogin.setOnClickListener { view ->
+      with( binding ){
+         btnCadastrar.setOnClickListener { view ->
 
             //Esconder o Teclado
             view.esconderTeclado()
 
             //Remover Focus
-            editLoginEmail.clearFocus()
-            editLoginSenha.clearFocus()
+            editCadastroNome.clearFocus()
+            editCadastroEmail.clearFocus()
+            editCadastroSenha.clearFocus()
+            editCadastroTelefone.clearFocus()
 
-            val email = editLoginEmail.text.toString()
-            val senha = editLoginSenha.text.toString()
+            val nome = editCadastroNome.text.toString()
+            val email = editCadastroEmail.text.toString()
+            val senha = editCadastroSenha.text.toString()
+            val telefone = editCadastroTelefone.text.toString()
+
             val usuario = Usuario(
-               email, senha
+               email, senha, nome, telefone
             )
-            autenticacaoViewModel.logarUsuario( usuario ){ uiStatus ->
+            autenticacaoViewModel.cadastrarUsuario( usuario ){ uiStatus ->
                when( uiStatus ){
                   is UIStatus.Sucesso -> {
                      navegarPara( MainActivity::class.java )
@@ -117,7 +108,18 @@ class LoginActivity : AppCompatActivity() {
                   }
                }
             }
+
          }
+      }
+   }
+
+   private fun inicializarToolbar() {
+      val toolbar = binding.includeTbPrincipal.tbPrincipal
+      setSupportActionBar( toolbar )
+
+      supportActionBar?.apply {
+         title = "Cadastro de usuário"
+         setDisplayHomeAsUpEnabled(true)
       }
    }
 }
