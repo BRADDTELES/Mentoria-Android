@@ -7,5 +7,9 @@
         <item name="android:textSize">@dimen/titulo04</item>
         <item name="android:drawableRight">@drawable/ic_seta_baixo_24</item>
     </style>
+    
+    <style name="CantosArredondados" >
+        <item name="cornerSize">10%</item>
+    </style>
 
 </resources>

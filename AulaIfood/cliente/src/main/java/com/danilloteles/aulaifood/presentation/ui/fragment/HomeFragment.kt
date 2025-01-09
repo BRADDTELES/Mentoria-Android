@@ -10,12 +10,23 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.danilloteles.aulaifood.R
 import com.danilloteles.aulaifood.data.remote.dto.CategoriaDTO
 import com.danilloteles.aulaifood.databinding.FragmentHomeBinding
-import com.danilloteles.aulaifood.presentation.adapter.CategoriaAdapter
+import com.danilloteles.aulaifood.domain.model.FiltroCategoria
+import com.danilloteles.aulaifood.presentation.ui.adapter.CategoriaAdapter
+import com.danilloteles.aulaifood.presentation.ui.adapter.FiltroCategoriaAdapter
 
 class HomeFragment : Fragment() {
 
    private lateinit var binding: FragmentHomeBinding
-   private lateinit var categoriaAdapter: CategoriaAdapter
+   //private lateinit var categoriaAdapter: CategoriaAdapter
+   private val listaFiltrosCategoria = listOf(
+      FiltroCategoria("Restaurantes", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Restaurantes3_JO1o.png?imwidth=128"),
+      FiltroCategoria("Mercados", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Mercados_nlXp.png?imwidth=128"),
+      FiltroCategoria("Farmácias", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Farmacia_Nosz.png?imwidth=128"),
+      FiltroCategoria("Pet", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Pet_e9dU.png?imwidth=128"),
+      FiltroCategoria("Bebidas", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Bebidas_x2Lk.png?imwidth=128"),
+      FiltroCategoria("Shopping", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/floreseperfume_zTRv.png?imwidth=128"),
+      FiltroCategoria("Gourmet", "https://static.ifood-static.com.br/image/upload/t_medium/discoveries/Gourmet_RQ4A.png?imwidth=128"),
+   )
 
    override fun onCreateView(
       inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +40,9 @@ class HomeFragment : Fragment() {
       )
 
       inicializarNotificacoes()
-      inicializarComponentesInterfaceCategorias()
+      /* Visualização do meu RecyclerView
+      inicializarComponentesInterfaceCategorias()*/
+      inicializarFiltrosCategoria()
 
       /*binding.textLoja.setOnClickListener {
          val navController = findNavController()
@@ -39,12 +52,23 @@ class HomeFragment : Fragment() {
       return binding.root
    }
 
+   private fun inicializarFiltrosCategoria() {
+      with( binding ){
+         val filtroCategoriaAdapter = FiltroCategoriaAdapter()
+         rvFiltroCategoria.adapter = filtroCategoriaAdapter
+         rvFiltroCategoria.layoutManager = GridLayoutManager(
+            context, 4
+         )
+         filtroCategoriaAdapter.adicionarItens( listaFiltrosCategoria )
+      }
+   }
+
    private fun inicializarComponentesInterfaceCategorias() {
 
-      with( binding ){
+      /*with( binding ){
          categoriaAdapter = CategoriaAdapter()
-         rvFiltroCategorias.adapter = categoriaAdapter
-         rvFiltroCategorias.layoutManager = GridLayoutManager(
+         rvFiltroCategoria.adapter = categoriaAdapter
+         rvFiltroCategoria.layoutManager = GridLayoutManager(
             context,4
          )
          categoriaAdapter.adicionarLista(
@@ -59,7 +83,7 @@ class HomeFragment : Fragment() {
                CategoriaDTO(R.drawable.gourmet,"Gourmet"),
             )
          )
-      }
+      }*/
 
    }
 

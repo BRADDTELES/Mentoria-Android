@@ -32,16 +32,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/tbHome" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_filtro_categorias"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbHome"
-        tools:itemCount="8"
-        tools:layoutManager="GridLayoutManager"
-        tools:listitem="@layout/item_filtro_categorias"
-        tools:spanCount="4" />
+        app:layout_constraintTop_toBottomOf="@+id/tbHome">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFiltroCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            tools:layoutManager="GridLayoutManager"
+            tools:listitem="@layout/item_rv_filtro_categoria"
+            tools:spanCount="4" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

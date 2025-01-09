@@ -1,4 +1,4 @@
-package com.danilloteles.aulaifood.presentation.adapter
+package com.danilloteles.aulaifood.presentation.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -21,11 +21,10 @@ class CategoriaAdapter : Adapter<CategoriaAdapter.CategoriaViewHolder>() {
    ) : ViewHolder( binding.root ){
       fun bind( categoriaDTO: CategoriaDTO ){
          binding.textNomeCategoria.text = categoriaDTO.nomeCategoria.toString()
-         if ( categoriaDTO != null){
-            Picasso.get().load(categoriaDTO.imagemCategoria).into(binding.imageCategoria)
-            /*binding.root.setOnClickListener {
-               // Ação para o clique na categoria
-            }*/
+         if ( categoriaDTO != null ){
+            Picasso.get()
+               .load(categoriaDTO.imagemCategoria)
+               .into(binding.imageCategoria)
          }
       }
    }
