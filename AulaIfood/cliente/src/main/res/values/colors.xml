@@ -2,8 +2,10 @@
 <resources>
     <color name="preto">#FF000000</color>
     <color name="branco">#FFFFFFFF</color>
+    <color name="cinza">#9C9C9C</color>
 
     <!-- cores customizadas -->
     <color name="primaria">#EA1D2D</color>
+    <color name="segundaria_clara">#FF969E</color>
 
 </resources>

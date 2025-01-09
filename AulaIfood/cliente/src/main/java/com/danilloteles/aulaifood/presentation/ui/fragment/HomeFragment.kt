@@ -18,6 +18,7 @@ import com.danilloteles.aulaifood.presentation.ui.adapter.FiltroCategoriaAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.LojasAdapter
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HomeFragment : Fragment() {
 
@@ -62,6 +63,7 @@ class HomeFragment : Fragment() {
          false
       )
 
+      inicializarFiltros()
       inicializarNotificacoes()
       /* Visualização do meu RecyclerView
       inicializarComponentesInterfaceCategorias()*/
@@ -71,6 +73,27 @@ class HomeFragment : Fragment() {
       inicializarUltimasLojas()
 
       return binding.root
+   }
+
+   private fun inicializarFiltros() {
+
+      val ordenacaoChecked = binding.chipFiltroOrdenacao.isCheckable
+      val entregaChecked = binding.chipEntregaGatris.isCheckable
+
+      binding.chipFiltroOrdenacao.setOnClickListener{
+         val ordenacoes = arrayOf("Ordenação Padrão", "Crescente", "Decrescente")
+         MaterialAlertDialogBuilder( requireContext() )
+            .setTitle("Selecione ordenação")
+            .setItems( ordenacoes ){ _, posicao ->
+               val ordenacaoSelecionada = ordenacoes[posicao]
+               if ( posicao == 0 ) {
+                  binding.chipFiltroOrdenacao.text = "Ordenação"
+               }else{
+                  binding.chipFiltroOrdenacao.text = ordenacaoSelecionada
+               }
+            }.show()
+      }
+
    }
 
    private fun inicializarUltimasLojas() {
