@@ -50,6 +50,7 @@ class HomeFragment : Fragment() {
       Loja("Açaí Emporio","Açaí","https://static.ifood-static.com.br/image/upload/t_medium/logosgde/a66dae6c-5466-451a-826b-70babe4c246d/202412090818_M4Pi_i.jpg?imwidth=128"),Loja("MC Donalds","Lanche","https://static.ifood-static.com.br/image/upload/t_medium/logosgde/e35a1e98-0584-4315-afcb-ad6c621ce28a/202408251240_PNLZ.png?imwidth=128"),
       Loja("Parmeginando","Italiana","https://static.ifood-static.com.br/image/upload/t_medium/logosgde/a1649f68-ef34-4afc-b0dd-7ec8562dfc1c/202408221249_71TG_i.jpg?imwidth=128"),
       Loja("Panini","Padaria","https://static.ifood-static.com.br/image/upload/t_thumbnail/logosgde/606929b7-3b67-4116-9728-f486e3ec1d99/202003231200_HDzR_i.png"),
+      Loja("Donuts À Bessa","Doces & Bolos","https://static.ifood-static.com.br/image/upload/t_medium/logosgde/08a030c7-45fa-4d3c-8c37-e39d2d077e28/202005212131_L7YE_i.jpg?imwidth=128"),
    )
 
    override fun onCreateView(
