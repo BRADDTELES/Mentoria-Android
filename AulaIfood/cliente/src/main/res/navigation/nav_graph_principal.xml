@@ -8,7 +8,12 @@
         android:id="@+id/homeFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_lojaFragment"
+            app:destination="@id/lojaFragment"
+            app:enterAnim="@android:anim/slide_in_left" />
+    </fragment>
     <fragment
         android:id="@+id/buscaFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.BuscaFragment"
@@ -24,4 +29,9 @@
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.PerfilFragment"
         android:label="fragment_perfil"
         tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/lojaFragment"
+        android:name="com.danilloteles.aulaifood.presentation.ui.fragment.LojaFragment"
+        android:label="fragment_loga"
+        tools:layout="@layout/fragment_loja" />
 </navigation>
