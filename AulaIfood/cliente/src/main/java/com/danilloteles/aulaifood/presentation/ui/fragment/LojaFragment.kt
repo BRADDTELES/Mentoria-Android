@@ -87,8 +87,8 @@ class LojaFragment : Fragment() {
       with( binding ){
          val orientacao = RecyclerView.HORIZONTAL
          produtoAdapterDestaque = ProdutoAdapter(orientacao){ produto ->
-            /*val navController = findNavController()
-            navController.navigate(R.id.action_homeFragment_to_lojaFragment)*/
+            val navController = findNavController()
+            navController.navigate(R.id.action_lojaFragment_to_produtoFragment)
          }
          produtoAdapterDestaque.adicionarLista( produtosDestaque )
          rvDestaqueProdutosLoja.adapter = produtoAdapterDestaque
@@ -102,8 +102,8 @@ class LojaFragment : Fragment() {
       with( binding ){
          val orientacao = RecyclerView.VERTICAL
          produtoAdapter = ProdutoAdapter(orientacao){ produto ->
-            /*val navController = findNavController()
-            navController.navigate(R.id.action_homeFragment_to_lojaFragment)*/
+            val navController = findNavController()
+            navController.navigate(R.id.action_lojaFragment_to_produtoFragment)
          }
          produtoAdapter.adicionarLista( produtos )
          rvProdutosLoja.adapter = produtoAdapter

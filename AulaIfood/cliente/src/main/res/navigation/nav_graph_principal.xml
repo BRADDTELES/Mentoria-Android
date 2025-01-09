@@ -32,5 +32,14 @@
         android:id="@+id/lojaFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.LojaFragment"
         android:label="fragment_loga"
-        tools:layout="@layout/fragment_loja" />
+        tools:layout="@layout/fragment_loja" >
+        <action
+            android:id="@+id/action_lojaFragment_to_produtoFragment"
+            app:destination="@id/produtoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/produtoFragment"
+        android:name="com.danilloteles.aulaifood.presentation.ui.fragment.ProdutoFragment"
+        android:label="fragment_produto"
+        tools:layout="@layout/fragment_produto" />
 </navigation>
