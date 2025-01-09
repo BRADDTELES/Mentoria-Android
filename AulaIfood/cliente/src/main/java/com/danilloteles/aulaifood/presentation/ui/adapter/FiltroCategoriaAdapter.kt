@@ -8,7 +8,8 @@ import com.danilloteles.aulaifood.databinding.ItemRvFiltroCategoriaBinding
 import com.danilloteles.aulaifood.domain.model.FiltroCategoria
 import com.squareup.picasso.Picasso
 
-class FiltroCategoriaAdapter : Adapter<FiltroCategoriaAdapter.FiltroCategoriaViewHolder>() {
+class FiltroCategoriaAdapter
+   : Adapter<FiltroCategoriaAdapter.FiltroCategoriaViewHolder>() {
 
    class FiltroCategoriaViewHolder(
       private val binding: ItemRvFiltroCategoriaBinding
