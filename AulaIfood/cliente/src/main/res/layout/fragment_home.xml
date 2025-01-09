@@ -65,5 +65,31 @@
             app:iss_text_align="CENTER"
             app:iss_unselected_dot="@drawable/ic_desmarcado_24" />
 
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Últimas lojas"
+            android:textSize="@dimen/titulo02" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvUltimasLojas"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            tools:listitem="@layout/item_rv_ultimas_lojas" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lojas"
+            android:textSize="@dimen/titulo02" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLojas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_rv_lojas" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
