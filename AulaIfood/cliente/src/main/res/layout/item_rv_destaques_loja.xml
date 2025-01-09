@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clProdutoDestaqueLoja"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="8dp">
@@ -16,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/CantosArredondados"
-        app:srcCompat="@drawable/produto_destaque" />
+        app:srcCompat="@drawable/produto" />
 
     <TextView
         android:id="@+id/textDescontoDestaqueLoja"
@@ -37,11 +38,11 @@
         app:layout_constraintTop_toBottomOf="@+id/imageDestaqueLoja" />
 
     <TextView
-        android:id="@+id/textDescricaoDestaqueLoja"
+        android:id="@+id/textNomeProdutoDestaqueLoja"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="São 4 Mcofertas para você compartilhar com quem preferir"
-        android:textSize="10sp"
+        android:text="McOferta Média Chickens"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/imageDestaqueLoja"
         app:layout_constraintStart_toStartOf="@+id/imageDestaqueLoja"
         app:layout_constraintTop_toBottomOf="@+id/textDescontoDestaqueLoja" />

@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clProdutoLoja"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="8dp">
@@ -10,7 +11,7 @@
         android:id="@+id/imageProdutoLoja"
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:scaleType="centerCrop"
+        android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -46,13 +47,14 @@
             android:id="@+id/textDescricaoProdutoLoja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nesta promoção você leva 1 McOferta Média" />
+            android:text="Nesta promoção você leva 1 McOferta Média"
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/textPrecoProdutoLoja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="R$ 51,90"
+            android:text="R$ 99,90"
             android:textSize="@dimen/titulo04"
             android:textStyle="bold" />
     </LinearLayout>
