@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BotaoEndereco" parent="Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/preto</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/titulo04</item>
+        <item name="android:drawableRight">@drawable/ic_seta_baixo_24</item>
+    </style>
+
+</resources>
