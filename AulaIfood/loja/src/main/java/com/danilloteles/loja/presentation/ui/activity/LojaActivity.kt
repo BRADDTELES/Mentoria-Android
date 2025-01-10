@@ -2,20 +2,27 @@ package com.danilloteles.loja.presentation.ui.activity
 
 import android.Manifest
 import android.Manifest.permission.READ_MEDIA_IMAGES
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.danilloteles.core.AlertaCarregamento
+import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.R
 import com.danilloteles.loja.databinding.ActivityCadastroBinding
 import com.danilloteles.loja.databinding.ActivityLoginBinding
 import com.danilloteles.loja.databinding.ActivityLojaBinding
+import com.danilloteles.loja.domain.model.UploadLoja
+import com.danilloteles.loja.presentation.viewmodel.AutenticacaoViewModel
+import com.danilloteles.loja.presentation.viewmodel.LojaViewModel
+import com.danilloteles.loja.util.Constantes
 import com.permissionx.guolindev.PermissionX
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,6 +35,7 @@ class LojaActivity : AppCompatActivity() {
    private val alertaCarregamento by lazy {
       AlertaCarregamento(this)
    }
+   private val lojaViewModel: LojaViewModel by viewModels()
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -79,15 +87,46 @@ class LojaActivity : AppCompatActivity() {
       inicializarObservaveis()
    }
 
-   private val selecionarImagemCapa = registerForActivityResult(
-      ActivityResultContracts.PickVisualMedia()
-   ){ uri ->
-      if (uri != null) {
-         binding.imageCapaLoja.setImageURI( uri)
-         //Upload da imagem
-      } else {
-         exibirMensagem("Nenhuma imagem foi selecionada para capa!")
+   private fun uploudImagemPerfil(uri: Uri) {
+
+      lojaViewModel.uploadImagem(
+         UploadLoja(
+            Constantes.STORAGE_LOJAS,
+            "imagem_perfil",
+            uri
+         )
+      ){ uiStatus ->
+         when( uiStatus ){
+            is UIStatus.Erro -> {
+               exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               exibirMensagem("Imagem de perfil atualizada com sucesso")
+            }
+         }
       }
+
+   }
+
+   private fun uploudCapaPerfil(uri: Uri) {
+
+      lojaViewModel.uploadImagem(
+         UploadLoja(
+            Constantes.STORAGE_LOJAS,
+            "imagem_capa",
+            uri
+         )
+      ){ uiStatus ->
+         when( uiStatus ){
+            is UIStatus.Erro -> {
+               exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               exibirMensagem("Imagem de capa atualizada com sucesso")
+            }
+         }
+      }
+
    }
 
    private val selecionarImagemPerfil = registerForActivityResult(
@@ -95,9 +134,22 @@ class LojaActivity : AppCompatActivity() {
    ){ uri ->
       if (uri != null) {
          binding.imagePerfilLoja.setImageURI( uri)
-         //Upload da imagem
+         //Upload da imagem no Firebase (enviar imagens de capa e perfil para o Firebase)
+         uploudImagemPerfil( uri )
       } else {
          exibirMensagem("Nenhuma imagem foi selecionada para perfil!")
+      }
+   }
+
+   private val selecionarImagemCapa = registerForActivityResult(
+      ActivityResultContracts.PickVisualMedia()
+   ){ uri ->
+      if (uri != null) {
+         binding.imageCapaLoja.setImageURI( uri)
+         //Upload da imagem no Firebase (enviar imagens de capa e perfil para o Firebase)
+         uploudCapaPerfil( uri )
+      } else {
+         exibirMensagem("Nenhuma imagem foi selecionada para capa!")
       }
    }
 

@@ -2,8 +2,10 @@ package com.danilloteles.loja.di
 
 import com.danilloteles.loja.data.remote.firebase.repository.AutenticacaoRepositoryImpl
 import com.danilloteles.loja.data.remote.firebase.repository.IAutenticacaoRepository
+import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.loja.domain.usecase.AutenticacaoUseCase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,6 +39,19 @@ object AppModule {
    @Provides
    fun provideFirebaseAuth(): FirebaseAuth {
       return FirebaseAuth.getInstance()
+   }
+
+   @Provides
+   fun provideFirebaseStorage(): FirebaseStorage {
+      return FirebaseStorage.getInstance()
+   }
+
+   @Provides
+   fun provideUploadRepository(
+      firebaseStorage: FirebaseStorage,
+      firebaseAuth: FirebaseAuth
+   ): UploadRepository {
+      return UploadRepository( firebaseStorage, firebaseAuth )
    }
 
 }
