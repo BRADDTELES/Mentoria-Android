@@ -1,12 +1,12 @@
 package com.danilloteles.loja.domain.usecase
 
-import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.domain.usecase.ResultadoValidacao
+import com.danilloteles.loja.domain.model.Usuario
 import com.wajahatkarim3.easyvalidation.core.view_ktx.validator
 
 class AutenticacaoUseCase {
 
-   fun validarCadastroUsuario(usuario: Usuario ) : ResultadoValidacao {
+   fun validarCadastroUsuario(usuario: Usuario): ResultadoValidacao {
 
       val resultadoValidacao = ResultadoValidacao()
 
@@ -26,26 +26,26 @@ class AutenticacaoUseCase {
          .minLength(10)
          .check()
 
-      if ( valNome ) {
+      if (valNome) {
          resultadoValidacao.nome = true
       }
 
-      if ( valEmail ) {
+      if (valEmail) {
          resultadoValidacao.email = true
       }
 
-      if ( valSenha ) {
+      if (valSenha) {
          resultadoValidacao.senha = true
       }
 
-      if ( valTelefone ) {
+      if (valTelefone) {
          resultadoValidacao.telefone = true
       }
 
       return resultadoValidacao
    }
 
-   fun validarLoginUsuario(usuario: Usuario ) : ResultadoValidacao {
+   fun validarLoginUsuario(usuario: Usuario): ResultadoValidacao {
 
       val resultadoValidacao = ResultadoValidacao()
 
@@ -57,11 +57,11 @@ class AutenticacaoUseCase {
          .minLength(6)
          .check()
 
-      if ( valEmail ) {
+      if (valEmail) {
          resultadoValidacao.email = true
       }
 
-      if ( valSenha ) {
+      if (valSenha) {
          resultadoValidacao.senha = true
       }
 

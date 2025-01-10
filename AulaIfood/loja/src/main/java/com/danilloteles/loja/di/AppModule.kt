@@ -9,24 +9,33 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
 
+/* Se caso usar o @InstallIn( SingletonComponent::class ): preciso Ativar
+* a Injeção de dependência no HomeActivity.kt,
+* @Inject lateinit var firebaseAuth: FirebaseAuth
+*
+*  Caso a não utilização do SingletonComponent: deve utilizar o
+* @InstallIn( ViewModelComponent::class )
+* Desativando a Injeção de dependência no HomeActivity.kt,
+* @Inject lateinit var firebaseAuth: FirebaseAuth
+*/
 @Module
-@InstallIn( ViewModelComponent::class )
+@InstallIn(ViewModelComponent::class)
 object AppModule {
 
    @Provides
-   fun provideAutenticaUseCase() : AutenticacaoUseCase {
+   fun provideAutenticaUseCase(): AutenticacaoUseCase {
       return AutenticacaoUseCase()
    }
 
    @Provides
    fun provideAutenticaRepository(
       firebaseAuth: FirebaseAuth
-   ) : IAutenticacaoRepository {
-      return AutenticacaoRepositoryImpl( firebaseAuth )
+   ): IAutenticacaoRepository {
+      return AutenticacaoRepositoryImpl(firebaseAuth)
    }
 
    @Provides
-   fun provideFirebaseAuth() : FirebaseAuth {
+   fun provideFirebaseAuth(): FirebaseAuth {
       return FirebaseAuth.getInstance()
    }
 

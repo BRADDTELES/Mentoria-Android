@@ -5,7 +5,7 @@ data class ResultadoValidacao(
    var email: Boolean = false,
    var senha: Boolean = false,
    var telefone: Boolean = false,
-){
+) {
    val sucessoValidacaoCadastro: Boolean
       get() = nome && email && senha && telefone
 

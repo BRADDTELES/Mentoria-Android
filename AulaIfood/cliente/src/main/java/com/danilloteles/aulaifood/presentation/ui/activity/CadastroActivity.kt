@@ -19,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CadastroActivity : AppCompatActivity() {
 
    private val binding by lazy {
-         ActivityCadastroBinding.inflate( layoutInflater )
+      ActivityCadastroBinding.inflate( layoutInflater )
    }
    private val alertaCarregamento by lazy {
       AlertaCarregamento(this)

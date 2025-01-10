@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_gerenciamento_loja"
+        android:title="Gerenciamento loja" />
+    <item
+        android:id="@+id/item_cardapio"
+        android:title="Cardápio" />
+    <item
+        android:id="@+id/item_taxa_endereco"
+        android:title="Taxa e Endereço" />
+    <item
+        android:id="@+id/item_sair"
+        android:title="Sair" />
+</menu>

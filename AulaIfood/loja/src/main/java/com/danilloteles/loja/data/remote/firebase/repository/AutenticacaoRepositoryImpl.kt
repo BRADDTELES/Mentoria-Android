@@ -1,7 +1,7 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
-import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.core.UIStatus
+import com.danilloteles.loja.domain.model.Usuario
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -22,24 +22,24 @@ class AutenticacaoRepositoryImpl @Inject constructor(
             usuario.email, usuario.senha
          ).await() != null
 
-         if ( retorno ) {//true
+         if (retorno) { //true
             uiStatus.invoke(
-               UIStatus.Sucesso( true )
+               UIStatus.Sucesso(true)
             )
          }
-      } catch ( erroUsuarioJaCadastrado: FirebaseAuthUserCollisionException ) {
+      } catch (erroUsuarioJaCadastrado: FirebaseAuthUserCollisionException) {
          uiStatus.invoke(
             UIStatus.Erro("Usuário já cadastrado")
          )
-      } catch ( erroEmailInvalido: FirebaseAuthInvalidCredentialsException ) {
+      } catch (erroEmailInvalido: FirebaseAuthInvalidCredentialsException) {
          uiStatus.invoke(
             UIStatus.Erro("E-mail está inválido, digite outro e-mail!")
          )
-      } catch ( erroSenhaFraca: FirebaseAuthWeakPasswordException ){
+      } catch (erroSenhaFraca: FirebaseAuthWeakPasswordException) {
          uiStatus.invoke(
             UIStatus.Erro("Sua senha está muito fraca, digite mais caracteres!")
          )
-      } catch ( erroPadrao: Exception ) {
+      } catch (erroPadrao: Exception) {
          uiStatus.invoke(
             UIStatus.Erro("Erro ao fazer seu cadastro, tente novamente!")
          )
@@ -56,20 +56,20 @@ class AutenticacaoRepositoryImpl @Inject constructor(
             usuario.email, usuario.senha
          ).await() != null
 
-         if ( retorno ) {//true
+         if (retorno) { //true
             uiStatus.invoke(
-               UIStatus.Sucesso( true )
+               UIStatus.Sucesso(true)
             )
          }
-      } catch ( erroUsuarioInvalido: FirebaseAuthInvalidUserException ) {
+      } catch (erroUsuarioInvalido: FirebaseAuthInvalidUserException) {
          uiStatus.invoke(
             UIStatus.Erro("E-mail inválido, usuário não cadastrado!")
          )
-      } catch ( erroSenhaInvalida: FirebaseAuthInvalidCredentialsException ) {
+      } catch (erroSenhaInvalida: FirebaseAuthInvalidCredentialsException) {
          uiStatus.invoke(
             UIStatus.Erro("A senha digitada está errada")
          )
-      } catch ( erroPadrao: Exception ){
+      } catch (erroPadrao: Exception) {
          uiStatus.invoke(
             UIStatus.Erro("Dados de acesso errado, tente novamente!")
          )

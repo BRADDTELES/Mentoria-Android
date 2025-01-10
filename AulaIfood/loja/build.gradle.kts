@@ -36,7 +36,7 @@ android {
    kotlinOptions {
       jvmTarget = "1.8"
    }
-   buildFeatures{
+   buildFeatures {
       viewBinding = true
    }
 }
@@ -50,19 +50,19 @@ dependencies {
    implementation(libs.firebase.firestore)
    implementation(libs.firebase.storage)
 
-   //Dependência de máscara
-   implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
-
-   //Dependência de validação
-   implementation (libs.easyvalidation.core)
-
    //Hilt
    implementation("com.google.dagger:hilt-android:2.51.1")
    implementation(project(":core"))
    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
+   //Dependência de máscara
+   implementation("io.github.vicmikhailau:MaskedEditText:5.0.3")
+
+   //Dependência de validação
+   implementation(libs.easyvalidation.core)
+
    //Fragment KTX
-   implementation(libs.androidx.fragment.ktx)//by viewModels()
+   implementation(libs.androidx.fragment.ktx) //by viewModels()
 
    //Ciclo de vida - Lifecycles
    // ViewModel
