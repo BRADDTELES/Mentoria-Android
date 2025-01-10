@@ -1,32 +1,47 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.core.UIStatus
+import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.domain.model.Usuario
+import com.danilloteles.loja.util.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
+import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
 class AutenticacaoRepositoryImpl @Inject constructor(
-   private val firebaseAuth: FirebaseAuth
+   private val firebaseAuth: FirebaseAuth,
+   private val firebaseFirestore: FirebaseFirestore
 ) : IAutenticacaoRepository {
    override suspend fun cadastrarUsuario(
       usuario: Usuario,
       uiStatus: (UIStatus<Boolean>) -> Unit
    ) {
       try {
-         val retorno = firebaseAuth.createUserWithEmailAndPassword(
+         val authResult = firebaseAuth.createUserWithEmailAndPassword(
             usuario.email, usuario.senha
-         ).await() != null
+         ).await()
 
-         if (retorno) { //true
-            uiStatus.invoke(
-               UIStatus.Sucesso(true)
-            )
-         }
+         //Salvar Firestore -> Loja
+         val idLoja = authResult.user?.uid ?:
+            return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
+
+         val loja = Loja(
+            idLoja = idLoja, nome = usuario.nome, telefone =  usuario.telefone
+         )
+
+         val refLoja = firebaseFirestore
+            .collection(Constantes.FIRESTORE_LOJAS)
+            .document( idLoja )
+
+         refLoja.set( loja ).await()
+
+         uiStatus.invoke( UIStatus.Sucesso(true) )
+
       } catch (erroUsuarioJaCadastrado: FirebaseAuthUserCollisionException) {
          uiStatus.invoke(
             UIStatus.Erro("Usuário já cadastrado")

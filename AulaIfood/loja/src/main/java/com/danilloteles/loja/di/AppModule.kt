@@ -2,9 +2,12 @@ package com.danilloteles.loja.di
 
 import com.danilloteles.loja.data.remote.firebase.repository.AutenticacaoRepositoryImpl
 import com.danilloteles.loja.data.remote.firebase.repository.IAutenticacaoRepository
+import com.danilloteles.loja.data.remote.firebase.repository.ILojaRepository
+import com.danilloteles.loja.data.remote.firebase.repository.LojaRepositoryImpl
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.loja.domain.usecase.AutenticacaoUseCase
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
@@ -31,9 +34,26 @@ object AppModule {
 
    @Provides
    fun provideAutenticaRepository(
-      firebaseAuth: FirebaseAuth
+      firebaseAuth: FirebaseAuth,
+      firebaseFirestore: FirebaseFirestore
    ): IAutenticacaoRepository {
-      return AutenticacaoRepositoryImpl(firebaseAuth)
+      return AutenticacaoRepositoryImpl( firebaseAuth, firebaseFirestore )
+   }
+
+   @Provides
+   fun provideUploadRepository(
+      firebaseStorage: FirebaseStorage,
+      firebaseAuth: FirebaseAuth
+   ): UploadRepository {
+      return UploadRepository( firebaseStorage, firebaseAuth )
+   }
+
+   @Provides
+   fun provideLojaRepository(
+      firebaseAuth: FirebaseAuth,
+      firebaseFirestore: FirebaseFirestore
+   ): ILojaRepository {
+      return LojaRepositoryImpl( firebaseAuth, firebaseFirestore )
    }
 
    @Provides
@@ -47,11 +67,8 @@ object AppModule {
    }
 
    @Provides
-   fun provideUploadRepository(
-      firebaseStorage: FirebaseStorage,
-      firebaseAuth: FirebaseAuth
-   ): UploadRepository {
-      return UploadRepository( firebaseStorage, firebaseAuth )
+   fun provideFirebaseFirestoree(): FirebaseFirestore {
+      return FirebaseFirestore.getInstance()
    }
 
 }
