@@ -29,7 +29,6 @@ class LoginActivity : AppCompatActivity() {
 
    override fun onStart() {
       super.onStart()
-      //autenticacaoViewModel.verificarUsuarioLogado()
       val usuarioLogado = autenticacaoViewModel.verificarUsuarioLogado()
       if ( usuarioLogado ) {
          navegarPara( HomeActivity::class.java )

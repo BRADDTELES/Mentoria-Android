@@ -13,6 +13,7 @@
         android:theme="@style/Theme.AulaIfood">
         <activity
             android:name=".presentation.ui.activity.CadastroActivity"
+            android:parentActivityName=".presentation.ui.activity.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.ui.activity.HomeActivity"
