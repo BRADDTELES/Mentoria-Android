@@ -7,7 +7,7 @@ import com.danilloteles.loja.data.remote.firebase.repository.ILojaRepository
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.domain.model.Loja
-import com.danilloteles.loja.domain.model.UploadLoja
+import com.danilloteles.loja.domain.model.UploadStorage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -41,7 +41,7 @@ class LojaViewModel @Inject constructor(
    }
 
    fun uploadImagem(
-      uploadLoja: UploadLoja,
+      uploadLoja: UploadStorage,
       uiStatus: (UIStatus<Boolean>) -> Unit
    ) {
       uiStatus.invoke( UIStatus.Carregando )

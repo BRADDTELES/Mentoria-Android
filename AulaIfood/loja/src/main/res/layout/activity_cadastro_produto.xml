@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageCapaProduto" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnSelecionarImagemProduto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -78,6 +78,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editNomeProduto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Digite o nome" />
@@ -88,6 +89,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editDescricaoProduto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Digite a descrição" />
@@ -98,13 +100,14 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPrecoProduto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Digite o preço" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Switch
-                android:id="@+id/switch1"
+                android:id="@+id/switchProduto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Produto de destaque?" />
@@ -114,13 +117,14 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editPrecoDestaqueProduto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Digite o preço de destaque" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:id="@+id/btnSalvar"
+                android:id="@+id/btnSalvarProduto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18dp"

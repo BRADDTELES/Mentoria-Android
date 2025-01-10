@@ -18,7 +18,7 @@ import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityLojaBinding
 import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.domain.model.Loja
-import com.danilloteles.loja.domain.model.UploadLoja
+import com.danilloteles.loja.domain.model.UploadStorage
 import com.danilloteles.loja.presentation.viewmodel.LojaViewModel
 import com.danilloteles.loja.util.Constantes
 import com.permissionx.guolindev.PermissionX
@@ -205,7 +205,7 @@ class LojaActivity : AppCompatActivity() {
 
    private fun uploudImagemPerfil(uri: Uri) {
       lojaViewModel.uploadImagem(
-         UploadLoja(
+         UploadStorage(
             Constantes.STORAGE_LOJAS,
             "imagem_perfil",
             uri
@@ -243,7 +243,7 @@ class LojaActivity : AppCompatActivity() {
 
    private fun uploudImagemCapa(uri: Uri) {
       lojaViewModel.uploadImagem(
-         UploadLoja(
+         UploadStorage(
             Constantes.STORAGE_LOJAS,
             "imagem_capa",
             uri
