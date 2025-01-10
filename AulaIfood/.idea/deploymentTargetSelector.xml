@@ -18,10 +18,10 @@
       </SelectionState>
       <SelectionState runConfigName="loja">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-01-10T13:11:58.118633100Z">
+        <DropdownSelection timestamp="2025-01-10T13:31:04.652129700Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\bradd\.android\avd\Pixel_7_Pro_API_29.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\bradd\.android\avd\Pixel_7_API_33-ext5.avd" />
             </handle>
           </Target>
         </DropdownSelection>

@@ -4,7 +4,10 @@ import android.Manifest
 import android.Manifest.permission.READ_MEDIA_IMAGES
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.exibirMensagem
@@ -76,13 +79,47 @@ class LojaActivity : AppCompatActivity() {
       inicializarObservaveis()
    }
 
+   private val selecionarImagemCapa = registerForActivityResult(
+      ActivityResultContracts.PickVisualMedia()
+   ){ uri ->
+      if (uri != null) {
+         binding.imageCapaLoja.setImageURI( uri)
+         //Upload da imagem
+      } else {
+         exibirMensagem("Nenhuma imagem foi selecionada para capa!")
+      }
+   }
+
+   private val selecionarImagemPerfil = registerForActivityResult(
+      ActivityResultContracts.PickVisualMedia()
+   ){ uri ->
+      if (uri != null) {
+         binding.imagePerfilLoja.setImageURI( uri)
+         //Upload da imagem
+      } else {
+         exibirMensagem("Nenhuma imagem foi selecionada para perfil!")
+      }
+   }
+
    private fun inicializarEventosClique() {
       with(binding){
          btnLojaVoltar.setOnClickListener{
             navegarPara(HomeActivity::class.java)
          }
-         btnSelecionarImagemCapa.setOnClickListener {  }
-         btnSelecionarImagemPerfil.setOnClickListener {  }
+         btnSelecionarImagemCapa.setOnClickListener {
+            selecionarImagemCapa.launch(
+               PickVisualMediaRequest(
+                  ActivityResultContracts.PickVisualMedia.ImageOnly
+               )
+            )
+         }
+         btnSelecionarImagemPerfil.setOnClickListener {
+            selecionarImagemPerfil.launch(
+               PickVisualMediaRequest(
+                  ActivityResultContracts.PickVisualMedia.ImageOnly
+               )
+            )
+         }
          btnAtualizar.setOnClickListener {  }
       }
    }
