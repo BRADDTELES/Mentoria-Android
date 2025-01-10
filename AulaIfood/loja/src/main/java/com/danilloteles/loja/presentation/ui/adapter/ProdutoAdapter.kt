@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.danilloteles.aulaifood.domain.model.Produto
+import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.databinding.ItemRvProdutosBinding
 import com.squareup.picasso.Picasso
 
@@ -23,11 +23,11 @@ class ProdutoAdapter(
    inner class ProdutosViewHolder(
       private val binding: ItemRvProdutosBinding
    ) : ViewHolder( binding.root ){
-      fun bind( produto: Produto ){
+      fun bind( produto: Produto){
          with( binding ){
 
             textNomeProdutoLoja.text = produto.nome
-            textPrecoProdutoLoja.text = produto.preco
+            textPrecoProdutoLoja.text = produto.preco.toString()
 
             if ( produto.url.isNotEmpty() ) {
                Picasso.get()

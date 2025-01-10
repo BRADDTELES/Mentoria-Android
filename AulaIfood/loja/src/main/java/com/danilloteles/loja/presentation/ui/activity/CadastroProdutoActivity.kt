@@ -32,6 +32,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
       AlertaCarregamento(this)
    }
    private val produtoViewModel: ProdutoViewModel by viewModels()
+   private var idProduto = ""
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -88,7 +89,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
             Constantes.STORAGE_PRODUTOS,
             UUID.randomUUID().toString(),
             uri
-         )
+         ), idProduto
       ) { uiStatus ->
          when (uiStatus) {
             is UIStatus.Erro -> {
@@ -98,11 +99,12 @@ class CadastroProdutoActivity : AppCompatActivity() {
 
             is UIStatus.Sucesso -> {
                alertaCarregamento.fechar()
-               exibirMensagem("Imagem de capa atualizada com sucesso")
+               idProduto = uiStatus.dados
+               exibirMensagem("Imagem do produto atualizada com sucesso")
             }
 
             is UIStatus.Carregando -> {
-               alertaCarregamento.exibir("Fazendo upload da imagem de capa")
+               alertaCarregamento.exibir("Fazendo upload da imagem do produto")
             }
          }
       }

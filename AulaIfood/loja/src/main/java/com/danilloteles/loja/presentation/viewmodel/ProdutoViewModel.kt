@@ -2,6 +2,7 @@ package com.danilloteles.loja.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.data.remote.firebase.repository.IProdutoRepository
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
@@ -19,7 +20,8 @@ class ProdutoViewModel @Inject constructor(
 
    fun uploadImagem(
       uploadStorage: UploadStorage,
-      uiStatus: (UIStatus<Boolean>) -> Unit
+      idProduto: String,
+      uiStatus: (UIStatus<String>) -> Unit
    ) {
       uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
@@ -30,8 +32,17 @@ class ProdutoViewModel @Inject constructor(
          }
          val uiStatusUpload = upload.await()
          if ( uiStatusUpload is UIStatus.Sucesso ) {
+
             val urlImagem = uiStatusUpload.dados
-            //Salvar os dados do produto
+            val produto = Produto(
+               id = idProduto, url = urlImagem
+            )
+
+            if (idProduto.isEmpty()) {//Salvar
+               produtoRepositoryImpl.salvar( produto, uiStatus )
+            }else{//Atualizar
+               produtoRepositoryImpl.atualizar( produto, uiStatus )
+            }
          }else{
             uiStatus.invoke( UIStatus.Erro("Erro ao fazer upload") )
          }

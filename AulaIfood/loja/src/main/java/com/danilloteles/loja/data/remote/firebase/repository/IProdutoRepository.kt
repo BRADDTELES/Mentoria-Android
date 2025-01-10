@@ -1,6 +1,6 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
-import com.danilloteles.aulaifood.domain.model.Produto
+import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus
 
 interface IProdutoRepository {
