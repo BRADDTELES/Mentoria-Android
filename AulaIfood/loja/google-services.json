@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "458767730191",
+    "project_id": "aulaifood-99284",
+    "storage_bucket": "aulaifood-99284.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:458767730191:android:5df93d4b9ab094dd0bc57a",
+        "android_client_info": {
+          "package_name": "com.danilloteles.loja"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt4htnqLjrm5nNSYKNC350bFyFkQpvD4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
