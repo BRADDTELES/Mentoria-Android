@@ -28,9 +28,11 @@ fun Activity.exibirMensagem( texto: String ){
    ).show()
 }
 
-fun <T>Activity.navegarPara( destino: Class<T> ) {
+fun <T>Activity.navegarPara( destino: Class<T>, finalizar: Boolean = true ) {
    startActivity(
       Intent(this, destino)
    )
-   finish()
+   if (finalizar) {
+      finish()
+   }
 }

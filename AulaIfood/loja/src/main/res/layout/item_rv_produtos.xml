@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/clProdutoLoja"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="16dp">
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageProdutoLoja"
@@ -14,25 +11,22 @@
         android:layout_height="100dp"
         android:scaleType="centerInside"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
         app:shapeAppearanceOverlay="@style/CantosArredondados"
         app:srcCompat="@drawable/produto" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageProdutoLoja"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/imageProdutoLoja"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
@@ -45,18 +39,36 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textDescricaoProdutoLoja"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Nesta promoção você leva 1 McOferta Média"
-            android:textSize="12sp" />
-
-        <TextView
             android:id="@+id/textPrecoProdutoLoja"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="R$ 99,90"
-            android:textSize="@dimen/titulo04"
-            android:textStyle="bold" />
+            android:textSize="@dimen/titulo04" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnAdicionarOpcional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_opcionais_24" />
+
+            <ImageButton
+                android:id="@+id/btnEditarProduto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_editar_24" />
+
+            <ImageButton
+                android:id="@+id/btnRemoverProduto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_remover_24" />
+        </LinearLayout>
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,7 +6,6 @@ import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.util.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 

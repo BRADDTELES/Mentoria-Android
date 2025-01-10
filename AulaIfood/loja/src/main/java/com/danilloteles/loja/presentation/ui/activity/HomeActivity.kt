@@ -51,14 +51,16 @@ class HomeActivity : AppCompatActivity() {
 
             when (menuItem.itemId) {
                R.id.item_gerenciamento_loja -> {
-                  navegarPara(LojaActivity::class.java)
+                  navegarPara( LojaActivity::class.java )
                }
 
-               R.id.item_cardapio -> {}
+               R.id.item_cardapio -> {
+                  navegarPara( CardapioActivity::class.java, false )
+               }
                R.id.item_taxa_endereco -> {}
                R.id.item_sair -> {
                   autenticacaoViewModel.deslogarUsuario()
-                  navegarPara(LoginActivity::class.java)
+                  navegarPara( LoginActivity::class.java )
                }
             }
             return true
