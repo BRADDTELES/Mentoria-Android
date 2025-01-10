@@ -14,6 +14,27 @@ class LojaRepositoryImpl @Inject constructor(
    private val firebaseAuth: FirebaseAuth,
    private val firebaseFirestore: FirebaseFirestore
 ) : ILojaRepository {
+
+   override suspend fun atualizarLoja(
+      loja: Loja,
+      uiStatus: (UIStatus<Boolean>) -> Unit
+   ) {
+      try {
+         val idLoja = firebaseAuth.currentUser?.uid ?:
+            return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
+
+         val refLoja = firebaseFirestore
+            .collection(Constantes.FIRESTORE_LOJAS)
+            .document( idLoja )
+         refLoja.update( loja.toMap() ).await()
+
+         uiStatus.invoke( UIStatus.Sucesso(true) )
+
+      } catch (erroAtualizarCampo: Exception) {
+         uiStatus.invoke(UIStatus.Erro("Erro ao atualizar dados da loja"))
+      }
+   }
+
    override suspend fun atualizarCampo(
       campo: Map<String, Any>,
       uiStatus: (UIStatus<Boolean>) -> Unit

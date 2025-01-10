@@ -19,6 +19,13 @@ class LojaViewModel @Inject constructor(
    private val lojaRepositoryImpl: ILojaRepository
 ) : ViewModel() {
 
+   fun atualizarLoja( loja: Loja, uiStatus: (UIStatus<Boolean>) -> Unit ){
+      uiStatus.invoke(UIStatus.Carregando)
+      viewModelScope.launch {
+         lojaRepositoryImpl.atualizarLoja( loja, uiStatus )
+      }
+   }
+
    //CategoriaViewModel, CategoriasRepositoryImpl, ICategoriasRepository, Categorias
    fun recuperarCategorias( uiStatus: (UIStatus<List<Categoria>>) -> Unit ){
       viewModelScope.launch {

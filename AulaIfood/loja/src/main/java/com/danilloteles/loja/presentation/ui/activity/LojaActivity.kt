@@ -12,6 +12,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.UIStatus
+import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityLojaBinding
@@ -91,6 +92,10 @@ class LojaActivity : AppCompatActivity() {
                spinnerAdapter.addAll( listaSpinnerCategorias )
 
                //Marcação da categorias selecionada
+               val posicaoSpinner = listaCategorias.indexOfFirst { categoria ->
+                  categoria.id == idCategoria
+               }
+               binding.spinnerCategoriaLoja.setSelection( posicaoSpinner +1 )
 
             }
             is UIStatus.Carregando -> {
@@ -281,7 +286,65 @@ class LojaActivity : AppCompatActivity() {
                )
             )
          }
-         btnAtualizar.setOnClickListener { }
+         btnAtualizar.setOnClickListener { view ->
+            view.esconderTeclado()
+
+            //Remover Focus
+            editNomeLoja.clearFocus()
+            editRazaoSocialLoja.clearFocus()
+            editCnpjLoja.clearFocus()
+            editSobreLoja.clearFocus()
+            editTelefoneLoja.clearFocus()
+
+            val nome = editNomeLoja.text.toString()
+            val razaoSocial = editRazaoSocialLoja.text.toString()
+            val cnpj = editCnpjLoja.text.toString()
+            val sobre = editSobreLoja.text.toString()
+            val telefone = editTelefoneLoja.text.toString()
+
+            var idCategoria = ""
+            var categoria = ""
+            val posicaoSelecionada = spinnerCategoriaLoja.selectedItemPosition
+            if ( posicaoSelecionada > 0 ) {
+               val categoriaSelecionada = listaCategorias[ posicaoSelecionada -1 ]
+               idCategoria = categoriaSelecionada.id
+               categoria = categoriaSelecionada.nome
+            }
+
+            val loja = Loja(
+               "",
+               idCategoria,
+               categoria,
+               nome,
+               razaoSocial,
+               cnpj,
+               sobre,
+               telefone
+            )
+
+            atualizarLoja( loja )
+         }
+      }
+   }
+
+   private fun atualizarLoja( loja: Loja ) {
+      lojaViewModel.atualizarLoja(loja){ uiStatus ->
+         when (uiStatus) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               exibirMensagem(uiStatus.erro)
+            }
+
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               exibirMensagem("Dados atualizados com sucesso")
+               //navegarPara(HomeActivity::class.java)
+            }
+
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Atualizando dados da loja")
+            }
+         }
       }
    }
 

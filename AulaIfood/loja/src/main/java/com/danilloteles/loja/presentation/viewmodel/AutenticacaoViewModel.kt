@@ -33,7 +33,7 @@ class AutenticacaoViewModel @Inject constructor(
 
       val retornoValidacao = autenticacaoUseCase.validarCadastroUsuario(usuario)
       _resultadoValidacao.postValue(retornoValidacao)
-      if (retornoValidacao.sucessoValidacaoCadastro) {
+      if ( retornoValidacao.sucessoValidacaoCadastro ) {
          _carregando.value = true
          viewModelScope.launch {
             autenticacaoRepositoryImpl.cadastrarUsuario(usuario, uiStatus)
