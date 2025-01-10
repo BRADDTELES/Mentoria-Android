@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danilloteles.aulaifood.domain.model.Produto
+import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityCardapioBinding
 import com.danilloteles.loja.presentation.ui.adapter.ProdutoAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CardapioActivity : AppCompatActivity() {
 
    private val binding by lazy {
@@ -46,14 +49,41 @@ class CardapioActivity : AppCompatActivity() {
    }
 
    private fun inicializar() {
-      inicializarProdutos()
       inicializarToolbar()
+      inicializarProdutos()
+      inicializarEventosClique()
+   }
+
+   private fun inicializarEventosClique() {
+      with(binding){
+         fabAdicionarProduto.setOnClickListener {
+            navegarPara(CadastroProdutoActivity::class.java, false)
+         }
+      }
+   }
+
+   private fun inicializarToolbar() {
+      val toolbar = binding.includeTbCardapio.tbPrincipalLoja
+      setSupportActionBar( toolbar )
+
+      supportActionBar?.apply {
+         title = "Cardápio de produtos"
+         setDisplayHomeAsUpEnabled(true)
+      }
    }
 
    private fun inicializarProdutos() {
       with( binding ){
          produtoAdapter = ProdutoAdapter(
-            {}, {}, {}
+            { produtos ->
+               navegarPara(CadastroOpcionaisActivity::class.java, false)
+            },
+            { produtos ->
+               navegarPara(CadastroProdutoActivity::class.java, false)
+            },
+            {
+
+            }
          )
          produtoAdapter.adicionarLista( produtos )
          rvCardapio.adapter = produtoAdapter
@@ -63,13 +93,5 @@ class CardapioActivity : AppCompatActivity() {
       }
    }
 
-   private fun inicializarToolbar() {
-      val toolbar = binding.includeTbCardapio.tbPrincipalLoja
-      setSupportActionBar(toolbar)
 
-      supportActionBar?.apply {
-         title = "Cardápio da produtos"
-         setDisplayHomeAsUpEnabled(true)
-      }
-   }
 }

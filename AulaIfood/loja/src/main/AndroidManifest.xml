@@ -22,9 +22,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaIfood">
         <activity
+            android:name=".presentation.ui.activity.CadastroOpcionaisActivity"
+            android:exported="false"
+            android:parentActivityName=".presentation.ui.activity.CardapioActivity" />
+        <activity
+            android:name=".presentation.ui.activity.CadastroProdutoActivity"
+            android:exported="false"
+            android:parentActivityName=".presentation.ui.activity.CardapioActivity" />
+        <activity
             android:name=".presentation.ui.activity.CardapioActivity"
-            android:parentActivityName=".presentation.ui.activity.HomeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".presentation.ui.activity.HomeActivity" />
         <activity
             android:name=".presentation.ui.activity.LojaActivity"
             android:exported="false" />

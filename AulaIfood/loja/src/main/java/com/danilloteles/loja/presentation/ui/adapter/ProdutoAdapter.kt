@@ -35,6 +35,18 @@ class ProdutoAdapter(
                   .into( imageProdutoLoja )
             }
 
+            btnAdicionarOpcional.setOnClickListener {
+               onClickOpcional(produto)
+            }
+
+            btnEditarProduto.setOnClickListener {
+               onClickEditar(produto)
+            }
+
+            btnRemoverProduto.setOnClickListener {
+               onClickRemover(produto)
+            }
+
          }
       }
    }
