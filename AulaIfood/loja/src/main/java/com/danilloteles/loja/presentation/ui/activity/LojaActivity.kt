@@ -24,6 +24,11 @@ class LojaActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       setContentView(binding.root)
       inicializar()
+      solicitarPermissoes()
+   }
+
+   private fun solicitarPermissoes() {
+
    }
 
    private fun inicializar() {
