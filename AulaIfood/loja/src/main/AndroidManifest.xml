@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AulaIfood">
         <activity
+            android:name=".presentation.ui.activity.CadastroActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.ui.activity.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ui.activity.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

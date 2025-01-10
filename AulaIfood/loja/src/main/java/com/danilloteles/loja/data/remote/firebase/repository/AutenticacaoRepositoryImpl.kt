@@ -2,7 +2,6 @@ package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.core.UIStatus
-import com.danilloteles.loja.data.remote.firebase.repository.IAutenticacaoRepository
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException

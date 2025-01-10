@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Loja</string>
+    <string name="entrar">Entrar</string>
+    <string name="casdastrar">Cadastre-se</string>
+
+    <string name="erro_cadastro_nome">Digite um nome válido, com no mínimo 06 letras</string>
+    <string name="erro_cadastro_email">Digite um e-mail válido</string>
+    <string name="erro_cadastro_senha">Digite uma senha com no mínimo 06 caracteres</string>
+    <string name="erro_cadastro_telefone">Digite telefone válido</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
