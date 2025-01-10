@@ -22,6 +22,7 @@ activity = "1.9.3"
 constraintlayout = "2.2.0"
 googleservice = "4.4.2"
 navigationFragment = "2.8.4"
+permissionx = "1.8.1"
 picasso = "2.8"
 
 [libraries]
@@ -49,6 +50,7 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+permissionx = { module = "com.guolindev.permissionx:permissionx", version.ref = "permissionx" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 
 [plugins]

@@ -85,6 +85,9 @@ dependencies {
    //slider
    implementation(libs.imageslideshow)
 
+   //Lib PermissõesX para solicitação de permissão de tempo de execução do Android
+   implementation(libs.permissionx)
+
    implementation(libs.androidx.core.ktx)
    implementation(libs.androidx.appcompat)
    implementation(libs.material)
