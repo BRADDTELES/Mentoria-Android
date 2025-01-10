@@ -14,10 +14,12 @@ import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityLojaBinding
+import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.domain.model.UploadLoja
 import com.danilloteles.loja.presentation.viewmodel.LojaViewModel
 import com.danilloteles.loja.util.Constantes
 import com.permissionx.guolindev.PermissionX
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,6 +38,64 @@ class LojaActivity : AppCompatActivity() {
       setContentView(binding.root)
       inicializar()
       solicitarPermissoes()
+   }
+
+   override fun onStart() {
+      super.onStart()
+      carregarDados()
+   }
+
+   private fun carregarDados() {
+
+      lojaViewModel.recuperarDadosLoja{ uiStatus ->
+         when (uiStatus) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               exibirMensagem(uiStatus.erro)
+            }
+
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               val loja = uiStatus.dados
+               exibirDadosLoja( loja )
+            }
+
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Carregando dados da loja")
+            }
+         }
+      }
+
+   }
+
+   private fun exibirDadosLoja( loja: Loja) {
+
+      if ( loja.urlCapa.isNotEmpty() ) {
+         Picasso.get()
+            .load(loja.urlCapa)
+            .into(binding.imageCapaLoja)
+      }
+      if ( loja.urlPerfil.isNotEmpty() ) {
+         Picasso.get()
+            .load(loja.urlPerfil)
+            .into(binding.imagePerfilLoja)
+      }
+      if ( loja.nome.isNotEmpty() ) {
+         binding.editNomeLoja.setText( loja.nome )
+      }
+      if ( loja.razaoSocial.isNotEmpty() ) {
+         binding.editRazaoSocialLoja.setText( loja.razaoSocial )
+      }
+      if ( loja.cnpj.isNotEmpty() ) {
+         binding.editCnpjLoja.setText( loja.cnpj )
+      }
+      if ( loja.sobreEmpresa.isNotEmpty() ) {
+         binding.editSobreLoja.setText( loja.sobreEmpresa )
+      }
+      if ( loja.telefone.isNotEmpty() ) {
+         binding.editTelefoneLoja.setText( loja.telefone )
+      }
+
    }
 
    private fun solicitarPermissoes() {

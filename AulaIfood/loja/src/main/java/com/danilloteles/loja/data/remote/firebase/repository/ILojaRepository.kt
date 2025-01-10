@@ -1,10 +1,12 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.core.UIStatus
+import com.danilloteles.loja.domain.model.Loja
 
 interface ILojaRepository {
    suspend fun atualizarCampo(
       campo: Map<String, Any>,//mapof("categoria" to "")
       uiStatus: (UIStatus<Boolean>)-> Unit
    )
+   suspend fun recuperarDadosLoja(uiStatus: (UIStatus<Loja>)-> Unit)
 }

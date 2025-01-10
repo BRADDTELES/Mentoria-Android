@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.data.remote.firebase.repository.ILojaRepository
-import com.danilloteles.loja.data.remote.firebase.repository.LojaRepositoryImpl
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
+import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.domain.model.UploadLoja
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
@@ -17,6 +17,13 @@ class LojaViewModel @Inject constructor(
    private val uploadRepository: UploadRepository,
    private val lojaRepositoryImpl: ILojaRepository
 ) : ViewModel() {
+
+   fun recuperarDadosLoja( uiStatus: (UIStatus<Loja>) -> Unit ){
+      uiStatus.invoke(UIStatus.Carregando)
+      viewModelScope.launch {
+         lojaRepositoryImpl.recuperarDadosLoja( uiStatus )
+      }
+   }
 
    fun uploadImagem(
       uploadLoja: UploadLoja,
