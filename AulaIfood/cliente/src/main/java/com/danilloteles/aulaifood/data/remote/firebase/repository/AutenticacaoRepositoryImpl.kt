@@ -3,6 +3,7 @@ package com.danilloteles.aulaifood.data.remote.firebase.repository
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.core.UIStatus
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
@@ -61,7 +62,7 @@ class AutenticacaoRepositoryImpl @Inject constructor(
                UIStatus.Sucesso( true )
             )
          }
-      } catch ( erroUsuarioInvalido: FirebaseAuthInvalidUserException ) {
+      } catch ( erroUsuarioInvalido: FirebaseAuthEmailException) {
          uiStatus.invoke(
             UIStatus.Erro("E-mail inválido, usuário não cadastrado!")
          )

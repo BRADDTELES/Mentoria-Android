@@ -115,6 +115,7 @@ class LoginActivity : AppCompatActivity() {
                   is UIStatus.Erro -> {
                      exibirMensagem( uiStatus.erro )
                   }
+                  is UIStatus.Carregando -> {}
                }
             }
          }

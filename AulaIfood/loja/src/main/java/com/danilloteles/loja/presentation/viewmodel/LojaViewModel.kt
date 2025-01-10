@@ -19,7 +19,7 @@ class LojaViewModel @Inject constructor(
       uploadLoja: UploadLoja,
       uiStatus: (UIStatus<Boolean>) -> Unit
    ) {
-
+      uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
          val upload = async {
             uploadRepository.upload(
@@ -27,6 +27,12 @@ class LojaViewModel @Inject constructor(
             )
          }
          val uiStatusUpload = upload.await()
+         if ( uiStatusUpload is UIStatus.Sucesso ) {
+            val urlImagem = uiStatusUpload.dados
+            uiStatus.invoke( UIStatus.Sucesso( true ) )
+         }else{
+            uiStatus.invoke( UIStatus.Erro("Erro ao fazer upload") )
+         }
       }
 
    }

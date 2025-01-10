@@ -106,6 +106,7 @@ class CadastroActivity : AppCompatActivity() {
                   is UIStatus.Erro -> {
                      exibirMensagem( uiStatus.erro )
                   }
+                  is UIStatus.Carregando -> {}
                }
             }
 
