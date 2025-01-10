@@ -1,10 +1,12 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.core.UIStatus
+import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.util.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
@@ -57,6 +59,30 @@ class LojaRepositoryImpl @Inject constructor(
 
       } catch (erroRecuperarLoja: Exception) {
          uiStatus.invoke(UIStatus.Erro("Erro ao recuperar dados da loja"))
+      }
+   }
+
+   override suspend fun recuperarCategorias(
+      uiStatus: (UIStatus<List<Categoria>>) -> Unit
+   ) {
+      try {
+
+         val refCategorias = firebaseFirestore
+            .collection(Constantes.FIRESTORE_CATEGORIAS)
+
+         val querySnapshot = refCategorias.get().await()
+
+         if ( querySnapshot.documents.isNotEmpty()) {
+            val listaCategorias = querySnapshot.documents.mapNotNull { documentSnapshot ->
+               documentSnapshot.toObject( Categoria::class.java )
+            }
+            uiStatus.invoke(UIStatus.Sucesso( listaCategorias ))
+         }else{
+            uiStatus.invoke(UIStatus.Sucesso( emptyList() ))
+         }
+
+      } catch (erroRecuperarLoja: Exception) {
+         uiStatus.invoke(UIStatus.Erro("Erro ao recuperar categorias"))
       }
    }
 }

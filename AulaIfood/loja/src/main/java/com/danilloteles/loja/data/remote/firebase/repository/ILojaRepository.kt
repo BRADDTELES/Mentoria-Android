@@ -1,6 +1,7 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.core.UIStatus
+import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.domain.model.Loja
 
 interface ILojaRepository {
@@ -9,4 +10,5 @@ interface ILojaRepository {
       uiStatus: (UIStatus<Boolean>)-> Unit
    )
    suspend fun recuperarDadosLoja(uiStatus: (UIStatus<Loja>)-> Unit)
+   suspend fun recuperarCategorias(uiStatus: (UIStatus<List<Categoria>>)-> Unit)
 }

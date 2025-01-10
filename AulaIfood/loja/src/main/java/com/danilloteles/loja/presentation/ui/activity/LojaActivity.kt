@@ -5,6 +5,7 @@ import android.Manifest.permission.READ_MEDIA_IMAGES
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
@@ -14,6 +15,7 @@ import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityLojaBinding
+import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.domain.model.UploadLoja
 import com.danilloteles.loja.presentation.viewmodel.LojaViewModel
@@ -32,6 +34,8 @@ class LojaActivity : AppCompatActivity() {
       AlertaCarregamento(this)
    }
    private val lojaViewModel: LojaViewModel by viewModels()
+   private lateinit var spinnerAdapter: ArrayAdapter<String>
+   private lateinit var listaCategorias: List<Categoria>
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
@@ -57,7 +61,9 @@ class LojaActivity : AppCompatActivity() {
             is UIStatus.Sucesso -> {
                alertaCarregamento.fechar()
                val loja = uiStatus.dados
+               val idCategoria = loja.idCategoria
                exibirDadosLoja( loja )
+               carregarCategorias( idCategoria )
             }
 
             is UIStatus.Carregando -> {
@@ -66,6 +72,33 @@ class LojaActivity : AppCompatActivity() {
          }
       }
 
+   }
+
+   private fun carregarCategorias(idCategoria: String) {
+      lojaViewModel.recuperarCategorias { uiStatus ->
+         when ( uiStatus ) {
+            is UIStatus.Erro -> {
+               exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+
+               listaCategorias = uiStatus.dados
+               val listaSpinnerCategorias = mutableListOf("Selecione uma categoria")
+               listaSpinnerCategorias.addAll(
+                  listaCategorias.map { categoria -> categoria.nome }
+               )
+               spinnerAdapter.clear()
+               spinnerAdapter.addAll( listaSpinnerCategorias )
+
+               //Marcação da categorias selecionada
+
+            }
+            is UIStatus.Carregando -> {
+               spinnerAdapter.clear()
+               spinnerAdapter.addAll( mutableListOf("Carregando"))
+            }
+         }
+      }
    }
 
    private fun exibirDadosLoja( loja: Loja) {
@@ -137,8 +170,20 @@ class LojaActivity : AppCompatActivity() {
    }
 
    private fun inicializar() {
+      inicializarSpinnerCategorias()
       inicializarEventosClique()
       inicializarObservaveis()
+   }
+
+   private fun inicializarSpinnerCategorias() {
+
+      spinnerAdapter = ArrayAdapter(
+         this,
+         android.R.layout.simple_spinner_dropdown_item,
+         mutableListOf()
+      )
+      binding.spinnerCategoriaLoja.adapter = spinnerAdapter
+
    }
 
    private val selecionarImagemPerfil = registerForActivityResult(
