@@ -36,10 +36,18 @@
         <action
             android:id="@+id/action_lojaFragment_to_produtoFragment"
             app:destination="@id/produtoFragment" />
+        <action
+            android:id="@+id/action_lojaFragment_to_finalizarPedidoFragment"
+            app:destination="@id/finalizarPedidoFragment" />
     </fragment>
     <fragment
         android:id="@+id/produtoFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.ProdutoFragment"
         android:label="fragment_produto"
         tools:layout="@layout/fragment_produto" />
+    <fragment
+        android:id="@+id/finalizarPedidoFragment"
+        android:name="com.danilloteles.aulaifood.presentation.ui.fragment.FinalizarPedidoFragment"
+        android:label="fragment_finalizar_pedido"
+        tools:layout="@layout/fragment_finalizar_pedido" />
 </navigation>

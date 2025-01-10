@@ -88,8 +88,11 @@ class ProdutoFragment : Fragment() {
    }
 
    private fun inicializarEventosClique() {
+      val navController = findNavController()
       binding.btnProdutoVoltar.setOnClickListener {
-         val navController = findNavController()
+         navController.navigate(R.id.lojaFragment)
+      }
+      binding.btnAdicionarProdutoCarrinho.setOnClickListener {
          navController.navigate(R.id.lojaFragment)
       }
    }
