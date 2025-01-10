@@ -7,12 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danilloteles.aulaifood.R
 import com.danilloteles.aulaifood.databinding.FragmentPedidosBinding
-import com.danilloteles.aulaifood.databinding.FragmentProdutoBinding
-import com.danilloteles.aulaifood.domain.model.Opcional
 import com.danilloteles.aulaifood.domain.model.PedidoHistorico
-import com.danilloteles.aulaifood.presentation.ui.adapter.OpcionaisAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.PedidosHistoricoAdapter
 
 class PedidosFragment : Fragment() {

@@ -22,8 +22,8 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class HomeFragment : Fragment() {
 
-   private lateinit var binding: FragmentHomeBinding
    //private lateinit var categoriaAdapter: CategoriaAdapter
+   private lateinit var binding: FragmentHomeBinding
    private lateinit var lojasAdapter: LojasAdapter
    private lateinit var ultimasLojasAdapter: LojasAdapter
    private val listaFiltrosCategoria = listOf(
