@@ -4,6 +4,8 @@ import com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao.A
 import com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao.IAutenticacaoRepository
 import com.danilloteles.aulaifood.data.remote.firebase.repository.loja.ILojaRepository
 import com.danilloteles.aulaifood.data.remote.firebase.repository.loja.LojaRepositoryImpl
+import com.danilloteles.aulaifood.data.remote.firebase.repository.produto.IProdutoRepository
+import com.danilloteles.aulaifood.data.remote.firebase.repository.produto.ProdutoRepositoryImpl
 import com.danilloteles.aulaifood.domain.usecase.AutenticacaoUseCase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -34,6 +36,13 @@ object AppModule {
       firebaseFirestore: FirebaseFirestore
    ): ILojaRepository {
       return LojaRepositoryImpl( firebaseFirestore )
+   }
+
+   @Provides
+   fun provideProdutoRepository(
+      firebaseFirestore: FirebaseFirestore
+   ): IProdutoRepository {
+      return ProdutoRepositoryImpl( firebaseFirestore )
    }
 
    @Provides
