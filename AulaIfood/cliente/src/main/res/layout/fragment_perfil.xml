@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageFotoPerfil"
+                    android:id="@+id/imagePerfil"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:scaleType="centerCrop"
@@ -40,16 +40,16 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.5"
                     app:shapeAppearanceOverlay="@style/ImagemArredondada"
-                    app:srcCompat="@drawable/perfil" />
+                    app:srcCompat="@drawable/nao_disponivel_perfil" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnAlterarImagemPerfil"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Alterar"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageFotoPerfil"
-                    app:layout_constraintEnd_toEndOf="@+id/imageFotoPerfil"
-                    app:layout_constraintStart_toStartOf="@+id/imageFotoPerfil" />
+                    app:layout_constraintBottom_toBottomOf="@+id/imagePerfil"
+                    app:layout_constraintEnd_toEndOf="@+id/imagePerfil"
+                    app:layout_constraintStart_toStartOf="@+id/imagePerfil" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

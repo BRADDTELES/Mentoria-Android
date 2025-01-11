@@ -1,5 +1,6 @@
 package com.danilloteles.aulaifood.di
 
+import com.danilloteles.aulaifood.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao.AutenticacaoRepositoryImpl
 import com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao.IAutenticacaoRepository
 import com.danilloteles.aulaifood.data.remote.firebase.repository.loja.ILojaRepository
@@ -44,6 +45,13 @@ object AppModule {
       firebaseFirestore: FirebaseFirestore
    ): IProdutoRepository {
       return ProdutoRepositoryImpl( firebaseFirestore )
+   }
+
+   fun provideUploadRepository(
+      firebaseStorage: FirebaseStorage,
+      firebaseAuth: FirebaseAuth
+   ): UploadRepository {
+      return UploadRepository( firebaseStorage, firebaseAuth )
    }
 
    @Provides

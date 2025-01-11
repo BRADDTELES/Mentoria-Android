@@ -4,19 +4,24 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.danilloteles.aulaifood.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao.IAutenticacaoRepository
+import com.danilloteles.aulaifood.domain.model.Produto
+import com.danilloteles.aulaifood.domain.model.UploadStorage
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.domain.usecase.AutenticacaoUseCase
 import com.danilloteles.aulaifood.domain.usecase.ResultadoValidacao
 import com.danilloteles.core.UIStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class AutenticacaoViewModel @Inject constructor(
    private val autenticacaoUseCase: AutenticacaoUseCase,
-   private val autenticacaoRepositoryImpl: IAutenticacaoRepository
+   private val autenticacaoRepositoryImpl: IAutenticacaoRepository,
+   private val uploadRepository: UploadRepository
 ): ViewModel() {
 
    private val _resultadoValidacao = MutableLiveData<ResultadoValidacao>()
@@ -54,6 +59,36 @@ class AutenticacaoViewModel @Inject constructor(
 
    fun verificarUsuarioLogado() : Boolean {
       return autenticacaoRepositoryImpl.verificarUsuarioLogado()
+   }
+
+   fun recuperarIdUsuarioLogado() : String {
+      return autenticacaoRepositoryImpl.recuperarIdUsuarioLogado()
+   }
+
+   fun uploadImagem(
+      uploadStorage: UploadStorage,
+      uiStatus: (UIStatus<String>) -> Unit
+   ) {
+      uiStatus.invoke(UIStatus.Carregando)
+      viewModelScope.launch {
+         val upload = async {
+            uploadRepository.upload(
+               uploadStorage.local,
+               uploadStorage.nomeImagem,
+               uploadStorage.urlImagem
+            )
+         }
+         val uiStatusUpload = upload.await()
+         if (uiStatusUpload is UIStatus.Sucesso) {
+
+            val urlImagem = uiStatusUpload.dados
+            uiStatus.invoke(UIStatus.Sucesso(""))
+
+         } else {
+            uiStatus.invoke(UIStatus.Erro("Erro ao fazer upload"))
+         }
+      }
+
    }
 
 }

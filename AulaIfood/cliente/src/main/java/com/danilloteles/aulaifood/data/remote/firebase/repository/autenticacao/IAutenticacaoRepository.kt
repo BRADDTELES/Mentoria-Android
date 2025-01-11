@@ -13,4 +13,5 @@ interface IAutenticacaoRepository {
       uiStatus: (UIStatus<Boolean>) -> Unit
    )
    fun verificarUsuarioLogado() : Boolean
+   fun recuperarIdUsuarioLogado(): String
 }

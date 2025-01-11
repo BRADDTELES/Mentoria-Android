@@ -80,4 +80,8 @@ class AutenticacaoRepositoryImpl @Inject constructor(
    override fun verificarUsuarioLogado(): Boolean {
       return firebaseAuth.currentUser != null
    }
+
+   override fun recuperarIdUsuarioLogado(): String {
+      return firebaseAuth.currentUser?.uid ?: ""
+   }
 }
