@@ -196,7 +196,6 @@ class LojaActivity : AppCompatActivity() {
    ) { uri ->
       if (uri != null) {
          binding.imagePerfilLoja.setImageURI(uri)
-         //Upload da imagem no Firebase (enviar imagens de capa e perfil para o Firebase)
          uploudImagemPerfil(uri)
       } else {
          exibirMensagem("Nenhuma imagem foi selecionada para perfil!")
@@ -234,7 +233,6 @@ class LojaActivity : AppCompatActivity() {
    ) { uri ->
       if (uri != null) {
          binding.imageCapaLoja.setImageURI(uri)
-         //Upload da imagem no Firebase (enviar imagens de capa e perfil para o Firebase)
          uploudImagemCapa(uri)
       } else {
          exibirMensagem("Nenhuma imagem foi selecionada para capa!")
@@ -287,6 +285,7 @@ class LojaActivity : AppCompatActivity() {
             )
          }
          btnAtualizar.setOnClickListener { view ->
+
             view.esconderTeclado()
 
             //Remover Focus
@@ -338,7 +337,7 @@ class LojaActivity : AppCompatActivity() {
             is UIStatus.Sucesso -> {
                alertaCarregamento.fechar()
                exibirMensagem("Dados atualizados com sucesso")
-               //navegarPara(HomeActivity::class.java)
+               navegarPara(HomeActivity::class.java)
             }
 
             is UIStatus.Carregando -> {

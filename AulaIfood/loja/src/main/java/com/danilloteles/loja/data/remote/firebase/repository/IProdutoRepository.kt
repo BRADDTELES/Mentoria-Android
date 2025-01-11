@@ -15,8 +15,14 @@ interface IProdutoRepository {
    suspend fun listar(
       uiStatus: (UIStatus<List<Produto>>)-> Unit
    )
+
    suspend fun recuperarProdutoPeloId(
       idProduto: String,
       uiStatus: (UIStatus<Produto>)-> Unit
+   )
+
+   suspend fun remover(
+      idProduto: String,
+      uiStatus: (UIStatus<Boolean>)-> Unit
    )
 }

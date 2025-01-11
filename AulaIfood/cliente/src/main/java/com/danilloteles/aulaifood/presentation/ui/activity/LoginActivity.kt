@@ -14,7 +14,6 @@ import com.danilloteles.core.UIStatus
 import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.core.navegarPara
-import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

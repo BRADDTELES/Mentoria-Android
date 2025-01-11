@@ -5,17 +5,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.databinding.ItemRvProdutosBinding
+import com.danilloteles.loja.domain.model.Produto
 import com.jamiltondamasceno.core.formatarComoMoeda
 import com.squareup.picasso.Picasso
 import java.util.Locale
 
-class ProdutoAdapter(
+class ProdutosAdapter(
    private val onClickOpcional: (Produto) -> Unit,
    private val onClickEditar: (Produto) -> Unit,
    private val onClickRemover: (Produto) -> Unit,
-) : Adapter<ProdutoAdapter.ProdutosViewHolder>(){
+) : Adapter<ProdutosAdapter.ProdutosViewHolder>(){
 
    private var produtos = listOf<Produto>()
    fun adicionarLista( lista: List<Produto> ) {
@@ -44,10 +44,11 @@ class ProdutoAdapter(
             )
 
             val textoPrecos = if ( produto.emDestaque == true ){
-               "$precoFormatado - [$precoDestaqueFormatado]"
+               "[$precoDestaqueFormatado] - $precoFormatado"
             }else{
                precoFormatado
             }
+
             textPrecoProdutoLoja.text = textoPrecos
 
             if ( produto.emDestaque == true ) {

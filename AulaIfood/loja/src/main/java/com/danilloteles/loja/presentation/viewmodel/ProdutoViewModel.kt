@@ -2,11 +2,10 @@ package com.danilloteles.loja.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.data.remote.firebase.repository.IProdutoRepository
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
-import com.danilloteles.loja.domain.model.Categoria
+import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.domain.model.UploadStorage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
@@ -19,17 +18,27 @@ class ProdutoViewModel @Inject constructor(
    private val produtoRepositoryImpl: IProdutoRepository
 ) : ViewModel() {
 
+   fun remover(
+      idProduto: String,
+      uiStatus: (UIStatus<Boolean>) -> Unit
+   ){
+      uiStatus.invoke( UIStatus.Carregando )
+      viewModelScope.launch {
+         produtoRepositoryImpl.remover( idProduto, uiStatus )
+      }
+   }
+
    fun recuperProdutoPeloId(
       idProduto: String,
       uiStatus: (UIStatus<Produto>) -> Unit
    ){
-      //uiStatus.invoke( UIStatus.Carregando )
+      //uiStatus.invoke( UIStatus.Carregando )//NÃO PRESTOU o carregamento pelo o Id do produto
       viewModelScope.launch {
          produtoRepositoryImpl.recuperarProdutoPeloId( idProduto, uiStatus )
       }
    }
 
-   fun listar( uiStatus: (UIStatus<List<Produto>>) -> Unit ){
+   fun listar( uiStatus: (UIStatus<List<Produto>> ) -> Unit ){
       uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
          produtoRepositoryImpl.listar( uiStatus )
@@ -39,10 +48,10 @@ class ProdutoViewModel @Inject constructor(
    fun salvar(
       produto: Produto,
       uiStatus: (UIStatus<String>) -> Unit
-   ) {
+   ){
       uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
-         if (produto.id.isEmpty()) {//Salvar
+         if ( produto.id.isEmpty() ) {//Salvar
             produtoRepositoryImpl.salvar( produto, uiStatus )
          }else{//Atualizar
             produtoRepositoryImpl.atualizar( produto, uiStatus )
@@ -54,7 +63,7 @@ class ProdutoViewModel @Inject constructor(
       uploadStorage: UploadStorage,
       idProduto: String,
       uiStatus: (UIStatus<String>) -> Unit
-   ) {
+   ){
       uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
          val upload = async {
@@ -70,7 +79,7 @@ class ProdutoViewModel @Inject constructor(
                id = idProduto, url = urlImagem
             )
 
-            if (idProduto.isEmpty()) {//Salvar
+            if ( idProduto.isEmpty() ) {//Salvar
                produtoRepositoryImpl.salvar( produto, uiStatus )
             }else{//Atualizar
                produtoRepositoryImpl.atualizar( produto, uiStatus )

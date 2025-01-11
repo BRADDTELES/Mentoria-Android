@@ -1,16 +1,11 @@
 package com.danilloteles.loja.presentation.ui.activity
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danilloteles.loja.R
 import com.danilloteles.loja.databinding.ActivityCadastroOpcionaisBinding
-import com.danilloteles.loja.databinding.ActivityHomeBinding
 import com.danilloteles.loja.domain.model.Opcional
 import com.danilloteles.loja.presentation.ui.adapter.OpcionaisAdapter
 import com.danilloteles.loja.presentation.viewmodel.AutenticacaoViewModel
@@ -71,7 +66,6 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
 
    private fun inicializar() {
       inicializarToolbar()
-      inicializarEventosClique()
       inicializarOpcionais()
    }
 
@@ -96,9 +90,5 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
          title = "Adicionar opcionais"
          setDisplayHomeAsUpEnabled(true)
       }
-   }
-
-   private fun inicializarEventosClique() {
-
    }
 }

@@ -26,7 +26,7 @@ import dagger.hilt.android.components.ViewModelComponent
 * @Inject lateinit var firebaseAuth: FirebaseAuth
 */
 @Module
-@InstallIn(ViewModelComponent::class)
+@InstallIn( ViewModelComponent::class )
 object AppModule {
 
    @Provides
@@ -77,7 +77,7 @@ object AppModule {
    }
 
    @Provides
-   fun provideFirebaseFirestoree(): FirebaseFirestore {
+   fun provideFirebaseFirestores(): FirebaseFirestore {
       return FirebaseFirestore.getInstance()
    }
 

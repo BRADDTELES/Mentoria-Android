@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
-import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityCardapioBinding
-import com.danilloteles.loja.presentation.ui.adapter.ProdutoAdapter
+import com.danilloteles.loja.domain.model.Produto
+import com.danilloteles.loja.presentation.ui.adapter.ProdutosAdapter
 import com.danilloteles.loja.presentation.viewmodel.ProdutoViewModel
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -22,7 +23,7 @@ class CardapioActivity : AppCompatActivity() {
    private val binding by lazy {
          ActivityCardapioBinding.inflate( layoutInflater )
    }
-   private lateinit var produtoAdapter: ProdutoAdapter
+   private lateinit var produtosAdapter: ProdutosAdapter
    private val alertaCarregamento by lazy {
       AlertaCarregamento(this)
    }
@@ -81,16 +82,16 @@ class CardapioActivity : AppCompatActivity() {
 
    private fun recuperarProdutos() {
       produtoViewModel.listar { uiStatus ->
-         when (uiStatus) {
+         when ( uiStatus ) {
             is UIStatus.Erro -> {
                alertaCarregamento.fechar()
-               exibirMensagem(uiStatus.erro)
+               exibirMensagem( uiStatus.erro )
             }
 
             is UIStatus.Sucesso -> {
                alertaCarregamento.fechar()
                val listaProdutos = uiStatus.dados
-               produtoAdapter.adicionarLista( listaProdutos )
+               produtosAdapter.adicionarLista( listaProdutos )
             }
 
             is UIStatus.Carregando -> {
@@ -101,15 +102,71 @@ class CardapioActivity : AppCompatActivity() {
    }
 
    private fun inicializar() {
-      inicializarToolbar()
       inicializarRecyclerViewProdutos()
+      inicializarToolbar()
       inicializarEventosClique()
    }
+
 
    private fun inicializarEventosClique() {
       with(binding){
          fabAdicionarProduto.setOnClickListener {
             navegarPara(CadastroProdutoActivity::class.java, false)
+         }
+      }
+   }
+
+   private fun inicializarRecyclerViewProdutos() {
+      with( binding ){
+         produtosAdapter = ProdutosAdapter(
+            onClickOpcional = { produto ->
+               navegarPara(CadastroOpcionaisActivity::class.java, false)
+            },
+            onClickEditar = { produto ->
+               val intent = Intent(applicationContext, CadastroProdutoActivity::class.java)
+               intent.putExtra("idProduto", produto.id)
+               startActivity(intent)
+            },
+            onClickRemover = { produto ->
+               exibirConfirmacaoRemocao( produto )
+            }
+         )
+         produtosAdapter.adicionarLista( produtos )
+         rvCardapio.adapter = produtosAdapter
+         rvCardapio.layoutManager = LinearLayoutManager(
+            applicationContext, RecyclerView.VERTICAL, false
+         )
+      }
+   }
+
+   private fun exibirConfirmacaoRemocao( produto: Produto ) {
+      MaterialAlertDialogBuilder(this)
+         .setTitle("Confirmar exclusão do produto?")
+         .setMessage("Produto: ${produto.nome}\nPreço: ${produto.preco}")
+         .setPositiveButton("Confirmar exclusão"){ dialog, _ ->
+            removerProduto( produto.id )//Remover produto pelo o id
+         }
+         .setNegativeButton("Cancelar"){ dialog, _ ->
+            dialog.dismiss()//Fechar a tela de cancelamento
+         }
+         .show()//Para poder fazer a exibição da tela
+   }
+
+   private fun removerProduto( idProduto: String ) {
+      produtoViewModel.remover( idProduto ){ uiStatus ->
+         when ( uiStatus ) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()//Fechar o Alerta de Carregamento quando Exibir o Erro
+               exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()////Fechar o Alerta de Carregamento quando der Sucesso
+               recuperarProdutos()//Após der Sucesso na Remoção do produto, essa linha recupera todos os outros Produtos
+               exibirMensagem("Produto removido com sucesso.")
+            }
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Removendo produto")
+            }
          }
       }
    }
@@ -123,28 +180,5 @@ class CardapioActivity : AppCompatActivity() {
          setDisplayHomeAsUpEnabled(true)
       }
    }
-
-   private fun inicializarRecyclerViewProdutos() {
-      with( binding ){
-         produtoAdapter = ProdutoAdapter(
-            onClickOpcional = { produto ->
-               navegarPara(CadastroOpcionaisActivity::class.java, false)
-            },
-            onClickEditar = { produto ->
-               val intent = Intent(applicationContext, CadastroProdutoActivity::class.java)
-               intent.putExtra("idProduto", produto.id)
-               startActivity(intent)
-            },
-            onClickRemover = { produto ->
-
-            }
-         )
-         rvCardapio.adapter = produtoAdapter
-         rvCardapio.layoutManager = LinearLayoutManager(
-            applicationContext, RecyclerView.VERTICAL, false
-         )
-      }
-   }
-
 
 }

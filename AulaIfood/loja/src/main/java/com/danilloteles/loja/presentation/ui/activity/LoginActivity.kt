@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       setContentView(binding.root)
       inicializar()
-      //FirebaseAuth.getInstance().signOut()
+      //FirebaseAuth.getInstance().signOut()//Deslogar, não preciso mais
    }
 
    private fun inicializar() {

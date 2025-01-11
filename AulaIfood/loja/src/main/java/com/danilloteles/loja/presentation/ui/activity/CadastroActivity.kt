@@ -99,7 +99,7 @@ class CadastroActivity : AppCompatActivity() {
             autenticacaoViewModel.cadastrarUsuario(usuario) { uiStatus ->
                when (uiStatus) {
                   is UIStatus.Sucesso -> {
-                     navegarPara(HomeActivity::class.java)
+                     navegarPara( HomeActivity::class.java )
                   }
 
                   is UIStatus.Erro -> {

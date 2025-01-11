@@ -8,7 +8,6 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 
 fun View.esconderTeclado(){
-
    val inputMethodManager = context.getSystemService(
       Context.INPUT_METHOD_SERVICE
    ) as InputMethodManager
@@ -17,7 +16,6 @@ fun View.esconderTeclado(){
       windowToken, 0
    )
    //inputMethodManager.showSoftInput(this, 0)
-
 }
 
 fun Activity.exibirMensagem( texto: String ){
@@ -32,7 +30,5 @@ fun <T>Activity.navegarPara( destino: Class<T>, finalizar: Boolean = true ) {
    startActivity(
       Intent(this, destino)
    )
-   if (finalizar) {
-      finish()
-   }
+   if(finalizar) finish()
 }
