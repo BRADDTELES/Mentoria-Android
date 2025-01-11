@@ -51,7 +51,14 @@
         android:id="@+id/produtoFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.ProdutoFragment"
         android:label="fragment_produto"
-        tools:layout="@layout/fragment_produto" />
+        tools:layout="@layout/fragment_produto" >
+        <argument
+            android:name="produto"
+            app:argType="com.danilloteles.aulaifood.domain.model.Produto" />
+        <argument
+            android:name="loja"
+            app:argType="com.danilloteles.aulaifood.domain.model.Loja" />
+    </fragment>
     <fragment
         android:id="@+id/finalizarPedidoFragment"
         android:name="com.danilloteles.aulaifood.presentation.ui.fragment.FinalizarPedidoFragment"
