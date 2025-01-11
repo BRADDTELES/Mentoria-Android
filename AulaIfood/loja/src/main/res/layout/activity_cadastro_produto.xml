@@ -107,14 +107,17 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Switch
-                android:id="@+id/switchProduto"
+                android:id="@+id/switchProdutoEmDestaque"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Produto de destaque?" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/tlPrecoDestaque"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editPrecoDestaqueProduto"

@@ -18,6 +18,20 @@ class ProdutoViewModel @Inject constructor(
    private val produtoRepositoryImpl: IProdutoRepository
 ) : ViewModel() {
 
+   fun salvar(
+      produto: Produto,
+      uiStatus: (UIStatus<String>) -> Unit
+   ) {
+      uiStatus.invoke( UIStatus.Carregando )
+      viewModelScope.launch {
+         if (produto.id.isEmpty()) {//Salvar
+            produtoRepositoryImpl.salvar( produto, uiStatus )
+         }else{//Atualizar
+            produtoRepositoryImpl.atualizar( produto, uiStatus )
+         }
+      }
+   }
+
    fun uploadImagem(
       uploadStorage: UploadStorage,
       idProduto: String,

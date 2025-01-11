@@ -15,8 +15,10 @@ data class Produto(
       if ( id.isNotEmpty() )                       dados["id"] = id
       if ( nome.isNotEmpty() )                     dados["nome"] = nome
       if ( descricao.isNotEmpty() )                dados["descricao"] = descricao
-      if ( preco.toString().isNotEmpty() )         dados["preco"] = preco
-      if ( precoDestaque.toString().isNotEmpty() ) dados["precoDestaque"] = precoDestaque
+      if ( preco >= 0.0 )                          dados["preco"] = preco
+      if ( precoDestaque >= 0.0 ) {
+         dados["precoDestaque"] = precoDestaque
+      }
       if ( url.isNotEmpty() )                      dados["url"] = url
       dados["emDestaque"] = emDestaque
 
