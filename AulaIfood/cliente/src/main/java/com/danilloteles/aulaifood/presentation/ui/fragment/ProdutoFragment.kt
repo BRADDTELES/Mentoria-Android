@@ -5,19 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.danilloteles.aulaifood.R
-import com.danilloteles.aulaifood.databinding.FragmentLojaBinding
 import com.danilloteles.aulaifood.databinding.FragmentProdutoBinding
-import com.danilloteles.aulaifood.databinding.ItemRvOpcionaisBinding
 import com.danilloteles.aulaifood.domain.model.Loja
-import com.danilloteles.aulaifood.domain.model.Opcional
 import com.danilloteles.aulaifood.domain.model.Produto
 import com.danilloteles.aulaifood.presentation.ui.adapter.OpcionaisAdapter
-import com.danilloteles.aulaifood.presentation.ui.adapter.ProdutoAdapter
+import com.danilloteles.aulaifood.presentation.viewmodel.ProdutoViewModel
+import com.danilloteles.core.AlertaCarregamento
+import com.danilloteles.core.UIStatus
+import com.danilloteles.core.exibirMensagem
 import com.jamiltondamasceno.core.formatarComoMoeda
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
@@ -26,48 +26,14 @@ import dagger.hilt.android.AndroidEntryPoint
 class ProdutoFragment : Fragment() {
 
    private lateinit var binding: FragmentProdutoBinding
-   private val opcionais = listOf(
-      Opcional(
-         "Molho Tasty",
-         "Composto por um hambúrguer de carne 100% bovina",
-         "R$ 3,00",
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202501030416_204bpeti9ba.png"
-      ),
-      Opcional(
-         "Cebola Fresca",
-         "Composto por um hambúrguer de carne 100% bovina",
-         " R$ 2,00",
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150806_uc1qzud8yyf.png"
-      ),
-      Opcional(
-         "Carne 100% Bovina",
-         "Composto por um hambúrguer de carne 100% bovina",
-         "R$ 9,00",
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150806_3lrri4k5ijb.png"
-      ),
-      Opcional(
-         "Maionese",
-         "Composto por um hambúrguer de carne 100% bovina",
-         "R$ 3,00",
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202501030414_0iotkucm6s7u.png"
-      ),
-      Opcional(
-         "Fatia Queijo Cheddar",
-         "Composto por um hambúrguer de carne 100% bovina",
-         " R$ 9,00",
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150807_mruwic5r0ye.png"
-      ),
-      Opcional(
-         "Bacon",
-         "Composto por um hambúrguer de carne 100% bovina",
-         "R$ 3,00",
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150807_lrnvvpb33ag.png"
-      ),
-   )
    private lateinit var opcionaisAdapter: OpcionaisAdapter
    private val produtoFragmentArgs: ProdutoFragmentArgs by navArgs()
    private lateinit var loja: Loja
    private lateinit var produto: Produto
+   private val produtoViewModel: ProdutoViewModel by viewModels()
+   private val alertaCarregamento by lazy {
+      AlertaCarregamento( requireContext() )
+   }
 
    override fun onCreateView(
       inflater: LayoutInflater, container: ViewGroup?,
@@ -89,6 +55,28 @@ class ProdutoFragment : Fragment() {
    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
       super.onViewCreated(view, savedInstanceState)
       exibirDadosProduto()
+      listarOpcionais()
+   }
+
+   private fun listarOpcionais() {
+      produtoViewModel.listarOpcionais(
+         loja.idLoja, produto.id
+      ){ uiStatus ->
+         when ( uiStatus ) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               activity?.exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               val opcionais = uiStatus.dados
+               opcionaisAdapter.adicionarItens( opcionais )
+            }
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Carregando dados de Opcionais")
+            }
+         }
+      }
    }
 
    private fun exibirDadosProduto() {
@@ -117,7 +105,7 @@ class ProdutoFragment : Fragment() {
    private fun inicializarOpcionais() {
       with( binding ){
          opcionaisAdapter = OpcionaisAdapter()
-         opcionaisAdapter.adicionarItens( opcionais )
+
          rvOpcionaisProdutoDetlahe.adapter = opcionaisAdapter
          rvOpcionaisProdutoDetlahe.layoutManager = LinearLayoutManager(
             context, RecyclerView.VERTICAL, false

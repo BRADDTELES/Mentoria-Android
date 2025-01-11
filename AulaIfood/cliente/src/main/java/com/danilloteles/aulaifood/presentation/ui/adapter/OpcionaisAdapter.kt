@@ -8,6 +8,7 @@ import com.danilloteles.aulaifood.databinding.ItemRvFiltroCategoriaBinding
 import com.danilloteles.aulaifood.databinding.ItemRvOpcionaisBinding
 import com.danilloteles.aulaifood.domain.model.Opcional
 import com.danilloteles.aulaifood.presentation.ui.adapter.FiltroCategoriaAdapter.FiltroCategoriaViewHolder
+import com.jamiltondamasceno.core.formatarComoMoeda
 import com.squareup.picasso.Picasso
 
 class OpcionaisAdapter
@@ -26,7 +27,7 @@ class OpcionaisAdapter
 
          binding.textNomeOpcionalDetalhe.text = opcional.nome
          binding.textDescricaoOpcionalDetalhe.text = opcional.descricao
-         binding.textPrecoOpcionalDetalhe.text = opcional.preco
+         binding.textPrecoOpcionalDetalhe.text = opcional.preco.formatarComoMoeda()
 
          if ( opcional.url.isNotEmpty() ) {
             Picasso.get()
