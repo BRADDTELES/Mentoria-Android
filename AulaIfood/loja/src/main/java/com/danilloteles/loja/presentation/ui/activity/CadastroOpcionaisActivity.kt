@@ -1,29 +1,42 @@
 package com.danilloteles.loja.presentation.ui.activity
 
+import android.Manifest
+import android.Manifest.permission.READ_MEDIA_IMAGES
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.danilloteles.core.AlertaCarregamento
+import com.danilloteles.core.UIStatus
 import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
 import com.danilloteles.loja.databinding.ActivityCadastroOpcionaisBinding
 import com.danilloteles.loja.domain.model.Opcional
 import com.danilloteles.loja.domain.model.Produto
+import com.danilloteles.loja.domain.model.UploadStorage
 import com.danilloteles.loja.presentation.ui.adapter.OpcionaisAdapter
+import com.danilloteles.loja.presentation.viewmodel.OpcionalViewModel
+import com.danilloteles.loja.util.Constantes
 import com.jamiltondamasceno.core.adicionarMascaraMoeda
 import com.jamiltondamasceno.core.formatarComoMoeda
 import com.jamiltondamasceno.core.moedaToDouble
+import com.permissionx.guolindev.PermissionX
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.UUID
 
 @AndroidEntryPoint
 class CadastroOpcionaisActivity : AppCompatActivity() {
 
    private val binding by lazy {
       ActivityCadastroOpcionaisBinding.inflate(layoutInflater)
+   }
+   private val alertaCarregamento by lazy {
+      AlertaCarregamento(this)
    }
    private val opcionais = listOf(
       Opcional(
@@ -76,13 +89,15 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       ),
    )
    private lateinit var opcionaisAdapter: OpcionaisAdapter
+   private val opcionalViewModel: OpcionalViewModel by viewModels()
    private var produto: Produto? = null
-   private var urlOpcional: Uri? = null
+   private var uriOpcional: Uri? = null
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
+      solicitarPermissoes()
    }
 
    private fun inicializar() {
@@ -107,8 +122,8 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
             view.esconderTeclado()
             //Remover Focus
             editNomeOpcional.clearFocus()
-            editDescricaoOpcional.clearFocus()
             editPrecoOpcional.clearFocus()
+            editDescricaoOpcional.clearFocus()
 
             val nome = editNomeOpcional.text.toString()
             val preco = editPrecoOpcional.moedaToDouble()
@@ -133,7 +148,32 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
 
    private fun salvarOpcional( opcional: Opcional ) {
 
+      uriOpcional?.let { uri ->
+         opcionalViewModel.salvar(
+            UploadStorage(
+               Constantes.STORAGE_OPCIONAIS,
+               UUID.randomUUID().toString(),
+               uri
+            ), opcional
+         ) { uiStatus ->
+            when (uiStatus) {
+               is UIStatus.Erro -> {
+                  alertaCarregamento.fechar()
+                  exibirMensagem(uiStatus.erro)
+               }
 
+               is UIStatus.Sucesso -> {
+                  alertaCarregamento.fechar()
+
+                  exibirMensagem("Opcional salvo com sucesso!")
+               }
+
+               is UIStatus.Carregando -> {
+                  alertaCarregamento.exibir("Salvando dados do Opcional")
+               }
+            }
+         }
+      }
 
    }
 
@@ -141,7 +181,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       if ( opcional.nome.isEmpty() ) return false
       if ( opcional.descricao.isEmpty() ) return false
       if ( opcional.preco == 0.0 ) return false
-      if ( urlOpcional == null ) return false
+      if ( uriOpcional == null ) return false
       return true
    }
 
@@ -150,7 +190,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
    ) { uri ->
       if (uri != null) {
          binding.imageCapaOpcional.setImageURI( uri )
-         urlOpcional = uri
+         uriOpcional = uri
       } else {
          exibirMensagem("Nenhuma imagem foi selecionada para o produto!")
       }
@@ -159,7 +199,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
    private fun inicializarDadosProduto() {
       binding.editPrecoOpcional.adicionarMascaraMoeda()
       val bundle = intent.extras
-      val produto = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+      produto = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
          bundle?.getParcelable("produto", Produto::class.java)
       } else {
          bundle?.getParcelable("produto")
@@ -192,5 +232,45 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
          title = "Adicionar opcionais"
          setDisplayHomeAsUpEnabled(true)
       }
+   }
+
+   private fun solicitarPermissoes() {
+
+      val listaPermissoes = mutableListOf<String>()
+
+      //Solicitar permissões de acordo com versões
+      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+         listaPermissoes.add(Manifest.permission.READ_MEDIA_VISUAL_USER_SELECTED) //>=34
+         listaPermissoes.add(READ_MEDIA_IMAGES) //>=33
+      } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+         listaPermissoes.add(READ_MEDIA_IMAGES) //>=33
+      } else {
+         listaPermissoes.add(Manifest.permission.READ_EXTERNAL_STORAGE) //<=32
+      }
+
+      PermissionX.init(this)
+         .permissions(listaPermissoes)
+         .explainReasonBeforeRequest()
+         .onExplainRequestReason { scope, permissoesNegadas ->
+            scope.showRequestReasonDialog(
+               permissoesNegadas,
+               "As permissões são necessárias para configurar imagem para opcional",
+               "Conceder permissões",
+               "Cancelar"
+            )
+         }
+         .onForwardToSettings { scope, permissoesNegadas ->
+            scope.showForwardToSettingsDialog(
+               permissoesNegadas,
+               "Voçê precisa conceder permissões manualmente em configurações",
+               "Abrir configurações",
+               "Cancelar"
+            )
+         }
+         .request { todasConcedidas, permissoesConcedidas, permissoesNegadas ->
+            if (!todasConcedidas) {
+               exibirMensagem("Permissões negadas, não é possível configurar imagem do opcional")
+            }
+         }
    }
 }

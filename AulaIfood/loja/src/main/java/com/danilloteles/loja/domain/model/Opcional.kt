@@ -6,5 +6,5 @@ data class Opcional(
    val nome: String = "",
    val descricao: String = "",
    val preco: Double = 0.0,
-   val url: String = "",
+   var url: String = "",
 )

@@ -102,6 +102,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
    }
 
    private fun solicitarPermissoes() {
+
       val listaPermissoes = mutableListOf<String>()
 
       //Solicitar permissões de acordo com versões
@@ -113,6 +114,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
       } else {
          listaPermissoes.add(Manifest.permission.READ_EXTERNAL_STORAGE) //<=32
       }
+
       PermissionX.init(this)
          .permissions(listaPermissoes)
          .explainReasonBeforeRequest()
