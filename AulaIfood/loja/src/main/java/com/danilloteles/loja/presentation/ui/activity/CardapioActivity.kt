@@ -1,13 +1,18 @@
 package com.danilloteles.loja.presentation.ui.activity
 
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.danilloteles.core.AlertaCarregamento
+import com.danilloteles.core.UIStatus
+import com.danilloteles.core.exibirMensagem
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.navegarPara
 import com.danilloteles.loja.databinding.ActivityCardapioBinding
 import com.danilloteles.loja.presentation.ui.adapter.ProdutoAdapter
+import com.danilloteles.loja.presentation.viewmodel.ProdutoViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,10 +21,15 @@ class CardapioActivity : AppCompatActivity() {
    private val binding by lazy {
          ActivityCardapioBinding.inflate( layoutInflater )
    }
-
    private lateinit var produtoAdapter: ProdutoAdapter
+   private val alertaCarregamento by lazy {
+      AlertaCarregamento(this)
+   }
 
-   private val produtos = listOf(
+   private val produtoViewModel: ProdutoViewModel by viewModels()
+   private val produtos = emptyList<Produto>()
+
+   /*private val produtos = listOf(
       Produto(
          "",
          "Chicken Méqui Box - 3 Mcofertas Médias",
@@ -55,12 +65,38 @@ class CardapioActivity : AppCompatActivity() {
          19.90,
          14.00,
          "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202501030414_lq14eozbb5.png"),
-   )
+   )*/
 
    override fun onCreate(savedInstanceState: Bundle?) {
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
+   }
+
+   override fun onStart() {
+      super.onStart()
+      recuperarProdutos()
+   }
+
+   private fun recuperarProdutos() {
+      produtoViewModel.listar { uiStatus ->
+         when (uiStatus) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               exibirMensagem(uiStatus.erro)
+            }
+
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               val listaProdutos = uiStatus.dados
+               produtoAdapter.adicionarLista( listaProdutos )
+            }
+
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Carregando produtos")
+            }
+         }
+      }
    }
 
    private fun inicializar() {
@@ -100,7 +136,6 @@ class CardapioActivity : AppCompatActivity() {
 
             }
          )
-         produtoAdapter.adicionarLista( produtos )
          rvCardapio.adapter = produtoAdapter
          rvCardapio.layoutManager = LinearLayoutManager(
             applicationContext, RecyclerView.VERTICAL, false

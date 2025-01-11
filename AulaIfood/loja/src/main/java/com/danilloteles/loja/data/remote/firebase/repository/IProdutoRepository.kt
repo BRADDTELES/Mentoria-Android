@@ -12,4 +12,7 @@ interface IProdutoRepository {
       produto: Produto,
       uiStatus: (UIStatus<String>)-> Unit
    )
+   suspend fun listar(
+      uiStatus: (UIStatus<List<Produto>>)-> Unit
+   )
 }

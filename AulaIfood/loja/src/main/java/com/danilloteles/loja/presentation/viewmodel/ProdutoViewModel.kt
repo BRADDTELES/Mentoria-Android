@@ -6,6 +6,7 @@ import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.data.remote.firebase.repository.IProdutoRepository
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
+import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.domain.model.UploadStorage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
@@ -17,6 +18,13 @@ class ProdutoViewModel @Inject constructor(
    private val uploadRepository: UploadRepository,
    private val produtoRepositoryImpl: IProdutoRepository
 ) : ViewModel() {
+
+   fun listar( uiStatus: (UIStatus<List<Produto>>) -> Unit ){
+      uiStatus.invoke( UIStatus.Carregando )
+      viewModelScope.launch {
+         produtoRepositoryImpl.listar( uiStatus )
+      }
+   }
 
    fun salvar(
       produto: Produto,

@@ -4,8 +4,10 @@
     <color name="branco">#FFFFFFFF</color>
     <color name="cinza">#9C9C9C</color>
     <color name="cinza_claro">#E8E8E8</color>
+    <color name="amarelo_claro">#FFE187</color>
 
     <!-- cores customizadas -->
     <color name="primaria">#EA1D2D</color>
     <color name="segundaria_clara">#FF969E</color>
+
 </resources>

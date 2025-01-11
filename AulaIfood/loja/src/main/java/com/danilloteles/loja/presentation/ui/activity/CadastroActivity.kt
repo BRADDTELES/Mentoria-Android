@@ -31,6 +31,11 @@ class CadastroActivity : AppCompatActivity() {
       inicializar()
    }
 
+   override fun onStart() {
+      super.onStart()
+
+   }
+
    private fun inicializar() {
       inicializarToolbar()
       inicializarEventosClique()

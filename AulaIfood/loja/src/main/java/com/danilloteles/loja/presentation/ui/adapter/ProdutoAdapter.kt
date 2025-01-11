@@ -1,12 +1,15 @@
 package com.danilloteles.loja.presentation.ui.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.databinding.ItemRvProdutosBinding
+import com.jamiltondamasceno.core.formatarComoMoeda
 import com.squareup.picasso.Picasso
+import java.util.Locale
 
 class ProdutoAdapter(
    private val onClickOpcional: (Produto) -> Unit,
@@ -27,7 +30,31 @@ class ProdutoAdapter(
          with( binding ){
 
             textNomeProdutoLoja.text = produto.nome
-            textPrecoProdutoLoja.text = produto.preco.toString()
+
+            val precoFormatado = produto.preco.formatarComoMoeda(
+               local = Locale("pt", "BR"),
+               maximoDigitosDecimais = 2,
+               simboloMoedaCustomizado = "R$"
+            )
+
+            val precoDestaqueFormatado = produto.precoDestaque.formatarComoMoeda(
+               local = Locale("pt", "BR"),
+               maximoDigitosDecimais = 2,
+               simboloMoedaCustomizado = "R$"
+            )
+
+            val textoPrecos = if ( produto.emDestaque){
+               "$precoFormatado - [$precoDestaqueFormatado]"
+            }else{
+               precoFormatado
+            }
+            textPrecoProdutoLoja.text = textoPrecos
+
+            if ( produto.emDestaque ) {
+               textDestaqueProdutoLoja.visibility = View.VISIBLE
+            }else{
+               textDestaqueProdutoLoja.visibility = View.GONE
+            }
 
             if ( produto.url.isNotEmpty() ) {
                Picasso.get()
