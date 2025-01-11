@@ -1,5 +1,9 @@
 package com.danilloteles.loja.domain.model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class Produto(
    var id: String = "",
    val nome: String = "",
@@ -8,7 +12,7 @@ data class Produto(
    val precoDestaque: Double = 0.0,
    val url: String = "",
    val emDestaque: Boolean? = null
-){
+) : Parcelable {
    fun toMap() : Map<String, Any> {
       val dados = mutableMapOf<String, Any>()
 

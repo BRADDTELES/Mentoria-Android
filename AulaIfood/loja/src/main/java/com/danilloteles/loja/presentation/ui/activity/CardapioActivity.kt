@@ -120,7 +120,9 @@ class CardapioActivity : AppCompatActivity() {
       with( binding ){
          produtosAdapter = ProdutosAdapter(
             onClickOpcional = { produto ->
-               navegarPara(CadastroOpcionaisActivity::class.java, false)
+               val intent = Intent(applicationContext, CadastroOpcionaisActivity::class.java)
+               intent.putExtra("produto", produto )
+               startActivity(intent)
             },
             onClickEditar = { produto ->
                val intent = Intent(applicationContext, CadastroProdutoActivity::class.java)

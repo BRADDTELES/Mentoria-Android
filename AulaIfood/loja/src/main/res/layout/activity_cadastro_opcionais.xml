@@ -29,7 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/includeTbOpcionais">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/textDadosProduto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Hamburguer com fritas"
@@ -49,13 +49,13 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnSelecionarImagemOpcional"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Selecionar imagem" />
 
                 <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/imageCapaOpcional"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:scaleType="centerCrop"
@@ -75,6 +75,7 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editNomeOpcional"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Digite o nome" />
@@ -85,6 +86,7 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editDescricaoOpcional"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Digite a descrição" />
@@ -95,13 +97,14 @@
                     android:layout_height="wrap_content">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editPrecoOpcional"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Digite o preço" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/button3"
+                    android:id="@+id/btnSalvarOpcional"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Salvar Opcional" />
