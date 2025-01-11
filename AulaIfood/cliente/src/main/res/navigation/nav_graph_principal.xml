@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_lojaFragment_to_finalizarPedidoFragment"
             app:destination="@id/finalizarPedidoFragment" />
+        <argument
+            android:name="loja"
+            app:argType="com.danilloteles.aulaifood.domain.model.Loja" />
     </fragment>
     <fragment
         android:id="@+id/produtoFragment"

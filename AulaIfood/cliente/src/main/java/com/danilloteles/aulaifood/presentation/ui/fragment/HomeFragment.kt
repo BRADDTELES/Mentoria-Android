@@ -123,8 +123,8 @@ class HomeFragment : Fragment() {
       with( binding ){
          val orientacao = RecyclerView.HORIZONTAL
          ultimasLojasAdapter = LojasAdapter(orientacao){ loja ->
-            val navController = findNavController()
-            navController.navigate(R.id.action_homeFragment_to_lojaFragment)
+            val acao = HomeFragmentDirections.actionHomeFragmentToLojaFragment( loja )
+            findNavController().navigate( acao )
          }
          rvUltimasLojas.adapter = ultimasLojasAdapter
          rvUltimasLojas.layoutManager = LinearLayoutManager(
@@ -137,8 +137,9 @@ class HomeFragment : Fragment() {
       with( binding ){
          val orientacao = RecyclerView.VERTICAL
          lojasAdapter = LojasAdapter(orientacao){ loja ->
-            val navController = findNavController()
-            navController.navigate(R.id.action_homeFragment_to_lojaFragment)
+            val acao = HomeFragmentDirections.actionHomeFragmentToLojaFragment( loja )
+            findNavController().navigate( acao )
+
          }
          rvLojas.adapter = lojasAdapter
          rvLojas.layoutManager = LinearLayoutManager(

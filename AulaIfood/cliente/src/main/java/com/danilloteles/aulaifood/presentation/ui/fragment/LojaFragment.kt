@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danilloteles.aulaifood.R
@@ -14,14 +15,18 @@ import com.danilloteles.aulaifood.databinding.FragmentLojaBinding
 import com.danilloteles.aulaifood.domain.model.Produto
 import com.danilloteles.aulaifood.presentation.ui.adapter.LojasAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.ProdutoAdapter
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LojaFragment : Fragment() {
 
    private lateinit var binding: FragmentLojaBinding
+
    private lateinit var produtoAdapter: ProdutoAdapter
    private lateinit var produtoAdapterDestaque: ProdutoAdapter
+   private val lojaFragmentArgs: LojaFragmentArgs by navArgs()
+
    private val produtosDestaque = listOf(
       Produto("Chicken Méqui Box - 3 Mcofertas Médias",
          "São 3 Mcofertas para você compartilhar com quem preferir. Escolha 3 (três) sanduíches entre as opções: McChicken e3 (três) Bebidas.",
@@ -83,6 +88,34 @@ class LojaFragment : Fragment() {
       inicializarProdutos()
 
       return binding.root
+   }
+
+   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+      super.onViewCreated(view, savedInstanceState)
+
+      exibirDadosLoja()
+
+   }
+
+   private fun exibirDadosLoja() {
+
+      val loja = lojaFragmentArgs.loja
+      if ( loja.urlCapa.isNotEmpty() ) {
+         Picasso.get()
+            .load(loja.urlCapa)
+            .into(binding.imageCapaLoja)
+      }
+      if ( loja.urlPerfil.isNotEmpty() ) {
+         Picasso.get()
+            .load(loja.urlPerfil)
+            .into(binding.imagePerfilLoja)
+      }
+      if ( loja.nome.isNotEmpty() ) {
+         binding.textNomeLoja.text = loja.nome
+      }
+      if ( loja.categoria.isNotEmpty() ) {
+         binding.textCategoriaLoja.text = loja.categoria
+      }
    }
 
    private fun inicializarProdutosDestaque() {
