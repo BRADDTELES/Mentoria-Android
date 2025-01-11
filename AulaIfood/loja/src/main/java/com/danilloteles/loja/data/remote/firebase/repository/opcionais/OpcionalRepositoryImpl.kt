@@ -1,11 +1,10 @@
-package com.danilloteles.loja.data.remote.firebase.repository
+package com.danilloteles.loja.data.remote.firebase.repository.opcionais
 
 import android.content.ContentValues.TAG
 import android.util.Log
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.domain.model.Opcional
-import com.danilloteles.loja.domain.model.Produto
-import com.danilloteles.loja.util.Constantes
+import com.danilloteles.core.util.ConstantesFirebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
@@ -34,11 +33,11 @@ class OpcionalRepositoryImpl@Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refOpcional = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
-            .collection(Constantes.FIRESTORE_ITENS)
+            .collection(ConstantesFirebase.FIRESTORE_ITENS)
             .document( opcional.idProduto )
-            .collection(Constantes.FIRESTORE_OPCIONAIS)
+            .collection(ConstantesFirebase.FIRESTORE_OPCIONAIS)
             .document()
 
          val idOpcional = refOpcional.id
@@ -62,11 +61,11 @@ class OpcionalRepositoryImpl@Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refOpcional = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
-            .collection(Constantes.FIRESTORE_ITENS)
+            .collection(ConstantesFirebase.FIRESTORE_ITENS)
             .document( idProduto )
-            .collection(Constantes.FIRESTORE_OPCIONAIS)
+            .collection(ConstantesFirebase.FIRESTORE_OPCIONAIS)
 
          val querySnapshot = refOpcional.get().await()
          if ( querySnapshot.documents.isNotEmpty()) {
@@ -92,11 +91,11 @@ class OpcionalRepositoryImpl@Inject constructor(
          return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refOpcional = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
-            .collection(Constantes.FIRESTORE_ITENS)
+            .collection(ConstantesFirebase.FIRESTORE_ITENS)
             .document( opcional.idProduto )
-            .collection(Constantes.FIRESTORE_OPCIONAIS)
+            .collection(ConstantesFirebase.FIRESTORE_OPCIONAIS)
             .document( opcional.id )
 
          refOpcional.delete().await()//Remover produto

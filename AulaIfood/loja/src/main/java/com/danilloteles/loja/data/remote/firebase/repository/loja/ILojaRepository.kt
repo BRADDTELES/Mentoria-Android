@@ -1,4 +1,4 @@
-package com.danilloteles.loja.data.remote.firebase.repository
+package com.danilloteles.loja.data.remote.firebase.repository.loja
 
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.domain.model.Categoria

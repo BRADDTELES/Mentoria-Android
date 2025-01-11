@@ -13,7 +13,9 @@ import com.danilloteles.aulaifood.databinding.FragmentFinalizarPedidoBinding
 import com.danilloteles.aulaifood.databinding.FragmentLojaBinding
 import com.danilloteles.aulaifood.domain.model.Produto
 import com.danilloteles.aulaifood.presentation.ui.adapter.ProdutoAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FinalizarPedidoFragment : Fragment() {
 
    private lateinit var binding: FragmentFinalizarPedidoBinding

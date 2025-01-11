@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aulaifood.domain.usecase.ResultadoValidacao
 import com.danilloteles.core.UIStatus
-import com.danilloteles.loja.data.remote.firebase.repository.IAutenticacaoRepository
+import com.danilloteles.loja.data.remote.firebase.repository.autenticacao.IAutenticacaoRepository
 import com.danilloteles.loja.domain.model.Usuario
 import com.danilloteles.loja.domain.usecase.AutenticacaoUseCase
 import com.google.firebase.auth.FirebaseAuth

@@ -14,7 +14,9 @@ import com.danilloteles.aulaifood.databinding.FragmentLojaBinding
 import com.danilloteles.aulaifood.domain.model.Produto
 import com.danilloteles.aulaifood.presentation.ui.adapter.LojasAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.ProdutoAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LojaFragment : Fragment() {
 
    private lateinit var binding: FragmentLojaBinding

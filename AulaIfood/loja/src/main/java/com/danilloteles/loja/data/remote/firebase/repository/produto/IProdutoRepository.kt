@@ -1,4 +1,4 @@
-package com.danilloteles.loja.data.remote.firebase.repository
+package com.danilloteles.loja.data.remote.firebase.repository.produto
 
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus

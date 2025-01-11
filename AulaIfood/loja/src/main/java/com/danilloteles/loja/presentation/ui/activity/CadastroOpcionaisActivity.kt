@@ -23,7 +23,7 @@ import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.domain.model.UploadStorage
 import com.danilloteles.loja.presentation.ui.adapter.OpcionaisAdapter
 import com.danilloteles.loja.presentation.viewmodel.OpcionalViewModel
-import com.danilloteles.loja.util.Constantes
+import com.danilloteles.core.util.ConstantesFirebase
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamiltondamasceno.core.adicionarMascaraMoeda
 import com.jamiltondamasceno.core.formatarComoMoeda
@@ -161,7 +161,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       uriOpcional?.let { uri ->
          opcionalViewModel.salvar(
             UploadStorage(
-               Constantes.STORAGE_OPCIONAIS,
+               ConstantesFirebase.STORAGE_OPCIONAIS,
                UUID.randomUUID().toString(),
                uri
             ), opcional

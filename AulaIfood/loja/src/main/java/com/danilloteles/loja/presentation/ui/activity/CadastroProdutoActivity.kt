@@ -19,7 +19,7 @@ import com.danilloteles.loja.databinding.ActivityCadastroProdutoBinding
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.domain.model.UploadStorage
 import com.danilloteles.loja.presentation.viewmodel.ProdutoViewModel
-import com.danilloteles.loja.util.Constantes
+import com.danilloteles.core.util.ConstantesFirebase
 import com.jamiltondamasceno.core.adicionarMascaraMoeda
 import com.jamiltondamasceno.core.formatarComoMoeda
 import com.jamiltondamasceno.core.moedaToDouble
@@ -173,7 +173,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
    private fun uploadImagemProduto(uri: Uri) {
       produtoViewModel.uploadImagem(
          UploadStorage(
-            Constantes.STORAGE_PRODUTOS,
+            ConstantesFirebase.STORAGE_PRODUTOS,
             UUID.randomUUID().toString(),
             uri
          ), idProduto

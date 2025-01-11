@@ -1,8 +1,7 @@
-package com.danilloteles.loja.data.remote.firebase.repository
+package com.danilloteles.loja.data.remote.firebase.repository.opcionais
 
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.domain.model.Opcional
-import com.danilloteles.loja.domain.model.Produto
 
 interface IOpcionalRepository {
    suspend fun salvar(

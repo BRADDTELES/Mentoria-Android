@@ -10,7 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.danilloteles.aulaifood.databinding.FragmentPedidosBinding
 import com.danilloteles.aulaifood.domain.model.PedidoHistorico
 import com.danilloteles.aulaifood.presentation.ui.adapter.PedidosHistoricoAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PedidosFragment : Fragment() {
 
    private lateinit var binding: FragmentPedidosBinding

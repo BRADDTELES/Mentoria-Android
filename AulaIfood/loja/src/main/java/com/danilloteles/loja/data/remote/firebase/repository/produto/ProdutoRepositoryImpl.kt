@@ -1,4 +1,4 @@
-package com.danilloteles.loja.data.remote.firebase.repository
+package com.danilloteles.loja.data.remote.firebase.repository.produto
 
 import android.content.ContentValues.TAG
 import android.util.Log
@@ -6,7 +6,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus
-import com.danilloteles.loja.util.Constantes
+import com.danilloteles.core.util.ConstantesFirebase
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
@@ -23,7 +23,7 @@ class ProdutoRepositoryImpl @Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refProduto = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
             .collection("itens")
             .document()
@@ -48,7 +48,7 @@ class ProdutoRepositoryImpl @Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refProduto = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
             .collection("itens")
             .document( produto.id )
@@ -71,7 +71,7 @@ class ProdutoRepositoryImpl @Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refProduto = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
             .collection("itens")
 
@@ -100,7 +100,7 @@ class ProdutoRepositoryImpl @Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refProduto = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
             .collection("itens")
             .document( idProduto )
@@ -131,7 +131,7 @@ class ProdutoRepositoryImpl @Inject constructor(
             return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
 
          val refProduto = firebaseFirestore
-            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .collection(ConstantesFirebase.FIRESTORE_PRODUTOS)
             .document( idLoja )
             .collection("itens")
             .document( idProduto )

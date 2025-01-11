@@ -1,11 +1,10 @@
-package com.danilloteles.aulaifood.data.remote.firebase.repository
+package com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao
 
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.core.UIStatus
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthEmailException
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
-import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import kotlinx.coroutines.tasks.await

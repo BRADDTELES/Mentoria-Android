@@ -1,13 +1,13 @@
 package com.danilloteles.loja.di
 
-import com.danilloteles.loja.data.remote.firebase.repository.AutenticacaoRepositoryImpl
-import com.danilloteles.loja.data.remote.firebase.repository.IAutenticacaoRepository
-import com.danilloteles.loja.data.remote.firebase.repository.ILojaRepository
-import com.danilloteles.loja.data.remote.firebase.repository.IOpcionalRepository
-import com.danilloteles.loja.data.remote.firebase.repository.IProdutoRepository
-import com.danilloteles.loja.data.remote.firebase.repository.LojaRepositoryImpl
-import com.danilloteles.loja.data.remote.firebase.repository.OpcionalRepositoryImpl
-import com.danilloteles.loja.data.remote.firebase.repository.ProdutoRepositoryImpl
+import com.danilloteles.loja.data.remote.firebase.repository.autenticacao.AutenticacaoRepositoryImpl
+import com.danilloteles.loja.data.remote.firebase.repository.autenticacao.IAutenticacaoRepository
+import com.danilloteles.loja.data.remote.firebase.repository.loja.ILojaRepository
+import com.danilloteles.loja.data.remote.firebase.repository.opcionais.IOpcionalRepository
+import com.danilloteles.loja.data.remote.firebase.repository.produto.IProdutoRepository
+import com.danilloteles.loja.data.remote.firebase.repository.loja.LojaRepositoryImpl
+import com.danilloteles.loja.data.remote.firebase.repository.opcionais.OpcionalRepositoryImpl
+import com.danilloteles.loja.data.remote.firebase.repository.produto.ProdutoRepositoryImpl
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.loja.domain.usecase.AutenticacaoUseCase
 import com.google.firebase.auth.FirebaseAuth

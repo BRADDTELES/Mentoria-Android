@@ -3,7 +3,7 @@ package com.danilloteles.loja.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.core.UIStatus
-import com.danilloteles.loja.data.remote.firebase.repository.IProdutoRepository
+import com.danilloteles.loja.data.remote.firebase.repository.produto.IProdutoRepository
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.domain.model.UploadStorage

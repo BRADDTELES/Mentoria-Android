@@ -15,7 +15,9 @@ import com.danilloteles.aulaifood.databinding.ItemRvOpcionaisBinding
 import com.danilloteles.aulaifood.domain.model.Opcional
 import com.danilloteles.aulaifood.presentation.ui.adapter.OpcionaisAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.ProdutoAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProdutoFragment : Fragment() {
 
    private lateinit var binding: FragmentProdutoBinding

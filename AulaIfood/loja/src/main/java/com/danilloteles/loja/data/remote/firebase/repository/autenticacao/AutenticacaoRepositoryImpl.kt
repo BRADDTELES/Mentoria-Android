@@ -1,9 +1,9 @@
-package com.danilloteles.loja.data.remote.firebase.repository
+package com.danilloteles.loja.data.remote.firebase.repository.autenticacao
 
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.domain.model.Loja
 import com.danilloteles.loja.domain.model.Usuario
-import com.danilloteles.loja.util.Constantes
+import com.danilloteles.core.util.ConstantesFirebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.FirebaseAuthInvalidUserException
@@ -35,7 +35,7 @@ class AutenticacaoRepositoryImpl @Inject constructor(
          )
 
          val refLoja = firebaseFirestore
-            .collection(Constantes.FIRESTORE_LOJAS)
+            .collection(ConstantesFirebase.FIRESTORE_LOJAS)
             .document( idLoja )
 
          refLoja.set( loja ).await()

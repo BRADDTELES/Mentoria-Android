@@ -3,12 +3,9 @@ package com.danilloteles.loja.presentation.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.core.UIStatus
-import com.danilloteles.loja.data.remote.firebase.repository.IOpcionalRepository
-import com.danilloteles.loja.data.remote.firebase.repository.IProdutoRepository
-import com.danilloteles.loja.data.remote.firebase.repository.OpcionalRepositoryImpl
+import com.danilloteles.loja.data.remote.firebase.repository.opcionais.IOpcionalRepository
 import com.danilloteles.loja.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.loja.domain.model.Opcional
-import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.domain.model.UploadStorage
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
