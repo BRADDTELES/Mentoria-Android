@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.danilloteles.loja.databinding.ItemRvOpcionalBinding
 import com.danilloteles.loja.domain.model.Opcional
+import com.jamiltondamasceno.core.formatarComoMoeda
 import com.squareup.picasso.Picasso
 
 class OpcionaisAdapter(
@@ -25,7 +26,7 @@ class OpcionaisAdapter(
 
          binding.textNomeOpcional.text = opcional.nome
          binding.textDescricaoOpcional.text = opcional.descricao
-         binding.textPrecoOpcional.text = opcional.preco
+         binding.textPrecoOpcional.text = opcional.preco.formatarComoMoeda()
 
          if ( opcional.url.isNotEmpty() ) {
             Picasso.get()
