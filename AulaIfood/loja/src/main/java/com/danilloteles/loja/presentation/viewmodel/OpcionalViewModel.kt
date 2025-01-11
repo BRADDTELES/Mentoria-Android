@@ -21,6 +21,16 @@ class OpcionalViewModel@Inject constructor(
    private val opcionalRepositoryImpl: IOpcionalRepository
 ) : ViewModel() {
 
+   fun listar(
+      idProduto: String,
+      uiStatus: (UIStatus<List<Opcional>> ) -> Unit
+   ){
+      uiStatus.invoke( UIStatus.Carregando )
+      viewModelScope.launch {
+         opcionalRepositoryImpl.listar( idProduto, uiStatus )
+      }
+   }
+
    fun salvar(
       uploadStorage: UploadStorage,
       opcional: Opcional,

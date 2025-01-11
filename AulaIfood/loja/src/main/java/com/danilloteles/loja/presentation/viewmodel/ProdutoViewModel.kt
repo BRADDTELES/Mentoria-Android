@@ -39,7 +39,7 @@ class ProdutoViewModel @Inject constructor(
    }
 
    fun listar( uiStatus: (UIStatus<List<Produto>> ) -> Unit ){
-      uiStatus.invoke( UIStatus.Carregando )
+      //uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
          produtoRepositoryImpl.listar( uiStatus )
       }

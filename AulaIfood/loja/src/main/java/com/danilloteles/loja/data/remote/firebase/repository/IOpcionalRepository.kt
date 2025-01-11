@@ -10,6 +10,7 @@ interface IOpcionalRepository {
       uiStatus: (UIStatus<String>)-> Unit
    )
    suspend fun listar(
+      idProduto: String,
       uiStatus: (UIStatus<List<Opcional>>)-> Unit
    )
    suspend fun remover(

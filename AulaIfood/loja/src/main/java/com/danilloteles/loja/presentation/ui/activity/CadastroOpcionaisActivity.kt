@@ -37,14 +37,11 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
    private val binding by lazy {
       ActivityCadastroOpcionaisBinding.inflate(layoutInflater)
    }
-   private val alertaCarregamento by lazy {
-      AlertaCarregamento(this)
-   }
    private val opcionais = listOf(
       Opcional(
          "",
          "",
-         "Molho Tasty",
+         "Molho",
          "Composto por um hambúrguer de carne 100% bovina",
          3.00,
          "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202501030416_204bpeti9ba.png"
@@ -52,7 +49,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       Opcional(
          "",
          "",
-         "Cebola Fresca",
+         "Cebola",
          "Composto por um hambúrguer de carne 100% bovina",
          2.00,
          "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150806_uc1qzud8yyf.png"
@@ -76,22 +73,17 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       Opcional(
          "",
          "",
-         "Fatia Queijo Cheddar",
+         "Queijo",
          "Composto por um hambúrguer de carne 100% bovina",
          9.00,
          "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150807_mruwic5r0ye.png"
-      ),
-      Opcional(
-         "",
-         "",
-         "Bacon",
-         "Composto por um hambúrguer de carne 100% bovina",
-         3.00,
-         "https://static.ifood-static.com.br/image/upload/t_medium/pratos/e35a1e98-0584-4315-afcb-ad6c621ce28a/202410150807_lrnvvpb33ag.png"
-      ),
+      )
    )
    private lateinit var opcionaisAdapter: OpcionaisAdapter
    private val opcionalViewModel: OpcionalViewModel by viewModels()
+   private val alertaCarregamento by lazy {
+      AlertaCarregamento(this)
+   }
    private var produto: Produto? = null
    private var uriOpcional: Uri? = null
 
@@ -102,6 +94,13 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       solicitarPermissoes()
    }
 
+   override fun onStart() {
+      super.onStart()
+      produto?.let { produto ->
+         recuperarOpcionais( produto.id )
+      }
+   }
+
    private fun inicializar() {
       inicializarDadosProduto()
       inicializarToolbar()
@@ -110,7 +109,6 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
    }
 
    private fun inicializarEventosClique() {
-
       with( binding ){
          btnSelecionarImagemOpcional.setOnClickListener {
             selecionarImagemOpcional.launch(
@@ -119,6 +117,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
                )
             )
          }
+
          btnSalvarOpcional.setOnClickListener { view ->
 
             view.esconderTeclado()
@@ -137,7 +136,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
                   descricao = descricao, preco = preco
                )
 
-               val resultadoValidacao = validaDadosOpcional(opcional)
+               val resultadoValidacao = validaDadosOpcional( opcional )
                if ( resultadoValidacao ) {
                   salvarOpcional( opcional )
                }else{
@@ -146,6 +145,14 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
             }
          }
       }
+   }
+
+   private fun validaDadosOpcional( opcional: Opcional ): Boolean {
+      if ( opcional.nome.isEmpty() ) return false
+      if ( opcional.descricao.isEmpty() ) return false
+      if ( opcional.preco == 0.0 ) return false
+      if ( uriOpcional == null ) return false
+      return true
    }
 
    private fun salvarOpcional( opcional: Opcional ) {
@@ -158,15 +165,17 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
                uri
             ), opcional
          ) { uiStatus ->
-            when (uiStatus) {
+            when ( uiStatus ) {
                is UIStatus.Erro -> {
                   alertaCarregamento.fechar()
-                  exibirMensagem(uiStatus.erro)
+                  exibirMensagem( uiStatus.erro )
                }
                is UIStatus.Sucesso -> {
                   alertaCarregamento.fechar()
                   limparDadosOpcionais()
-                  recuperarOpcionais()
+                  produto?.let { produto ->
+                     recuperarOpcionais( produto.id )
+                  }
                   exibirMensagem("Opcional salvo com sucesso!")
                }
                is UIStatus.Carregando -> {
@@ -178,8 +187,24 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
 
    }
 
-   private fun recuperarOpcionais() {
-      TODO("Not yet implemented")
+   private fun recuperarOpcionais( idProduto: String ) {
+
+      opcionalViewModel.listar( idProduto ){ uiStatus ->
+         when ( uiStatus ) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               val listaOpcionais = uiStatus.dados
+               opcionaisAdapter.adicionarItens( listaOpcionais )
+            }
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Salvando dados do Opcional")
+            }
+         }
+      }
    }
 
    private fun limparDadosOpcionais() {
@@ -196,18 +221,10 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
       }
    }
 
-   private fun validaDadosOpcional(opcional: Opcional): Boolean {
-      if ( opcional.nome.isEmpty() ) return false
-      if ( opcional.descricao.isEmpty() ) return false
-      if ( opcional.preco == 0.0 ) return false
-      if ( uriOpcional == null ) return false
-      return true
-   }
-
    private val selecionarImagemOpcional = registerForActivityResult(
       ActivityResultContracts.PickVisualMedia()
    ) { uri ->
-      if (uri != null) {
+      if( uri != null ) {
          binding.imageCapaOpcional.setImageURI( uri )
          uriOpcional = uri
       } else {
@@ -231,6 +248,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
    }
 
    private fun inicializarOpcionais() {
+
       with( binding ){
          opcionaisAdapter = OpcionaisAdapter{ opcional ->
 
@@ -241,6 +259,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
             applicationContext, RecyclerView.VERTICAL, false
          )
       }
+
    }
 
    private fun inicializarToolbar() {
@@ -273,7 +292,7 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
          .onExplainRequestReason { scope, permissoesNegadas ->
             scope.showRequestReasonDialog(
                permissoesNegadas,
-               "As permissões são necessárias para configurar imagem para opcional",
+               "As permissões são necessárias para configurar imagem para Opcional",
                "Conceder permissões",
                "Cancelar"
             )

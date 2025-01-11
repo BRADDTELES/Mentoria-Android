@@ -2,6 +2,7 @@ package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.domain.model.Opcional
+import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.loja.util.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -49,8 +50,34 @@ class OpcionalRepositoryImpl@Inject constructor(
       }
    }
 
-   override suspend fun listar(uiStatus: (UIStatus<List<Opcional>>) -> Unit) {
+   override suspend fun listar(
+      idProduto: String,
+      uiStatus: (UIStatus<List<Opcional>>) -> Unit
+   ) {
+      try {
 
+         val idLoja = firebaseAuth.currentUser?.uid ?:
+            return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
+
+         val refOpcional = firebaseFirestore
+            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .document( idLoja )
+            .collection(Constantes.FIRESTORE_ITENS)
+            .document( idProduto )
+            .collection(Constantes.FIRESTORE_OPCIONAIS)
+
+         val querySnapshot = refOpcional.get().await()
+         if ( querySnapshot.documents.isNotEmpty()) {
+            val listaOpcionais = querySnapshot.documents.mapNotNull { documentSnapshot ->
+               documentSnapshot.toObject( Opcional::class.java )
+            }
+            uiStatus.invoke(UIStatus.Sucesso( listaOpcionais ))
+         }else{
+            uiStatus.invoke(UIStatus.Sucesso(emptyList()))
+         }
+      } catch (erroRecuperarLoja: Exception) {
+         uiStatus.invoke(UIStatus.Erro("Erro ao recuperar produtos"))
+      }
    }
 
    override suspend fun remover(
