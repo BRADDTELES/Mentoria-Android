@@ -21,8 +21,10 @@ import com.danilloteles.loja.domain.model.UploadStorage
 import com.danilloteles.loja.presentation.viewmodel.ProdutoViewModel
 import com.danilloteles.loja.util.Constantes
 import com.jamiltondamasceno.core.adicionarMascaraMoeda
+import com.jamiltondamasceno.core.formatarComoMoeda
 import com.jamiltondamasceno.core.moedaToDouble
 import com.permissionx.guolindev.PermissionX
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
 import java.util.UUID
@@ -43,29 +45,59 @@ class CadastroProdutoActivity : AppCompatActivity() {
       super.onCreate(savedInstanceState)
       setContentView( binding.root )
       inicializar()
-   }
-
-   private fun inicializar() {
-      inicializarEventosClique()
       solicitarPermissoes()
-      inicializarMascaraMoeda()
    }
 
-   private fun inicializarMascaraMoeda() {
+   override fun onStart() {
+      super.onStart()
+      recuperarDadosProduto()
+   }
 
-      binding.editPrecoProduto.adicionarMascaraMoeda(
-         local = Locale("pt", "BR"),
-         maximoDigitosDecimais = 2,
-         simboloMoedaCustomizado = "R$",
-         maximoDigitos = 7
-      )
+   private fun recuperarDadosProduto() {
+      if ( idProduto.isNotEmpty() ) {
+         produtoViewModel.recuperProdutoPeloId( idProduto ){ uiStatus ->
+            when (uiStatus) {
+               is UIStatus.Erro -> {
+                  alertaCarregamento.fechar()
+                  exibirMensagem(uiStatus.erro)
+               }
+               is UIStatus.Sucesso -> {
+                  val produto = uiStatus.dados
+                  exibirDadosProduto( produto )
+               }
+               is UIStatus.Carregando -> {
+                  alertaCarregamento.exibir("Carregando dados do produto")
+               }
+            }
+         }
+      }
+   }
 
-      binding.editPrecoDestaqueProduto.adicionarMascaraMoeda(
-         local = Locale("pt", "BR"),
-         maximoDigitosDecimais = 2,
-         simboloMoedaCustomizado = "R$",
-         maximoDigitos = 7
-      )
+   private fun exibirDadosProduto(produto: Produto) {
+
+      if ( produto.url.isNotEmpty() ) {
+         Picasso.get()
+            .load(produto.url)
+            .into(binding.imageCapaProduto)
+      }
+      if ( produto.nome.isNotEmpty() ) {
+         binding.editNomeProduto.setText( produto.nome )
+      }
+      if ( produto.descricao.isNotEmpty() ) {
+         binding.editDescricaoProduto.setText( produto.descricao )
+      }
+      if ( produto.preco >= 0.0 ) {
+         binding.editPrecoProduto.setText( produto.preco.formatarComoMoeda() )
+      }
+      if ( produto.emDestaque == true ) {
+         binding.switchProdutoEmDestaque.isChecked = true
+         binding.tlPrecoDestaque.visibility = View.VISIBLE
+         if ( produto.precoDestaque >= 0.0 ) {
+            binding.editPrecoDestaqueProduto.setText( produto.precoDestaque.formatarComoMoeda() )
+         }
+      }else{
+         binding.switchProdutoEmDestaque.isChecked = false
+      }
 
    }
 
@@ -106,6 +138,35 @@ class CadastroProdutoActivity : AppCompatActivity() {
             }
          }
    }
+
+   private fun inicializar() {
+
+      val bundle = intent.extras
+      idProduto = bundle?.getString("idProduto") ?: ""
+
+      inicializarEventosClique()
+      inicializarMascaraMoeda()
+   }
+
+   private fun inicializarMascaraMoeda() {
+
+      binding.editPrecoProduto.adicionarMascaraMoeda(
+         local = Locale("pt", "BR"),
+         maximoDigitosDecimais = 2,
+         simboloMoedaCustomizado = "R$",
+         maximoDigitos = 7
+      )
+
+      binding.editPrecoDestaqueProduto.adicionarMascaraMoeda(
+         local = Locale("pt", "BR"),
+         maximoDigitosDecimais = 2,
+         simboloMoedaCustomizado = "R$",
+         maximoDigitos = 7
+      )
+
+   }
+
+
 
    private fun uploadImagemProduto(uri: Uri) {
       produtoViewModel.uploadImagem(
@@ -228,7 +289,7 @@ class CadastroProdutoActivity : AppCompatActivity() {
       if ( produto.nome.isEmpty() ) return false
       if ( produto.descricao.isEmpty() ) return false
       if ( produto.preco <= 0.0 ) return false
-      if ( produto.emDestaque ){
+      if ( produto.emDestaque == true ){
          if ( produto.precoDestaque <= 0.0 ) return false
       }
       return true

@@ -1,5 +1,6 @@
 package com.danilloteles.loja.presentation.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -101,7 +102,7 @@ class CardapioActivity : AppCompatActivity() {
 
    private fun inicializar() {
       inicializarToolbar()
-      inicializarProdutos()
+      inicializarRecyclerViewProdutos()
       inicializarEventosClique()
    }
 
@@ -123,16 +124,18 @@ class CardapioActivity : AppCompatActivity() {
       }
    }
 
-   private fun inicializarProdutos() {
+   private fun inicializarRecyclerViewProdutos() {
       with( binding ){
          produtoAdapter = ProdutoAdapter(
-            { produtos ->
+            onClickOpcional = { produto ->
                navegarPara(CadastroOpcionaisActivity::class.java, false)
             },
-            { produtos ->
-               navegarPara(CadastroProdutoActivity::class.java, false)
+            onClickEditar = { produto ->
+               val intent = Intent(applicationContext, CadastroProdutoActivity::class.java)
+               intent.putExtra("idProduto", produto.id)
+               startActivity(intent)
             },
-            {
+            onClickRemover = { produto ->
 
             }
          )

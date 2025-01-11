@@ -43,14 +43,14 @@ class ProdutoAdapter(
                simboloMoedaCustomizado = "R$"
             )
 
-            val textoPrecos = if ( produto.emDestaque){
+            val textoPrecos = if ( produto.emDestaque == true ){
                "$precoFormatado - [$precoDestaqueFormatado]"
             }else{
                precoFormatado
             }
             textPrecoProdutoLoja.text = textoPrecos
 
-            if ( produto.emDestaque ) {
+            if ( produto.emDestaque == true ) {
                textDestaqueProdutoLoja.visibility = View.VISIBLE
             }else{
                textDestaqueProdutoLoja.visibility = View.GONE

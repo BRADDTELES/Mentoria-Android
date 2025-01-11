@@ -2,7 +2,6 @@ package com.danilloteles.loja.data.remote.firebase.repository
 
 import com.danilloteles.loja.domain.model.Produto
 import com.danilloteles.core.UIStatus
-import com.danilloteles.loja.domain.model.Categoria
 import com.danilloteles.loja.util.Constantes
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -88,6 +87,37 @@ class ProdutoRepositoryImpl @Inject constructor(
 
       } catch (erroRecuperarLoja: Exception) {
          uiStatus.invoke(UIStatus.Erro("Erro ao recuperar produtos"))
+      }
+   }
+
+   override suspend fun recuperarProdutoPeloId(
+      idProduto: String,
+      uiStatus: (UIStatus<Produto>) -> Unit
+   ) {
+      try {
+         val idLoja = firebaseAuth.currentUser?.uid ?:
+            return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
+
+         val refProduto = firebaseFirestore
+            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .document( idLoja )
+            .collection("itens")
+            .document( idProduto )
+
+         val documentSnapshot = refProduto.get().await()
+         if ( documentSnapshot.exists() ) {
+            val produto = documentSnapshot.toObject( Produto::class.java )
+            if (produto != null) {
+               uiStatus.invoke(UIStatus.Sucesso( produto ))
+            }else{
+               uiStatus.invoke(UIStatus.Erro("Erro ao converter dados do produto"))
+            }
+         }else{
+            uiStatus.invoke(UIStatus.Erro("Não existem dados para o produto"))
+         }
+
+      } catch (erroRecuperarLoja: Exception) {
+         uiStatus.invoke(UIStatus.Erro("Erro ao recuperar dados do produto"))
       }
    }
 }

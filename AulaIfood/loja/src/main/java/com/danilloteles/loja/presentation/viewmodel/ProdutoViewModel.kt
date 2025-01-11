@@ -19,6 +19,16 @@ class ProdutoViewModel @Inject constructor(
    private val produtoRepositoryImpl: IProdutoRepository
 ) : ViewModel() {
 
+   fun recuperProdutoPeloId(
+      idProduto: String,
+      uiStatus: (UIStatus<Produto>) -> Unit
+   ){
+      //uiStatus.invoke( UIStatus.Carregando )
+      viewModelScope.launch {
+         produtoRepositoryImpl.recuperarProdutoPeloId( idProduto, uiStatus )
+      }
+   }
+
    fun listar( uiStatus: (UIStatus<List<Produto>>) -> Unit ){
       uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {

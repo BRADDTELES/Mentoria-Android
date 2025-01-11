@@ -7,20 +7,21 @@ data class Produto(
    val preco: Double = 0.0,
    val precoDestaque: Double = 0.0,
    val url: String = "",
-   val emDestaque: Boolean = false
+   val emDestaque: Boolean? = null
 ){
    fun toMap() : Map<String, Any> {
       val dados = mutableMapOf<String, Any>()
 
-      if ( id.isNotEmpty() )                       dados["id"] = id
-      if ( nome.isNotEmpty() )                     dados["nome"] = nome
-      if ( descricao.isNotEmpty() )                dados["descricao"] = descricao
-      if ( preco >= 0.0 )                          dados["preco"] = preco
-      if ( precoDestaque >= 0.0 ) {
-         dados["precoDestaque"] = precoDestaque
+      if ( id.isNotEmpty() )           dados["id"] = id
+      if ( nome.isNotEmpty() )         dados["nome"] = nome
+      if ( descricao.isNotEmpty() )    dados["descricao"] = descricao
+      if ( preco > 0.0 )               dados["preco"] = preco
+      if ( url.isNotEmpty() )          dados["url"] = url
+
+      emDestaque?.let { destaque ->
+         dados["emDestaque"] = destaque
+         dados["precoDestaque"] = if ( destaque && precoDestaque > 0.0 ) precoDestaque else 0.0
       }
-      if ( url.isNotEmpty() )                      dados["url"] = url
-      dados["emDestaque"] = emDestaque
 
       return dados
    }
