@@ -24,6 +24,7 @@ import com.danilloteles.loja.domain.model.UploadStorage
 import com.danilloteles.loja.presentation.ui.adapter.OpcionaisAdapter
 import com.danilloteles.loja.presentation.viewmodel.OpcionalViewModel
 import com.danilloteles.loja.util.Constantes
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.jamiltondamasceno.core.adicionarMascaraMoeda
 import com.jamiltondamasceno.core.formatarComoMoeda
 import com.jamiltondamasceno.core.moedaToDouble
@@ -251,13 +252,47 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
 
       with( binding ){
          opcionaisAdapter = OpcionaisAdapter{ opcional ->
-
+            configurarExclusao( opcional )
          }
          opcionaisAdapter.adicionarItens( opcionais )
          rvOpcionais.adapter = opcionaisAdapter
          rvOpcionais.layoutManager = LinearLayoutManager(
             applicationContext, RecyclerView.VERTICAL, false
          )
+      }
+
+   }
+
+   private fun configurarExclusao(opcional: Opcional) {
+      MaterialAlertDialogBuilder(this)
+         .setTitle("Deseja realmente excluir o opcional?")
+         .setMessage("[${opcional.nome}] - ${opcional.preco.formatarComoMoeda()}")
+         .setNegativeButton("Cancelar"){ dialog, _ ->
+            dialog.dismiss()
+         }
+         .setPositiveButton("Confirmar exclusão"){ dialog, _ ->
+            removerOpcional( opcional )
+            dialog.dismiss()
+         }
+         .show()
+   }
+
+   private fun removerOpcional(opcional: Opcional) {
+
+      opcionalViewModel.remover( opcional ) { uiStatus ->
+         when (uiStatus) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               recuperarOpcionais( opcional.idProduto )
+            }
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Excluindo Opcional")
+            }
+         }
       }
 
    }

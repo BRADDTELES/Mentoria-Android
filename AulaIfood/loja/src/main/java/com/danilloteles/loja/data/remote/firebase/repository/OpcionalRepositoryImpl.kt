@@ -1,5 +1,7 @@
 package com.danilloteles.loja.data.remote.firebase.repository
 
+import android.content.ContentValues.TAG
+import android.util.Log
 import com.danilloteles.core.UIStatus
 import com.danilloteles.loja.domain.model.Opcional
 import com.danilloteles.loja.domain.model.Produto
@@ -81,8 +83,33 @@ class OpcionalRepositoryImpl@Inject constructor(
    }
 
    override suspend fun remover(
-      opcional: Opcional, uiStatus: (UIStatus<Boolean>) -> Unit
+      opcional: Opcional,
+      uiStatus: (UIStatus<Boolean>) -> Unit
    ) {
+      try {
 
+         val idLoja = firebaseAuth.currentUser?.uid ?:
+         return uiStatus.invoke( UIStatus.Erro("Usuário não está logado") )
+
+         val refOpcional = firebaseFirestore
+            .collection(Constantes.FIRESTORE_PRODUTOS)
+            .document( idLoja )
+            .collection(Constantes.FIRESTORE_ITENS)
+            .document( opcional.idProduto )
+            .collection(Constantes.FIRESTORE_OPCIONAIS)
+            .document( opcional.id )
+
+         refOpcional.delete().await()//Remover produto
+         uiStatus.invoke( UIStatus.Sucesso(true) )
+
+      } catch ( erroAtualizarCampo: Exception ) {
+         Log.e(TAG, "MENSSAGEM DE ERRO:\n---> ${erroAtualizarCampo.message}")//Log para visualizar o Erro
+         /*
+         MENSSAGEM DE ERRO:
+         ---> The specified child already has a parent.
+         You must call removeView() on the child's parent first.
+         * */
+         uiStatus.invoke(UIStatus.Erro("Erro ao remover opcional"))
+      }
    }
 }

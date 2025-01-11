@@ -21,6 +21,16 @@ class OpcionalViewModel@Inject constructor(
    private val opcionalRepositoryImpl: IOpcionalRepository
 ) : ViewModel() {
 
+   fun remover(
+      opcional: Opcional,
+      uiStatus: (UIStatus<Boolean>) -> Unit
+   ){
+      uiStatus.invoke( UIStatus.Carregando )
+      viewModelScope.launch {
+         opcionalRepositoryImpl.remover( opcional, uiStatus )
+      }
+   }
+
    fun listar(
       idProduto: String,
       uiStatus: (UIStatus<List<Opcional>> ) -> Unit
