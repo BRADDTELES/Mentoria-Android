@@ -14,12 +14,17 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.danilloteles.aulaifood.databinding.FragmentPerfilBinding
 import com.danilloteles.aulaifood.domain.model.UploadStorage
+import com.danilloteles.aulaifood.domain.model.Usuario
+import com.danilloteles.aulaifood.presentation.ui.activity.LoginActivity
 import com.danilloteles.aulaifood.presentation.viewmodel.AutenticacaoViewModel
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.UIStatus
 import com.danilloteles.core.exibirMensagem
+import com.danilloteles.core.navegarPara
 import com.danilloteles.core.util.ConstantesFirebase
+import com.google.firebase.auth.FirebaseAuth
 import com.permissionx.guolindev.PermissionX
+import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.UUID
 
@@ -86,6 +91,10 @@ class PerfilFragment : Fragment() {
    private fun inicializarEventosClique() {
       with( binding ){
 
+         btnSalvarPerfil.setOnClickListener {
+            atualizarDadosPerfilUsuario()
+         }
+
          btnAlterarImagemPerfil.setOnClickListener {
             selecionarImagemPerfil.launch(
                PickVisualMediaRequest(
@@ -93,8 +102,33 @@ class PerfilFragment : Fragment() {
                )
             )
          }
-         btnSalvarPerfil.setOnClickListener {
 
+         btnDeslogar.setOnClickListener {
+            autenticacaoViewModel.deslogarUsuario()
+            activity?.navegarPara( LoginActivity::class.java )
+         }
+      }
+   }
+
+   private fun atualizarDadosPerfilUsuario() {
+      val nomePerfil = binding.editNomePerfil.text.toString()
+      if ( nomePerfil.isNotEmpty() ) {
+         autenticacaoViewModel.atualizarUsuario(
+            Usuario( nome = nomePerfil )
+         ){ uiStatus ->
+            when( uiStatus ){
+               is UIStatus.Sucesso -> {
+                  alertaCarregamento.fechar()
+                  activity?.exibirMensagem("Dados atualizados com sucesso!")
+               }
+               is UIStatus.Erro -> {
+                  alertaCarregamento.fechar()
+                  activity?.exibirMensagem( uiStatus.erro )
+               }
+               is UIStatus.Carregando -> {
+                  alertaCarregamento.exibir("Atualizando dados")
+               }
+            }
          }
       }
    }
@@ -105,6 +139,35 @@ class PerfilFragment : Fragment() {
    }
 
    private fun exibirDadosUsuario() {
+      autenticacaoViewModel.recuperarDadosUsuarioLogado { uiStatus ->
+         when (uiStatus) {
+            is UIStatus.Erro -> {
+               alertaCarregamento.fechar()
+               activity?.exibirMensagem( uiStatus.erro )
+            }
+            is UIStatus.Sucesso -> {
+               alertaCarregamento.fechar()
+               val usuario = uiStatus.dados
+               exibirDados( usuario )
+            }
+            is UIStatus.Carregando -> {
+               alertaCarregamento.exibir("Carregando dados do perfil")
+            }
+         }
+      }
+   }
+
+   private fun exibirDados( usuario: Usuario ) {
+
+      if ( usuario.urlPerfil.isNotEmpty() ) {
+         Picasso.get()
+            .load(usuario.urlPerfil)
+            .into(binding.imagePerfil)
+      }
+
+      if ( usuario.nome.isNotEmpty() ) {
+         binding.editNomePerfil.setText( usuario.nome )
+      }
 
    }
 

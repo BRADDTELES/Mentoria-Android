@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aulaifood.data.remote.firebase.repository.UploadRepository
 import com.danilloteles.aulaifood.data.remote.firebase.repository.autenticacao.IAutenticacaoRepository
-import com.danilloteles.aulaifood.domain.model.Produto
 import com.danilloteles.aulaifood.domain.model.UploadStorage
 import com.danilloteles.aulaifood.domain.model.Usuario
 import com.danilloteles.aulaifood.domain.usecase.AutenticacaoUseCase
@@ -35,11 +34,13 @@ class AutenticacaoViewModel @Inject constructor(
    fun cadastrarUsuario( usuario: Usuario, uiStatus: (UIStatus<Boolean>) -> Unit  ) {
 
       val retornoValidacao = autenticacaoUseCase.validarCadastroUsuario( usuario )
-      _resultadoValidacao.postValue( retornoValidacao )
+      _resultadoValidacao.value = retornoValidacao
       if ( retornoValidacao.sucessoValidacaoCadastro ){
          _carregando.value = true
          viewModelScope.launch {
-            autenticacaoRepositoryImpl.cadastrarUsuario( usuario, uiStatus )
+            autenticacaoRepositoryImpl.cadastrarUsuario(
+               usuario, uiStatus
+            )
             _carregando.postValue( false )
          }
       }
@@ -47,7 +48,7 @@ class AutenticacaoViewModel @Inject constructor(
 
    fun logarUsuario( usuario: Usuario, uiStatus: (UIStatus<Boolean>) -> Unit ) {
       val retornoValidacao = autenticacaoUseCase.validarLoginUsuario( usuario )
-      _resultadoValidacao.postValue( retornoValidacao )
+      _resultadoValidacao.value = retornoValidacao
       if ( retornoValidacao.sucessoValidacaoLogin ){
          _carregando.value = true
          viewModelScope.launch {
@@ -63,6 +64,29 @@ class AutenticacaoViewModel @Inject constructor(
 
    fun recuperarIdUsuarioLogado() : String {
       return autenticacaoRepositoryImpl.recuperarIdUsuarioLogado()
+   }
+
+   fun deslogarUsuario() {
+      return autenticacaoRepositoryImpl.deslogarUsuario()
+   }
+
+   fun recuperarDadosUsuarioLogado(
+      uiStatus: (UIStatus<Usuario>)->Unit
+   ){
+      uiStatus.invoke(UIStatus.Carregando)
+      viewModelScope.launch {
+         autenticacaoRepositoryImpl.recuperarDadosUsuarioLogado( uiStatus )
+      }
+   }
+
+   fun atualizarUsuario(
+      usuario: Usuario,
+      uiStatus: (UIStatus<String>)->Unit
+   ){
+      uiStatus.invoke(UIStatus.Carregando)
+      viewModelScope.launch {
+         autenticacaoRepositoryImpl.atualizarUsuario( usuario, uiStatus )
+      }
    }
 
    fun uploadImagem(
@@ -82,6 +106,8 @@ class AutenticacaoViewModel @Inject constructor(
          if (uiStatusUpload is UIStatus.Sucesso) {
 
             val urlImagem = uiStatusUpload.dados
+            val usuario = Usuario( urlPerfil = urlImagem )
+            autenticacaoRepositoryImpl.atualizarUsuario( usuario, uiStatus )
             uiStatus.invoke(UIStatus.Sucesso(""))
 
          } else {

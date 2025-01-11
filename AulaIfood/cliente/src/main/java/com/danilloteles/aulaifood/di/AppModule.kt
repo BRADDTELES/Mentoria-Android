@@ -28,9 +28,10 @@ object AppModule {
 
    @Provides
    fun provideAutenticaRepository(
-      firebaseAuth: FirebaseAuth
+      firebaseAuth: FirebaseAuth,
+      firebaseFirestore: FirebaseFirestore
    ) : IAutenticacaoRepository {
-      return AutenticacaoRepositoryImpl( firebaseAuth )
+      return AutenticacaoRepositoryImpl( firebaseAuth, firebaseFirestore )
    }
 
    @Provides
