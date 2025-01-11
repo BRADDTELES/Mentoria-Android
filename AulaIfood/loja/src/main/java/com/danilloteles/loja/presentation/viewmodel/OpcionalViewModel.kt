@@ -36,12 +36,9 @@ class OpcionalViewModel@Inject constructor(
          }
          val uiStatusUpload = upload.await()
          if ( uiStatusUpload is UIStatus.Sucesso ) {
-
             val urlImagem = uiStatusUpload.dados
             opcional.url = urlImagem
-
-            uiStatus.invoke( UIStatus.Sucesso("") )
-
+            opcionalRepositoryImpl.salvar( opcional, uiStatus )
          }else{
             uiStatus.invoke( UIStatus.Erro("Erro ao fazer upload") )
          }

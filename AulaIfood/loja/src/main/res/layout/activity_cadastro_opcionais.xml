@@ -60,7 +60,7 @@
                     android:layout_height="120dp"
                     android:scaleType="centerCrop"
                     app:shapeAppearanceOverlay="@style/CantosArredondados"
-                    app:srcCompat="@drawable/capa_destaque_produto" />
+                    app:srcCompat="@drawable/nao_disponivel" />
             </LinearLayout>
 
             <LinearLayout

@@ -28,7 +28,7 @@
                 android:layout_width="0dp"
                 android:layout_height="180dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/capa_destaque_produto"
+                android:src="@drawable/nao_disponivel"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"

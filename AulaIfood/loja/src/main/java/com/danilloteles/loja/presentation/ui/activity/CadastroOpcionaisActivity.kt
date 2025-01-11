@@ -9,12 +9,14 @@ import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.danilloteles.core.AlertaCarregamento
 import com.danilloteles.core.UIStatus
 import com.danilloteles.core.esconderTeclado
 import com.danilloteles.core.exibirMensagem
+import com.danilloteles.loja.R
 import com.danilloteles.loja.databinding.ActivityCadastroOpcionaisBinding
 import com.danilloteles.loja.domain.model.Opcional
 import com.danilloteles.loja.domain.model.Produto
@@ -161,13 +163,12 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
                   alertaCarregamento.fechar()
                   exibirMensagem(uiStatus.erro)
                }
-
                is UIStatus.Sucesso -> {
                   alertaCarregamento.fechar()
-
+                  limparDadosOpcionais()
+                  recuperarOpcionais()
                   exibirMensagem("Opcional salvo com sucesso!")
                }
-
                is UIStatus.Carregando -> {
                   alertaCarregamento.exibir("Salvando dados do Opcional")
                }
@@ -175,6 +176,24 @@ class CadastroOpcionaisActivity : AppCompatActivity() {
          }
       }
 
+   }
+
+   private fun recuperarOpcionais() {
+      TODO("Not yet implemented")
+   }
+
+   private fun limparDadosOpcionais() {
+      uriOpcional = null
+      with( binding ){
+         editNomeOpcional.setText("")
+         editPrecoOpcional.setText("")
+         editDescricaoOpcional.setText("")
+         imageCapaOpcional.setImageDrawable(
+            ContextCompat.getDrawable(
+               applicationContext, R.drawable.nao_disponivel
+            )
+         )
+      }
    }
 
    private fun validaDadosOpcional(opcional: Opcional): Boolean {
