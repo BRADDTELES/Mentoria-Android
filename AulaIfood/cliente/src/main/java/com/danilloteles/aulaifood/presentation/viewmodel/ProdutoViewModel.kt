@@ -4,6 +4,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.danilloteles.aulaifood.data.remote.firebase.repository.produto.IProdutoRepository
 import com.danilloteles.aulaifood.domain.model.Produto
+import com.danilloteles.aulaifood.domain.model.ProdutosSeparados
+import com.danilloteles.aulaifood.domain.usecase.produto.RecuperarProdutosPorTipoUseCase
 import com.danilloteles.core.UIStatus
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -11,7 +13,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ProdutoViewModel @Inject constructor(
-   private val produtoRepositoryImpl: IProdutoRepository
+   private val produtoRepositoryImpl: IProdutoRepository,
+   private val recuperarProdutosPorTipoUseCase: RecuperarProdutosPorTipoUseCase
 ) : ViewModel() {
 
    fun recuperProdutoPeloId(
@@ -27,11 +30,11 @@ class ProdutoViewModel @Inject constructor(
 
    fun listar(
       idLoja: String,
-      uiStatus: (UIStatus<List<Produto>> ) -> Unit
+      uiStatus: (UIStatus<List<ProdutosSeparados>> ) -> Unit
    ){
       //uiStatus.invoke( UIStatus.Carregando )
       viewModelScope.launch {
-         produtoRepositoryImpl.listar( idLoja, uiStatus )
+         recuperarProdutosPorTipoUseCase( idLoja, uiStatus )
       }
    }
 

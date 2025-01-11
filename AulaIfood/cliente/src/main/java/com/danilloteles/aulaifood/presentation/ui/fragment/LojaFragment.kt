@@ -15,6 +15,7 @@ import com.danilloteles.aulaifood.databinding.FragmentHomeBinding
 import com.danilloteles.aulaifood.databinding.FragmentLojaBinding
 import com.danilloteles.aulaifood.domain.model.Loja
 import com.danilloteles.aulaifood.domain.model.Produto
+import com.danilloteles.aulaifood.domain.model.TipoProduto
 import com.danilloteles.aulaifood.presentation.ui.adapter.LojasAdapter
 import com.danilloteles.aulaifood.presentation.ui.adapter.ProdutoAdapter
 import com.danilloteles.aulaifood.presentation.viewmodel.LojaViewModel
@@ -72,9 +73,20 @@ class LojaFragment : Fragment() {
             }
             is UIStatus.Sucesso -> {
                alertaCarregamento.fechar()
-               val produtos = uiStatus.dados
+               val produtosSeparados = uiStatus.dados
+
+               val produtosEmDestaque = produtosSeparados
+                  .find {
+                     it.tipo == TipoProduto.PRODUTOS_EM_DESTAQUE
+                  }?.lista ?: emptyList()
+
+               val produtos = produtosSeparados
+                  .find {
+                     it.tipo == TipoProduto.PRODUTOS
+                  }?.lista ?: emptyList()
+
                produtoAdapter.adicionarLista( produtos )
-               produtoAdapterDestaque.adicionarLista( produtos )
+               produtoAdapterDestaque.adicionarLista( produtosEmDestaque )
             }
             is UIStatus.Carregando -> {
                alertaCarregamento.exibir("Carregando produtos")
