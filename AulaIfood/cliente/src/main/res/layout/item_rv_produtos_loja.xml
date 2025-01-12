@@ -19,7 +19,7 @@
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/CantosArredondados"
-        app:srcCompat="@drawable/produto" />
+        app:srcCompat="@drawable/nao_disponivel" />
 
     <LinearLayout
         android:id="@+id/linearLayout"

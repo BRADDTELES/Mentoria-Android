@@ -32,11 +32,17 @@ class FinalizarPedidoFragment : Fragment() {
          false
       )
 
-      //inicializarEventosClique()
       //inicializarProdutosDestaque()
+      inicializarEventosClique()
       inicializarProdutos()
 
       return binding.root
+   }
+
+   private fun inicializarEventosClique() {
+      binding.btnFinalizarPedidoVoltar.setOnClickListener {
+         findNavController().popBackStack()
+      }
    }
 
    private fun inicializarProdutos() {
